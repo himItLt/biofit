@@ -1,0 +1,417 @@
+.about-holly .grid {
+  margin-bottom: 0;
+}
+
+.about-holly .grid__item {
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .about-holly__grid--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.about-holly__media {
+  min-height: 100%;
+  overflow: visible;
+}
+
+.about-holly__media--small {
+  height: 19.4rem;
+}
+
+.about-holly__media--medium {
+  height: 29.6rem;
+}
+
+.about-holly__media--large {
+  height: 43.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .about-holly__media--small {
+    height: 31.4rem;
+  }
+
+  .about-holly__media--medium {
+    height: 46rem;
+  }
+
+  .about-holly__media--large {
+    height: 69.5rem;
+  }
+}
+
+.about-holly__media--placeholder {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-holly__media--placeholder:after {
+  content: '';
+  position: absolute;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.about-holly__media--placeholder.about-holly__media--adapt {
+  height: 20rem;
+}
+
+@media screen and (min-width: 750px) {
+  .about-holly__media--placeholder.about-holly__media--adapt {
+    height: 30rem;
+  }
+}
+
+.about-holly__media--placeholder > svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.about-holly__media--placeholder:is(.animate--ambient, .animate--zoom-in) > .svg-wrapper {
+  top: 0;
+  left: 0;
+  transform: translate(0);
+}
+
+.about-holly__content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-self: center;
+  padding: 4rem calc(4rem / var(--font-body-scale)) 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-holly .grid__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.about-holly:not(.about-holly--overlap) .about-holly__media-item:after {
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.about-holly:not(.about-holly--overlap) .about-holly__text-item:after {
+  border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+}
+
+.about-holly .about-holly__media-item > * {
+  border-radius: var(--media-radius);
+  overflow: hidden;
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.about-holly .global-media-settings {
+  overflow: hidden !important;
+}
+
+.about-holly .about-holly__text-item > * {
+  border-radius: var(--text-boxes-radius);
+  overflow: hidden;
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+}
+
+.about-holly:not(.about-holly--overlap) .about-holly__media-item > *,
+.about-holly:not(.about-holly--overlap) .about-holly__text-item > * {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 749px) {
+  .about-holly.collapse-corners:not(.about-holly--overlap) .about-holly__media-item:after,
+  .about-holly.collapse-corners:not(.about-holly--overlap) .grid__item .about-holly__media,
+  .about-holly.collapse-corners:not(.about-holly--overlap) .about-holly__media img,
+  .about-holly.collapse-corners:not(.about-holly--overlap) .about-holly__media .placeholder-svg {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .about-holly.collapse-corners:not(.about-holly--overlap) .about-holly__text-item:after,
+  .about-holly.collapse-corners:not(.about-holly--overlap) .grid__item .about-holly__content {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .about-holly.collapse-borders:not(.about-holly--overlap) .about-holly__content {
+    border-top: 0;
+  }
+}
+
+.about-holly__content--mobile-right > * {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.about-holly__content--mobile-center > * {
+  align-self: center;
+  text-align: center;
+}
+
+.about-holly--overlap .about-holly__content {
+  width: 90%;
+  margin: -3rem auto 0;
+}
+
+@media screen and (min-width: 750px) {
+  .about-holly__grid--reverse .about-holly__content {
+    margin-left: auto;
+  }
+
+  .about-holly__content--bottom {
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+  .about-holly__content--top {
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  .about-holly__content--desktop-right > * {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .about-holly__content--desktop-left > * {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .about-holly__content--desktop-center > * {
+    align-self: center;
+    text-align: center;
+  }
+
+  .about-holly--overlap .about-holly__text-item {
+    display: flex;
+    padding: 3rem 0;
+  }
+
+  .about-holly--overlap .about-holly__content {
+    height: auto;
+    width: calc(100% + 4rem);
+    min-width: calc(100% + 4rem);
+    margin-top: 0;
+    margin-left: -4rem;
+  }
+
+  .about-holly--overlap .about-holly__grid--reverse .about-holly__content {
+    margin-left: 0;
+    margin-right: -4rem;
+  }
+
+  .about-holly--overlap .about-holly__grid--reverse .about-holly__text-item {
+    justify-content: flex-end;
+  }
+
+  .about-holly--overlap .about-holly__media-item--top {
+    align-self: flex-start;
+  }
+
+  .about-holly--overlap .about-holly__media-item--middle {
+    align-self: center;
+  }
+
+  .about-holly--overlap .about-holly__media-item--bottom {
+    align-self: flex-end;
+  }
+
+  .about-holly__media-item--small,
+  .about-holly__media-item--large + .about-holly__text-item {
+    flex-grow: 0;
+  }
+
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__media-item:after,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__media,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__media
+    img,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__media
+    .placeholder-svg,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__text-item:after,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__content,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__content:after {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__text-item:after,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__content,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__content:after,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__media-item:after,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__media,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__media
+    img,
+  .about-holly.collapse-corners:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__media
+    .placeholder-svg {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .about-holly.collapse-borders:not(.about-holly--overlap)
+    .grid:not(.about-holly__grid--reverse)
+    .about-holly__content {
+    border-left: 0;
+  }
+
+  .about-holly.collapse-borders:not(.about-holly--overlap)
+    .about-holly__grid--reverse
+    .about-holly__content {
+    border-right: 0;
+  }
+}
+
+.about-holly:not(.collapse-corners, .about-holly--overlap) .about-holly__media-item {
+  z-index: 2;
+}
+
+/* Needed for gradient continuity with or without animation so that transparent PNG images come up as we would expect */
+.about-holly.about-holly--overlap .backround-transparent,
+.about-holly:not(.about-holly--overlap) .background-transparent {
+  background: transparent;
+}
+
+/* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
+.about-holly .gradient {
+  transform: perspective(0);
+}
+
+.about-holly__content {
+  border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+  word-break: break-word;
+}
+
+@media screen and (min-width: 990px) {
+  .about-holly__content {
+    padding: 6rem 7rem 7rem;
+  }
+}
+
+.about-holly__content > * + * {
+  margin-top: 2rem;
+}
+
+.about-holly__content > .about-holly__text:empty ~ a {
+  margin-top: 2rem;
+}
+
+.about-holly__content > :first-child:is(.about-holly__heading),
+.about-holly__text--caption + .about-holly__heading,
+.about-holly__text--caption:first-child {
+  margin-top: 0;
+}
+
+.about-holly__content :last-child:is(.about-holly__heading),
+.about-holly__text--caption {
+  margin-bottom: 0;
+}
+
+.about-holly__content .button + .about-holly__text {
+  margin-top: 2rem;
+}
+
+.about-holly__content .about-holly__text + .button {
+  margin-top: 3rem;
+}
+
+.about-holly__heading {
+  margin-bottom: 0;
+}
+
+.about-holly__text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 749px) {
+  .collapse-padding .about-holly__grid .about-holly__content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .collapse-padding
+    .about-holly__grid:not(.about-holly__grid--reverse)
+    .about-holly__content:not(.about-holly__content--desktop-center) {
+    padding-right: 0;
+  }
+
+  .collapse-padding
+    .about-holly__grid--reverse
+    .about-holly__content:not(.about-holly__content--desktop-center) {
+    padding-left: 0;
+  }
+}
+
+/* check for flexbox gap in older Safari versions */
+@supports not (inset: 10px) {
+  .about-holly .grid {
+    margin-left: 0;
+  }
+}
+
+/*
+  Multirow
+  note: consider removing from this stylesheet if multirow-specific styles increase signficantly
+*/
+.multirow__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--grid-mobile-vertical-spacing);
+}
+
+@media screen and (min-width: 750px) {
+  .multirow__inner {
+    row-gap: var(--grid-desktop-vertical-spacing);
+  }
+}

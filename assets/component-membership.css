@@ -1,0 +1,417 @@
+.membership .grid {
+  margin-bottom: 0;
+}
+
+.membership .grid__item {
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .membership__grid--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.membership__media {
+  min-height: 100%;
+  overflow: visible;
+}
+
+.membership__media--small {
+  height: 19.4rem;
+}
+
+.membership__media--medium {
+  height: 29.6rem;
+}
+
+.membership__media--large {
+  height: 43.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .membership__media--small {
+    height: 31.4rem;
+  }
+
+  .membership__media--medium {
+    height: 46rem;
+  }
+
+  .membership__media--large {
+    height: 69.5rem;
+  }
+}
+
+.membership__media--placeholder {
+  position: relative;
+  overflow: hidden;
+}
+
+.membership__media--placeholder:after {
+  content: '';
+  position: absolute;
+  background: rgba(var(--color-foreground), 0.04);
+}
+
+.membership__media--placeholder.membership__media--adapt {
+  height: 20rem;
+}
+
+@media screen and (min-width: 750px) {
+  .membership__media--placeholder.membership__media--adapt {
+    height: 30rem;
+  }
+}
+
+.membership__media--placeholder > svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.membership__media--placeholder:is(.animate--ambient, .animate--zoom-in) > .svg-wrapper {
+  top: 0;
+  left: 0;
+  transform: translate(0);
+}
+
+.membership__content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-self: center;
+  padding: 4rem calc(4rem / var(--font-body-scale)) 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.membership .grid__item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.membership:not(.membership--overlap) .membership__media-item:after {
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.membership:not(.membership--overlap) .membership__text-item:after {
+  border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+}
+
+.membership .membership__media-item > * {
+  border-radius: var(--media-radius);
+  overflow: hidden;
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.membership .global-media-settings {
+  overflow: hidden !important;
+}
+
+.membership .membership__text-item > * {
+  border-radius: var(--text-boxes-radius);
+  overflow: hidden;
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+}
+
+.membership:not(.membership--overlap) .membership__media-item > *,
+.membership:not(.membership--overlap) .membership__text-item > * {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 749px) {
+  .membership.collapse-corners:not(.membership--overlap) .membership__media-item:after,
+  .membership.collapse-corners:not(.membership--overlap) .grid__item .membership__media,
+  .membership.collapse-corners:not(.membership--overlap) .membership__media img,
+  .membership.collapse-corners:not(.membership--overlap) .membership__media .placeholder-svg {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .membership.collapse-corners:not(.membership--overlap) .membership__text-item:after,
+  .membership.collapse-corners:not(.membership--overlap) .grid__item .membership__content {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .membership.collapse-borders:not(.membership--overlap) .membership__content {
+    border-top: 0;
+  }
+}
+
+.membership__content--mobile-right > * {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.membership__content--mobile-center > * {
+  align-self: center;
+  text-align: center;
+}
+
+.membership--overlap .membership__content {
+  width: 90%;
+  margin: -3rem auto 0;
+}
+
+@media screen and (min-width: 750px) {
+  .membership__grid--reverse .membership__content {
+    margin-left: auto;
+  }
+
+  .membership__content--bottom {
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+  .membership__content--top {
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+
+  .membership__content--desktop-right > * {
+    align-self: flex-end;
+    text-align: right;
+  }
+
+  .membership__content--desktop-left > * {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .membership__content--desktop-center > * {
+    align-self: center;
+    text-align: center;
+  }
+
+  .membership--overlap .membership__text-item {
+    display: flex;
+    padding: 3rem 0;
+  }
+
+  .membership--overlap .membership__content {
+    height: auto;
+    width: calc(100% + 4rem);
+    min-width: calc(100% + 4rem);
+    margin-top: 0;
+    margin-left: -4rem;
+  }
+
+  .membership--overlap .membership__grid--reverse .membership__content {
+    margin-left: 0;
+    margin-right: -4rem;
+  }
+
+  .membership--overlap .membership__grid--reverse .membership__text-item {
+    justify-content: flex-end;
+  }
+
+  .membership--overlap .membership__media-item--top {
+    align-self: flex-start;
+  }
+
+  .membership--overlap .membership__media-item--middle {
+    align-self: center;
+  }
+
+  .membership--overlap .membership__media-item--bottom {
+    align-self: flex-end;
+  }
+
+  .membership__media-item--small,
+  .membership__media-item--large + .membership__text-item {
+    flex-grow: 0;
+  }
+
+  .membership.collapse-corners:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__media-item:after,
+  .membership.collapse-corners:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__media,
+  .membership.collapse-corners:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__media
+    img,
+  .membership.collapse-corners:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__media
+    .placeholder-svg,
+  .membership.collapse-corners:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__text-item:after,
+  .membership.collapse-corners:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__content,
+  .membership.collapse-corners:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__content:after {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .membership.collapse-corners:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__text-item:after,
+  .membership.collapse-corners:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__content,
+  .membership.collapse-corners:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__content:after,
+  .membership.collapse-corners:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__media-item:after,
+  .membership.collapse-corners:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__media,
+  .membership.collapse-corners:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__media
+    img,
+  .membership.collapse-corners:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__media
+    .placeholder-svg {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .membership.collapse-borders:not(.membership--overlap)
+    .grid:not(.membership__grid--reverse)
+    .membership__content {
+    border-left: 0;
+  }
+
+  .membership.collapse-borders:not(.membership--overlap)
+    .membership__grid--reverse
+    .membership__content {
+    border-right: 0;
+  }
+}
+
+.membership:not(.collapse-corners, .membership--overlap) .membership__media-item {
+  z-index: 2;
+}
+
+/* Needed for gradient continuity with or without animation so that transparent PNG images come up as we would expect */
+.membership.membership--overlap .backround-transparent,
+.membership:not(.membership--overlap) .background-transparent {
+  background: transparent;
+}
+
+/* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
+.membership .gradient {
+  transform: perspective(0);
+}
+
+.membership__content {
+  border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
+    var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
+  word-break: break-word;
+}
+
+@media screen and (min-width: 990px) {
+  .membership__content {
+    padding: 6rem 7rem 7rem;
+  }
+}
+
+.membership__content > * + * {
+  margin-top: 2rem;
+}
+
+.membership__content > .membership__text:empty ~ a {
+  margin-top: 2rem;
+}
+
+.membership__content > :first-child:is(.membership__heading),
+.membership__text--caption + .membership__heading,
+.membership__text--caption:first-child {
+  margin-top: 0;
+}
+
+.membership__content :last-child:is(.membership__heading),
+.membership__text--caption {
+  margin-bottom: 0;
+}
+
+.membership__content .button + .membership__text {
+  margin-top: 2rem;
+}
+
+.membership__content .membership__text + .button {
+  margin-top: 3rem;
+}
+
+.membership__heading {
+  margin-bottom: 0;
+}
+
+.membership__text p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 749px) {
+  .collapse-padding .membership__grid .membership__content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .collapse-padding
+    .membership__grid:not(.membership__grid--reverse)
+    .membership__content:not(.membership__content--desktop-center) {
+    padding-right: 0;
+  }
+
+  .collapse-padding
+    .membership__grid--reverse
+    .membership__content:not(.membership__content--desktop-center) {
+    padding-left: 0;
+  }
+}
+
+/* check for flexbox gap in older Safari versions */
+@supports not (inset: 10px) {
+  .membership .grid {
+    margin-left: 0;
+  }
+}
+
+/*
+  Multirow
+  note: consider removing from this stylesheet if multirow-specific styles increase signficantly
+*/
+.multirow__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--grid-mobile-vertical-spacing);
+}
+
+@media screen and (min-width: 750px) {
+  .multirow__inner {
+    row-gap: var(--grid-desktop-vertical-spacing);
+  }
+}

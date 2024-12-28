@@ -78,12 +78,13 @@
   height: 424px;
 }
 
-.newsletter #form_fields_wrapper {
-  width: 100%;
+.newsletter .form_fields_wrapper {
+  width: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: none !important;
+  margin-left: -150px;
+  margin-bottom: 20px;
 }
 
 .newsletter .field,

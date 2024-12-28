@@ -1,9 +1,11 @@
 .biafit-footer {
-    width: 100%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     align-content: center;
-    height: 166px;
+    height: 170px;
+    margin: auto;
+    margin-bottom: 10px;
 }
 
 .biafit-footer .column1,
@@ -13,7 +15,7 @@
     height: 166px;
 }
 
-.biafit-footer .link-image {
+.biafit-footer a.link-image {
     display: block;
 }
 
@@ -30,17 +32,30 @@
     color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
 }
 
+.biafit-footer .column1 .rights-reserved {
+    margin-bottom: 0;
+    margin-top: 25px;
+}
+
 .biafit-footer .social-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 40px;
+    width: 250px;
+    margin: auto;
 }
-.biafit-footer .social-links a {
+
+.biafit-footer .social-links .instagram,
+.biafit-footer .social-links .facebook,
+.biafit-footer .social-links .youtube
+ {
     display: block;
     width: 36px;
     height: 36px;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 0;
 }
 
 .biafit-footer .social-links .instagram {
@@ -51,7 +66,7 @@
     background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-facebook.png?v=1735411341');
 }
 
-.biafit-footer .social-links .instagram {
+.biafit-footer .social-links .youtube {
     background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-youtube.png?v=1735411341');
 }
 
@@ -60,11 +75,39 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 20.8px;
+    text-align: center;
+    margin-top: 0;
 }
 
-.biafit-footer .app-image {
+.biafit-footer .service-title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.biafit-footer .column3 {
+    padding-left: 45px;
+}
+.biafit-footer__app-image {
+    display: block;
     width: 191px;
     height: 56px;
+    float: right;
+}
+
+.biafit-footer .service-links {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.biafit-footer .service-links a {
+    text-decoration: none;
 }
 
 

@@ -371,3 +371,7 @@ a.button::after, a.button::before {
         left: -200px;
     } 
 }
+
+footer {
+    display: none !important;
+}

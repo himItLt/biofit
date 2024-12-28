@@ -1,4 +1,4 @@
-{{ 'cokmponent-biafit-footer.css' | asset_url | stylesheet_tag }}
+{{ 'component-biafit-footer.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -33,22 +33,22 @@
         </div>
       </div>
       <div class="customer-service">
-        <h5>Customer service</h5>
-        <div class="social-links">
+        <h5 class="service-title">Customer service</h5>
+        <div class="service-links">
           <a href="#">Privacy policy</a>
           <a href="#">Terms & conditions</a>
         </div>  
       </div>
     </div>
-  </div>
-  <div class="column3">
-    <h5>Download the app</h5>
-    <a href="#" class="link-image app-img">
-      <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-app-store-link.png?v=1735405717" width="100%" height="100%">
-    </a>
-    <a href="#" class="link-image app-img">
-      <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-google-link.png?v=1735405717" width="100%" height="100%">
-    </a>
+    <div class="column3">
+      <h5>Download the app</h5>
+      <a href="#" class="biafit-footer__app-image">
+        <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-app-store-link.png?v=1735405717" width="100%" height="100%">
+      </a>
+      <a href="#" class="biafit-footer__app-image">
+        <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-google-link.png?v=1735405717" width="100%" height="100%">
+      </a>
+    </div>
   </div>
 </div>
 

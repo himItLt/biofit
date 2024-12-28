@@ -60,6 +60,7 @@
 
 <div
   class="color-{{ section.settings.color_scheme }} isolate gradient"
+  id="programs-section"
 >
   <div
     class="collection{% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %} section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}"
@@ -155,16 +156,7 @@
             aria-label="{{ 'general.slider.previous_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
           </button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ products_to_display }}</span>
-          </div>
           <button
             type="button"
             class="slider-button slider-button--next"
@@ -172,9 +164,6 @@
             aria-label="{{ 'general.slider.next_slide' | t }}"
             aria-controls="Slider-{{ section.id }}"
           >
-            <span class="svg-wrapper">
-              {{- 'icon-caret.svg' | inline_asset_content -}}
-            </span>
           </button>
         </div>
       {%- endif -%}

@@ -1,0 +1,434 @@
+{{ 'cokmponent-biafit-footer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="biafit-footer">
+    <div class="column1">
+      <a href="#" class="link-image footer-logo">
+        <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-logo.png?v=1735403452" width="100%" height="100%">
+      </a>
+      <p class="challenge">Challenge yourself now to become the best you possible. Get the Grounds app!</p>
+      <p class="rights-reserved">© 2025 Bia Fit. All rights reserved.</p>
+    </div>
+    <div class="column2">
+      <div class="social-media">
+        <h5>Social media</h5>
+        <div class="social-links">
+          <a href="#" class="instagram"></a>
+          <a href="#" class="facebook"></a>
+          <a href="#" class="youtube"></a>
+        </div>
+      </div>
+      <div class="customer-service">
+        <h5>Customer service</h5>
+        <div class="social-links">
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms & conditions</a>
+        </div>  
+      </div>
+    </div>
+  </div>
+  <div class="column3">
+    <h5>Download the app</h5>
+    <a href="#" class="link-image app-img">
+      <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-app-store-link.png?v=1735405717" width="100%" height="100%">
+    </a>
+    <a href="#" class="link-image app-img">
+      <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-google-link.png?v=1735405717" width="100%" height="100%">
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.biafit-footer.name",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.biafit-footer.settings.image.label"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.biafit-footer.settings.height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.biafit-footer.settings.height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.biafit-footer.settings.height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.biafit-footer.settings.height.options__4.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.biafit-footer.settings.height.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_width",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.biafit-footer.settings.desktop_image_width.options__1.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.biafit-footer.settings.desktop_image_width.options__2.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.biafit-footer.settings.desktop_image_width.options__3.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.biafit-footer.settings.desktop_image_width.label",
+      "info": "t:sections.biafit-footer.settings.desktop_image_width.info"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "image_first",
+          "label": "t:sections.biafit-footer.settings.layout.options__1.label"
+        },
+        {
+          "value": "text_first",
+          "label": "t:sections.biafit-footer.settings.layout.options__2.label"
+        }
+      ],
+      "default": "image_first",
+      "label": "t:sections.biafit-footer.settings.layout.label",
+      "info": "t:sections.biafit-footer.settings.layout.info"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.biafit-footer.settings.desktop_content_position.options__1.label"
+        },
+        {
+          "value": "middle",
+          "label": "t:sections.biafit-footer.settings.desktop_content_position.options__2.label"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.biafit-footer.settings.desktop_content_position.options__3.label"
+        }
+      ],
+      "default": "top",
+      "label": "t:sections.biafit-footer.settings.desktop_content_position.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.biafit-footer.settings.desktop_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.biafit-footer.settings.desktop_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.biafit-footer.settings.desktop_content_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.biafit-footer.settings.desktop_content_alignment.label"
+    },
+    {
+      "type": "select",
+      "id": "content_layout",
+      "options": [
+        {
+          "value": "no-overlap",
+          "label": "t:sections.biafit-footer.settings.content_layout.options__1.label"
+        },
+        {
+          "value": "overlap",
+          "label": "t:sections.biafit-footer.settings.content_layout.options__2.label"
+        }
+      ],
+      "default": "no-overlap",
+      "label": "t:sections.biafit-footer.settings.content_layout.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.multirow.settings.container_color_scheme.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.animation.content"
+    },
+    {
+      "type": "select",
+      "id": "image_behavior",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.all.animation.image_behavior.options__1.label"
+        },
+        {
+          "value": "ambient",
+          "label": "t:sections.all.animation.image_behavior.options__2.label"
+        },
+        {
+          "value": "zoom-in",
+          "label": "t:sections.all.animation.image_behavior.options__4.label"
+        }
+      ],
+      "default": "none",
+      "label": "t:sections.all.animation.image_behavior.label"
+    },
+    {
+      "type": "header",
+      "content": "Mobile layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.biafit-footer.settings.mobile_content_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.biafit-footer.settings.mobile_content_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.biafit-footer.settings.mobile_content_alignment.options__3.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.biafit-footer.settings.mobile_content_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.biafit-footer.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.biafit-footer.blocks.heading.settings.heading.default",
+          "label": "t:sections.biafit-footer.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "hxl",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "hxxl",
+              "label": "t:sections.all.heading_size.options__5.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "caption",
+      "name": "t:sections.biafit-footer.blocks.caption.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "default": "t:sections.biafit-footer.blocks.caption.settings.text.default",
+          "label": "t:sections.biafit-footer.blocks.caption.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "subtitle",
+              "label": "t:sections.biafit-footer.blocks.caption.settings.text_style.options__1.label"
+            },
+            {
+              "value": "caption-with-letter-spacing",
+              "label": "t:sections.biafit-footer.blocks.caption.settings.text_style.options__2.label"
+            }
+          ],
+          "default": "caption-with-letter-spacing",
+          "label": "t:sections.biafit-footer.blocks.caption.settings.text_style.label"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.biafit-footer.blocks.caption.settings.caption_size.options__1.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.biafit-footer.blocks.caption.settings.caption_size.options__2.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.biafit-footer.blocks.caption.settings.caption_size.options__3.label"
+            }
+          ],
+          "default": "medium",
+          "label": "t:sections.biafit-footer.blocks.caption.settings.caption_size.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.biafit-footer.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "t:sections.biafit-footer.blocks.text.settings.text.default",
+          "label": "t:sections.biafit-footer.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.biafit-footer.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.biafit-footer.blocks.text.settings.text_style.options__2.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.biafit-footer.blocks.text.settings.text_style.label"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.biafit-footer.blocks.button.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "t:sections.biafit-footer.blocks.button.settings.button_label.default",
+          "label": "t:sections.biafit-footer.blocks.button.settings.button_label.label",
+          "info": "t:sections.biafit-footer.blocks.button.settings.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.biafit-footer.blocks.button.settings.button_link.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "t:sections.biafit-footer.blocks.button.settings.outline_button.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.biafit-footer.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

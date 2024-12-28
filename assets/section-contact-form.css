@@ -37,3 +37,80 @@
     grid-column-gap: 2rem;
   }
 }
+
+.contact form {
+  max-width: 562px;
+  height: 457px;
+  margin-left: calc(100vw / 2 - 492px);
+  padding-top: 45px;
+}
+
+.contact .field {
+  color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+}
+
+.contact .field input,
+.contact .field textarea {
+  border: 1px solid rgba(226, 226, 226, 1) !important;  
+}
+
+.contact .button {
+  background: transparent !important;
+  width: 326px;
+  height: 64px;
+  padding: 20px 40px 20px 40px;
+  border-radius: 16px;
+  border-image-source: linea-gradient(96.35deg, #ED1653 -16.05%, #F15822 119.87%);
+  border: 1px solid #F15822;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--Primary, rgba(237, 22, 83, 1));
+}
+
+.contact .description h3 {
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44.8px;
+  color: var(--Text-Black, rgba(6, 6, 6, 1));
+  margin-bottom: 0px;
+  margin-top: 52px;
+}
+
+.contact .description p {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+}
+
+.contact form *::before, 
+.contact form *::after {
+  display: none !important;
+}
+
+.contact .title {
+  left: 5px;
+}
+
+.contact {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/contact-us-bg.png?v=1735132163') !important;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 722px;
+  min-width: 90%;
+}
+
+.contact {
+  height: 920px;
+}

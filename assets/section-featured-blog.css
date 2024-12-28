@@ -58,3 +58,35 @@
     }
   }
 }
+
+.description h2 {
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44.8px;
+  text-align: left;
+  text-underline-position: from-font;
+  margin: 0;
+}
+
+.description .caption-1 {
+  color: var(--Text-Black, rgba(6, 6, 6, 1));
+}
+
+.description .caption-2 {
+  color: var(--Primary, rgba(237, 22, 83, 1));
+}
+
+.description p {
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27.36px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  width: 537px;
+  display: block;
+}
+

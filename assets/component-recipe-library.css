@@ -1,70 +1,70 @@
-.about-app .grid {
+.recipe-library .grid {
   margin-bottom: 0;
 }
 
-.about-app .grid__item {
+.recipe-library .grid__item {
   position: relative;
 }
 
 @media screen and (min-width: 750px) {
-  .about-app__grid--reverse {
+  .recipe-library__grid--reverse {
     flex-direction: row-reverse;
   }
 }
 
-.about-app__media {
+.recipe-library__media {
   min-height: 100%;
   overflow: visible;
 }
 
-.about-app__media--small {
+.recipe-library__media--small {
   height: 19.4rem;
 }
 
-.about-app__media--medium {
+.recipe-library__media--medium {
   height: 29.6rem;
 }
 
-.about-app__media--large {
+.recipe-library__media--large {
   height: 43.5rem;
 }
 
 @media screen and (min-width: 750px) {
-  .about-app__media--small {
+  .recipe-library__media--small {
     height: 31.4rem;
   }
 
-  .about-app__media--medium {
+  .recipe-library__media--medium {
     height: 46rem;
   }
 
-  .about-app__media--large {
+  .recipe-library__media--large {
     height: 69.5rem;
   }
 }
 
-.about-app__media--placeholder {
+.recipe-library__media--placeholder {
   position: relative;
   overflow: hidden;
 }
 
-.about-app__media--placeholder:after {
+.recipe-library__media--placeholder:after {
   content: '';
   position: absolute;
   background: rgba(var(--color-foreground), 0.04);
 }
 
-.about-app__media--placeholder.about-app__media--adapt {
+.recipe-library__media--placeholder.recipe-library__media--adapt {
   height: 20rem;
 }
 
 @media screen and (min-width: 750px) {
-  .about-app__media--placeholder.about-app__media--adapt {
+  .recipe-library__media--placeholder.recipe-library__media--adapt {
     height: 30rem;
   }
 }
 
-.about-app__media--placeholder > svg {
+.recipe-library__media--placeholder > svg {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -74,13 +74,13 @@
   fill: currentColor;
 }
 
-.about-app__media--placeholder:is(.animate--ambient, .animate--zoom-in) > .svg-wrapper {
+.recipe-library__media--placeholder:is(.animate--ambient, .animate--zoom-in) > .svg-wrapper {
   top: 0;
   left: 0;
   transform: translate(0);
 }
 
-.about-app__content {
+.recipe-library__content {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -92,7 +92,7 @@
   z-index: 1;
 }
 
-.about-app .grid__item::after {
+.recipe-library .grid__item::after {
   content: '';
   position: absolute;
   top: 0;
@@ -102,112 +102,112 @@
   z-index: -1;
 }
 
-.about-app:not(.about-app--overlap) .about-app__media-item:after {
+.recipe-library:not(.recipe-library--overlap) .recipe-library__media-item:after {
   border-radius: var(--media-radius);
   box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
     rgba(var(--color-shadow), var(--media-shadow-opacity));
 }
 
-.about-app:not(.about-app--overlap) .about-app__text-item:after {
+.recipe-library:not(.recipe-library--overlap) .recipe-library__text-item:after {
   border-radius: var(--text-boxes-radius);
   box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
     var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
 }
 
-.about-app .about-app__media-item > * {
+.recipe-library .recipe-library__media-item > * {
   border-radius: var(--media-radius);
   overflow: hidden;
   box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius)
     rgba(var(--color-shadow), var(--media-shadow-opacity));
 }
 
-.about-app .global-media-settings {
+.recipe-library .global-media-settings {
   overflow: hidden !important;
 }
 
-.about-app .about-app__text-item > * {
+.recipe-library .recipe-library__text-item > * {
   border-radius: var(--text-boxes-radius);
   overflow: hidden;
   box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
     var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
 }
 
-.about-app:not(.about-app--overlap) .about-app__media-item > *,
-.about-app:not(.about-app--overlap) .about-app__text-item > * {
+.recipe-library:not(.recipe-library--overlap) .recipe-library__media-item > *,
+.recipe-library:not(.recipe-library--overlap) .recipe-library__text-item > * {
   box-shadow: none;
 }
 
 @media screen and (max-width: 749px) {
-  .about-app.collapse-corners:not(.about-app--overlap) .about-app__media-item:after,
-  .about-app.collapse-corners:not(.about-app--overlap) .grid__item .about-app__media,
-  .about-app.collapse-corners:not(.about-app--overlap) .about-app__media img,
-  .about-app.collapse-corners:not(.about-app--overlap) .about-app__media .placeholder-svg {
+  .recipe-library.collapse-corners:not(.recipe-library--overlap) .recipe-library__media-item:after,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap) .grid__item .recipe-library__media,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap) .recipe-library__media img,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap) .recipe-library__media .placeholder-svg {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  .about-app.collapse-corners:not(.about-app--overlap) .about-app__text-item:after,
-  .about-app.collapse-corners:not(.about-app--overlap) .grid__item .about-app__content {
+  .recipe-library.collapse-corners:not(.recipe-library--overlap) .recipe-library__text-item:after,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap) .grid__item .recipe-library__content {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
 
-  .about-app.collapse-borders:not(.about-app--overlap) .about-app__content {
+  .recipe-library.collapse-borders:not(.recipe-library--overlap) .recipe-library__content {
     border-top: 0;
   }
 }
 
-.about-app__content--mobile-right > * {
+.recipe-library__content--mobile-right > * {
   align-self: flex-end;
   text-align: right;
 }
 
-.about-app__content--mobile-center > * {
+.recipe-library__content--mobile-center > * {
   align-self: center;
   text-align: center;
 }
 
-.about-app--overlap .about-app__content {
+.recipe-library--overlap .recipe-library__content {
   width: 90%;
   margin: -3rem auto 0;
 }
 
 @media screen and (min-width: 750px) {
-  .about-app__grid--reverse .about-app__content {
+  .recipe-library__grid--reverse .recipe-library__content {
     margin-left: auto;
   }
 
-  .about-app__content--bottom {
+  .recipe-library__content--bottom {
     justify-content: flex-end;
     align-self: flex-end;
   }
 
-  .about-app__content--top {
+  .recipe-library__content--top {
     justify-content: flex-start;
     align-self: flex-start;
   }
 
-  .about-app__content--desktop-right > * {
+  .recipe-library__content--desktop-right > * {
     align-self: flex-end;
     text-align: right;
   }
 
-  .about-app__content--desktop-left > * {
+  .recipe-library__content--desktop-left > * {
     align-self: flex-start;
     text-align: left;
   }
 
-  .about-app__content--desktop-center > * {
+  .recipe-library__content--desktop-center > * {
     align-self: center;
     text-align: center;
   }
 
-  .about-app--overlap .about-app__text-item {
+  .recipe-library--overlap .recipe-library__text-item {
     display: flex;
     padding: 3rem 0;
   }
 
-  .about-app--overlap .about-app__content {
+  .recipe-library--overlap .recipe-library__content {
     height: auto;
     width: calc(100% + 4rem);
     min-width: calc(100% + 4rem);
@@ -215,115 +215,115 @@
     margin-left: -4rem;
   }
 
-  .about-app--overlap .about-app__grid--reverse .about-app__content {
+  .recipe-library--overlap .recipe-library__grid--reverse .recipe-library__content {
     margin-left: 0;
     margin-right: -4rem;
   }
 
-  .about-app--overlap .about-app__grid--reverse .about-app__text-item {
+  .recipe-library--overlap .recipe-library__grid--reverse .recipe-library__text-item {
     justify-content: flex-end;
   }
 
-  .about-app--overlap .about-app__media-item--top {
+  .recipe-library--overlap .recipe-library__media-item--top {
     align-self: flex-start;
   }
 
-  .about-app--overlap .about-app__media-item--middle {
+  .recipe-library--overlap .recipe-library__media-item--middle {
     align-self: center;
   }
 
-  .about-app--overlap .about-app__media-item--bottom {
+  .recipe-library--overlap .recipe-library__media-item--bottom {
     align-self: flex-end;
   }
 
-  .about-app__media-item--small,
-  .about-app__media-item--large + .about-app__text-item {
+  .recipe-library__media-item--small,
+  .recipe-library__media-item--large + .recipe-library__text-item {
     flex-grow: 0;
   }
 
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__media-item:after,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__media,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__media
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__media-item:after,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__media,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__media
     img,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__media
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__media
     .placeholder-svg,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__text-item:after,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__content,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__content:after {
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__text-item:after,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__content,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__content:after {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__text-item:after,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__content,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__content:after,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__media-item:after,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__media,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__media
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__text-item:after,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__content,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__content:after,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__media-item:after,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__media,
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__media
     img,
-  .about-app.collapse-corners:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__media
+  .recipe-library.collapse-corners:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__media
     .placeholder-svg {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  .about-app.collapse-borders:not(.about-app--overlap)
-    .grid:not(.about-app__grid--reverse)
-    .about-app__content {
+  .recipe-library.collapse-borders:not(.recipe-library--overlap)
+    .grid:not(.recipe-library__grid--reverse)
+    .recipe-library__content {
     border-left: 0;
   }
 
-  .about-app.collapse-borders:not(.about-app--overlap)
-    .about-app__grid--reverse
-    .about-app__content {
+  .recipe-library.collapse-borders:not(.recipe-library--overlap)
+    .recipe-library__grid--reverse
+    .recipe-library__content {
     border-right: 0;
   }
 }
 
-.about-app:not(.collapse-corners, .about-app--overlap) .about-app__media-item {
+.recipe-library:not(.collapse-corners, .recipe-library--overlap) .recipe-library__media-item {
   z-index: 2;
 }
 
 /* Needed for gradient continuity with or without animation so that transparent PNG images come up as we would expect */
-.about-app.about-app--overlap .backround-transparent,
-.about-app:not(.about-app--overlap) .background-transparent {
+.recipe-library.recipe-library--overlap .backround-transparent,
+.recipe-library:not(.recipe-library--overlap) .background-transparent {
   background: transparent;
 }
 
 /* Needed for gradient continuity with or without animation, the transform scopes the gradient to its container which happens already when animation are turned on */
-.about-app .gradient {
+.recipe-library .gradient {
   transform: perspective(0);
 }
 
-.about-app__content {
+.recipe-library__content {
   border-radius: var(--text-boxes-radius);
   box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
     var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
@@ -331,49 +331,49 @@
 }
 
 @media screen and (min-width: 990px) {
-  .about-app__content {
+  .recipe-library__content {
     padding: 6rem 7rem 7rem;
   }
 }
 
-.about-app__content > * + * {
+.recipe-library__content > * + * {
   margin-top: 2rem;
 }
 
-.about-app__content > .about-app__text:empty ~ a {
+.recipe-library__content > .recipe-library__text:empty ~ a {
   margin-top: 2rem;
 }
 
-.about-app__content > :first-child:is(.about-app__heading),
-.about-app__text--caption + .about-app__heading,
-.about-app__text--caption:first-child {
+.recipe-library__content > :first-child:is(.recipe-library__heading),
+.recipe-library__text--caption + .recipe-library__heading,
+.recipe-library__text--caption:first-child {
   margin-top: 0;
 }
 
-.about-app__content :last-child:is(.about-app__heading),
-.about-app__text--caption {
+.recipe-library__content :last-child:is(.recipe-library__heading),
+.recipe-library__text--caption {
   margin-bottom: 0;
 }
 
-.about-app__content .button + .about-app__text {
+.recipe-library__content .button + .recipe-library__text {
   margin-top: 2rem;
 }
 
-.about-app__content .about-app__text + .button {
+.recipe-library__content .recipe-library__text + .button {
   margin-top: 3rem;
 }
 
-.about-app__heading {
+.recipe-library__heading {
   margin-bottom: 0;
 }
 
-.about-app__text p {
+.recipe-library__text p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 749px) {
-  .collapse-padding .about-app__grid .about-app__content {
+  .collapse-padding .recipe-library__grid .recipe-library__content {
     padding-left: 0;
     padding-right: 0;
   }
@@ -381,21 +381,21 @@
 
 @media screen and (min-width: 750px) {
   .collapse-padding
-    .about-app__grid:not(.about-app__grid--reverse)
-    .about-app__content:not(.about-app__content--desktop-center) {
+    .recipe-library__grid:not(.recipe-library__grid--reverse)
+    .recipe-library__content:not(.recipe-library__content--desktop-center) {
     padding-right: 0;
   }
 
   .collapse-padding
-    .about-app__grid--reverse
-    .about-app__content:not(.about-app__content--desktop-center) {
+    .recipe-library__grid--reverse
+    .recipe-library__content:not(.recipe-library__content--desktop-center) {
     padding-left: 0;
   }
 }
 
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {
-  .about-app .grid {
+  .recipe-library .grid {
     margin-left: 0;
   }
 }
@@ -414,4 +414,84 @@
   .multirow__inner {
     row-gap: var(--grid-desktop-vertical-spacing);
   }
+}
+/*
+  Content items
+*/
+
+.content ul {
+  padding: 0;
+}
+.content-item {
+  padding-top: 10px;
+  list-style-type: none;
+  padding-left: 46px;
+  border: 1px solid rgba(255, 232, 238, 1);
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.04);
+  height: 105px;
+  padding-left: 50px;
+  padding-top: 16px;
+  gap: 12px;
+  border-radius: 16px;
+  width: 567px;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+.content-item::before {
+  content: '';
+  display: inline-block;
+  height: 25px;
+  width: 35px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/recipes-item-icon.png?v=1735164055');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: -35px;
+}
+.content-item h5 {
+  position: relative;
+  top: -57px;
+}
+.content-item p {
+  position: relative;
+  top: -77px;
+}
+.content-item h5 {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.8px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--Primary, rgba(237, 22, 83, 1));
+}
+.content-item p {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+.recipe-library__text h2 {
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44.8px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(37, 37, 37, 1);
+}
+
+.recipe-library_info {
+  width: 526px;
+  margin-left: calc(50vw - 670px);
+}
+
+.recipe-library__media {
+  position: relative;
+  left: -325px;
 }

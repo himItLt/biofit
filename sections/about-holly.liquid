@@ -25,7 +25,7 @@
 -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
-  <div class="page-width">
+  <div class="page-width" id="about-holly-section">
     <div class="about-holly about-holly--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <div class="about-holly__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} about-holly__grid--reverse{% endif %}">
         <div class="about-holly__media-item about-holly__media-item--{{ section.settings.desktop_image_width }} about-holly__media-item--{{ section.settings.desktop_content_position }} grid__item">
@@ -73,33 +73,53 @@
                   >
                     {{ block.settings.heading }}
                   </h2>
-                {%- when 'caption' -%}
-                  <p
-                    class="about-holly__text about-holly__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                    {{ block.shopify_attributes }}
-                  >
-                    {{ block.settings.caption | escape }}
-                  </p>
-                {%- when 'text' -%}
-                  <div class="about-holly__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.text }}
-                  </div>
-                {%- when 'button' -%}
-                  {%- if block.settings.button_label != blank -%}
-                    <a
-                      {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.button_link }}"
-                      {% endif %}
-                      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                      {{ block.shopify_attributes }}
-                    >
-                      {{ block.settings.button_label | escape }}
-                    </a>
-                  {%- endif -%}
               {%- endcase -%}
             {%- endfor -%}
+            <div class="about-holly_information">
+              {%- for block in section.blocks -%}
+                {% case block.type %}
+                  {%- when 'caption' -%}
+                    <p
+                      class="about-holly__text about-holly__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {{ block.settings.caption | escape }}
+                    </p>
+                  {%- when 'text' -%}
+                    <div class="about-holly__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                      {{ block.settings.text }}
+                    </div>
+                  {%- when 'button' -%}
+                    {%- if block.settings.button_label != blank -%}
+                      <a
+                        {% if block.settings.button_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.button_link }}"
+                        {% endif %}
+                        class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                        {{ block.shopify_attributes }}
+                      >
+                        {{ block.settings.button_label | escape }}
+                      </a>
+                    {%- endif -%}
+                {%- endcase -%}
+              {%- endfor -%}
+              <div class="social-links">
+                <a href="#" class="link-item instagram">
+                  Holly T. Baxter Instagram
+                </a>
+                <a href="#" class="link-item instagram">
+                  TeamBiaFit Instagram
+                </a>
+                <a href="#" class="link-item youtube">
+                  Youtube
+                </a>
+                <a href="#" class="link-item facebook">
+                  Facebook
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

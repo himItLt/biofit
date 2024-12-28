@@ -1,0 +1,70 @@
+.biafit-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    height: 166px;
+}
+
+.biafit-footer .column1,
+.biafit-footer .column2,
+.biafit-footer .column3 {
+    width: 331px;
+    height: 166px;
+}
+
+.biafit-footer .link-image {
+    display: block;
+}
+
+.biafit-footer .footer-logo {
+    width: 227px;
+    height: 48px;
+}
+
+.biafit-footer .column1 p {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+}
+
+.biafit-footer .social-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.biafit-footer .social-links a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.biafit-footer .social-links .instagram {
+    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-instagram.png?v=1735411341');
+}
+
+.biafit-footer .social-links .facebook {
+    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-facebook.png?v=1735411341');
+}
+
+.biafit-footer .social-links .instagram {
+    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-youtube.png?v=1735411341');
+}
+
+.biafit-footer h5 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20.8px;
+}
+
+.biafit-footer .app-image {
+    width: 191px;
+    height: 56px;
+}
+
+

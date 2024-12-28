@@ -25,7 +25,7 @@
 -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
-  <div class="page-width">
+  <div class="page-width" id="recipe-library-section">
     <div class="recipe-library recipe-library--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <div class="recipe-library__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} recipe-library__grid--reverse{% endif %}">
         <div class="recipe-library__media-item recipe-library__media-item--{{ section.settings.desktop_image_width }} recipe-library__media-item--{{ section.settings.desktop_content_position }} grid__item">
@@ -73,33 +73,61 @@
                   >
                     {{ block.settings.heading }}
                   </h2>
-                {%- when 'caption' -%}
-                  <p
-                    class="recipe-library__text recipe-library__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                    {{ block.shopify_attributes }}
-                  >
-                    {{ block.settings.caption | escape }}
-                  </p>
-                {%- when 'text' -%}
-                  <div class="recipe-library__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.text }}
-                  </div>
-                {%- when 'button' -%}
-                  {%- if block.settings.button_label != blank -%}
-                    <a
-                      {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.button_link }}"
-                      {% endif %}
-                      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                      {{ block.shopify_attributes }}
-                    >
-                      {{ block.settings.button_label | escape }}
-                    </a>
-                  {%- endif -%}
               {%- endcase -%}
             {%- endfor -%}
+            <div class="recipe-library_info">
+              {%- for block in section.blocks -%}
+                {% case block.type %}
+                  {%- when 'caption' -%}
+                    <p
+                      class="recipe-library__text recipe-library__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {{ block.settings.caption | escape }}
+                    </p>
+                  {%- when 'text' -%}
+                    <div class="recipe-library__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                      {{ block.settings.text }}
+                    </div>
+                  {%- when 'button' -%}
+                    {%- if block.settings.button_label != blank -%}
+                      <a
+                        {% if block.settings.button_link == blank %}
+                          role="link" aria-disabled="true"
+                        {% else %}
+                          href="{{ block.settings.button_link }}"
+                        {% endif %}
+                        class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                        {{ block.shopify_attributes }}
+                      >
+                        {{ block.settings.button_label | escape }}
+                      </a>
+                    {%- endif -%}
+                {%- endcase -%}
+              {%- endfor -%}
+              <div class="content">
+                <ul>
+                  <li class="content-item">
+                      <h5>Delicious meals for all preferences</h5>
+                      <p>
+                        Enjoy 250+ dietician approved macro-friendly recipes to choose from (with new ones added monthly!)
+                      </p>
+                  </li>
+                  <li class="content-item">
+                    <h5>Build a meal plan that fits your goal and your life</h5>
+                    <p>
+                      Whether you want to gain muscle or get shredded, achieve your goals with our evidence-based nutrition
+                    </p>
+                  </li>
+                  <li class="content-item">
+                    <h5>Share your journey in our exclusive community</h5>
+                    <p>
+                      Connect with like-minded women, celebrate your successes in the app, get inspired, and gain support
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>

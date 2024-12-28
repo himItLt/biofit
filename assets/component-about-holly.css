@@ -415,3 +415,54 @@
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
+
+.about-holly__text p strong {
+  color: var(--Primary, rgba(237, 22, 83, 1));
+}
+
+.about-holly_information {
+  width: 587px;
+  margin-left: calc(50vw - 724px);
+}
+
+.social-links {
+  width: 466px;
+  height: 216px;  
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.social-links a {
+  width: 250px;
+  height: 100px;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: var(--Light-Grey, rgba(244, 244, 244, 1));
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25.6px;
+  color: var(--Text-Black, rgba(6, 6, 6, 1));
+  background-repeat: no-repeat;
+  background-position: right 50% top 15px;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 66px;
+}
+
+.social-links .instagram {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/instagram.png?v=1735338490');
+}
+.social-links .instagram {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/instagram.png?v=1735338490');
+}
+.social-links .youtube {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/youtube.png?v=1735338490');
+}
+.social-links .facebook {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/facebook.png?v=1735338490');
+}

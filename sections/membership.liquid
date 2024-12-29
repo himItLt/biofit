@@ -31,35 +31,35 @@
         <div class="membership__media-item membership__media-item--{{ section.settings.desktop_image_width }} membership__media-item--{{ section.settings.desktop_content_position }} grid__item">
           <div class="membership__media">
             <div class="plans-form">
-              <div class="plan-item unchecked">
-                <input type="radio" name="current-plan" id="plan-1" value="1">
-                <div class="plan-info">
+              <div class="plan-item unchecked" id="plan1">
+                <input type="radio" name="current-plan" id="plan-1" value="plan1">
+                <label class="plan-info">
                   <div class="plan-description">
                     <h5 class="plan-title">Monthly</h5>
                     <p><span class="plan-price">$29 USD</span><span class="plan-frequency"> / month</span></p>
                   </div>
                   <div class="plan-discount"></div>
-                </div>
+                </label>
               </div>
-              <div class="plan-item checked">
-                <input type="radio" name="current-plan" id="plan-2" value="2">
-                <div class="plan-info">
+              <div class="plan-item checked" id="plan2">
+                <input type="radio" name="current-plan" id="plan-2" value="plan2">
+                <label class="plan-info">
                   <div class="plan-description">
                     <h5 class="plan-title">Semi-Annual</h5>
                     <p><span class="plan-price">$119 USD</span><span class="plan-frequency"> / every 6 month</span></p>
                   </div>
                   <div class="plan-discount">Save 30%</div>
-                </div>
+                </label>
               </div>
-              <div class="plan-item unchecked">
-                <input type="radio" name="current-plan" id="plan-3" value="3">
-                <div class="plan-info best-price">
+              <div class="plan-item unchecked" id="plan3">
+                <input type="radio" name="current-plan" id="plan-3" value="plan3">
+                <label class="plan-info best-price" for="plan-3">
                   <div class="plan-description">
                     <h5 class="plan-title">Annual</h5>
                     <p><span class="plan-price">$179 USD</span><span class="plan-frequency"> / per year</span></p>
                   </div>
                   <div class="plan-discount">Save 50%</div>
-                </div>
+                </label>
               </div>
             </div>
           </div>

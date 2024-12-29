@@ -371,8 +371,10 @@ a.button::after, a.button::before {
         left: -200px;
     } 
 }
-
+/* Unlock for dev */
+/*
 .section-featured-product,
 footer {
     display: none !important;
 }
+    */

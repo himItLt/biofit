@@ -29,34 +29,39 @@
     <div class="membership membership--{{ section.settings.content_layout }} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == section.settings.section_color_scheme and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <div class="membership__grid grid grid--gapless grid--1-col grid--{% if section.settings.desktop_image_width == 'medium' %}2-col-tablet{% else %}3-col-tablet{% endif %}{% if section.settings.layout == 'text_first' %} membership__grid--reverse{% endif %}">
         <div class="membership__media-item membership__media-item--{{ section.settings.desktop_image_width }} membership__media-item--{{ section.settings.desktop_content_position }} grid__item">
-          <div
-            class="membership__media membership__media--{{ section.settings.height }} global-media-settings{% unless remove_color_classes %} gradient color-{{ section.settings.color_scheme }}{% else %} background-transparent{% endunless %}{% if section.settings.image != blank %} media{% else %} membership__media--placeholder placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}"
-            {% if section.settings.height == 'adapt' and section.settings.image != blank %}
-              style="padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;"
-            {% endif %}
-          >
-            {%- if section.settings.image != blank -%}
-              {%- if section.settings.image_behavior == 'ambient' or section.settings.image_behavior == 'zoom-in' -%}
-                {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
-                {%- capture sizes -%}
-              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 1.6667 }}px,
-              (min-width: 750px) calc((100vw - 130px) / 1.667), calc((100vw - 50px) / 1.667)
-            {%- endcapture -%}
-              {%- else -%}
-                {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
-                {%- capture sizes -%}
-              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
-              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-            {%- endcapture -%}
-              {%- endif -%}
-              {{
-                section.settings.image
-                | image_url: width: 1500
-                | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
-              }}
-            {%- else -%}
-              {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- endif -%}
+          <div class="membership__media">
+            <div class="plans-form">
+              <div class="plan-item unchecked">
+                <input type="radio" name="current-plan" id="plan-1" value="1">
+                <div class="plan-info">
+                  <div class="plan-description">
+                    <h5 class="plan-title">Monthly</h5>
+                    <p><span class="plan-price">$29 USD</span><span class="plan-frequency"> / month</span></p>
+                  </div>
+                  <div class="plan-discount"></div>
+                </div>
+              </div>
+              <div class="plan-item checked">
+                <input type="radio" name="current-plan" id="plan-2" value="2">
+                <div class="plan-info">
+                  <div class="plan-description">
+                    <h5 class="plan-title">Semi-Annual</h5>
+                    <p><span class="plan-price">$119 USD</span><span class="plan-frequency"> / every 6 month</span></p>
+                  </div>
+                  <div class="plan-discount">Save 30%</div>
+                </div>
+              </div>
+              <div class="plan-item unchecked">
+                <input type="radio" name="current-plan" id="plan-3" value="3">
+                <div class="plan-info best-price">
+                  <div class="plan-description">
+                    <h5 class="plan-title">Annual</h5>
+                    <p><span class="plan-price">$179 USD</span><span class="plan-frequency"> / per year</span></p>
+                  </div>
+                  <div class="plan-discount">Save 50%</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="membership__text-item grid__item">
@@ -87,10 +92,11 @@
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
                     <a
+                      id="membership_join-us"
                       {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
+                        role="link" aria-disabled="true" 
                       {% else %}
-                        href="{{ block.settings.button_link }}"
+                        href="#"
                       {% endif %}
                       class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
                       {{ block.shopify_attributes }}

@@ -415,3 +415,138 @@
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
+
+.membership {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/membership-bg.png?v=1735132163');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 666px;
+}
+
+.membership__media {
+  background: none !important;
+}
+
+.membership .plans-form {
+  width: 470px;
+  height: 320px;
+  margin-top: 180px;
+}
+
+.membership .plan-item {
+  width: 470px;
+  height: 96px;
+  padding: 16px 24px 16px 24px;
+  border-radius: 16px;
+  display: flex;
+  margin-top: 15px;
+}
+
+.membership .plan-item input[type="radio"] {
+  display: none;
+}
+
+.membership .plan-item.unchecked {
+  border: 1px solid rgba(226, 226, 226, 1);
+  background: #fff;
+}
+
+.membership .plan-item.checked {
+  border: 1px solid var(--Primary, rgba(237, 22, 83, 1));
+  background: rgba(254, 243, 246, 1);
+}
+
+.membership .plan-item.unchecked::before {
+  content: '';
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/plan-unchecked.png?v=1735486119');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+}
+
+.membership .plan-item.checked::before {
+  content: '';
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/plan-checked.png?v=1735486119');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+}
+
+.membership .plan-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.membership .plan-info p {
+  margin: 0;
+}
+
+.membership .plan-title {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 700;
+  opacity: 80%;
+  color: var(--Primary, rgba(237, 22, 83, 1));
+  margin: 0;
+}
+
+.membership .plan-discount {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--Text-Black, rgba(6, 6, 6, 1));
+}
+
+.membership .plan-price {
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--Text-Black, rgba(6, 6, 6, 1));
+}
+
+.membership .plan-frequency {
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
+}
+
+.membership__text h2 {
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 44.8px;
+  color: var(--Text-Black, rgba(6, 6, 6, 1));
+}
+
+.membership__text p {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+}
+
+.membership__text {
+  width: 430px;
+}
+
+.membership__text,
+#membership_join-us {
+  margin-left: 30%;
+}
+
+.membership .plan-info.best-price:before {
+  content: '';
+  position: absolute;
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/best-value-badge.png?v=1735490502');
+  background-repeat: no-repeat;
+  margin-top: -30px;
+  left: -25px;
+  z-index: 10;
+  width: 97px;
+  height: 37px;
+}

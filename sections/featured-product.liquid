@@ -4,7 +4,6 @@
     assign placeholder = true
   endif
 -%}
-
 <product-info
   data-section="{{ section.id }}"
   data-product-id="{{ product.id }}"
@@ -113,6 +112,22 @@
                       {{ 'onboarding.product_title' | t }}
                     {%- endunless -%}
                   </h2>
+                  
+                  <script>
+                    var variant_id = {{ product.selected_or_first_available_variant.id }};
+                    var plans = {{product.selling_plan_groups | json}};
+                    console.log(plans);
+                    
+                    var prod_id = {{ product.id }};
+                    const el = document.querySelector('#membership_join-us');
+                    
+                    el.addEventListener("click", (e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      addItemToCart(prod_id, 1, "1", "1 month");
+                      return false;
+                    });
+                  </script>
                 {%- when 'price' -%}
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                     {%- render 'price',

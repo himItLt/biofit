@@ -313,6 +313,75 @@
         "padding_bottom": 52
       }
     },
+    "featured_product_QeYAz4": {
+      "type": "featured-product",
+      "blocks": {
+        "text_cAg7Fh": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_jFwJjk": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_h7XnaF": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_ex4cyw": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_tRgFwD": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_J3dkNp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_gMEhDW": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_cAg7Fh",
+        "title_jFwJjk",
+        "price_h7XnaF",
+        "variant_picker_ex4cyw",
+        "quantity_selector_tRgFwD",
+        "buy_buttons_J3dkNp",
+        "share_gMEhDW"
+      ],
+      "settings": {
+        "product": "biafit-app-plans",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "biafit_footer_TG4QUy": {
       "type": "biafit-footer",
       "blocks": {
@@ -370,6 +439,7 @@
     "membership_ntWN7n",
     "contact_form_LQHA3g",
     "newsletter_BLyJqC",
+    "featured_product_QeYAz4",
     "biafit_footer_TG4QUy"
   ]
 }

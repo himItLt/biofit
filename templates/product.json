@@ -23,6 +23,34 @@
           "type": "title",
           "settings": {}
         },
+        "recharge_subscriptions_subscription_widget_v2_pHTRad": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "default_selection": "subscription",
+            "first_selection_option": "subscription",
+            "display_mode": "normal",
+            "brand_color": "#121212",
+            "brand_contrast_color": "#FFFFFF",
+            "selected_bg_color": "#FFFFFF",
+            "selected_text_color": "#121212",
+            "text_color": "#121212",
+            "border_radius": "soft",
+            "subscription_with_discount_label": "Subscribe & save",
+            "subscription_without_discount_label": "Subscribe",
+            "onetime_label": "One-time",
+            "frequency_label": "Deliver every:",
+            "frequency_display_type": "buttonGroup",
+            "frequency_display_content": "interval",
+            "badge_text": "Save up to {maxDiscount}",
+            "badge_text_color": "#FFFFFF",
+            "badge_bg_color": "#0F866A",
+            "benefits": "<ul><li>You save &lcub;discount&rcub;</li><li>Skip, delay or cancel any time</li><li>Free shipping in the US</li><li>Renew on your timeframe</li></ul>",
+            "onetime_drawbacks": "",
+            "learn_more_text": "Learn more",
+            "learn_more_content": "<style>rc-learn-more-modal h1 { font-size: 40px; line-height: 48px; font-weight: 600; text-align: center; padding-bottom: 32px; margin: 0;}rc-learn-more-modal h2 { padding: 0; margin: 0; font-size: 20px; line-height: 28px; font-weight: 600;}rc-learn-more-modal p { margin: 0; padding: 0; font-size: 16px; line-height: 24px;}rc-learn-more-modal .learn-more-content { padding: 0 20px 20px;}rc-learn-more-modal .learn-more-footer button { background-color: var(--rc-widget-brand-color); color: var(--rc-widget-brand-contrast-color); border: none; border-radius: var(--rc-widget-button-radius); padding: 12px; min-width: 335px; font-size: 16px; font-weight: 600; line-height: 24px; cursor: pointer; transition: background-color 0.1s ease;}rc-learn-more-modal .learn-more-footer button:hover { background-color: var(--rc-widget-brand-color-80);}rc-learn-more-modal .learn-more-footer { display: flex; justify-content: center;}rc-learn-more-modal .learn-more-group { display: flex; flex-direction: column; gap: 24px; margin-bottom: 24px;}rc-learn-more-modal .learn-more-group-item { display: flex; gap: 32px; align-items: center;}rc-learn-more-modal .learn-more-group-icon-container { display: flex; padding: 32px; background-color: #f6f8f9; border-radius: var(--rc-widget-card-radius);}rc-learn-more-modal svg, rc-learn-more-modal img { height: 40px; width: 40px;}@media (max-width: 560px) { rc-learn-more-modal h1 { font-size: 26px; line-height: 32px; padding-bottom: 16px; }rc-learn-more-modal h2 { font-size: 16px; line-height: 24px;}rc-learn-more-modal p { font-size: 14px; line-height: 20px;}rc-learn-more-modal .learn-more-content { padding: 0;}rc-learn-more-modal svg, rc-learn-more-modal img { height: 32px; width: 32px;}rc-learn-more-modal .learn-more-group-item { gap: 16px;}rc-learn-more-modal .learn-more-group-icon-container { padding: 20px;} }</style><div class=\"learn-more-content\">\n<h1 class=\"learn-more-header\">Great reasons to subscribe</h1> <div class=\"learn-more-group\"> <div class=\"learn-more-group-item\"> <div class=\"learn-more-group-icon-container\"><span rc-calendar-icon></span></div> <div> <h2 style=\"margin:0;\">Flexible frequency</h2> <p style=\"margin:0;\"> Not sure how much of something you need, or how often? Adjust quantities and frequencies any time. </p> </div> </div> <div class=\"learn-more-group-item\"> <div class=\"learn-more-group-icon-container\"> <span rc-bell-icon></span> </div> <div> <h2>Order reminders</h2> <p> We'll let you know before each shipment. Delay, reschedule or cancel if you need to - we’ll only bill you when your order ships. </p> </div> </div> <div class=\"learn-more-group-item\"> <div class=\"learn-more-group-icon-container\"> <span rc-phone-icon></span> </div> <div> <h2>You're in control</h2> <p> Add or remove subscriptions, cancel orders, and edit frequencies and quantities through our user-friendly customer portal. </p> </div> </div> </div>\n</div><div class=\"learn-more-footer\"><button data-dismiss-modal>Got it</button></div>",
+            "frequency_display_translations": "{\n\t\"days\": \"{interval} days\", \n\t\"day\": \"{interval} day\", \n\t\"weeks\": \"{interval} weeks\", \n\t\"week\": \"{interval} week\", \n\t\"months\": \"{interval} months\", \n\t\"month\": \"{interval} month\", \n\t\"save\": \"Save {discount}\"\n}"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -59,6 +87,7 @@
       "block_order": [
         "vendor",
         "title",
+        "recharge_subscriptions_subscription_widget_v2_pHTRad",
         "price",
         "variant_picker",
         "quantity_selector",

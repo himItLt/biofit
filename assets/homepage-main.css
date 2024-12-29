@@ -372,6 +372,7 @@ a.button::after, a.button::before {
     } 
 }
 
+.section-featured-product,
 footer {
     display: none !important;
 }

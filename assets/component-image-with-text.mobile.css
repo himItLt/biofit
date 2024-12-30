@@ -1,0 +1,65 @@
+@media screen and (max-width: 768px) {
+  .image-with-text {
+    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/home-page-mobile-bg.png?v=1735575810') !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width:100%;
+    position: relative;
+    margin-top: -20px;
+    height: 768px;
+  }
+  .counter-block {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .counter-block .counter-block-item {
+    width: 94px;
+    height: 60px;
+    padding: 6px 12px 6px 12px;
+    border-radius: 12px;
+    border: 1px solid #FFADC4;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .counter-block .counter-block-item:last-child {
+    width: 140px;
+  }
+  .counter-block .counter-block-item:first-child {
+    width: 81px;
+  }
+  .counter-block-item .counter-number {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+    margin: 0;
+  }
+  .counter-block-item .counter-text {
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
+  }
+  .image-with-text__heading {
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
+  }
+  .image-with-text__content {
+    padding: 16px;
+    padding-bottom: 490px;
+  }
+  #main-block-button {
+    position: absolute;
+    top: 655px;
+    left: calc(50vw - 171px);
+  }
+}

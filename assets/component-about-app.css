@@ -416,11 +416,11 @@
   }
 }
 
+/* BiaFit */
 .about-app__services {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
 }
 
 .about-app__services .service-item {

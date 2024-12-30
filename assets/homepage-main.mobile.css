@@ -1,0 +1,109 @@
+@media screen and (max-width: 768px) {
+    .header__button-div {
+        display: none;
+    }
+    .header {
+        grid-template-areas: "heading left-icons";
+        padding: 2px 13px 2px 8px !important;
+        grid-template-columns: 1fr 2fr;
+        background: rgba(255, 232, 238, 1) !important;
+    }
+    .header-wrapper {
+        background: rgba(255, 232, 238, 1) !important;
+    }
+    .header__icon--summary {
+        width: 24px;
+        height: 24px;
+        color: var(--Text-Black, rgba(6, 6, 6, 1));
+    }
+    .menu-drawer-container {
+        justify-content: right;
+    }
+    .menu-drawer {
+        background-color: #fff;
+    }
+    .menu-drawer__navigation-container {
+        background-color: #fff;  
+        max-height: 768px;  
+    }
+    .menu-drawer .list-social {
+        justify-content: center !important;
+    }
+    .menu-drawer__account {
+        display:none !important;
+    }
+    .list-social__item .icon {
+        color: rgba(237, 22, 83, 0.5);
+        width: 32px;
+        height: 32px;
+    }
+    .list-menu__item {
+        display: flex;
+        align-items: center;
+        background-color: #fff !important;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 25.6px;
+        text-align: center;
+        color: var(--Text-Black, rgba(6, 6, 6, 1));
+        height: 58px;
+        border-bottom: 1px solid; 
+        padding: 16px 20px !important;
+        border-color: var(--Color-Block-Titles, rgba(237, 22, 83, 0.07));
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    
+    a.button {
+        width: 343px;
+        height: 52px;
+        padding: 20px 40px 20px 40px;
+        border-radius: 16px;
+        font-family: Poppins;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        text-align: left;
+        background: linear-gradient(96.35deg, #ED1653 -16.05%, #F15822 119.87%);
+        box-shadow: 0px 4px 12px 0px rgba(241, 20, 57, 0.4);
+        color: #fff;
+    }
+    
+    .image-with-text__text, .about-app__text, .about-holly__text, .about-app__services .service-item {
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        color: rgba(139, 136, 137, 1);
+    }
+
+    .about-app__text h2, .about-holly__text h2 {
+        font-family: Poppins;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 72px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-transform: uppercase;
+        color: var(--Text-Black, rgba(6, 6, 6, 1));
+    }
+
+    .about-app__heading, 
+    .collection__title .title, 
+    .blog__title, .about-holly__heading, 
+    .recipe-library__heading,
+    .membership__heading,
+    .contact .title {
+        font-family: Poppins;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 56px;
+        color: var(--Color-Block-Titles, rgba(237, 22, 83, 0.07));
+        position: relative;
+        text-transform: uppercase;
+        z-index: 10;
+        width: 140%;
+    }
+}

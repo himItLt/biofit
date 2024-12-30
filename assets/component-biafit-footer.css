@@ -79,6 +79,11 @@
     margin-top: 0;
 }
 
+.column3 h5 {
+    padding-left: 90px;
+    margin-bottom: 15px;
+}
+
 .biafit-footer .service-title {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -92,6 +97,7 @@
     width: 191px;
     height: 56px;
     float: right;
+    margin-top: 5px;
 }
 
 .biafit-footer .service-links {
@@ -100,7 +106,6 @@
     font-weight: 500;
     line-height: 24px;
     text-transform: uppercase;
-    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
     text-decoration: none;
     display: flex;
     justify-content: space-between;
@@ -108,6 +113,7 @@
 
 .biafit-footer .service-links a {
     text-decoration: none;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1)) !important;
 }
 
 

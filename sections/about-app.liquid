@@ -98,16 +98,8 @@
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
                     <div class="main-content">
-                    <a
-                      {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.button_link }}"
-                      {% endif %}
-                      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                      {{ block.shopify_attributes }}
-                    >
-                      {{ block.settings.button_label | escape }}
+                    <a href="#membership-section" class="button button--primary" id="about-app-button">
+                      Join Us
                     </a>
                   </div>
                   {%- endif -%}

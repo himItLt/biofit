@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 430px) {
     .header__button-div {
         display: none;
     }
@@ -70,13 +70,13 @@
         color: #fff;
     }
     
-    .image-with-text__text, .about-app__text, .about-holly__text, .about-app__services .service-item {
+    .about-app__text, .about-holly__text, .about-app__services .service-item {
         font-family: Lato;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
-        line-height: 24px;
-        letter-spacing: 0.03em;
-        color: rgba(139, 136, 137, 1);
+        line-height: 19.6px;
+        color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+        margin: 0 15px;
     }
 
     .about-app__text h2, .about-holly__text h2 {
@@ -104,6 +104,129 @@
         position: relative;
         text-transform: uppercase;
         z-index: 10;
-        width: 140%;
+    }
+
+    /** Programs **/
+    
+    .collection__description {
+        text-align: center;
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        padding: 0 50px;
+    }
+
+    .collection__description strong {
+        color: var(--Primary, rgba(237, 22, 83, 1));
+    }
+
+    .collection .card__content {
+        position: relative;
+        top: -155px;
+        padding: 10px;
+    }
+
+    .collection ul {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 777px;
+        left: -211px;
+    }
+
+    .collection ul > li:nth-child(2) .card__inner,
+    .collection ul > li:nth-child(2) .card__media
+    {
+        width: 260px;   
+        height: 310px;
+    }
+
+    .collection ul > li:nth-child(2) .card__media {
+        border-radius: 12px !important;
+        border: 2px solid #F15822;
+    }
+
+    .collection ul > li:nth-child(2) {
+        padding: 0 !important;
+    }
+
+    .collection ul > li .card-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .collection ul > li {
+        padding-top: 30px;
+    }
+
+    .collection ul > li .card__inner {
+        width: 210px;
+        height: 250px;
+    }
+
+    .collection ul > li .card__media {
+        border-radius: 12px !important;
+        border: 1px solid rgba(0, 0, 0, 0.9);
+    }
+
+    .collection ul > li .card__information {
+        width: 184px;
+        height: 112px;
+        overflow: hidden;
+        top: 23px;
+        position: relative;
+        padding: 0 12px !important;
+    }
+
+    .collection ul > li:nth-child(2) .card__information {
+        width: 264px;
+    }
+
+    .collection {
+        height: 579px;
+    }
+
+    .collection .card__heading {
+        color: #fff;
+        /*background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/program-title-icon.png?v=1735123507');
+        background-position: left;*/
+        height: 21px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-family: Poppins;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20.8px;
+    }
+
+    .collection .price {
+        display: none;
+    }
+
+    .collection .caption {
+        height: 60px;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        color: #fff;
+    }
+
+    .collection .card--media {
+        z-index: 0;
+    }
+
+    .collection .slider-buttons {
+        z-index: 10;
+        position: relative;
+        top: 343px;
+    }
+
+    .collection .card__content::after {
+        display: none;
+    }
+    .collection slider-component {
+        height: 375px;
     }
 }

@@ -37,12 +37,8 @@
       <h2 class="caption-2">THOUSANDS TO TRANSFORM</h2>
       <p class="caption-text">Our approach is built on the foundation of tailored, evidence-based exercise principles. We ensure that every step towards your health and well-being is grounded in science.</p>
     </div>  
-    <slider-component class="slider-mobile-gutter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-      <ul
-        id="Slider-{{ section.id }}"
-        class="blog__posts articles-wrapper contains-card contains-card--article{% if settings.blog_card_style == 'standard' %} contains-card--standard{% endif %} grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}"
-        role="list"
-      >
+    <slider-component>
+      <ul class="blog__posts" role="list">
         {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
           {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
             <li
@@ -123,9 +119,8 @@
           {%- endfor -%}
         {%- endif -%}
       </ul>
-      {%- if posts_exceed_limit -%}
-        <div class="slider-buttons{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
-          <button
+        <div class="slider-buttons">
+              <button
             type="button"
             class="slider-button slider-button--prev"
             name="previous"
@@ -138,7 +133,6 @@
             aria-label="{{ 'general.slider.next_slide' | t }}"
           ></button>
         </div>
-      {%- endif -%}
     </slider-component>
 
     {%- if section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count -%}

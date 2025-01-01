@@ -1,27 +1,23 @@
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 430px) {
   .content ul {
     padding: 0;
   }
   .content-item {
-    padding-top: 10px;
     list-style-type: none;
-    padding-left: 46px;
     border: 1px solid rgba(255, 232, 238, 1);
-    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.04);
-    height: 105px;
-    padding-left: 50px;
-    padding-top: 16px;
-    gap: 12px;
+    box-shadow: 2px 2px 12px #0000000a;
+    height: 115px;
+    padding-left: 45px;
+    padding-top: 10px;
     border-radius: 16px;
-    width: 567px;
-    margin-bottom: 20px;
-    padding-right: 10px;
+    width: 362px;
+    margin-bottom: 4px;
   }
   .content-item::before {
     content: '';
     display: inline-block;
-    height: 25px;
-    width: 35px;
+    height: 24px;
+    width: 24px;
     background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/recipes-item-icon.png?v=1735164055');
     background-size: contain;
     background-repeat: no-repeat;
@@ -37,48 +33,50 @@
   }
   .content-item h5 {
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 20.8px;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    line-height: 18.2px;
     color: var(--Primary, rgba(237, 22, 83, 1));
   }
   .content-item p {
     font-family: Lato;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.03em;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+    line-height: 19.6px;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
   }
   .recipe-library__text h2 {
     font-family: Poppins;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 44.8px;
+    line-height: 28px;
+    color: #252525;
     text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    color: rgba(37, 37, 37, 1);
+    top: -349px;
+    position: relative;
+    text-transform: uppercase;
   }
   .recipe-library_info {
-    width: 526px;
+    width: 343px;
     margin-right: 200px;
   }
   .recipe-library__media {
     position: relative;
-    width: 530px;
-    top: -50px;
+    width: 275px;
+    margin: auto;
   }
   .recipe-library__grid {
     display: flex;
     width: 100%;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: center;
-  }  
+  }
+  .section-recipe-library .page-width {
+    padding-left: 14px;
+    padding-right: 0;
+  }
+  .recipe-library__media-item {
+    top: 24px;
+    position: relative;
+  }
 }
-

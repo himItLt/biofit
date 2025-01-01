@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 430px) {
   .image-with-text {
     background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/home-page-mobile-bg.png?v=1735575810') !important;
     background-size: cover;
@@ -9,6 +9,14 @@
     margin-top: -20px;
     height: 768px;
   }
+  .image-with-text__text {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: rgba(139, 136, 137, 1);
+}
   .counter-block {
     width: 100%;
     display: flex;

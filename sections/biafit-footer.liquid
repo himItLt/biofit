@@ -1,21 +1,9 @@
 {{ 'component-biafit-footer.css' | asset_url | stylesheet_tag }}
-
-{%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-{%- endstyle -%}
+{{ 'component-biafit-footer.mobile.css' | asset_url | stylesheet_tag }}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
-  <div class="biafit-footer">
+  <!-- Desktop Footer -->
+  <div class="biafit-footer desktop">
     <div class="column1">
       <a href="#" class="link-image footer-logo">
         <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-logo.png?v=1735403452" width="100%" height="100%">
@@ -48,6 +36,42 @@
       <a href="#" class="biafit-footer__app-image">
         <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-google-link.png?v=1735405717" width="100%" height="100%">
       </a>
+    </div>
+  </div>
+  <!-- Mobile Footer -->
+  <div class="biafit-footer mobile">
+    <div class="heading">
+      <a href="#" class="link-image footer-logo">
+        <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-logo.png?v=1735403452" width="100%" height="100%">
+      </a>
+      <p class="challenge">Challenge yourself now to become the best you possible. Get the Grounds app!</p>
+    </div>
+    <div class="social-media">
+      <h5>Social media</h5>
+      <div class="social-links">
+        <a href="#" class="instagram"></a>
+        <a href="#" class="facebook"></a>
+        <a href="#" class="youtube"></a>
+      </div>
+    </div>
+    <div class="download-app">
+      <h5>Download the app</h5>
+      <div class="app-links">
+        <a href="#" class="biafit-footer__app-image">
+          <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-app-store-link.png?v=1735405717" width="100%" height="100%">
+        </a>
+        <a href="#" class="biafit-footer__app-image">
+          <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-google-link.png?v=1735405717" width="100%" height="100%">
+        </a>
+      </div>
+    </div>
+    <div class="customer-service">
+      <h5 class="service-title">Customer service</h5>
+      <div class="service-links">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms & conditions</a>
+      </div>
+      <p class="rights-reserved">© 2025 Bia Fit. All rights reserved.</p>
     </div>
   </div>
 </div>

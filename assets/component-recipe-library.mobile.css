@@ -79,4 +79,8 @@
     top: 24px;
     position: relative;
   }
+  .recipe-library__heading {
+    margin-top: 60px;
+    margin-left: -13px;
+  }
 }

@@ -1,6 +1,6 @@
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 430px) {
   .contact img {
-    max-width: 100%;
+    display: none;
   }
 
   .contact .form__message {
@@ -15,24 +15,24 @@
     margin-bottom: 1.5rem;
   }
 
-  .contact__button {
-    margin-top: 3rem;
-  }
-
   .contact form {
-    max-width: 562px;
-    height: 457px;
-    margin-left: calc(100vw / 2 - 492px);
-    padding-top: 45px;
+    max-width: 345px;
+    height: 465px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/mobile-contact-us.png?v=1735673668');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    padding: 15px;
+    margin: auto;
   }
 
   .contact .field {
     color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
     font-family: Lato;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.03em;
+    line-height: 19.6px;
+    color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
   }
 
   .contact .field input,
@@ -43,27 +43,31 @@
 
   .contact .button {
     background: transparent !important;
-    width: 326px;
-    height: 64px;
+    width: 311px;
+    height: 52px;
     padding: 20px 40px 20px 40px;
     border-radius: 16px;
-    border-image-source: linea-gradient(96.35deg, #ED1653 -16.05%, #F15822 119.87%);
     border: 1px solid #F15822;
     font-family: Poppins;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     color: var(--Primary, rgba(237, 22, 83, 1));
+    margin-top: 15px;
+  }
+
+  .contact .description {
+    padding: 0;
   }
 
   .contact .description h3 {
     font-family: Poppins;
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 44.8px;
+    line-height: 28px;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
-    margin-bottom: 0px;
-    margin-top: 52px;
+    text-transform: uppercase;
+    margin-top: 5px;
   }
 
   .contact .description p {
@@ -81,38 +85,11 @@
   }
 
   .contact .title {
-    left: 5px;
+    left: -5px;
   }
 
   .contact {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/contact-us-bg.png?v=1735132163') !important;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 722px;
-    min-width: 90%;
-  }
-
-  .contact {
-    height: 920px;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .contact .field {
-    margin-bottom: 2rem;
-  }
-}
-@media screen and (min-width: 750px) {
-  .contact__button {
-    margin-top: 4rem;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .contact__fields {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
+    height: 598px;
+    width: 375px;
   }
 }

@@ -32,21 +32,21 @@
     top: -77px;
   }
   .content-item h5 {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 18.2px;
     color: var(--Primary, rgba(237, 22, 83, 1));
   }
   .content-item p {
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 19.6px;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
   }
   .recipe-library__text h2 {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;

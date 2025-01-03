@@ -22,23 +22,31 @@
   .contact form {
     max-width: 562px;
     height: 457px;
-    margin-left: calc(100vw / 2 - 492px);
+    margin-left: calc(50vw - 570px);
     padding-top: 45px;
   }
 
   .contact .field {
+    margin-bottom: 12px !important;
+  }
+  .contact .field input,
+  .contact .field textarea {
+    border: 1px solid rgba(226, 226, 226, 1) !important;  
+    border-radius: 12px;
     color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.03em;
   }
 
-  .contact .field input,
+  .contact .field input {
+    height: 52px;
+  }
+
   .contact .field textarea {
-    border: 1px solid rgba(226, 226, 226, 1) !important;  
-    border-radius: 12px;
+    height: 120px;
   }
 
   .contact .button {
@@ -49,7 +57,7 @@
     border-radius: 16px;
     border-image-source: linea-gradient(96.35deg, #ED1653 -16.05%, #F15822 119.87%);
     border: 1px solid #F15822;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 18px;
     font-weight: 600;
     line-height: 24px;
@@ -57,22 +65,25 @@
   }
 
   .contact .description h3 {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 32px;
     font-weight: 700;
     line-height: 44.8px;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
     margin-bottom: 0px;
     margin-top: 52px;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
+    text-transform: uppercase;
   }
 
   .contact .description p {
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.03em;
     color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+    margin-bottom: 30px;
   }
 
   .contact form *::before, 

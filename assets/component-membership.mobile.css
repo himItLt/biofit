@@ -7,13 +7,16 @@
     height: 622px;
     width: 100%;
   }
+  .section-membership .page-width {
+    height: 100%;
+  }
   .membership__grid {
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
-    width: 430px;
+    width: 343px;
     height: 354px;
-    padding-left: 25px;
+    margin: auto;
   }
   .section-membership__media {
     background: none !important;
@@ -53,6 +56,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 24px;
+    background-position-y: center;
   }
 
   .section-membership .plan-item.checked::before {
@@ -60,6 +64,7 @@
     background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/plan-checked.png?v=1735486119');
     background-repeat: no-repeat;
     background-size: contain;
+    background-position-y: center;
     width: 24px;
   }
 
@@ -75,14 +80,16 @@
   }
 
   .section-membership .plan-title {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 21px;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+    margin: 0;
   }
 
   .section-membership .plan-discount {
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 18.2px;
@@ -91,7 +98,7 @@
   }
 
   .section-membership .plan-price {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
@@ -99,7 +106,7 @@
   }
 
   .section-membership .plan-frequency {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 12px;
     font-weight: 600;
     line-height: 15.6px;
@@ -107,7 +114,7 @@
   }
 
   .membership__text h2 {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
@@ -116,7 +123,7 @@
   }
 
   .membership__text p {
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 19.6px;
@@ -150,7 +157,7 @@
 
   #membership_join-us {
     top: 290px;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -162,5 +169,8 @@
   .membership__content {
     width: 343px;
     margin-top: 15px;
+  }
+  .membership__heading {
+    margin-bottom: 5px;
   }
 }

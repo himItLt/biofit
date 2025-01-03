@@ -13,7 +13,7 @@
   }
 
   .newsletter__wrapper .inline-richtext {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
@@ -27,7 +27,7 @@
     padding-right: 0;
   }
   .newsletter__subheading p {
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 19.6px;
@@ -62,7 +62,7 @@
   .newsletter .field input {
     width: 100%;
     height: 52px;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 19.6px;
@@ -91,7 +91,7 @@
   .newsletter .subscribe-button {
     width: 345px;
     height: 52px;
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;

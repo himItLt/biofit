@@ -1,4 +1,8 @@
 @media screen and (max-width: 430px) {
+    .page-width {
+        overflow: hidden;
+        overflow-y: visible;
+    }
     .header__button-div {
         display: none;
     }
@@ -6,11 +10,11 @@
         grid-template-areas: "heading left-icons";
         padding: 2px 13px 2px 8px !important;
         grid-template-columns: 1fr 2fr;
-        background: rgba(255, 232, 238, 1) !important;
+        background: rgba(255, 232, 238, 1);
     }
-    .header-wrapper {
+    /*.header-wrapper {
         background: rgba(255, 232, 238, 1) !important;
-    }
+    }*/
     .header__icon--summary {
         width: 24px;
         height: 24px;
@@ -41,7 +45,7 @@
         display: flex;
         align-items: center;
         background-color: #fff !important;
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
         font-size: 16px;
         font-weight: 500;
         line-height: 25.6px;
@@ -60,7 +64,7 @@
         height: 52px;
         padding: 20px 40px 20px 40px;
         border-radius: 16px;
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
         font-size: 18px;
         font-weight: 600;
         line-height: 24px;
@@ -71,7 +75,7 @@
     }
     
     .about-app__text, .about-holly__text, .about-app__services .service-item {
-        font-family: Lato;
+        font-family: Lato, sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 19.6px;
@@ -80,7 +84,7 @@
     }
 
     .about-app__text h2, .about-holly__text h2 {
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
         font-size: 60px;
         font-weight: 700;
         line-height: 72px;
@@ -96,7 +100,7 @@
     .recipe-library__heading,
     .membership__heading,
     .contact .title {
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
         font-size: 40px;
         font-weight: 800;
         line-height: 56px;
@@ -110,7 +114,7 @@
     
     .collection__description {
         text-align: center;
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
         font-size: 20px;
         font-weight: 700;
         line-height: 28px;
@@ -123,8 +127,9 @@
 
     .collection .card__content {
         position: relative;
-        top: -155px;
+        top: -200px;
         padding: 10px;
+        height: 200px;
     }
 
     .collection ul {
@@ -132,7 +137,7 @@
         justify-content: center;
         position: absolute;
         width: 777px;
-        left: -211px;
+        left: calc(-219px + 100vw/390);
     }
 
     .collection ul > li:nth-child(2) .card__inner,
@@ -149,6 +154,10 @@
 
     .collection ul > li:nth-child(2) {
         padding: 0 !important;
+    }
+
+    .collection ul > li:nth-child(3) {
+        margin-left: -9px;    
     }
 
     .collection ul > li .card-wrapper {
@@ -168,19 +177,28 @@
     .collection ul > li .card__media {
         border-radius: 12px !important;
         border: 1px solid rgba(0, 0, 0, 0.9);
+        border: 0;
     }
 
-    .collection ul > li .card__information {
-        width: 184px;
-        height: 112px;
-        overflow: hidden;
-        top: 23px;
-        position: relative;
-        padding: 0 12px !important;
+    .collection .card__content > .card__information {
+        padding-left: 12px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 200px;
+    }
+    
+    .collection ul > li .card__content .card__information {
+        width: 200px;
     }
 
-    .collection ul > li:nth-child(2) .card__information {
+    .collection ul > li:nth-child(2) .card__content .card__information {
         width: 264px;
+    }
+
+    .collection ul > li .card__content .card__information .card-information {
+        margin-bottom: 10px;
+        margin-top: -10px;
     }
 
     .collection {
@@ -189,15 +207,17 @@
 
     .collection .card__heading {
         color: #fff;
-        /*background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/program-title-icon.png?v=1735123507');
-        background-position: left;*/
-        height: 21px;
+        background-position: center left;
+        background-size: 32px 32px;
+        height: 32px;
         background-size: contain;
         background-repeat: no-repeat;
-        font-family: Poppins;
+        font-family: Poppins, sans-serif;
         font-size: 16px;
         font-weight: 600;
         line-height: 20.8px;
+        padding-left: 38px;
+        padding-top: 7px;
     }
 
     .collection .price {
@@ -205,12 +225,13 @@
     }
 
     .collection .caption {
-        height: 60px;
-        font-family: Lato;
+        height: 77px;
+        font-family: Lato, sans-serif;
         font-size: 14px;
         font-weight: 400;
         line-height: 19.6px;
         color: #fff;
+        overflow: hidden;
     }
 
     .collection .card--media {
@@ -218,15 +239,63 @@
     }
 
     .collection .slider-buttons {
-        z-index: 10;
         position: relative;
-        top: 343px;
     }
 
     .collection .card__content::after {
         display: none;
     }
-    .collection slider-component {
-        height: 375px;
+    .collection .slider__wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100vw;
+        height: 345px;
+    }
+    .card__biafit-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 25px;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .card__biafit-buttons .biafit-button {
+        width: 65px;
+        height: 25px;
+        padding: 2px 8px 2px 8px;
+        border-radius: 20px;
+        background: var(--Primary, rgba(237, 22, 83, 1));
+        font-family: Open Sans;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20.52px;
+        letter-spacing: 0.03em;
+        text-align: center;
+        color: white;
+    }
+    .card__biafit-buttons .biafit-show_more {
+        width: calc(100% - 140px);
+        overflow: overlay;
+        text-align: right;
+        padding-right: 17px;
+    }
+    .card__biafit-buttons .biafit-show_more > a {
+        font-family: Lato, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        text-align: center;
+        text-decoration: underline;
+        color: var(--Primary, rgba(237, 22, 83, 1));
+    }
+    .section-template--17715266126015__image_with_text_3PaXKQ-padding {
+        padding: 0px !important;
+    }
+    .section-template--17715266126015__featured_collection_Nay7xH-padding {
+        padding-top: 27px;
+        padding-bottom: 27px;
+        margin-bottom: 45px;
     }
 }

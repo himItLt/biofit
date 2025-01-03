@@ -12,15 +12,22 @@
   .section-about-holly {
     height: 830px;
   }
-
+  .about-holly__text p {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+  }
   .about-holly__text p strong {
     color: var(--Primary, rgba(237, 22, 83, 1));
   }
 
   .about-holly_information {
     width: 587px;
-    margin-right: 100px;
-    margin-top: -29px;
+    margin-right: calc(50vw - 780px);
+    margin-top: -75px;
   }
 
   .social-links {
@@ -31,7 +38,7 @@
     flex-direction: row;
     align-content: space-between;
     flex-wrap: wrap;
-    margin-top: 25px;
+    margin-top: 45px;
   }
 
   .social-links a {
@@ -40,7 +47,7 @@
     padding: 12px;
     border-radius: 12px;
     background-color: var(--Light-Grey, rgba(244, 244, 244, 1));
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 25.6px;
@@ -64,6 +71,18 @@
   .about-holly__heading {
     left: 5px;
   }
+  .about-holly__text h2 {
+    font-family: Poppins, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44.8px;
+    color: rgba(37, 37, 37, 1);
+    margin-bottom: 10px;
+  }
+
+  #about-holly-section {
+    padding-top: 20px;
+  }
 }
 
 @media screen and (max-width: 430px) {
@@ -82,7 +101,7 @@
 
   .social-links {
     width: 100%;
-    height: 162px;  
+    height: 192px;  
     display: flex;
     flex-direction: row;
     align-content: space-between;
@@ -124,7 +143,7 @@
   }
 
   .about-holly__text h2 {
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
@@ -139,4 +158,7 @@
     color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
   }
   
+  .about-holly__heading {
+    margin-bottom: 0px;
+  }
 }

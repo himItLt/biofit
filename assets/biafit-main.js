@@ -1,7 +1,33 @@
 /**
- * Scroller
+ * Manager
  */
-class Scroller {
+class Manager {
+  trackMobileMenu() {
+    const menuBtn = document.getElementById('Details-menu-drawer-container');
+    const header = document.querySelector('.header-wrapper header');
+    const drawer = document.getElementById('menu-drawer'); 
+
+    if (!menuBtn) {
+      return;
+    }
+    
+    const mutationObserver = new MutationObserver((mutationList) => {
+      let isOpened = false;
+      for (const item of mutationList) {
+        if (item.attributeName === "class") {
+          if (menuBtn.classList.contains('menu-opening')) {
+            isOpened = true;
+            break;
+          } 
+        }
+      }
+
+      header.style.backgroundColor = (isOpened ? '#fff' : '#ffe8ee');
+      drawer.style.marginTop = (isOpened ? '-1px' : '0px');
+    });
+    mutationObserver.observe(menuBtn, { attributes: true });
+  }
+
   scrollToSmoothly(pos, time) {
     var currentPos = window.scrollY;
     var start = null;
@@ -61,28 +87,64 @@ class Scroller {
     })
   }
 }
+const manager = new Manager();
+manager.initHeaderLinks();
+manager.trackMobileMenu();
 
-(new Scroller()).initHeaderLinks();
 /**
  * Slider customization
  */
 class BiafitSlider {
+  setupTimers() {
+    const programsBtn = document.querySelector('.collection .slider-button--next');
+    const blogBtn = document.querySelector('.blog .slider-button--next');
+    setInterval(() => {
+      programsBtn.dispatchEvent(new Event('click'));
+      blogBtn.dispatchEvent(new Event('click'));
+    }, 15000);
+  }
+
+  toggleProgramInfo(action) {
+    const parentEl = action.parentElement;
+    const openLink = parentEl.querySelector('.open');
+    const closeLink = parentEl.querySelector('.close');
+    const caption = parentEl.parentElement.parentElement.querySelector('.card-information .caption');
+    
+    if (action.classList.contains('open')) {
+      openLink.style.display = 'none';
+      closeLink.style.display = '';
+      caption.style.height = 'auto';
+    } else {
+      openLink.style.display = '';
+      closeLink.style.display = 'none';
+      caption.style.height = '77px';
+    }
+  }
+
   lockClick() {
-    let cards = document.querySelectorAll('.grid.product-grid > li');
+    let cards = document.querySelectorAll('.collection__cards > li');
     
     cards.forEach(card => {
       let hrefs = card.querySelectorAll('a');
       
       hrefs.forEach(el => {
-        el.addEventListener('click', e => {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;  
-        });
+        if (el.classList.contains('open') || el.classList.contains('close')) {
+          el.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.toggleProgramInfo(e.target);
+          })
+        } else {
+          el.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;  
+          });
+        }
       });
     });
 
-    let blogCards = document.querySelectorAll('blog__posts > li');
+    let blogCards = document.querySelectorAll('.blog__posts > li');
     
     blogCards.forEach(card => {
       let hrefs = card.querySelectorAll('a');
@@ -104,6 +166,7 @@ class BiafitSlider {
     const updateSlider = () => {
       firstSlide = slider.querySelector('li:first-child');
       lastSlide = slider.querySelector('li:last-child');
+      this.lockClick();
     }
     updateSlider();
 
@@ -128,7 +191,7 @@ class BiafitSlider {
   initProgramsCarusel() {
     const nextBtn = document.querySelector('.collection .slider-button--next');
     const prevBtn = document.querySelector('.collection .slider-button--prev');
-    const slider = document.querySelector('.collection .grid.product-grid');
+    const slider = document.querySelector('.collection .collection__cards');
     this.processSliderAction(slider, prevBtn, nextBtn);
   }
 
@@ -140,8 +203,8 @@ class BiafitSlider {
   }
 }
 
-var biafitSlider = new BiafitSlider();
+const biafitSlider = new BiafitSlider();
 biafitSlider.lockClick();
 biafitSlider.initProgramsCarusel();
 biafitSlider.initTestimonialsCarusel();
-
+biafitSlider.setupTimers();

@@ -310,8 +310,13 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
-
+    {%- case template -%}
+    {%- when 'index' -%}
+      {% sections 'header-group' %}
+    {%- else -%}
+      {% section 'header-common' %}
+    {%- endcase -%}
+    
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>

@@ -1,0 +1,50 @@
+[
+{
+    "description": "Plans list",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "planId": {
+                "type": "number"
+            },
+            "title": {
+                "type": "string"
+            },
+            "discount": {
+                "type": "string"
+            },
+            "frequency": {
+                "type": "string"
+            },
+            "display_price": {
+                "type": "number"
+            }
+        }
+    }
+},
+
+[
+    {
+        "planId": 5725618367,
+        "title": "Monthly",
+        "discount": "",
+        "frequency": "month",
+        "display_price": 29
+    },
+    {
+        "planId": 5725651135,
+        "title": "Semi-Annual",
+        "discount": "Save 30%",
+        "frequency": "every 6 month",
+        "display_price": 119
+    },
+    {
+        "planId": 5725683903,
+        "title": "Annual",
+        "discount": "Save 50%",
+        "frequency": "per year",
+        "display_price": 179
+    }
+]
+]

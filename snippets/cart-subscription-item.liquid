@@ -1,0 +1,25 @@
+{% comment %}
+  Renders a subscription product cart item
+
+  Accepts:
+  - product: {Object} Product Liquid object (required)
+  - selected_plan: {Object} Cart Item selected selling plan (required)
+  
+  Usage:
+  {% render 'cart-subscription-item', product: item.product, selected_plan: item.selling_plan_allocation.selling_plan %}
+{% endcomment %}
+{%- if product and product != empty -%}
+  {%- for plan in product.metafields.custom.subscription_plans.value -%}
+    {%- if plan.planId == selected_plan.id -%}
+      <div class="cart-plan-item" id="plan-{{ forloop.index }}">
+        <div class="plan-info">
+          <div class="plan-description">
+            <h5 class="plan-title">{{ plan.title }}</h5>
+            <p><span class="plan-price">${{ plan.display_price }} USD</span><span class="plan-frequency"> / {{ plan.frequency }}</span></p>
+          </div>
+          <div class="plan-discount">{{ plan.discount }}</div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

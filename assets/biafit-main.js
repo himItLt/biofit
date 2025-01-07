@@ -62,6 +62,10 @@ class Manager {
       let href = document.getElementById(linkId);
       let targetEl = document.getElementById(headerLinks[linkId]);
 
+      if (!href || !targetEl) {
+        continue;
+      }
+
       href.addEventListener('click', e => {
         e.preventDefault();
         e.stopPropagation();
@@ -71,6 +75,9 @@ class Manager {
     }
     
     const targetElement = document.getElementById('membership-section');
+    if (!targetElement) {
+      return;
+    }
     let buttons = [
       document.getElementById('main-block-button'),
       document.querySelector('.header-button'),
@@ -78,6 +85,9 @@ class Manager {
     ];
 
     buttons.forEach(el => {
+      if (!el) {
+        return;
+      }
       el.addEventListener('click', e => {
         e.preventDefault();
         e.stopPropagation();
@@ -98,10 +108,17 @@ class BiafitSlider {
   setupTimers() {
     const programsBtn = document.querySelector('.collection .slider-button--next');
     const blogBtn = document.querySelector('.blog .slider-button--next');
-    setInterval(() => {
-      programsBtn.dispatchEvent(new Event('click'));
-      blogBtn.dispatchEvent(new Event('click'));
-    }, 15000);
+
+    if (programsBtn || blogBtn) {
+      setInterval(() => {
+        if (programsBtn) {
+          programsBtn.dispatchEvent(new Event('click'));
+        }
+        if (blogBtn) {
+          blogBtn.dispatchEvent(new Event('click'));
+        }
+      }, 15000);
+    }
   }
 
   toggleProgramInfo(action) {
@@ -124,7 +141,7 @@ class BiafitSlider {
   lockClick() {
     let cards = document.querySelectorAll('.collection__cards > li');
     
-    cards.forEach(card => {
+    cards?.forEach(card => {
       let hrefs = card.querySelectorAll('a');
       
       hrefs.forEach(el => {
@@ -146,7 +163,7 @@ class BiafitSlider {
 
     let blogCards = document.querySelectorAll('.blog__posts > li');
     
-    blogCards.forEach(card => {
+    blogCards?.forEach(card => {
       let hrefs = card.querySelectorAll('a');
       
       hrefs.forEach(el => {
@@ -160,6 +177,9 @@ class BiafitSlider {
   }
 
   processSliderAction(slider, prevBtn, nextBtn) {
+    if (!slider) {
+      return;
+    }
     let firstSlide = null;
     let lastSlide = null;
 

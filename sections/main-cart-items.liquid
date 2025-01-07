@@ -29,14 +29,14 @@
   <div class="page-width">
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-      <a href="{{ routes.root_url }}#membership" class="underlined-link continue-shopping">
+      <a href="{{ routes.root_url }}#membership-section" class="underlined-link continue-shopping">
         {{- 'general.continue_shopping' | t -}}
       </a>
     </div>
 
     <div class="cart__warnings">
       <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-      <a href="{{ routes.root_url }}#membsership" class="button continue-shopping">
+      <a href="{{ routes.root_url }}#membership-section" class="button continue-shopping">
         {{ 'general.continue_shopping' | t }}
       </a>
 
@@ -197,7 +197,7 @@
                         assign has_vol_pricing = true
                       endif
                     -%}
-                    <td class="cart-item__totals right small-hide">
+                    <td class="cart-item__totals">
                       {%- render 'loading-spinner' -%}
                       <div class="cart-item__price-wrapper">
                         {%- if item.original_line_price != item.final_line_price -%}

@@ -112,7 +112,9 @@
                       {{ 'onboarding.product_title' | t }}
                     {%- endunless -%}
                   </h2>
-                  
+                  {% comment %}
+                    Script to add Subscriptions to Cart
+                  {% endcomment %}
                   <script>
                     var variantId = {{ product.selected_or_first_available_variant.id }};
                     var plans = {{product.selling_plan_groups | json}};
@@ -133,13 +135,61 @@
                             "name": "12 month subscription",
                           }
                       },
-
+                    
                       shopURL: '{{ shop.url }}',
                       variantId: null,
                       selectedPlanId: 'plan2',
-
-                      addItemToCart: () => {
-                          const data = {
+                      subscriptionToAdd: null,
+                    
+                      deleteProductItem: (keyId) => {
+                        let toDelete = {
+                          id: keyId,
+                          quantity: 0
+                        };
+                        
+                        return fetch('/cart/change.js', {
+                            method: 'POST',
+                            headers: {
+                              'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(toDelete)
+                          });
+                      },
+                    
+                      deleteFromCart: async (productType) => {
+                        let deletePromises = [];
+                    
+                        const _deleteItem = async () => {
+                          const response = await fetch( '/cart.js', {
+                            method: "GET",
+                            headers: {
+                              'Content-Type': 'application/json'
+                            }
+                          });
+                          const data = await response?.json();
+                          
+                          if (data?.items.length > 0) {
+                            const items = data.items;
+                            
+                            items.forEach(async item => {
+                              if (item.product_type == productType) {
+                                const promise = HomePageManager.deleteProductItem(item.key);
+                                deletePromises.push(promise);
+                                await promise;
+                    
+                                return _deleteItem();
+                              }
+                            });
+                          }
+                          return deletePromises;
+                        }
+                    
+                        return _deleteItem();
+                      },
+                    
+                      addItemToCart: async () => {
+                        const _addItem = () => {
+                          const dataToAdd = {
                             'id': HomePageManager.variantId,
                             'quantity': 1,
                             'selling_plan': HomePageManager.plans[HomePageManager.selectedPlanId]['id']
@@ -147,17 +197,28 @@
                           fetch( '/cart/add.js', {
                             method: "POST",
                             headers: {
-                            'Content-Type': 'application/json'
+                              'Content-Type': 'application/json'
                             },
-                            body:  JSON.stringify(data)
+                            body:  JSON.stringify(dataToAdd)
                           })
-                          .then(response => { 
-                            return response.json(); 
+                          .then(response => {
+                            return response.json();
                           })
-                          .then(data => { 
+                          .then(data => {
+                            HomePageManager.subscriptionToAdd = data.key;
                             window.location.href = '/cart';
                           });
-                          //window.location = '/checkout';
+                        };
+                    
+                        let deletePromises = await HomePageManager.deleteFromCart('Subscription');
+                    
+                        if (deletePromises.length > 0) {
+                          Promise.all(deletePromises).then(response => {
+                            _addItem();
+                          })
+                        } else {
+                          _addItem();
+                        }
                       },
                       
                       initPlansForm: (variantId) => {
@@ -185,7 +246,6 @@
                         });
                       }
                     }
-
                     //console.log(plans, selectedPlan);
                     
                     HomePageManager.initPlansForm(variantId);

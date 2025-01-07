@@ -105,6 +105,32 @@ manager.trackMobileMenu();
  * Slider customization
  */
 class BiafitSlider {
+  sliderConfig = {
+    program: {
+      offset: 415,
+      originalWidth: '1810px',
+      originalLeft: '0px',
+      prev: {
+        width: '1915px',
+      },
+      next: {
+        width: '1915px',
+        left: '-425px'
+      },
+    },
+    blog: {
+      offset: 330,
+      originalWidth: '1328px',
+      originalLeft: '0px',
+      prev: {
+        width: '1370px',
+      },
+      next: {
+        width: '1370px',
+        left: '-330px'
+      },
+    }
+  };
   setupTimers() {
     const programsBtn = document.querySelector('.collection .slider-button--next');
     const blogBtn = document.querySelector('.blog .slider-button--next');
@@ -176,7 +202,25 @@ class BiafitSlider {
     });
   }
 
-  processSliderAction(slider, prevBtn, nextBtn) {
+  animateSlider(slider, direction, config, finishCallback) {
+    const offset = config.offset * direction;
+
+    const animation = slider.animate(
+      [
+        // keyframes
+        { transform: "translateX(0px)" },
+        { transform: "translateX(" + offset + "px)" },
+      ],
+      {
+        // timing options
+        duration: 1000,
+        iterations: 1,
+      },
+    );
+    animation.onfinish = finishCallback;
+  }
+
+  processSliderAction(slider, prevBtn, nextBtn, configName) {
     if (!slider) {
       return;
     }
@@ -192,34 +236,67 @@ class BiafitSlider {
 
     nextBtn.removeAttribute('disabled');
     prevBtn.removeAttribute('disabled');
-    
-    prevBtn.addEventListener('click', e => {
-      let newSlide = firstSlide.cloneNode(true);
-      firstSlide.remove();
-      slider.append(newSlide);
-      updateSlider();
-    });
 
-    nextBtn.addEventListener('click', e => {
-      let newSlide = lastSlide.cloneNode(true);
-      lastSlide.remove();
-      slider.prepend(newSlide);
-      updateSlider();
-    });
+    const config = this.sliderConfig[configName];
+    if (config) {
+      prevBtn.addEventListener('click', e => {
+        let newSlide = firstSlide.cloneNode(true);
+        slider.append(newSlide);
+        slider.style.width = config.prev.width; 
+        this.animateSlider(slider, -1, config, (e) => {
+          firstSlide.remove();
+          slider.style.width = config.originalWidth;
+          updateSlider();
+        });
+      });
+  
+      nextBtn.addEventListener('click', e => {
+        let newSlide = lastSlide.cloneNode(true);
+        slider.prepend(newSlide);
+        slider.style.width = config.next.width; 
+        slider.style.left = config.next.left;
+  
+        this.animateSlider(slider, 1, config, (e) => {
+          lastSlide.remove();
+          slider.style.width = config.originalWidth;
+          slider.style.left = config.originalLeft;
+          updateSlider();
+        });
+      });
+    } else {
+      prevBtn.addEventListener('click', e => {
+        let newSlide = firstSlide.cloneNode(true);
+        slider.append(newSlide);
+        firstSlide.remove();
+        updateSlider();
+      });
+  
+      nextBtn.addEventListener('click', e => {
+        let newSlide = lastSlide.cloneNode(true);
+        slider.prepend(newSlide);
+        lastSlide.remove();
+        updateSlider();
+      });
+    }
   }
 
   initProgramsCarusel() {
     const nextBtn = document.querySelector('.collection .slider-button--next');
     const prevBtn = document.querySelector('.collection .slider-button--prev');
     const slider = document.querySelector('.collection .collection__cards');
-    this.processSliderAction(slider, prevBtn, nextBtn);
+    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'program' : 'mobile');
   }
 
   initTestimonialsCarusel() {
     const nextBtn = document.querySelector('.blog .slider-button--next');
     const prevBtn = document.querySelector('.blog .slider-button--prev');
     const slider = document.querySelector('.blog .blog__posts');
-    this.processSliderAction(slider, prevBtn, nextBtn);
+    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'blog' : 'mobile');
+  }
+
+  isMobile() {
+    const mq = window.matchMedia( "(max-width: 430px)" );
+    return mq.matches;
   }
 }
 
@@ -227,4 +304,4 @@ const biafitSlider = new BiafitSlider();
 biafitSlider.lockClick();
 biafitSlider.initProgramsCarusel();
 biafitSlider.initTestimonialsCarusel();
-biafitSlider.setupTimers();
+//biafitSlider.setupTimers();

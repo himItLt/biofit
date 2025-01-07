@@ -128,7 +128,7 @@
 
   .blog .slider-buttons {
       position: relative;
-      top: -520px;
+      top: -500px;
       float: right;
       margin-right: 20px;
   }
@@ -138,14 +138,25 @@
   }
 
   .blog .slider__wrapper {
-    width: calc(100vw / 1.25);
+    width: 1328px;
     margin: auto;
-    top: 60px;
+    top: -40px;
     position: relative;
+    overflow: hidden;
+    padding-top: 60px;
   }
 
+  .blog ul.blog__posts {
+    display: flex;
+    align-items: stretch;
+    width: 1328px;
+    min-width: 1328px !important;
+    padding-left: 0;
+    position: relative;
+  } 
+
   .blog .description {
-    margin-left: calc(50vw - 669px);
+    margin-left: calc(50vw - 665px);
   }
 
   .blog .card__inner {

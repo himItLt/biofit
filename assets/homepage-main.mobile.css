@@ -136,7 +136,7 @@
         display: flex;
         justify-content: center;
         position: absolute;
-        width: 777px;
+        width: 1028px;
         left: calc(-219px + 100vw/390);
     }
 
@@ -157,7 +157,7 @@
     }
 
     .collection ul > li:nth-child(3) {
-        margin-left: -9px;    
+        margin-left: -5px;    
     }
 
     .collection ul > li .card-wrapper {

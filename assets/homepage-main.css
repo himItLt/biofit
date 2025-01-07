@@ -115,7 +115,12 @@
     .collection ul > li:nth-child(2) {
         padding: 0 !important;
     }
-
+    .collection ul > li:nth-child(4), 
+    .collection ul > li:nth-child(5),
+    .collection ul > li:nth-child(6) {
+        left: -50px;
+        position: relative;
+    }
     .collection ul > li .card-wrapper {
         display: flex;
         justify-content: center;
@@ -154,8 +159,12 @@
         display: flex;
         align-items: stretch;
         height: 570px;
-        width: 1435px;
-        margin: auto;
+        width: 1810px;
+        min-width: 1810px !important;
+        margin-left: -15px;
+        padding-left: 0;
+        position: relative;
+        overflow: hidden;
     }
 
     .collection {
@@ -212,6 +221,13 @@
         margin-top: -35px;
     }
 
+    .collection slider-component .slider__wrapper {
+        width: 1320px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+    }
+
     .page-width-desktop {
         padding: 0px !important;
         max-width: 1770px;
@@ -220,12 +236,6 @@
     /* Slider */
     .slider-counter {
         display: none !important;
-    }
-
-    slider-component ul {
-        align-items: center;
-        justify-content: center;
-        display: flex;
     }
 
     .card-wrapper *, .card-wrapper *:hover {

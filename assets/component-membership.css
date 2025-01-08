@@ -99,10 +99,13 @@
     color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
   }
 
+  .section-membership__text {
+    margin-top: 30px;
+  }
   .section-membership__text h2 {
     font-family: Poppins, sans-serif;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 44.8px;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
   }
@@ -114,6 +117,8 @@
     line-height: 24px;
     letter-spacing: 0.03em;
     color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+    margin-top: -15px;
+    margin-bottom: 20px;
   }
 
   .section-membership .plan-info.best-price:before {

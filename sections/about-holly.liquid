@@ -32,8 +32,16 @@
                     {{ block.settings.caption | escape }}
                   </p>
                 {%- when 'text' -%}
-                  <div class="about-holly__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.text }}
+                  <div class="about-holly__text rte body">
+                    <h2><strong>Holly T. Baxter</strong></h2>
+
+                    <p>BiaFit was founded by Holly T. Baxter, an Australian born <strong>Dietitian,<br>
+                     Coach, Educator and Author</strong>, whose journey in the health<br> 
+                     and fitness industry is nothing short of extraordinary.</p>
+                    
+                    <p>With <strong>over 13 years of dedicated experience</strong>, Holly has become <br>
+                    a trusted authority, inspiring women worldwide to embrace <br>
+                    a healthy life of knowledge, wellness, and self-empowerment.</p><p></p>
                   </div>
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
@@ -52,16 +60,16 @@
               {%- endcase -%}
             {%- endfor -%}
             <div class="social-links">
-              <a href="#" class="link-item instagram">
+              <a href="https://www.instagram.com/hollytbaxter" class="link-item instagram" target="_blank">
                 Holly T. Baxter Instagram
               </a>
-              <a href="#" class="link-item instagram">
+              <a href="https://www.instagram.com/teambiafit/" class="link-item instagram" target="_blank">
                 TeamBiaFit Instagram
               </a>
-              <a href="#" class="link-item youtube">
+              <a href="https://www.youtube.com/c/HollyTBaxter" class="link-item youtube" target="_blank">
                 Youtube
               </a>
-              <a href="#" class="link-item facebook">
+              <a href="https://www.facebook.com/TeamBiaFit" class="link-item facebook" target="_blank">
                 Facebook
               </a>
             </div>

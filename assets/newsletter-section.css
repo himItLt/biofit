@@ -16,6 +16,7 @@
   margin-left: auto;
   margin-right: auto;
   padding-right: 35px;
+  margin-bottom: 15px;
 }
 
 .newsletter__wrapper .newsletter-form__field-wrapper {
@@ -37,9 +38,7 @@
     margin: 0 0 0 1rem;
   }
 }
-.newsletter__wrapper .inline-richtext {
-  text-transform: uppercase;
-}
+
 /* Custom code */
 @media screen and (min-width: 1440px) {
   .newsletter__wrapper {
@@ -52,7 +51,10 @@
     font-weight: 700;
     line-height: 44.8px;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
-    width: 590px;
+    text-transform: uppercase;
+    width: 652px;
+    padding: 0px 15px;
+    margin-bottom: 10px;
   }
 
   .newsletter .main-layout {

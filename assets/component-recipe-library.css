@@ -13,7 +13,7 @@
     padding-top: 16px;
     gap: 12px;
     border-radius: 16px;
-    width: 567px;
+    width: 526px;
     margin-bottom: 20px;
     padding-right: 10px;
   }
@@ -58,7 +58,7 @@
   .recipe-library__text h2 {
     font-family: Poppins, sans-serif;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 44.8px;
     text-align: center;
     text-underline-position: from-font;
@@ -67,8 +67,11 @@
     margin-left: -35px;
     text-transform: uppercase;
   }
+  .recipe-library__text h2 strong {
+    font-weight: 800;
+  }
   .recipe-library__text-item .content {
-    margin-top: 45px;
+    margin-top: 40px;
   }
   .recipe-library_info {
     width: 526px;

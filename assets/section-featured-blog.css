@@ -71,7 +71,7 @@
   .description h2 {
     font-family: Poppins, sans-serif;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 44.8px;
     text-align: left;
     text-underline-position: from-font;
@@ -79,7 +79,7 @@
   }
 
   .description p {
-    font-family: Open Sans;
+    font-family: Lato, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 27.36px;
@@ -148,11 +148,11 @@
 
   .blog ul.blog__posts {
     display: flex;
-    align-items: stretch;
     width: 1328px;
     min-width: 1328px !important;
     padding-left: 0;
     position: relative;
+    justify-content: flex-start;
   } 
 
   .blog .description {

@@ -13,7 +13,7 @@
     height: 830px;
   }
   .about-holly__text p {
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -59,6 +59,10 @@
     padding-top: 66px;
   }
 
+  .social-links a:hover {
+    background-color: rgba(254, 243, 246, 1);
+  }
+
   .section-about-holly .about-holly__media {
     width: 850px;
     position: relative;
@@ -77,7 +81,7 @@
   .about-holly__text h2 strong {
     font-family: Poppins, sans-serif;
     font-size: 32px;
-    font-weight: 900 !important;
+    font-weight: 800 !important;
     line-height: 44.8px;
     color: rgba(37, 37, 37, 1);
     margin-bottom: 10px;
@@ -117,7 +121,7 @@
     padding: 45px 10px;
     border-radius: 12px;
     background-color: var(--Light-Grey, rgba(244, 244, 244, 1));
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
@@ -143,6 +147,7 @@
 
   .about-holly__text {
     margin: 0;
+    width: 507px;
   }
 
   .about-holly__text h2 {
@@ -154,7 +159,7 @@
   }
 
   .about-holly__text p {
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 19.6px;

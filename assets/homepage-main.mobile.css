@@ -94,7 +94,7 @@
         color: var(--Text-Black, rgba(6, 6, 6, 1));
     }
 
-    .about-app__heading, 
+    .about-app__heading strong, 
     .collection__title .title, 
     .blog__title, .about-holly__heading, 
     .recipe-library__heading,

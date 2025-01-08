@@ -109,30 +109,209 @@ manager.trackMobileMenu();
 class BiafitSlider {
   sliderConfig = {
     program: {
-      offset: 415,
-      originalWidth: '1842px',
-      originalLeft: '0px',
+      original: {
+        marginLeft: '0px',
+        width: '1328px'
+      },
       prev: {
-        width: '1915px',
+        animation: 'program-desktop-prev',
+        init: (slider) => {
+          slider.style.width = '1390px';
+        },
+        onStart: (slider) => {
+          console.log('Start Prev:', slider.querySelector('li:nth-child(2)'));
+        },
+        onFinish: (slider) => {
+          console.log('Finish Prev:', slider.querySelector('li.large-slide'));
+        }
       },
       next: {
-        width: '1915px',
-        left: '-425px'
+        animation: 'program-desktop-next',
+        init: (slider) => {
+          slider.style.width = '1390px';
+        },
+        onStart: (slider) => {
+          console.log('Start Next', slider.querySelector('li:nth-child(2)'));
+        },
+        onFinish: (slider) => {
+          console.log('Finish Next', slider.querySelector('li.large-slide'));    
+        }
       },
     },
     blog: {
-      offset: 330,
-      originalWidth: '1328px',
-      originalLeft: '0px',
+      original: {
+        marginLeft: '0px',
+        width: '1328px'  
+      },
       prev: {
-        width: '1370px',
+        animation: 'blog-desktop-prev',
+        init: (slider) => {
+          slider.style.width = '1385px';
+          slider.style.marginLeft = '-330px';
+        }
       },
       next: {
-        width: '1370px',
-        left: '-330px'
+        animation: 'blog-desktop-next',
+        init: (slider) => {
+          slider.style.width = '1385px';
+        }
       },
     }
   };
+
+  getAnimation(name) {
+    const animations = {
+      'blog-desktop-prev': [
+        {
+          left: '0px'
+        },
+        {
+          left: '335px'
+        },
+      ],
+      'blog-desktop-next': [
+        {
+          left: '0px'
+        },
+        {
+          left: "-335px"
+        },
+      ],
+      'program-desktop-prev': [
+        {
+          left: '0px'
+        },
+        {
+          left: '385px'
+        },
+      ],
+      'program-desktop-next': [
+        {
+          marginLeft: '-25px'
+        },
+        {
+          marginLeft: '-425px'
+        },
+      ],
+    };
+    return animations[name];
+  }
+  
+  animateElement(element, animationName, finishCallback = (e) => {}, startCallback = (e) => {}) {
+    const animation = element.animate(
+      this.getAnimation(animationName),
+      1000
+    );
+    animation.onfinish = finishCallback;
+    animation.onanimationstart = startCallback;
+  }
+
+  processSliderAction(slider, prevBtn, nextBtn, configName) {
+    if (!slider) {
+      return;
+    }
+    let firstSlide = null;
+    let lastSlide = null;
+
+    const updateSlider = () => {
+      firstSlide = slider.querySelector('li:first-child');
+      lastSlide = slider.querySelector('li:last-child');
+      this.lockClick();
+    }
+    updateSlider();
+
+    nextBtn.removeAttribute('disabled');
+    prevBtn.removeAttribute('disabled');
+
+    const config = this.sliderConfig[configName];
+
+    if (config) {
+      const commonFinish = () => {
+        for (let originalStyle in config.original) {
+          slider.style[originalStyle] = config.original[originalStyle];
+        }
+      };
+
+      nextBtn.addEventListener('click', e => {
+        let newSlide = firstSlide.cloneNode(true);
+        slider.append(newSlide);
+        config.next.init(slider);
+
+        this.animateElement(
+          slider, 
+          config.next.animation, 
+          (e) => {
+            firstSlide.remove();
+            commonFinish();
+            if (config.next.onFinish) {
+              config.next.onFinish(slider);  
+            }
+            updateSlider();
+          },
+          (e) => {
+            if (config.next.onStart) {
+              config.next.onStart(slider);  
+            }
+          }
+        );
+      });
+      
+      prevBtn.addEventListener('click', e => {
+        let newSlide = lastSlide.cloneNode(true);
+        slider.prepend(newSlide);
+        config.prev.init(slider);
+        
+        this.animateElement(
+          slider, 
+          config.prev.animation, 
+          (e) => {
+            commonFinish();
+            lastSlide.remove();
+            if (config.prev.onFinish) {
+              config.prev.onFinish(slider);  
+            }
+            updateSlider();
+          },
+          (e) => {
+            if (config.prev.onStart) {
+              config.prev.onStart(slider);  
+            }
+          }
+        );
+      });
+    } else {
+      /* Mobile slider without animation */
+      prevBtn.addEventListener('click', e => {
+        let newSlide = firstSlide.cloneNode(true);
+        slider.append(newSlide);
+        firstSlide.remove();
+        updateSlider();
+      });
+  
+      nextBtn.addEventListener('click', e => {
+        let newSlide = lastSlide.cloneNode(true);
+        slider.prepend(newSlide);
+        lastSlide.remove();
+        updateSlider();
+      });
+    }
+  }
+
+  initProgramsCarusel() {
+    const nextBtn = document.querySelector('.collection .slider-button--next');
+    const prevBtn = document.querySelector('.collection .slider-button--prev');
+    const slider = document.querySelector('.collection .collection__cards');
+    slider.querySelector('li:nth-child(2)').classList.add('large-slide');
+    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'program' : 'mobile');
+  }
+
+  initTestimonialsCarusel() {
+    const nextBtn = document.querySelector('.blog .slider-button--next');
+    const prevBtn = document.querySelector('.blog .slider-button--prev');
+    const slider = document.querySelector('.blog .blog__posts');
+    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'blog' : 'mobile');
+  }
+  
   setupTimers() {
     const programsBtn = document.querySelector('.collection .slider-button--next');
     const blogBtn = document.querySelector('.blog .slider-button--next');
@@ -202,98 +381,6 @@ class BiafitSlider {
         });
       });
     });
-  }
-
-  animateSlider(slider, direction, config, finishCallback) {
-    const offset = config.offset * direction;
-
-    const animation = slider.animate(
-      [
-        // keyframes
-        { transform: "translateX(0px)" },
-        { transform: "translateX(" + offset + "px)" },
-      ],
-      {
-        // timing options
-        duration: 1000,
-        iterations: 1,
-      },
-    );
-    animation.onfinish = finishCallback;
-  }
-
-  processSliderAction(slider, prevBtn, nextBtn, configName) {
-    if (!slider) {
-      return;
-    }
-    let firstSlide = null;
-    let lastSlide = null;
-
-    const updateSlider = () => {
-      firstSlide = slider.querySelector('li:first-child');
-      lastSlide = slider.querySelector('li:last-child');
-      this.lockClick();
-    }
-    updateSlider();
-
-    nextBtn.removeAttribute('disabled');
-    prevBtn.removeAttribute('disabled');
-
-    const config = this.sliderConfig[configName];
-    if (config) {
-      prevBtn.addEventListener('click', e => {
-        let newSlide = firstSlide.cloneNode(true);
-        slider.append(newSlide);
-        slider.style.width = config.prev.width; 
-        this.animateSlider(slider, -1, config, (e) => {
-          firstSlide.remove();
-          slider.style.width = config.originalWidth;
-          updateSlider();
-        });
-      });
-  
-      nextBtn.addEventListener('click', e => {
-        let newSlide = lastSlide.cloneNode(true);
-        slider.prepend(newSlide);
-        slider.style.width = config.next.width; 
-        slider.style.left = config.next.left;
-  
-        this.animateSlider(slider, 1, config, (e) => {
-          lastSlide.remove();
-          slider.style.width = config.originalWidth;
-          slider.style.left = config.originalLeft;
-          updateSlider();
-        });
-      });
-    } else {
-      prevBtn.addEventListener('click', e => {
-        let newSlide = firstSlide.cloneNode(true);
-        slider.append(newSlide);
-        firstSlide.remove();
-        updateSlider();
-      });
-  
-      nextBtn.addEventListener('click', e => {
-        let newSlide = lastSlide.cloneNode(true);
-        slider.prepend(newSlide);
-        lastSlide.remove();
-        updateSlider();
-      });
-    }
-  }
-
-  initProgramsCarusel() {
-    const nextBtn = document.querySelector('.collection .slider-button--next');
-    const prevBtn = document.querySelector('.collection .slider-button--prev');
-    const slider = document.querySelector('.collection .collection__cards');
-    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'program' : 'mobile');
-  }
-
-  initTestimonialsCarusel() {
-    const nextBtn = document.querySelector('.blog .slider-button--next');
-    const prevBtn = document.querySelector('.blog .slider-button--prev');
-    const slider = document.querySelector('.blog .blog__posts');
-    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'blog' : 'mobile');
   }
 
   isMobile() {

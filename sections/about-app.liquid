@@ -1,6 +1,6 @@
 {{ 'component-about-app.css' | asset_url | stylesheet_tag }}
 
-<div class="section-about-app">
+<div class="section-about-app" id="about-app-section">
   <div class="page-width">
     {%- for block in section.blocks -%}
       {% case block.type %}

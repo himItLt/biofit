@@ -25,7 +25,7 @@
     assign posts_displayed = section.settings.post_limit
   endif
 -%}
-<div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
+<div class="blog" id="testimonials-section">
   <h2
     id="SectionHeading-{{ section.id }}"
     class="blog__title inline-richtext"

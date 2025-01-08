@@ -17,7 +17,7 @@
 {%- endstyle -%}
 
 <div class="newsletter center {% if section.settings.full_width == false %}newsletter--narrow page-width{% endif %}">
-  <div class="newsletter__wrapper color-{{ section.settings.color_scheme }} gradient content-container isolate{% if section.settings.full_width %} content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  <div class="newsletter__wrapper">
     <div class="main-layout">
       <div class="image-block">
         <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/iPhone_15_Pro.png?v=1735381156" width="100%" height="100%"/>
@@ -47,7 +47,8 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.text }}
+                Enjoy 10 of Holly's dietician-approved recipes FREE to help you<br>
+                reach your goals.
               </div>
             {%- when 'email_form' -%}
               <div class="newsletter-form">

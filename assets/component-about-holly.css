@@ -1,11 +1,11 @@
 .social-links .instagram {
-  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/instagram.png?v=1735338490');
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/instagram.svg?v=1736323231');
 }
 .social-links .youtube {
-  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/youtube.png?v=1735338490');
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/youtube.svg?v=1736323231');
 }
 .social-links .facebook {
-  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/facebook.png?v=1735338490');
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/facebook.svg?v=1736323230');
 }
 
 @media screen and (min-width: 1440px) {
@@ -72,9 +72,12 @@
     left: 5px;
   }
   .about-holly__text h2 {
+    margin-bottom: -8px;
+  }
+  .about-holly__text h2 strong {
     font-family: Poppins, sans-serif;
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 900 !important;
     line-height: 44.8px;
     color: rgba(37, 37, 37, 1);
     margin-bottom: 10px;

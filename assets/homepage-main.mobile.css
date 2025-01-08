@@ -186,14 +186,20 @@
         flex-direction: column;
         justify-content: flex-end;
         height: 200px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+        border-radius: 12px;
+        position: relative;
+        margin: auto;
     }
     
     .collection ul > li .card__content .card__information {
-        width: 200px;
+        width: 209px;
+        top: -15px;
     }
 
     .collection ul > li:nth-child(2) .card__content .card__information {
-        width: 264px;
+        width: 256px;
+        top: -2px;
     }
 
     .collection ul > li .card__content .card__information .card-information {
@@ -267,7 +273,7 @@
         padding: 2px 8px 2px 8px;
         border-radius: 20px;
         background: var(--Primary, rgba(237, 22, 83, 1));
-        font-family: Open Sans;
+        font-family: Lato, sans-serif;
         font-size: 12px;
         font-weight: 600;
         line-height: 20.52px;

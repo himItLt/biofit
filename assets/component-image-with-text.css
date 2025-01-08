@@ -426,7 +426,7 @@
     width:100%;
     position: relative;
     margin-top: -120px;
-    height: 872px;
+    height: 880px;
     padding-top: 210px;
   }
 
@@ -453,6 +453,9 @@
     width:725px;
     margin-bottom: 20px;
     margin-top: 30px;
+  }
+  .image-with-text__text p {
+    width: 580px;
   }
 
   .counter-block {

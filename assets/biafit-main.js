@@ -51,7 +51,9 @@ class Manager {
 
   initHeaderLinks() {
     let headerLinks = {
+      'HeaderMenu-about-biafit': 'about-app-section',
       'HeaderMenu-programs': 'programs-section',
+      'HeaderMenu-testimonials': 'testimonials-section',
       'HeaderMenu-about-holly': 'about-holly-section',
       'HeaderMenu-recipe-library': 'recipe-library-section',
       'HeaderMenu-plans': 'membership-section',
@@ -108,7 +110,7 @@ class BiafitSlider {
   sliderConfig = {
     program: {
       offset: 415,
-      originalWidth: '1810px',
+      originalWidth: '1842px',
       originalLeft: '0px',
       prev: {
         width: '1915px',

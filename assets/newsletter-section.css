@@ -63,6 +63,7 @@
     justify-content: center;
     height: 505px;
     padding-top: 55px;
+    overflow: hidden;
   }
 
   .newsletter .image-block {

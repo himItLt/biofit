@@ -108,37 +108,109 @@ manager.trackMobileMenu();
  */
 class BiafitSlider {
   sliderConfig = {
-    program: {
+    'program': {
       original: {
-        marginLeft: '0px',
-        width: '1328px'
+        width: '1835px',
+        left: '0px',
       },
       prev: {
         animation: 'program-desktop-prev',
         init: (slider) => {
-          slider.style.width = '1390px';
+          slider.style.width = '1890px';
+          slider.style.left = '-410px';  
         },
         onStart: (slider) => {
-          console.log('Start Prev:', slider.querySelector('li:nth-child(2)'));
+          const oldCard = slider.querySelector('li.large-slide');
+          const newCard = slider.querySelector('li:nth-child(2)');
+          this.animateElement(
+            oldCard.querySelector('.card-wrapper'), 
+            'program-desktop.wrapper',
+            true
+          );
+          this.animateElement(
+            newCard.querySelector('.card-wrapper'), 
+            'program-desktop.wrapper',
+            false
+          );
         },
         onFinish: (slider) => {
-          console.log('Finish Prev:', slider.querySelector('li.large-slide'));
+          this.programAnimationEnd(slider);
         }
       },
       next: {
         animation: 'program-desktop-next',
         init: (slider) => {
-          slider.style.width = '1390px';
+          slider.style.width = '1890px';
         },
         onStart: (slider) => {
-          console.log('Start Next', slider.querySelector('li:nth-child(2)'));
+          const oldCard = slider.querySelector('li.large-slide');
+          const newCard = slider.querySelector('li:nth-child(3)');
+          this.animateElement(
+            oldCard.querySelector('.card-wrapper'), 
+            'program-desktop.wrapper',
+            true
+          );
+          this.animateElement(
+            newCard.querySelector('.card-wrapper'), 
+            'program-desktop.wrapper',
+            false
+          );
         },
         onFinish: (slider) => {
-          console.log('Finish Next', slider.querySelector('li.large-slide'));    
+          this.programAnimationEnd(slider);  
         }
       },
     },
-    blog: {
+    'program-mobile': {
+      original: {
+        left: '0px',
+      },
+      prev: {
+        animation: 'program-mobile-prev',
+        init: (slider) => {
+          slider.style.left = '-215px';  
+        },
+        onStart: (slider) => {
+          const oldCard = slider.querySelector('li.large-slide');
+          const newCard = slider.querySelector('li:nth-child(2)');
+          this.animateElement(
+            oldCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            true
+          );
+          this.animateElement(
+            newCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            false
+          );
+        },
+        onFinish: (slider) => {
+          this.programAnimationEnd(slider);
+        }
+      },
+      next: {
+        animation: 'program-mobile-next',
+        init: (slider) => {},
+        onStart: (slider) => {
+          const oldCard = slider.querySelector('li.large-slide');
+          const newCard = slider.querySelector('li:nth-child(3)');
+          this.animateElement(
+            oldCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            true
+          );
+          this.animateElement(
+            newCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            false
+          );
+        },
+        onFinish: (slider) => {
+          this.programAnimationEnd(slider);  
+        }
+      },
+    },
+    'blog': {
       original: {
         marginLeft: '0px',
         width: '1328px'  
@@ -156,8 +228,31 @@ class BiafitSlider {
           slider.style.width = '1385px';
         }
       },
+    },
+    'blog-mobile': {
+      original: {
+        left: '0',
+      },
+      prev: {
+        animation: 'blog-mobile-prev',
+        init: (slider) => {
+          slider.style.left = '-180px';
+        }
+      },
+      next: {
+        animation: 'blog-mobile-next',
+        init: (slider) => {
+        }
+      },
     }
   };
+
+  programAnimationEnd(slider) {
+    const oldCard = slider.querySelector('li.large-slide');
+    const newCard = slider.querySelector('li:nth-child(2)');
+    oldCard.classList.remove('large-slide');
+    newCard.classList.add('large-slide');
+  }
 
   getAnimation(name) {
     const animations = {
@@ -177,33 +272,89 @@ class BiafitSlider {
           left: "-335px"
         },
       ],
-      'program-desktop-prev': [
+      'blog-mobile-prev': [
+        {
+          left: '-180px'
+        },
+        {
+          left: '0px'
+        },
+      ],
+      'blog-mobile-next': [
         {
           left: '0px'
         },
         {
-          left: '385px'
+          left: "-180px"
+        },
+      ],
+      'program-desktop-prev': [
+        {
+          left: '-410px'
+        },
+        {
+          left: '0px'
         },
       ],
       'program-desktop-next': [
         {
-          marginLeft: '-25px'
+          left: '0px'
         },
         {
-          marginLeft: '-425px'
+          left: '-410px'
         },
+      ],
+      'program-desktop.wrapper': [
+        {
+          marginTop: '60px',
+          width: '392px',
+          height: '447px',  
+        },
+        {
+          marginTop: '0px',
+          width: '496px', 
+          height: '565px',
+        }
+      ],
+      'program-mobile-prev': [
+        {
+          left: '-215px'
+        },
+        {
+          left: '0px'
+        },
+      ],
+      'program-mobile-next': [
+        {
+          left: '0px'
+        },
+        {
+          left: '-215px'
+        },
+      ],
+      'program-mobile.wrapper': [
+        {
+          marginTop: '30px',
+          width: '210px',
+          height: '250px',
+        },
+        {
+          marginTop: '0px',
+          width: '260px',
+          height: '310px',  
+        }
       ],
     };
     return animations[name];
   }
   
-  animateElement(element, animationName, finishCallback = (e) => {}, startCallback = (e) => {}) {
+  animateElement(element, animationName, reverse = false, finishCallback = (e) => {}, startCallback = () => {}) {
+    startCallback();
     const animation = element.animate(
-      this.getAnimation(animationName),
+      (reverse ? this.getAnimation(animationName).reverse() : this.getAnimation(animationName)),
       1000
     );
     animation.onfinish = finishCallback;
-    animation.onanimationstart = startCallback;
   }
 
   processSliderAction(slider, prevBtn, nextBtn, configName) {
@@ -234,12 +385,13 @@ class BiafitSlider {
 
       nextBtn.addEventListener('click', e => {
         let newSlide = firstSlide.cloneNode(true);
-        slider.append(newSlide);
         config.next.init(slider);
-
+        slider.append(newSlide);
+        
         this.animateElement(
           slider, 
-          config.next.animation, 
+          config.next.animation,
+          false,
           (e) => {
             firstSlide.remove();
             commonFinish();
@@ -248,7 +400,7 @@ class BiafitSlider {
             }
             updateSlider();
           },
-          (e) => {
+          () => {
             if (config.next.onStart) {
               config.next.onStart(slider);  
             }
@@ -258,12 +410,13 @@ class BiafitSlider {
       
       prevBtn.addEventListener('click', e => {
         let newSlide = lastSlide.cloneNode(true);
-        slider.prepend(newSlide);
         config.prev.init(slider);
+        slider.prepend(newSlide);
         
         this.animateElement(
           slider, 
-          config.prev.animation, 
+          config.prev.animation,
+          false,
           (e) => {
             commonFinish();
             lastSlide.remove();
@@ -272,7 +425,7 @@ class BiafitSlider {
             }
             updateSlider();
           },
-          (e) => {
+          () => {
             if (config.prev.onStart) {
               config.prev.onStart(slider);  
             }
@@ -302,14 +455,14 @@ class BiafitSlider {
     const prevBtn = document.querySelector('.collection .slider-button--prev');
     const slider = document.querySelector('.collection .collection__cards');
     slider.querySelector('li:nth-child(2)').classList.add('large-slide');
-    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'program' : 'mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'program' : 'program-mobile');
   }
 
   initTestimonialsCarusel() {
     const nextBtn = document.querySelector('.blog .slider-button--next');
     const prevBtn = document.querySelector('.blog .slider-button--prev');
     const slider = document.querySelector('.blog .blog__posts');
-    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'blog' : 'mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'blog' : 'blog-mobile');
   }
   
   setupTimers() {

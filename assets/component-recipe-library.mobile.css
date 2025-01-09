@@ -8,10 +8,10 @@
     box-shadow: 2px 2px 12px #0000000a;
     height: 115px;
     padding-left: 45px;
-    padding-top: 10px;
+    padding-top: 15px;
     border-radius: 16px;
     width: 362px;
-    margin-bottom: 4px;
+    margin-bottom: 4px
   }
   .content-item::before {
     content: '';

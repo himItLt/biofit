@@ -6,7 +6,7 @@
     background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/home-page-mobile-bg.png?v=1735575810') !important;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: 0px -40px;
     width:100%;
     position: relative;
     margin-top: -20px;
@@ -24,6 +24,8 @@
     display: flex;
     align-items: stretch;
     justify-content: space-between;
+    margin-top: 25px;
+    margin-bottom: 30px;
   }
   .counter-block .counter-block-item {
     width: 94px;
@@ -62,7 +64,7 @@
     line-height: 36px;
     text-transform: uppercase;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
-    padding-top: 30px;
+    margin-bottom: 10px;
   }
   .image-with-text__content {
     padding: 16px;

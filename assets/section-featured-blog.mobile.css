@@ -32,7 +32,11 @@
     position: absolute;
     display: flex;
     height: 280px;
-    left: -25px;
+    margin-left: -30px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 2000px;
   }
 
   .blog .article-card-wrapper {
@@ -71,11 +75,6 @@
   }
   .blog li.blog__post {
     max-width: 168px;
-    margin-right: 9px;
-  }
-
-  .blog slider-component ul > li:nth-child(2) {
-    margin-right: 30px;
   }
 
   .blog .slider-buttons {
@@ -85,6 +84,7 @@
     width: 375px;
     margin: auto;
     top: 310px;
+    left: -5px;
   }
   
   .blog slider-component {
@@ -92,10 +92,10 @@
   }
 
   .blog .slider__wrapper {
-    max-width: 375px;
+    max-width: 360px;
     overflow: hidden;
     position: relative;
-    width: 375px;
+    width: 360px;
     height: 600px;
     margin: auto;
   }

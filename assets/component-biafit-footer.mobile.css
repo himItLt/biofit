@@ -4,13 +4,12 @@
     }
     .biafit-footer {
         width: 100%;
-        height: 470px;
+        height: 565px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-content: center;
         margin-bottom: 30px;
-        padding: 20px 30px;
+        padding: 60px 30px 80px;
     }
 
     .biafit-footer .heading,

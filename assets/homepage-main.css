@@ -35,6 +35,9 @@
     .header:not(.drawer-menu).page-width {
         padding-left: 20px !important;
         padding-right: 20px !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .list-menu li a {
@@ -105,43 +108,35 @@
         padding: 10px;
     }
 
-    .collection ul li.large-slide {
-        padding: 0 !important;
+    .collection ul > li .card-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 392px;
+        height: 447px;
+        margin-top: 60px;
     }
-
-    .collection ul li.large-slide .card__inner,
-    .collection ul li.large-slide .card__media
-    {
+    .collection ul li.large-slide .card-wrapper {
         width: 496px;   
         height: 565px;
+        margin-top: 0px;
+    }
+
+    .collection ul li .card__inner,
+    .collection ul li .card__media
+    {
+        width: 100%;   
+        height: 100%;
     }
 
     .collection ul li.large-slide .card__media {
         border-radius: 16px !important;
         border: 4px solid #F15822;
     }
-/*
-    .collection ul > li:nth-child(4), 
-    .collection ul > li:nth-child(5),
-    .collection ul > li:nth-child(6) {
-        left: -50px;
-        position: relative;
-    }
-        */
-    .collection ul > li .card-wrapper {
-        display: flex;
-        justify-content: center;
-    }
 
-    .collection ul > li {
-        padding-top: 60px;
+    .collection ul li.large-slide .card__content > .card__information {
+        top: -3px;
     }
-
-    .collection ul > li .card__inner {
-        width: 392px;
-        height: 447px;
-    }
-
+    
     .collection ul > li .card__media {
         border-radius: 16px !important;
         border: 0;
@@ -153,6 +148,8 @@
         flex-direction: column;
         justify-content: flex-end;
         height: 400px;
+        width: 100%;
+        position: relative;
     }
 
     .collection .card__content > .card__information .card-information {
@@ -160,30 +157,22 @@
     }
 
     .collection ul > li .card__content > .card__information {
-        width: 392px;
-        margin: auto;
+        width: 100%;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
         border-radius: 16px;
     }
-    .collection ul li.large-slide .card__content > .card__information {
-        width: 490px;
-        margin: auto;
-        position: relative;
-        top: -3px;
-    }
-
+    
     .collection ul {
         display: flex;
         flex-direction: row;
         height: 570px;
-        width: 1842px;
-        min-width: 1842px !important;
-        margin-left: -25px;
+        width: 1835px;
+        min-width: 1835px !important;
         padding-left: 0;
         position: relative;
         overflow: hidden;
         justify-content: flex-start;
-        gap: 9px;
+        gap: 20px;
     }
 
     .collection {

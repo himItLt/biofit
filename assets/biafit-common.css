@@ -1,4 +1,5 @@
-#header-common.header {
+#header-common.header, 
+#header-challenge.header {
   margin-top: 10px;
   height: 75px;
   border-radius: 0;

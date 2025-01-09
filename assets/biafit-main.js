@@ -51,13 +51,16 @@ class Manager {
 
   initHeaderLinks() {
     let headerLinks = {
+      // Desktop
       'HeaderMenu-about-biafit': 'about-app-section',
       'HeaderMenu-programs': 'programs-section',
       'HeaderMenu-testimonials': 'testimonials-section',
       'HeaderMenu-about-holly': 'about-holly-section',
       'HeaderMenu-recipe-library': 'recipe-library-section',
       'HeaderMenu-plans': 'membership-section',
-      'HeaderMenu-contact-us': 'contact-section'
+      'HeaderMenu-contact-us': 'contact-section',
+      // Mobile
+      // TODO: Implement scroll for menu
     };
 
     for (let linkId in headerLinks) {

@@ -103,7 +103,7 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper" id="header-challenge">
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -116,7 +116,7 @@
       assign localization_forms = true
     endif
   -%}
-  <header id="header-challenge" class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
+  <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
       if section.settings.menu != blank
         render 'header-drawer'
@@ -197,13 +197,9 @@
       {%- endif -%}
     {%- endif -%}
 
-    <!-- Button Log In -->
+    <!-- Button Join Now -->
     <div class="header__button-div">
-        {%- if customer -%}
-            <a href="/account/logout" class="header-button">Log Out</a>
-        {%- else -%}
-            <a href="{{ routes.account_login_url }}" class="header-button">Log In</a>
-        {%- endif -%}
+      <a href="" class="header-button biafit-buy-button">Join Now</a>
     </div>
     <!-- Icons -->
     

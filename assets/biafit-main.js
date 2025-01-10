@@ -2,6 +2,11 @@
  * Manager
  */
 class Manager {
+  isMobile() {
+    const mq = window.matchMedia( "(max-width: 430px)" );
+    return mq.matches;
+  }
+
   trackMobileMenu() {
     const menuBtn = document.getElementById('Details-menu-drawer-container');
     const header = document.querySelector('.header-wrapper header');
@@ -29,13 +34,17 @@ class Manager {
   }
 
   scrollToSmoothly(pos, time) {
-    var currentPos = window.scrollY;
-    var start = null;
+    if (this.isMobile()) {
+      document.querySelector('header-drawer .header__icon')?.click();
+    }
+
+    let currentPos = window.scrollY;
+    let start = null;
     if(time == null) time = 500;
     pos = +pos, time = +time;
     window.requestAnimationFrame(function step(currentTime) {
         start = !start ? currentTime : start;
-        var progress = currentTime - start;
+        let progress = currentTime - start;
         if (currentPos < pos) {
             window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos);
         } else {
@@ -59,6 +68,7 @@ class Manager {
       'HeaderMenu-recipe-library': 'recipe-library-section',
       'HeaderMenu-plans': 'membership-section',
       'HeaderMenu-contact-us': 'contact-section',
+
       // Mobile
       // TODO: Implement scroll for menu
     };
@@ -454,18 +464,21 @@ class BiafitSlider {
   }
 
   initProgramsCarusel() {
+    const slider = document.querySelector('.collection .collection__cards');
+    if (!slider) {
+      return;
+    }
     const nextBtn = document.querySelector('.collection .slider-button--next');
     const prevBtn = document.querySelector('.collection .slider-button--prev');
-    const slider = document.querySelector('.collection .collection__cards');
     slider.querySelector('li:nth-child(2)').classList.add('large-slide');
-    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'program' : 'program-mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, !manager.isMobile() ? 'program' : 'program-mobile');
   }
 
   initTestimonialsCarusel() {
     const nextBtn = document.querySelector('.blog .slider-button--next');
     const prevBtn = document.querySelector('.blog .slider-button--prev');
     const slider = document.querySelector('.blog .blog__posts');
-    this.processSliderAction(slider, prevBtn, nextBtn, !this.isMobile() ? 'blog' : 'blog-mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, !manager.isMobile() ? 'blog' : 'blog-mobile');
   }
   
   setupTimers() {
@@ -537,11 +550,6 @@ class BiafitSlider {
         });
       });
     });
-  }
-
-  isMobile() {
-    const mq = window.matchMedia( "(max-width: 430px)" );
-    return mq.matches;
   }
 }
 

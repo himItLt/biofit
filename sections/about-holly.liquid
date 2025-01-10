@@ -44,19 +44,12 @@
                     a healthy life of knowledge, wellness, and self-empowerment.</p><p></p>
                   </div>
                 {%- when 'button' -%}
-                  {%- if block.settings.button_label != blank -%}
-                    <a
-                      {% if block.settings.button_link == blank %}
-                        role="link" aria-disabled="true"
-                      {% else %}
-                        href="{{ block.settings.button_link }}"
-                      {% endif %}
-                      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                      {{ block.shopify_attributes }}
-                    >
-                      {{ block.settings.button_label | escape }}
-                    </a>
-                  {%- endif -%}
+                  <a
+                    href="#"
+                    class="button button--primary biafit-buy-button"
+                  >
+                    Join Now
+                  </a>
               {%- endcase -%}
             {%- endfor -%}
             <div class="social-links">

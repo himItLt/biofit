@@ -152,11 +152,30 @@
           "menu_color_scheme": "",
           "enable_country_selector": false,
           "enable_language_selector": false,
-          "enable_customer_avatar": true,
+          "enable_customer_avatar": false,
           "mobile_logo_position": "center",
           "margin_bottom": 0,
-          "padding_top": 20,
-          "padding_bottom": 20
+          "padding_top": 0,
+          "padding_bottom": 0
+        }
+      },
+      "header-challenge": {
+        "type": "header-challenge",
+        "settings": {
+          "logo_position": "middle-left",
+          "menu": "challenge-menu",
+          "menu_type_desktop": "mega",
+          "sticky_header_type": "none",
+          "show_line_separator": false,
+          "color_scheme": "",
+          "menu_color_scheme": "",
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "enable_customer_avatar": false,
+          "mobile_logo_position": "center",
+          "margin_bottom": 0,
+          "padding_top": 0,
+          "padding_bottom": 0
         }
       }
     },

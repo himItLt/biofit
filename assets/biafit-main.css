@@ -59,7 +59,12 @@
     .blog__title, .about-holly__heading, 
     .recipe-library__heading,
     .membership__heading,
-    .contact .title {
+    .contact .title,
+    .support .title,
+    .about-challenge__heading,
+    .whats-included__heading,
+    .grand-prize__heading
+     {
         font-family: Poppins, sans-serif;
         font-size: 90px;
         font-weight: 900;
@@ -69,7 +74,6 @@
         position: relative;
         text-transform: uppercase;
         z-index: 10;
-        max-width: 50%;
     }
     .about-app__heading strong {
         font-weight: 900;    

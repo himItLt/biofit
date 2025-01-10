@@ -1,0 +1,21 @@
+/* Desktop */
+@media screen and (min-width: 1440px) {
+    .challenge-countdown {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        height: 170px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 430px) {
+    .challenge-countdown {
+        
+    }
+}
+
+

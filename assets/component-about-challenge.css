@@ -1,0 +1,152 @@
+/* BiaFit */
+.about-challenge__services {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-challenge__services .service-item {
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 0 2px 9px 57px;
+}
+.about-challenge__services .item-icon-1 {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/item-icon-1.svg?v=1736279879');
+}
+.about-challenge__services .item-icon-2 {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/item-icon-2.svg?v=1736279879');
+}
+.about-challenge__services .item-icon-3 {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/item-icon-3.svg?v=1736279879');
+}
+.about-challenge__services .item-icon-4 {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/item-icon-4.svg?v=1736279879');
+} 
+.about-challenge__services .item-icon-5 {
+  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/item-icon-5.svg?v=1736279879');
+}
+.about-challenge-button {
+  margin-top: 25px;
+}
+.section-about-challenge {
+  margin-top: 135px;
+}
+
+@media screen and (min-width: 1440px) {
+  .about-challenge__heading {
+    top: -78px;
+    left: 7px;
+  }
+  .about-challenge__text h1 strong {
+    font-family: Poppins, sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 44.8px;
+    text-transform: uppercase;
+  }
+  .about-challenge__text p, .section-about-challenge .service-item {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+  }
+  .section-about-challenge .main-content {
+    width: 606px;
+    margin-left: calc(50vw - 740px);
+    margin-top: -140px;
+  }
+  .about-challenge__media {
+    position: relative;
+    width: 660px;
+    top: -195px;
+    margin-right: -91px;
+    float: right;
+  }
+  .section-about-challenge .button-wrapper {
+    padding-left: calc(50vw - 740px);
+    padding-top: 35px;
+  }
+
+  .about-challenge__grid {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .about-challenge__media-item {
+    width: 700px;  
+  }
+  .about-challenge__text-item {
+    width: 700px;
+  }
+  .about-challenge__services {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #shopify-section-template--17715266126015__about_app_TQVKC9 {
+    margin-top: -40px;
+    height: 1065px;
+  }
+
+  .about-challenge__media {
+    width: 321px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    margin-left: 90px;
+  }
+
+  .about-challenge__text h1 {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+
+  .about-challenge__services .service-item {
+    background-repeat: no-repeat;
+    padding: 0 2px 9px 50px;
+    background-size: 32px;
+    background-position: left center;
+    width: auto;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+  }
+
+  .about-challenge__text p {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));  
+  }
+
+  .about-challenge__services .button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .section-about-challenge {
+    margin-top: 0px !important;
+  }
+  .section-about-challenge .button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .about-challenge__text-item {
+    height: 650px;
+  }
+  .section-about-challenge a.button {
+    width: 360px;
+  }
+}
+

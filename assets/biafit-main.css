@@ -384,6 +384,10 @@ slider-component ul > li::marker {
     content: "";
 }
 
+ul > li {
+    list-style-type: none !important;
+}
+
 .card-wrapper *, .card-wrapper *:hover {
     cursor: default !important;
 }

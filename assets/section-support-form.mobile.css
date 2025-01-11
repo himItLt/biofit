@@ -1,0 +1,108 @@
+@media screen and (max-width: 430px) {
+  .support img {
+    display: none;
+  }
+
+  .support .form__message {
+    align-items: flex-start;
+  }
+
+  .support .icon-success {
+    margin-top: 0.2rem;
+  }
+
+  .support .field {
+    margin-bottom: 12px;
+  }
+
+  .support form {
+    max-width: 345px;
+    height: 465px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/mobile-support-us.png?v=1735673668');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    padding: 15px;
+    margin: auto;
+  }
+
+  .support .field, .support .field .field__label {
+    color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
+  }
+
+  .support .field .field__label {
+    margin-top: 3px;
+  }
+
+  .support .field input,
+  .support .field textarea {
+    border: 1px solid rgba(226, 226, 226, 1) !important;  
+    border-radius: 12px;
+  }
+
+  .support .field input {
+    height: 52px;
+  }
+
+  .support .field textarea {
+    height: 120px;
+  }
+
+  .support .button {
+    background: transparent !important;
+    width: 311px;
+    height: 52px;
+    padding: 20px 40px 20px 40px;
+    border-radius: 16px;
+    border: 1px solid #F15822;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+    margin-top: 15px;
+  }
+
+  .support .description {
+    padding: 0;
+  }
+
+  .support .description h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: -10px;
+  }
+
+  .support .description p {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+  }
+
+  .support form *::before, 
+  .support form *::after {
+    display: none !important;
+  }
+
+  .support .title {
+    left: 0;
+  }
+
+  .support {
+    height: 598px;
+    width: 100%;
+  }
+}

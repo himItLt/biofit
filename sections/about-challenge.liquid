@@ -25,32 +25,26 @@
           {%- for block in section.blocks -%}
             {% case block.type %}
               {%- when 'caption' -%}
-                <div class="main-content">
-                <p
-                  class="about-challenge__text about-challenge__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                  {{ block.shopify_attributes }}
-                >
-                  {{ block.settings.caption | escape }}
-                </p>
-                </div>
+                  <h3 class="about-challenge__caption">
+                    {{ block.settings.caption | escape }}
+                  </h3>
               {%- when 'text' -%}
                 <div class="main-content">
-                  <div class="about-challenge__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                  <div class="about-challenge__text rte">
                     {{ block.settings.text }}
                   </div>
-                  <div class="about-challenge__services">
-                    <div class="service-item item-icon-1">Access to 50+ Home & Gym Programs for Strength, Hypertrophy, Cardio, Warmup & Mobility</div>
-                    <div class="service-item item-icon-2">Enjoy Holly's Dietician Approved Recipe Library (250+ recipes with new ones added monthly!)</div>
-                    <div class="service-item item-icon-3">Stay Motivated with Workout and Progress Tracking, Personal Bests, and Detailed Volume and Lifting Analytics</div>
-                    <div class="service-item item-icon-4">Monitor Your Energy Expenditure, Track Your Steps, and Record<br> Your Weight Daily to stay on track with your goals</div>
-                    <div class="service-item item-icon-5">Receive Training Insights and Resources from Holly and Join a Private Support Community with women on the same journey</div>
-                  </div>
+                  <ul class="about-challenge__services">
+                    <li class="service-item item-1"><span class="red">Duration :</span> 6 Weeks</li>
+                    <li class="service-item item-2"><span class="red">Levels :</span> Beginner/Intermediate and Advanced</li>
+                    <li class="service-item item-3"><span class="red">Price :</span> <span class="challenge-price">$99 USD</span></li>
+                    <li class="service-item item-4"><span class="red">Prize :</span> $1,000 USD Cash and other goodies!</li>
+                  </ul>
                 </div>
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
                 <div class="button-wrapper">
-                  <a href="#membership-section" class="button button--primary" id="about-challenge-button">
-                    Join Us
+                  <a href="#" class="button button--primary biafit" id="about-challenge-button">
+                    Join Now
                   </a>
                 </div>
                 {%- endif -%}

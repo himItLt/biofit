@@ -24,18 +24,11 @@
         <div class="about-app__content">
           {%- for block in section.blocks -%}
             {% case block.type %}
-              {%- when 'caption' -%}
-                <div class="main-content">
-                <p
-                  class="about-app__text about-app__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                  {{ block.shopify_attributes }}
-                >
-                  {{ block.settings.caption | escape }}
-                </p>
-                </div>
+            {%- when 'caption' -%}
+                <h3 class="about-app__caption">{{ block.settings.caption | escape }}</h3>
               {%- when 'text' -%}
                 <div class="main-content">
-                  <div class="about-app__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                  <div class="about-app__text">
                     {{ block.settings.text }}
                   </div>
                   <div class="about-app__services">
@@ -49,8 +42,8 @@
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
                 <div class="button-wrapper">
-                  <a href="#membership-section" class="button button--primary" id="about-app-button">
-                    Join Us
+                  <a href="{{ block.settings.button_link }}" class="button button--primary" id="about-app-button">
+                    {{ block.settings.button_label | escape }}
                   </a>
                 </div>
                 {%- endif -%}

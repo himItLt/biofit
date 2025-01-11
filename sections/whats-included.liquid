@@ -14,47 +14,36 @@
           </h2>
         {%- endcase -%}
       {%- endfor -%}
-    <div class="whats-included__grid">
-      <div class="whats-included__media-item">
-        <div class="whats-included__media">
-          <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/whats-included.png?v=1736525188" width="100%" height="100%">
+      <div class="main-content">
+        <div class="whats-included__caption">
+          <h3 class="title-black">Bonus FREE Pre-Challenge App Access</h3>
+          <h3 class="title-red">Starts Monday, January 27th!</h3>
+        </div>
+        <div class="whats-included__grid">
+          <div class="whats-included__media-item">
+            <div class="whats-included__media">
+              <img src="https://cdn.shopify.com/s/files/1/0674/7750/4191/files/whats-included.png?v=1736525188" width="100%" height="100%">
+            </div>
+          </div>
+          <div class="whats-included__text-item">
+            <ul class="whats-included__services">
+              <li>6-Weeks of Challenge Access to the BRAND NEW BiaFit App</li>
+              <li>NEW! Enjoy Holly's Dietician-Approved Recipe Library In-App (250+ recipes)</li>
+              <li>Access to 50+ Strength, Hypertrophy, Fat Loss, Cardio, Warm-Up & Mobility Routines</li>
+              <li>Programs for Beginner to Advanced, with Home and Gym Exercises</li>
+              <li>Exclusive NEW Programs by Holly for this challenge</li>
+              <li>Our "Love Yourself Fit" Educational Guide with Everything You Need to Succeed</li>
+              <li>Weekly Live Q&A Session with Holly</li>
+              <li>Private In-App Support Community</li>
+            </ul>
+          </div>
+        </div>
+        <div class="whats-included__button-wrapper">
+          <a href="#" class="button button--primary biafit-buy-button" id="whats-included-button">
+            Join Now
+          </a>
         </div>
       </div>
-      <div class="whats-included__text-item">
-        <div class="whats-included__content">
-          {%- for block in section.blocks -%}
-            {% case block.type %}
-              {%- when 'caption' -%}
-                <div class="main-content">
-                <p
-                  class="whats-included__text whats-included__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                  {{ block.shopify_attributes }}
-                >
-                  {{ block.settings.caption | escape }}
-                </p>
-                </div>
-              {%- when 'text' -%}
-                <div class="main-content">
-                  <div class="whats-included__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.text }}
-                  </div>
-                  <div class="whats-included__services">
-                    <div class="service-item item-icon-1">Access to 50+ Home & Gym Programs for Strength, Hypertrophy, Cardio, Warmup & Mobility</div>
-                  </div>
-                </div>
-              {%- when 'button' -%}
-                {%- if block.settings.button_label != blank -%}
-                <div class="button-wrapper">
-                  <a href="#membership-section" class="button button--primary" id="whats-included-button">
-                    Join Us
-                  </a>
-                </div>
-                {%- endif -%}
-            {%- endcase -%}
-          {%- endfor -%}
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 

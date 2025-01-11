@@ -115,7 +115,7 @@ class Manager {
 const manager = new Manager();
 manager.initHeaderLinks();
 manager.trackMobileMenu();
-
+window.biafitManager = manager;
 /**
  * Slider customization
  */

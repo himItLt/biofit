@@ -25,32 +25,23 @@
           {%- for block in section.blocks -%}
             {% case block.type %}
               {%- when 'caption' -%}
-                <div class="main-content">
-                <p
-                  class="grand-prize__text grand-prize__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                  {{ block.shopify_attributes }}
-                >
+                <h3 class="grand-prize__caption">
                   {{ block.settings.caption | escape }}
-                </p>
-                </div>
-              {%- when 'text' -%}
-                <div class="main-content">
-                  <div class="grand-prize__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.text }}
-                  </div>
-                  <div class="grand-prize__services">
-                    <div class="service-item item-icon-1">Access to 50+ Home & Gym Programs for Strength, Hypertrophy, Cardio, Warmup & Mobility</div>
-                    <div class="service-item item-icon-2">Enjoy Holly's Dietician Approved Recipe Library (250+ recipes with new ones added monthly!)</div>
-                    <div class="service-item item-icon-3">Stay Motivated with Workout and Progress Tracking, Personal Bests, and Detailed Volume and Lifting Analytics</div>
-                    <div class="service-item item-icon-4">Monitor Your Energy Expenditure, Track Your Steps, and Record<br> Your Weight Daily to stay on track with your goals</div>
-                    <div class="service-item item-icon-5">Receive Training Insights and Resources from Holly and Join a Private Support Community with women on the same journey</div>
-                  </div>
-                </div>
+                </h3>
+                <ul class="grand-prize__services">
+                  <li class="item-icon-1">Win $1,000 USD Cash</li>
+                  <li class="item-icon-2">6 Weeks FREE 1 on 1 Coaching</li>
+                  <li class="item-icon-3">3 Month Free Subscription to BiaFit Workout App</li>
+                  <li class="item-icon-4">Holly’s Ebook Collection</li>
+                  <li class="item-icon-5">Fitness Essentials Supp Pack ($250 USD Value)</li>
+                  <li class="item-icon-6">Limited Edition Ultimate Glute Bands</li>
+                  <li class="item-icon-7">Exclusve BiaBody Hoodie</li>
+                </ul>
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
-                <div class="button-wrapper">
+                <div class="grand-prize__button-wrapper">
                   <a href="#" class="button button--primary biafit-buy-button" id="grand-prize-button">
-                    Join Us
+                    Begin your transformation
                   </a>
                 </div>
                 {%- endif -%}

@@ -44,6 +44,27 @@
     color: rgba(65, 65, 66, 1);
     margin-bottom: 10px;
 }
+/* Blog */
+.blog .card__content {
+    display: none;
+}
+.blog .article-card-wrapper {
+    height: 317px;
+}
+.blog .card__inner {
+    height: 315px;
+}
+.blog .article-card__image {
+    border-radius: 12px;
+}
+.blog .slider-buttons {
+    top: -405px;
+}
+
+.about-holly__heading {
+    margin-top: 30px;
+}
+
 
 @media screen and (min-width: 1440px) {
     

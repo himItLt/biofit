@@ -57,6 +57,81 @@
         "padding_bottom": 0
       }
     },
+    "whats_included_maiqtL": {
+      "type": "whats-included",
+      "blocks": {
+        "heading_UP6zR3": {
+          "type": "heading",
+          "settings": {
+            "heading": "What's Included",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UP6zR3"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "challenge_countdown_Fbc8cm": {
+      "type": "challenge-countdown",
+      "blocks": {
+        "heading_K73KYm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_UVUyU8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_EWXayd": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_K73KYm",
+        "text_UVUyU8",
+        "button_EWXayd"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "about_challenge_8Wzqyg": {
       "type": "about-challenge",
       "blocks": {
@@ -96,82 +171,6 @@
         "caption_Cjaknp",
         "text_6BanMD",
         "button_mb8wmh"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "whats_included_maiqtL": {
-      "type": "whats-included",
-      "blocks": {
-        "heading_UP6zR3": {
-          "type": "heading",
-          "settings": {
-            "heading": "What's Included",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": [
-        "heading_UP6zR3"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "grand_prize_TyF7A4": {
-      "type": "grand-prize",
-      "blocks": {
-        "heading_qamYG7": {
-          "type": "heading",
-          "settings": {
-            "heading": "Grand Prize",
-            "heading_size": "h1"
-          }
-        },
-        "caption_dxYWFB": {
-          "type": "caption",
-          "settings": {
-            "caption": "you can WIN:",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "button_r9hzGw": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_qamYG7",
-        "caption_dxYWFB",
-        "button_r9hzGw"
       ],
       "settings": {
         "height": "adapt",
@@ -246,9 +245,9 @@
     "featured_blog_DgGpfG": {
       "type": "featured-blog",
       "settings": {
-        "heading": "Testimonials",
+        "heading": "Transformations",
         "heading_size": "h1",
-        "blog": "testimonials",
+        "blog": "transformations",
         "post_limit": 4,
         "columns_desktop": 4,
         "color_scheme": "",
@@ -306,24 +305,25 @@
         "padding_bottom": 36
       }
     },
-    "challenge_countdown_Fbc8cm": {
-      "type": "challenge-countdown",
+    "grand_prize_TyF7A4": {
+      "type": "grand-prize",
       "blocks": {
-        "heading_K73KYm": {
+        "heading_qamYG7": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "Grand Prize",
             "heading_size": "h1"
           }
         },
-        "text_UVUyU8": {
-          "type": "text",
+        "caption_dxYWFB": {
+          "type": "caption",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
+            "caption": "you can WIN:",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
           }
         },
-        "button_EWXayd": {
+        "button_r9hzGw": {
           "type": "button",
           "settings": {
             "button_label": "Button label",
@@ -333,9 +333,9 @@
         }
       },
       "block_order": [
-        "heading_K73KYm",
-        "text_UVUyU8",
-        "button_EWXayd"
+        "heading_qamYG7",
+        "caption_dxYWFB",
+        "button_r9hzGw"
       ],
       "settings": {
         "height": "adapt",
@@ -411,13 +411,13 @@
   },
   "order": [
     "challenge_info",
-    "about_challenge_8Wzqyg",
     "whats_included_maiqtL",
-    "grand_prize_TyF7A4",
+    "challenge_countdown_Fbc8cm",
+    "about_challenge_8Wzqyg",
     "about_app_CaE9xt",
     "featured_blog_DgGpfG",
     "about_holly_F97HFb",
-    "challenge_countdown_Fbc8cm",
+    "grand_prize_TyF7A4",
     "support_form",
     "biafit_footer_ymBdTx"
   ]

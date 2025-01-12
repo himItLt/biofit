@@ -1,27 +1,39 @@
 {{ 'component-challenge-countdown.css' | asset_url | stylesheet_tag }}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
-  <!-- Desktop Footer -->
-  <div class="challenge-countdown">
-    <div class="countdoun-heading">
-      <h3>Hurry!</h3>
-      <h2>The Challenge Starts In:</h2>
-    </div>
-    <div class="contdown-timer">
-      <div class="hours">
-        <div class="time-number">123</div>
-        <div class="time-title">Hours</div>
+  <div class="countdown__page-wrapper">
+    <div class="challenge-countdown">
+      <div class="countdown-heading">
+        <h3>Hurry!</h3>
+        <h2>The Challenge Starts In:</h2>
       </div>
-      <div class="minutes">
-        <div class="time-seconds">
-          <div class="second-ten">4</div>
-          <div class="second-unit">
-            <div class="second-unit-animated">5</div>
-          </div>
+      <div class="countdown-timer">
+        <div class="time-block hours">
+          <div class="time-number"></div>
+          <h4 class="time-title">Hours</h4>
         </div>
-        <div class="time-title">Minutes</div>
+        <div class="time-block minutes">
+          <div class="time-number"></div>
+          <h4 class="time-title">Minutes</h4>
+        </div>
+        <div class="time-block seconds">
+          <div class="time-seconds">
+            <div class="time-number second-ten"></div>
+            <div class="time-number second-unit">
+              <div class="second-unit-animated">
+                <div class="time-number"></div>
+                <div class="time-number"></div>
+              </div>
+            </div>
+          </div>
+          <h4 class="time-title">Seconds</h4>
+        </div>
       </div>
-      <div class="hours">123</div>
+      <div class="countdown__button-wrapper">
+        <a href="#" class="button button--primary biafit-buy-button" id="whats-included-button">
+          Join Now
+        </a>
+      </div>
     </div>
   </div>
 </div>

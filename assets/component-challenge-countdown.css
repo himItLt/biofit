@@ -1,21 +1,124 @@
+/* Base */
+.countdown__page-wrapper {
+    width: 100%;
+    height: 675px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/challenge-countdown-bg.png?v=1736626154');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 65px;
+}
+.challenge-countdown {
+    width: 855px;
+    height: 515px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto auto;
+}
+
+.countdown-heading h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44.8px;
+    text-align: center;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+    margin-bottom: 0px;
+    margin-top: 85px;
+    text-transform: uppercase;
+}
+
+.countdown-heading h2 {
+    font-family: Poppins, sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 72px;
+    text-align: center;
+    color: #000;
+    margin-top: 10px;;
+}
+
+.countdown-timer {
+    width: 880px;
+    height: 374px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.countdown-timer .time-block {
+    display: block;
+    width: 225px;
+    height: 216px;
+}
+.countdown-timer .time-block.hours {
+    width: 310px;
+}
+.countdown-timer .time-block.seconds {
+    width: 225px;
+}
+.countdown-timer .time-seconds {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.countdown-timer .second-unit-animated {
+    position: relative;
+    width: 100%;
+    height: 432px;
+    margin-top: 35px;
+    top: 0px;
+}
+
+.countdown-timer .second-unit-animated .time-number {
+    line-height: 156px;
+    opacity: 0.5;
+}
+
+.countdown-timer .time-number {
+    font-family: Lato, sans-serif;
+    font-size: 180px;
+    font-weight: 700;
+    line-height: 216px;
+    text-align: center;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+}
+
+.countdown-timer .time-title {
+    font-family: Poppins, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 35px;
+    text-align: left;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+    margin-top: -20px;
+}
+
+.countdown-timer .time-seconds .second-unit {
+    position: relative;
+    height: 281px;
+    overflow: hidden;
+    margin-top: -5px;
+}
+
+.countdown__button-wrapper {
+    margin-top: 70px;
+}
+
+
+
 /* Desktop */
 @media screen and (min-width: 1440px) {
-    .challenge-countdown {
-        width: 70%;
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-        height: 170px;
-        margin: auto;
-        margin-bottom: 10px;
-    }
+    
 }
 
 /* Mobile */
 @media screen and (max-width: 430px) {
-    .challenge-countdown {
-        
-    }
+
 }
 
 

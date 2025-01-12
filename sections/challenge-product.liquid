@@ -31,6 +31,7 @@
   {%- endstyle -%}
 
   {% assign start_date = product.metafields.custom.challenge_start.value | date: "%a, %b %d, %Y" %}
+  
   <div class="page-width challenge-main-wrapper">
     <div class="challenge-main">
       <h1 class="challenge-title">6 week FIT Challenge 2025</h1>
@@ -49,6 +50,12 @@
       </div>
     </div>
   </div>
+  {% assign start_date_ts = product.metafields.custom.challenge_start.value | date: "%s" %}
+
+  <script>
+    window.biafitStart = {{ start_date_ts }};
+    window.challengeId = {{ product.selected_or_first_available_variant.id }};
+  </script>
 </product-info>
 
 {% schema %}

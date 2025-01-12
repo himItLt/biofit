@@ -318,7 +318,6 @@
     {%- when 'product.biafit-challenge' -%}
       <link rel="stylesheet" href="{{ 'challenge-base.css' | asset_url }}" media="print" onload="this.media='all'"> 
     {%- else -%}
-      {% section 'header-common' %}
       <link rel="stylesheet" href="{{ 'biafit-common.css' | asset_url }}" media="print" onload="this.media='all'"> 
       <link rel="stylesheet" href="{{ 'biafit-common.mobile.css' | asset_url }}" media="print" onload="this.media='all'"> 
     {%- endcase -%}

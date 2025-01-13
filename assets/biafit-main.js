@@ -64,19 +64,30 @@ class Manager {
       'HeaderMenu-about-biafit': 'about-app-section',
       'HeaderMenu-programs': 'programs-section',
       'HeaderMenu-testimonials': 'testimonials-section',
+      'HeaderMenu-transformations': 'testimonials-section',
       'HeaderMenu-about-holly': 'about-holly-section',
       'HeaderMenu-recipe-library': 'recipe-library-section',
       'HeaderMenu-plans': 'membership-section',
       'HeaderMenu-contact-us': 'contact-section',
+      'HeaderMenu-support': 'contact-section',
+      'HeaderMenu-grand-prize': 'grand-prize-section',
+      'HeaderMenu-what-is-the-challenge': 'about-challenge-section',
+      'HeaderMenu-whats-included': 'whats-included-section',
 
       // Mobile
-      // TODO: Implement scroll for menu
+      'HeaderDrawer-whats-included': 'whats-included-section',
+      'HeaderDrawer-what-is-the-challenge': 'about-challenge-section',
+      'HeaderDrawer-about-biafit': 'about-app-section',
+      'HeaderDrawer-transformations': 'testimonials-section',
+      'HeaderDrawer-about-holly': 'about-holly-section',
+      'HeaderDrawer-grand-prize': 'grand-prize-section',
+      'HeaderDrawer-support': 'contact-section',
     };
 
     for (let linkId in headerLinks) {
       let href = document.getElementById(linkId);
       let targetEl = document.getElementById(headerLinks[linkId]);
-
+      
       if (!href || !targetEl) {
         continue;
       }
@@ -113,9 +124,12 @@ class Manager {
   }
 }
 const manager = new Manager();
+window.biafitManager = manager;
+
+console.log('test');
 manager.initHeaderLinks();
 manager.trackMobileMenu();
-window.biafitManager = manager;
+
 /**
  * Slider customization
  */

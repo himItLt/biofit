@@ -8,16 +8,6 @@
     margin-top: 25px;
 }
 
-.about-challenge__services .service-item {
-    font-family: Poppins, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20.8px;
-    text-align: left;
-    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
-}
-
-.about-app__text p,
 .about-challenge__text p {
     font-family: Lato, sans-serif;
     font-size: 16px;
@@ -29,21 +19,9 @@
 .about-app__text p strong,
 .about-challenge__text p strong {
     color: var(--Primary, rgba(237, 22, 83, 1));
+    font-weight: 500;
 }
 
-.whats-included__caption h3,
-.about-challenge__caption,
-.grand-prize__caption,
-.about-app__caption {
-    font-family: Poppins, sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    line-height: 44.8px;
-    text-align: left;
-    text-transform: uppercase;
-    color: rgba(65, 65, 66, 1);
-    margin-bottom: 10px;
-}
 /* Blog */
 .blog .card__content {
     display: none;
@@ -71,6 +49,7 @@
 }
 
 @media screen and (max-width: 430px) {
+    .whats-included__caption h3,
     .about-challenge-heading {
         font-family: Poppins, sans-serif;
         font-size: 20px;
@@ -80,7 +59,7 @@
         text-transform: uppercase;
     }
 
-    .about-challenge__services .service-item {
+    .whats-included__services>li {
         font-family: Lato, sans-serif;
         font-size: 14px;
         font-weight: 500;
@@ -94,17 +73,6 @@
         font-weight: 500;
         line-height: 21px;
         color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));  
-    }
-
-    .about-challenge__caption {
-        font-family: Poppins, sans-serif;
-        font-size: 32px;
-        font-weight: 800;
-        line-height: 44.8px;
-        text-align: left;
-        text-transform: uppercase;
-        color: rgba(65, 65, 66, 1);
-        margin-bottom: 10px;
     }
 }
 

@@ -4,7 +4,7 @@
     height: 675px;
     background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/challenge-countdown-bg.png?v=1736626154');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     margin-top: 65px;
 }
 .challenge-countdown {
@@ -118,7 +118,119 @@
 
 /* Mobile */
 @media screen and (max-width: 430px) {
+    .countdown__page-wrapper {
+        width: 100%;
+        height: 370px;
+        margin-top: 36px;
+        background: linear-gradient(180deg, #F9F9F9 0%, #FEF3F6 100%);
+    }
+    .challenge-countdown {
+        width: 375px;
+        height: 206px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto auto;
+    }
+    
+    .countdown-heading h3 {
+        font-family: Poppins, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 28px;
+        text-align: center;
+        color: var(--Primary, rgba(237, 22, 83, 1));
+        margin-bottom: 0px;
+        margin-top: 40px;
+        text-transform: uppercase;
+    }
+    
+    .countdown-heading h2 {
+        font-family: Poppins, sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 33.6px;
+        text-align: center;
+        color: #000;
+        margin-top: 10px;;
+    }
+    
+    .countdown-timer {
+        width: 335px;
+        height: 146px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .countdown-timer .time-block {
+        display: block;
+        width: 82px;
+        height: 90px;
+    }
+    .countdown-timer .time-block.hours {
+        width: 120px;
+    }
+    .countdown-timer .time-block.seconds {
+        width: 90px;
+    }
+    .countdown-timer .time-seconds {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .countdown-timer .second-unit-animated {
+        position: relative;
+        width: 100%;
+        height: 170px;
+        margin-top: 17px;
+        top: 0px;
+    }
+    
+    .countdown-timer .second-unit-animated .time-number {
+        line-height: 60px;
+        opacity: 0.5;
+    }
+    
+    .countdown-timer .time-number {
+        font-family: Lato, sans-serif;
+        font-family: Lato;
+        font-size: 70.36px;
+        font-weight: 700;
+        line-height: 84.44px;
+        text-align: center;
+        color: var(--Primary, rgba(237, 22, 83, 1));
+    }
+    
+    .countdown-timer .time-title {
+        font-family: Poppins, sans-serif;
+        font-family: Poppins;
+        font-size: 10.95px;
+        font-weight: 600;
+        line-height: 13.68px;
+        color: var(--Primary, rgba(237, 22, 83, 1));
+        margin-top: -10px;
+    }
 
+    .countdown-timer .time-seconds .time-title {
+        margin-top: -16px;    
+    }
+    
+    .countdown-timer .time-seconds .second-unit {
+        position: relative;
+        height: 120px;
+        overflow: hidden;
+        margin-top: -5px;
+    }
+    
+    .countdown__button-wrapper {
+        margin-top: 40px;
+    }
 }
 
 

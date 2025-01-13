@@ -21,7 +21,12 @@ class ChallengeTimer {
       },
     ],
     'slider-mobile': [
-      
+      {
+        top: '0px',
+      },
+      {
+        top: '-57px'
+      },
     ],
   }
   alignTimeNumer(value) {
@@ -87,7 +92,7 @@ class ChallengeTimer {
     const minutes = Math.floor((this.diffSeconds - hours * 3600) / 60);
     const seconds = (this.diffSeconds - hours * 3600 - minutes * 60);
     const secondTen = Math.floor(seconds / 10);
-    const secondUnit = 0;
+    const secondUnit = 9;
 
     if (this.currentSecondAnimated === null) {
       this.currentSecondAnimated = secondUnit;
@@ -115,6 +120,7 @@ class ChallengeTimer {
     this.updateCounterBlock();
     this.mode = (window.biafitManager.isMobile() ? 'mobile' : 'desktop');
 
+    // TODO: uncomment countdown
     setInterval(() => {
       this.startAnimation();
     }, 1000);
@@ -220,7 +226,6 @@ class ChallengeProduct {
 
 const challengeTimer = new ChallengeTimer();
 const challengeProduct = new ChallengeProduct();
-window.onload = e => {
-  challengeTimer.initCountdoun();
-  challengeProduct.initChallengePage(window.challengeId);
-}
+challengeTimer.initCountdoun();
+challengeProduct.initChallengePage(window.challengeId);
+document.querySelector('.header__heading-link')?.setAttribute('href', '#');

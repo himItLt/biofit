@@ -47,7 +47,11 @@
         </p>
       {%- endif -%}
     </div>
-
+    {% if item.product.type == 'Subscription' %}
+      {% assign colspan = 1 %}
+    {% else %}
+      {% assign colspan = 2 %}
+    {% endif %}
     <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
         <div class="js-contents">
@@ -58,7 +62,7 @@
               </caption>
               <thead>
                 <tr>
-                  <th class="cart-item__title" colspan="1" scope="col">
+                  <th class="cart-item__title" colspan="{{ colspan }}" scope="col">
                     {{ 'sections.cart.headings.product' | t }}
                   </th>
                   <th class="cart-item__totals" colspan="1" scope="col">
@@ -80,8 +84,8 @@
               <tbody>
                 {%- for item in cart.items -%}
                   <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
-                    {% comment %}
-                       <td class="cart-item__media">
+                    {% if item.product.type != 'Subscription' %}
+                      <td class="cart-item__media">
                       {% if item.image %}
                         {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
                         <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
@@ -96,10 +100,8 @@
                           >
                         </div>
                       {% endif %}
-                    </td>
-                    {% endcomment %}
-                   
-
+                      </td>
+                    {% endif %}
                     <td class="cart-item__details">
                       {% comment %}
                         Subscription Plan

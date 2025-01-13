@@ -5,6 +5,13 @@
   border-radius: 12px;
   box-shadow: 0px 2px 20px 0px rgba(242, 51, 105, 0.1);
   width: fit-content;
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20.8px;
+  text-align: left;
+  color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
 }
 
 .about-challenge__text p strong, .about-challenge__services .red {
@@ -12,9 +19,18 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .about-challenge__caption {
+    font-family: Poppins, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 44.8px;
+    text-align: left;
+    text-transform: uppercase;
+    color: rgba(65, 65, 66, 1);
+    margin-bottom: 10px;
+  }
   .about-challenge__content {
     width: 561px;
-    margin-left: calc(50vw - 740px);
     margin-top: -100px;
   }
   .about-challenge__media {
@@ -42,31 +58,61 @@
 }
 
 @media screen and (max-width: 430px) {
-  .about-challenge__media {
-    width: 321px;
-    margin-top: -20px;
-    margin-bottom: 20px;
-    margin-left: 90px;
+  .about-challenge__content {
+    width: 345px;
+    margin: auto;
+  }
+  .about-challenge__heading {
+    line-height: 42px;
   }
 
-  .about-challenge__services .button-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-  .section-about-challenge {
-    margin-top: 0px !important;
+  .about-challenge__media {
+    position: relative;
+    width: 100%;
+    margin-top: -15px;
   }
   .section-about-challenge .button-wrapper {
+    padding-top: 40px;
+  }
+
+  .about-challenge__grid {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 15px;
+    gap: 4px;
+  }
+
+  .about-challenge__caption {
+    font-family: Poppins, sans-serif;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 28px !important;
+    text-align: left;
+    text-transform: uppercase;
+    color: #414142;
+    margin-bottom: 10px;
+  }
+
+  .about-challenge__services .service-item {
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20.2px;
+    text-align: left;
+    padding: 12px;
+    width: max-content;
+    height: 42px;
+  }
+
+  .about-challenge__media-item {
+    width: 100%;  
   }
   .about-challenge__text-item {
-    height: 650px;
+    width: 100%;
   }
-  .section-about-challenge a.button {
-    width: 360px;
+
+  .section-about-challenge .button-wrapper {
+    margin-top: 40px;
   }
 }
 

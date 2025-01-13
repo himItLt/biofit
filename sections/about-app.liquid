@@ -10,7 +10,8 @@
             class="about-app__heading"
             {{ block.shopify_attributes }}
           >
-            {{ block.settings.heading }}
+            <!-- {{ block.settings.heading }} -->
+            The BiaFit App: Your Evidence-<br class="m-break">Based Training Companion!
           </h2>
         {%- endcase -%}
       {%- endfor -%}
@@ -22,23 +23,34 @@
       </div>
       <div class="about-app__text-item">
         <div class="about-app__content">
+          <div class="main-content">
           {%- for block in section.blocks -%}
             {% case block.type %}
             {%- when 'caption' -%}
                 <h3 class="about-app__caption">{{ block.settings.caption | escape }}</h3>
               {%- when 'text' -%}
-                <div class="main-content">
                   <div class="about-app__text">
                     {{ block.settings.text }}
                   </div>
                   <div class="about-app__services">
-                    <div class="service-item item-icon-1">Access to 50+ Home & Gym Programs for Strength, Hypertrophy, Cardio, Warmup & Mobility</div>
-                    <div class="service-item item-icon-2">Enjoy Holly's Dietician Approved Recipe Library (250+ recipes with new ones added monthly!)</div>
-                    <div class="service-item item-icon-3">Stay Motivated with Workout and Progress Tracking, Personal Bests, and Detailed Volume and Lifting Analytics</div>
-                    <div class="service-item item-icon-4">Monitor Your Energy Expenditure, Track Your Steps, and Record<br> Your Weight Daily to stay on track with your goals</div>
-                    <div class="service-item item-icon-5">Receive Training Insights and Resources from Holly and Join a Private Support Community with women on the same journey</div>
+                    <div class="service-item item-icon-1">
+                      Access To 50+ Home & Gym Programs For Strength, Hypertrophy, Fat <br class="d-break">
+                      Loss, Cardio, Warmup & Mobility
+                    </div>
+                    <div class="service-item item-icon-2">
+                      Enjoy Holly's Dietician Approved Recipe Library (250+ Recipes With New <br class="d-break">
+                      Ones Added Monthly!)
+                    </div>
+                    <div class="service-item item-icon-3">Stay Motivated With Workout And Progress Tracking, Personal Bests, <br class="d-break">
+                    And Detailed Volume And Lifting Analytics</div>
+                    <div class="service-item item-icon-4">
+                      Monitor Your Energy Expenditure, Track Your Steps, And Record Your <br class="d-break">
+                      Weight Daily To Stay On Track With Your Goals</div>
+                    <div class="service-item item-icon-5">
+                      Receive Training Insights And Resources From Holly And Join A Private <br class="d-break">
+                      In-App Support Community With Women On The Same Journey
+                    </div>
                   </div>
-                </div>
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
                 <div class="button-wrapper">
@@ -49,6 +61,7 @@
                 {%- endif -%}
             {%- endcase -%}
           {%- endfor -%}
+          </div>
         </div>
       </div>
     </div>

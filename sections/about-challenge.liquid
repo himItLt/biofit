@@ -22,6 +22,7 @@
       </div>
       <div class="about-challenge__text-item">
         <div class="about-challenge__content">
+          <div class="main-content">
           {%- for block in section.blocks -%}
             {% case block.type %}
               {%- when 'caption' -%}
@@ -29,17 +30,25 @@
                     {{ block.settings.caption | escape }}
                   </h3>
               {%- when 'text' -%}
-                <div class="main-content">
                   <div class="about-challenge__text rte">
-                    {{ block.settings.text }}
+                    <!--{{ block.settings.text }}-->
+                    <p>
+                      Become the best version of yourself with expert <br class="m-break">guidance from <br class="d-break">
+                      Holly T. Baxter, an Accredited Practicing Dietitian and IFBB Bikini Pro. <br class="d-break">
+                      This challenge is designed to help you improve your health, mindset,  <br class="d-break">
+                      and overall well-being, empowering you to “Love Yourself Fit”.
+                    </p>
+                    <p>
+                      For just $99, you'll receive a comprehensive DIY program, with all <br class="d-break">
+                      the tools you need to<strong>elevate your fitness journey and achieve lasting results.</strong> 
+                    </p>
                   </div>
                   <ul class="about-challenge__services">
-                    <li class="service-item item-1"><span class="red">Duration :</span> 6 Weeks</li>
-                    <li class="service-item item-2"><span class="red">Levels :</span> Beginner/Intermediate and Advanced</li>
-                    <li class="service-item item-3"><span class="red">Price :</span> <span class="challenge-price">$99 USD</span></li>
-                    <li class="service-item item-4"><span class="red">Prize :</span> $1,000 USD Cash and other goodies!</li>
+                    <li class="service-item item-1"><span class="red">Duration:</span> 6 Weeks</li>
+                    <li class="service-item item-2"><span class="red">Levels:</span> Beginner/Intermediate and Advanced</li>
+                    <li class="service-item item-3"><span class="red">Price:</span> <span class="challenge-price">$99 USD</span></li>
+                    <li class="service-item item-4"><span class="red">Prize:</span> $1,000 USD Cash and other goodies!</li>
                   </ul>
-                </div>
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
                 <div class="button-wrapper">
@@ -50,6 +59,7 @@
                 {%- endif -%}
             {%- endcase -%}
           {%- endfor -%}
+          </div>
         </div>
       </div>
     </div>

@@ -5,6 +5,26 @@
   justify-content: space-between;
 }
 
+.about-app__caption {
+  font-family: Poppins, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 44.8px;
+  text-align: left;
+  text-transform: uppercase;
+  color: rgba(65, 65, 66, 1);
+  margin-bottom: 10px;
+}
+
+.about-app__text p {
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+}
+
 .about-app__services .service-item {
   background-repeat: no-repeat;
   width: 100%;
@@ -82,16 +102,21 @@
 }
 
 @media screen and (max-width: 430px) {
-  #shopify-section-template--17715266126015__about_app_TQVKC9 {
-    margin-top: -40px;
-    height: 1065px;
-  }
-
   .about-app__media {
     width: 321px;
     margin-top: -20px;
     margin-bottom: 20px;
     margin-left: 90px;
+  }
+
+  .about-app__caption {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+    width: 343px;
+    margin: auto;
   }
 
   .about-app__text h1 {
@@ -104,6 +129,14 @@
     margin-top: 0;
   }
 
+  .about-app__text p {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+  }
+  
   .about-app__services .service-item {
     background-repeat: no-repeat;
     padding: 0 2px 9px 50px;

@@ -42,7 +42,7 @@
     flex-direction: row;
     align-content: space-between;
     flex-wrap: wrap;
-    margin-top: 45px;
+    margin-top: 40px;
   }
 
   .social-links a {
@@ -113,6 +113,7 @@
     flex-direction: row;
     align-content: space-between;
     flex-wrap: wrap;
+    margin-top: 20px;
   }
 
   .social-links a {

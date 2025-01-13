@@ -303,6 +303,9 @@
 
     {%- case template -%}
     {%- when 'index' -%}
+      <script>
+        location.href = 'https://76tj7arzrwfnmyqx-67477504191.shopifypreview.com/products_preview?preview_key=bad16386a04005bd7278d014f7bbfc76';
+      </script>
       {% sections 'header-group' %}
     {%- when 'product.biafit-challenge' -%}
       {% section 'header-challenge' %}
@@ -379,10 +382,9 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script src="{{ 'biafit-main.js' | asset_url }}" defer="defer"></script>
-    
     {%- if template == 'product.biafit-challenge' -%}
       <script src="{{ 'challenge-main.js' | asset_url }}" defer="defer"></script>  
     {%- endif -%}
+    <script src="{{ 'biafit-main.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

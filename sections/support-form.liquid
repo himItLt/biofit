@@ -1,7 +1,7 @@
 {{ 'section-support-form.css' | asset_url | stylesheet_tag }}
 {{ 'section-support-form.mobile.css' | asset_url | stylesheet_tag }}
 
-<div class="color-{{ section.settings.color_scheme }} gradient" id="support-section">
+<div class="color-{{ section.settings.color_scheme }} gradient" id="contact-section">
   <div class="support page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title">
@@ -20,8 +20,15 @@
       <div class="description">
         <h3 class="subtitle">Want <span>Personalized Support?</span></h3>
         <p class="subtitle">Work 1-on-1 with Holly for a custom experience and receive:</p>
+        <ul class="support__services">
+          <li class="service-item item-1">All of the above plus</li>
+          <li class="service-item item-2">6 weeks of 1-on-1<br> nutrition coaching</li>
+          <li class="service-item item-3">Weekly coaching check-ins<br> with Holly</li>
+          <li class="service-item item-4">Personalized nutrition plan<br> + education for your goals</li>
+          <li class="service-item item-5">Post-coaching support &<br> nutrition guidance</li>
+        </ul>
       </div>
-    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+    {%- form 'support', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
           {{- 'icon-success.svg' | inline_asset_content -}}

@@ -134,5 +134,7 @@
   }
 
 @media screen and (min-width: 1440px) {
-  
+  .support__services {
+    display: none !important;
+  }  
 }

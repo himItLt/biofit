@@ -9,8 +9,10 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    width: 100%;
-    margin-top: -30px;
+    width: 1236px;
+    top: -30px;
+    margin: auto;
+    position: relative;
   }
 
   .section-membership .plans-form {
@@ -135,12 +137,12 @@
 
   .membership__media-item {
     width: 500px;
-    margin-right: calc(50vw - 610px);
+    margin-right: 0;
   }
 
   .membership__text-item {
     width: 548px;
-    margin-left: calc(50vw - 565px);
+    margin-left: 0;
   }
 
   .membership__text h2 {

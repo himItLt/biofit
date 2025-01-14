@@ -28,6 +28,7 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
   <div class="page-width">
     <div class="image-with-text">
+      <!-- TODO: add flex, remove image item -->
       <div class="image-with-text__grid">
         <div class="image-with-text__media-item">
           <div class="image-with-text__media">
@@ -56,7 +57,7 @@
           </div>
         </div>
         <div class="image-with-text__text-item">
-          <div id="ImageWithText--{{ section.id }}" class="image-with-text__content">
+          <div id="ImageWithText--{{ section.id }} " class="image-with-text__content">
             {%- for block in section.blocks -%}
               {% case block.type %}
                 {%- when 'heading' -%}
@@ -66,15 +67,15 @@
                   >
                     IT'S FINALLY HERE!<br>
                     OUR BRAND NEW<br> 
-                    BIAFIT WORKOUT APP!  
+                    BIAFIT WORKOUT APP!
                   </h2>
                 {%- when 'caption' -%}
                   <p
                     class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
                     {{ block.shopify_attributes }}
                   >
-                    We'll help you become the best version of yourself, with customized,<br>
-                    supportive and empowering training programs and guidance.
+                    We'll help you become the best versio <br class="m-break">of yourself, with customized,<br class="d-break">
+                    supportive and <br class="m-break">empowering training programs and expert guidance.
                   </p>
                 {%- when 'text' -%}
                   <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>

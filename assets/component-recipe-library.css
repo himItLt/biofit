@@ -75,19 +75,21 @@
   }
   .recipe-library_info {
     width: 526px;
-    margin-left: calc(50vw - 565px);
+    margin-left: 92px;
   }
   .recipe-library__media {
     position: relative;
     width: 530px;
     top: -50px;
-    margin-right: calc(50vw - 620px);
+    margin-right: 105px;
   }
+  
   .recipe-library__grid {
     display: flex;
-    width: 100%;
+    width: 1328px;
     flex-direction: row-reverse;
     justify-content: space-between;
+    margin: auto;
   }  
 }
 

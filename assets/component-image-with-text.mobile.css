@@ -1,5 +1,5 @@
 @media screen and (max-width: 430px) {
-  .section-template--17715266126015__image_with_text_3PaXKQ-padding .page-width {
+  .page-width:has(.image-with-text) {
     height: 850px;
   }
   .image-with-text {

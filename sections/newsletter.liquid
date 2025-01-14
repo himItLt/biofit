@@ -36,7 +36,10 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.heading }}
+                {% comment %} {{ block.settings.heading }} {% endcomment %}
+                Sign up and receive our free <br class="m-break">
+                Sweets & Desserts <br class="m-break"> 
+                Recipe Ebook 
               </h2>
             {%- when 'paragraph' -%}
               <div
@@ -47,7 +50,7 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                Enjoy 10 of Holly's dietician-approved recipes FREE to help you
+                Enjoy 10 of Holly's dietician-approved recipes FREE <br class="m-break">to help you
                 reach your goals.
               </div>
             {%- when 'email_form' -%}

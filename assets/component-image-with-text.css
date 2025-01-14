@@ -16,7 +16,12 @@
     top: -80px;
     width: 85%;
     float: left;
+    /* TODO: remove calc padding */
     padding-left: calc(50vw - 665px);
+    max-width: 725px;
+    padding: 0;
+    margin-top: 45px;
+    margin-left: 200px;
   }
 
   .image-with-text__heading {
@@ -81,13 +86,6 @@
 
   .image-with-text__text-item {
     top: 165px;
-  }
-
-  #ImageWithText--template--17681880875199__image_with_text_3PaXKQ {
-    max-width: 725px;
-    padding: 0;
-    margin-top: 45px;
-    margin-left: 200px;
   }
 }
 

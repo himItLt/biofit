@@ -1,13 +1,3 @@
-.social-links .instagram {
-  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/instagram.svg?v=1736323231');
-}
-.social-links .youtube {
-  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/youtube.svg?v=1736323231');
-}
-.social-links .facebook {
-  background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/facebook.svg?v=1736323230');
-}
-
 .social-links a:hover {
   background-color: rgba(254, 243, 246, 1);
 }

@@ -20,20 +20,6 @@
     background-color: #fff;
 }
 
-.biafit-footer .social-links .instagram {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-instagram.svg?v=1736323231');
-}
-
-.biafit-footer .social-links .facebook {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-facebook.png?v=1735411341');
-}
-
-.biafit-footer .social-links .youtube {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/footer-youtube.svg?v=1736323231');
-}
-.biafit-footer .service-title {
-    visibility: hidden;
-}
 @media screen and (min-width: 1440px) {
     .biafit-footer.mobile {
         display: none;

@@ -1,2 +1,2 @@
-# biofit
-BioFit Shopify project
+# biafit
+BiaFit Shopify project

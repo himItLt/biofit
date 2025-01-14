@@ -99,7 +99,7 @@
     font-weight: 600;
     color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
   }
-  
+  /* TODO: fix tempale id class */
   cart-items.section-template--17715265798335__cart-items-padding {
     padding-bottom: 0px !important;
     padding-top: 10px;
@@ -109,7 +109,6 @@
   cart-items .continue-shopping {
     display: block;
     padding-left: 30px;
-    background-image: url("https://cdn.shopify.com/s/files/1/0674/7750/4191/files/arrow-left-shopping.png?v=1736095557");
     background-position: center left;
     background-repeat: no-repeat;
     width: 200px;

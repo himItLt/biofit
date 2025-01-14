@@ -10,6 +10,14 @@
   {
     "name": "t:settings_schema.logo.name",
     "settings": [
+      // TODO: image settings 
+      {
+        "type": "text",
+        "id": "image_cdn_path",
+        "label": "Image CDN Path",
+        "default": 
+        
+      },
       {
         "type": "image_picker",
         "id": "logo",

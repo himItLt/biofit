@@ -1,7 +1,6 @@
 
 @media screen and (max-width: 430px) {
   .section-membership {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/mobile-membership.png?v=1735673668');
     background-repeat: no-repeat;
     background-size: cover;
     height: 622px;
@@ -53,7 +52,6 @@
 
   .section-membership .plan-item.unchecked::before {
     content: '';
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/plan-unchecked.png?v=1735486119');
     background-repeat: no-repeat;
     background-size: contain;
     width: 24px;
@@ -62,7 +60,6 @@
 
   .section-membership .plan-item.checked::before {
     content: '';
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/plan-checked.png?v=1735486119');
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: center;
@@ -134,7 +131,6 @@
   .section-membership .plan-info.best-price:before {
     content: '';
     position: absolute;
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/best-value-badge.png?v=1735490502');
     background-repeat: no-repeat;
     margin-top: -23px;
     margin-left: -79px;

@@ -1,3 +1,11 @@
 {
-    "explorer.sortOrder": "mixed"
+    "explorer.sortOrder": "mixed",
+    "workbench.colorCustomizations": {
+
+        "editor.selectionBackground": "#686f88",
+        "editor.selectionHighlightBackground": "#a4b4d615",
+        "editor.lineHighlightBackground": "#ffffff05",
+        "editor.wordHighlightBackground": "#ffffff15",
+        /*"editorCursor.foreground": "#<color5>"*/
+    }
 }

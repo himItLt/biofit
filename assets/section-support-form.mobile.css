@@ -1,6 +1,5 @@
 @media screen and (max-width: 430px) {
   .support {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/support-mobile-bg.png?v=1736759719');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -60,21 +59,6 @@
     background-size: 28px 28px;
     display: flex;
     align-items: center;
-  }
-  .support__services .item-1 {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/support-icon-1.svg?v=1736761521');
-  }
-  .support__services .item-2 {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/support-icon-2.svg?v=1736761521');
-  }
-  .support__services .item-3 {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/support-icon-3.svg?v=1736761521');
-  }
-  .support__services .item-4 {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/support-icon-4.svg?v=1736761521');
-  } 
-  .support__services .item-5 {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/support-icon-5.svg?v=1736761521');
   }
   .support form {
     max-width: 345px;

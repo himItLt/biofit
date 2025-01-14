@@ -52,7 +52,6 @@ product-info {
   }
 
   .challenge-main-wrapper {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/challenge-main-bg.png?v=1736534110');
     height: 935px;
     margin-top: -100px;
     position: relative;
@@ -74,7 +73,6 @@ product-info {
     display: block;
     width: 865px;
     height: 247px;
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/challenge-love-fit.png?v=1736534167');
     background-repeat: no-repeat;
     background-size: calc(100% - 80px) 100%;
     background-position: 105px;
@@ -102,7 +100,6 @@ product-info {
     text-transform: uppercase;
   }
   .challenge-main .date-value {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/calendar-icon.svg?v=1736528030');
     background-repeat: no-repeat;
     background-size: 24px 24px;
     background-position: 16px center;

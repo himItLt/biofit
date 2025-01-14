@@ -185,14 +185,12 @@
     }
 
     .collection {
-        background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/programs-bg.png?v=1735123508');
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     .collection .card__heading {
         color: #fff;
-        background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/program-title-icon.png?v=1735123507');
         background-position: left;
         height: 44px;
         background-size: contain;
@@ -356,6 +354,7 @@
         max-width: 100%;
     }
 
+    /* TODO: remove template class */
     .section-template--17715266126015__featured_collection_Nay7xH-padding {
         padding-top: 36px !important;
         padding-bottom: 110px !important;
@@ -376,12 +375,10 @@
 }
 
 .slider-button.slider-button--prev {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/button-prev.png?v=1735320986');
     margin-right: 8px;
 }
 
 .slider-button.slider-button--next {
-    background-image: url('https://cdn.shopify.com/s/files/1/0674/7750/4191/files/button-next.png?v=1735320986');
     margin-left: 8px;
 }
 

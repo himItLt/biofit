@@ -17,7 +17,7 @@
     <div class="about-challenge__grid">
       <div class="about-challenge__media-item">
         <div class="about-challenge__media">
-          <img src="{{ cdn_image_path }}about-challenge.png?v=1736525015" width="100%" height="100%">
+          <img src="{{ settings.image_cdn_path }}about-challenge.png?v=1736525015" width="100%" height="100%">
         </div>
       </div>
       <div class="about-challenge__text-item">
@@ -40,7 +40,7 @@
                     </p>
                     <p>
                       For just $99, you'll receive a comprehensive DIY program, with all <br class="d-break">
-                      the tools you need to<strong>elevate your fitness journey and achieve lasting results.</strong> 
+                      the tools you need to <strong>elevate your fitness journey and achieve lasting results.</strong> 
                     </p>
                   </div>
                   <ul class="about-challenge__services">
@@ -52,7 +52,7 @@
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
                 <div class="button-wrapper">
-                  <a href="#" class="button button--primary biafit" id="about-challenge-button">
+                  <a href="#" class="button button--primary biafit-buy-button" id="about-challenge-button">
                     Join Now
                   </a>
                 </div>

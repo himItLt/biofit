@@ -19,6 +19,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .about-challenge__services {
+    margin-top: 40px;
+  }
+  
   .about-challenge__caption {
     font-family: Poppins, sans-serif;
     font-size: 32px;
@@ -50,14 +54,17 @@
     justify-content: center;
   }
   .about-challenge__media-item {
-    width: 700px;  
+    width: 580px;  
   }
   .about-challenge__text-item {
-    width: 700px;
+    width: 580px;
   }
 }
 
 @media screen and (max-width: 430px) {
+  .section-about-challenge {
+    margin-top: 10px;
+  }
   .about-challenge__content {
     width: 345px;
     margin: auto;
@@ -71,10 +78,7 @@
     width: 100%;
     margin-top: -15px;
   }
-  .section-about-challenge .button-wrapper {
-    padding-top: 40px;
-  }
-
+  
   .about-challenge__grid {
     display: flex;
     flex-direction: column;
@@ -113,6 +117,9 @@
 
   .section-about-challenge .button-wrapper {
     margin-top: 40px;
+    padding-top: 0;
+    margin-bottom: 20px;
   }
+  
 }
 

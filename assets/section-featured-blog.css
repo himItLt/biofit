@@ -35,20 +35,19 @@
     display: block;
   }
   .blog__title {
-    top: 10px;
+    top: 45px;
     left: 5px;
   }
 
   .blog .article-card-wrapper {
       height: 409px;
-      border-radius: 12px;
-      border: 1px solid rgba(226, 226, 226, 1);
-      box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.05);
       width: 317px;
   }
 
   .blog .article-card__image-wrapper {
-      border-radius: 12px 12px 0 0 !important;
+      border-radius: 12px;
+      border: 1px solid rgba(226, 226, 226, 1);
+      box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.05);
   }
 
   .blog .card__heading {

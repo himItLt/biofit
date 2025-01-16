@@ -88,9 +88,6 @@
   .image-with-text {
     background-image: url('{{ cdn_image_path }}homepage-main-bg.png?v=1735043839') !important;
   }
-  .image-with-text {
-    background-image: url('{{ cdn_image_path }}home-page-mobile-bg.png?v=1735575810') !important;
-  }
   .section-membership {
     background-image: url('{{ cdn_image_path }}membership-bg.png?v=1735132163');
   }
@@ -103,20 +100,11 @@
   .section-membership .plan-info.best-price:before {
     background-image: url('{{ cdn_image_path }}best-value-badge.png?v=1735490502');
   }
-  .section-membership {
-    background-image: url('{{ cdn_image_path }}mobile-membership.png?v=1735673668');
-  }
-  .section-membership .plan-info.best-price:before {
-    background-image: url('{{ cdn_image_path }}best-value-badge.png?v=1735490502');
-  }
   .content-item::before {
     background-image: url('{{ cdn_image_path }}recipes-item-icon.svg?v=1736323230');
   }
   .whats-included__services > li {
     background-image: url('{{ cdn_image_path }}recipes-item-icon.svg?v=1736323230');
-  }
-  .newsletter {
-    background-image: url("{{ cdn_image_path }}mobile-sign-up.png?v=1735673668");
   }
   .challenge-main-wrapper {
     background-image: url('{{ cdn_image_path }}challenge-main-bg.png?v=1736534110');
@@ -127,23 +115,11 @@
   .challenge-main .date-value {
     background-image: url('{{ cdn_image_path }}calendar-icon.svg?v=1736528030');
   }
-  .challenge-main-wrapper {
-    background-image: url('{{ cdn_image_path }}challenge-main-mobile-bg.png?v=1736534110');
-  }
-  .challenge-main .date-value {
-    background-image: url('{{ cdn_image_path }}calendar-icon.svg?v=1736528030');
-  }
   .contact {
     background-image: url('{{ cdn_image_path }}contact-us-bg.png?v=1735132163') !important;
   }
-  .contact form {
-    background-image: url('{{ cdn_image_path }}mobile-contact-us.png?v=1735673668');
-  }
   .support .support__main-content {
     background-image: url('{{ cdn_image_path }}support-bg.png?v=1736614949') !important;
-  }
-  .support {
-    background-image: url('{{ cdn_image_path }}support-mobile-bg.png?v=1736759719');
   }
   .support__services .item-1 {
     background-image: url('{{ cdn_image_path }}support-icon-1.svg?v=1736761521');
@@ -160,5 +136,28 @@
   .support__services .item-5 {
     background-image: url('{{ cdn_image_path }}support-icon-5.svg?v=1736761521');
   }
+  .section-grand-prize {
+    background-image: url('{{ cdn_image_path}}grand-prize-bg.png?v=1736942391');
+  }
 
+  @media screen and (max-width: 430px) {
+    .image-with-text {
+      background-image: url('{{ cdn_image_path }}home-page-mobile-bg.png?v=1735575810') !important;
+    }
+    .section-membership {
+      background-image: url('{{ cdn_image_path }}mobile-membership.png?v=1735673668');
+    }
+    .newsletter {
+      background-image: url("{{ cdn_image_path }}mobile-sign-up.png?v=1735673668");
+    }
+    .challenge-main-wrapper {
+      background-image: url('{{ cdn_image_path }}challenge-main-mobile-bg.png?v=1736534110');
+    }
+    .contact form {
+      background-image: url('{{ cdn_image_path }}mobile-contact-us.png?v=1735673668');
+    }
+    .support {
+      background-image: url('{{ cdn_image_path }}support-mobile-bg.png?v=1736759719');
+    }
+  }
 </style>

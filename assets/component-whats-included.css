@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  gap: 0 !important;
+  gap: 6px !important;
+  margin-top: 0px !important;
 }
 
 .whats-included__services > li {
@@ -66,6 +67,7 @@
     width: 1328px;
     margin:auto;
     justify-content: space-between;
+    height: 560px;
   }
   
   .whats-included__media {
@@ -74,19 +76,23 @@
     top: -120px;
     float: right;
   }
-  .section-whats-included .button-wrapper {
-    padding-top: 40px;
+  .whats-included__button-wrapper {
+    margin-top: 40px;
   }
 
   .whats-included__media-item {
     width: 630px;  
   }
   .whats-included__text-item {
-    width: 550px;
+    width: 615px;
   }
 }
 
 @media screen and (max-width: 430px) {
+  .section-whats-included {
+    margin-top: 20px;
+    height: 1030px;
+  }
   .whats-included__caption {
     width: 345px;
   }
@@ -108,7 +114,7 @@
     position: relative;
     height: 340px;
     width: 342px;
-    margin-top: -30px;
+    margin-top: -20px;
   }
   .section-whats-included .button-wrapper {
     padding-top: 40px;
@@ -124,11 +130,15 @@
     background-position: left center;
     background-size: 24px 24px;
     height: 48px;
-    width: 340px;
+    width: 100%;
     padding: 0 0 0 35px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
   }
   .whats-included__button-wrapper {
     margin-top: 32px;
+    margin-bottom: 20px;
   }
 }
 

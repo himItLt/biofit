@@ -13,6 +13,8 @@ product-info {
   border-radius: 0;
   border: 0;
   box-shadow: none;
+  margin: auto;
+  position: relative;
 }
 #header-challenge .header__menu-item {
   color: var(--Light-Grey, rgba(244, 244, 244, 1));
@@ -39,6 +41,12 @@ product-info {
 }
 
 @media screen and (min-width: 1440px) {
+  #header-challenge .header, #header-challenge {
+    width: 1328px;
+    min-width: 1328px;
+    top: 13px;
+  }
+
   .header__heading-logo {
     height: 25px;
     width: auto;

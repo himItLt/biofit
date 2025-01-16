@@ -20,6 +20,10 @@
     background-color: #fff;
 }
 
+.biafit-footer .service-title {
+    visibility: hidden;
+}
+
 @media screen and (min-width: 1440px) {
     .biafit-footer.mobile {
         display: none;

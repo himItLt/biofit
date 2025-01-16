@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "challenge_redirect": "https://biafitapp.myshopify.com/products/love-yourself-fit-2025-6-week-challenge",
     "logo": "shopify://shop_images/logo-header-desktop.png",
     "logo_width": 140,
     "type_header_font": "din_neuzeit_grotesk_n3",
@@ -109,13 +110,13 @@
     "brand_headline": "DAWN",
     "brand_description": "<p>Empowering transformations through personalized fitness journeys and trusted testimonials.</p>",
     "brand_image_width": 465,
-    "social_facebook_link": "",
-    "social_instagram_link": "http://instagram.com/",
-    "social_youtube_link": "",
-    "social_tiktok_link": "https://tiktok.com",
-    "social_twitter_link": "x.com",
+    "social_facebook_link": "https://www.facebook.com/TeamBiaFit",
+    "social_instagram_link": "https://www.instagram.com/teambiafit/",
+    "social_youtube_link": "https://www.youtube.com/c/HollyTBaxter",
+    "social_tiktok_link": "",
+    "social_twitter_link": "",
     "social_snapchat_link": "",
-    "social_pinterest_link": "pinterest.com",
+    "social_pinterest_link": "",
     "social_tumblr_link": "",
     "social_vimeo_link": "",
     "predictive_search_enabled": true,

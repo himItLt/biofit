@@ -123,12 +123,9 @@ class Manager {
     })
   }
 }
+
 const manager = new Manager();
 window.biafitManager = manager;
-
-console.log('test');
-manager.initHeaderLinks();
-manager.trackMobileMenu();
 
 /**
  * Slider customization
@@ -568,7 +565,14 @@ class BiafitSlider {
 }
 
 const biafitSlider = new BiafitSlider();
-biafitSlider.lockClick();
-biafitSlider.initProgramsCarusel();
-biafitSlider.initTestimonialsCarusel();
-//biafitSlider.setupTimers();
+
+/* Initialize */
+window.onload = (e) => {
+  manager.initHeaderLinks();
+  manager.trackMobileMenu();
+
+  biafitSlider.lockClick();
+  biafitSlider.initProgramsCarusel();
+  biafitSlider.initTestimonialsCarusel();
+  biafitSlider.setupTimers();
+}

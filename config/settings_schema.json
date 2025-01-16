@@ -8,16 +8,25 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
-    "name": "t:settings_schema.logo.name",
+    "name": "Biafit Options",
     "settings": [
-      // TODO: image settings 
       {
         "type": "text",
         "id": "image_cdn_path",
         "label": "Image CDN Path",
-        "default": 
-        
+        "default": "https://cdn.shopify.com/s/files/1/0674/7750/4191/files/"
       },
+      {
+        "type": "text",
+        "id": "challenge_redirect",
+        "label": "Challenge product redirect",
+        "default": "https://165kxgm0thtkimtk-67477504191.shopifypreview.com/products_preview?preview_key=f5cb287aa614d0654f2f5028d3e3da0b"
+      },
+    ]
+  },
+  {
+    "name": "t:settings_schema.logo.name",
+    "settings": [
       {
         "type": "image_picker",
         "id": "logo",

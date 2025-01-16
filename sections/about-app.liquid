@@ -10,15 +10,14 @@
             class="about-app__heading"
             {{ block.shopify_attributes }}
           >
-            <!-- {{ block.settings.heading }} -->
-            The BiaFit App: Your Evidence-<br class="m-break">Based Training Companion!
+            {{ block.settings.heading }}
           </h2>
         {%- endcase -%}
       {%- endfor -%}
     <div class="about-app__grid">
       <div class="about-app__media-item">
         <div class="about-app__media">
-          <img src="{{ cdn_image_path }}about-app.png?v=1736524892" width="100%" height="100%">
+          <img src="{{ settings.image_cdn_path }}about-app.png?v=1736524892" width="100%" height="100%">
         </div>
       </div>
       <div class="about-app__text-item">
@@ -28,33 +27,33 @@
             {% case block.type %}
             {%- when 'caption' -%}
                 <h3 class="about-app__caption">
-                  {{ block.settings.caption | escape }}
+                  {% comment %} {{ block.settings.caption | escape }} {% endcomment %}
+                  The BiaFit App: Your Evidence-<br>Based Training Companion!
                 </h3>
               {%- when 'text' -%}
                   <div class="about-app__text">
                     <!-- {{ block.settings.text }} -->
                     <p>
-                      The <strong>>BRAND NEW BiaFit Workout App</strong> by Dietician and <br class="m-break">
-                      Coach Holly T Baxter, has everything you need to reach <br class="m-break">your goals in the gym:
+                      The <strong>BRAND NEW BiaFit Workout App</strong> by Dietician and Coach Holly T Baxter, has everything you need to reach <br class="d-break">your goals in the gym:
                     </p>
                   </div>
                   <div class="about-app__services">
                     <div class="service-item item-icon-1">
-                      Access To 50+ Home & Gym Programs For <br class="m-break">Strength, Hypertrophy, Fat <br class="d-break">
-                      Loss, Cardio, Warmup & <br class="m-break">Mobility
+                      Access To 50+ Home & Gym Programs For Strength, Hypertrophy, Fat <br class="d-break">
+                      Loss, Cardio, Warmup & Mobility
                     </div>
                     <div class="service-item item-icon-2">
-                      Enjoy Holly's Dietician Approved Recipe Library <br class="m-break">(250+ Recipes With New <br class="d-break">
+                      Enjoy Holly's Dietician Approved Recipe Library (250+ Recipes With New <br class="d-break">
                       Recipes Added Monthly!)
                     </div>
-                    <div class="service-item item-icon-3">Stay Motivated With Workout And Progress <br class="m-break">Tracking, Personal Bests, <br class="d-break">
-                    And Detailed Volume <br class="m-break">And Lifting Analytics</div>
+                    <div class="service-item item-icon-3">Stay Motivated With Workout And Progress Tracking, Personal Bests, <br class="d-break">
+                    And Detailed Volume And Lifting Analytics</div>
                     <div class="service-item item-icon-4">
-                      Monitor Your Energy Expenditure, Track Your <br class="m-break">Steps, And Record Your <br class="d-break">
+                      Monitor Your Energy Expenditure, Track Your Steps, And Record Your <br class="d-break">
                       Weight Daily To Stay On Track With Your Goals</div>
                     <div class="service-item item-icon-5">
-                      Receive Training Insights And Resources From <br class="m-break">Holly And Join A Private <br class="d-break">
-                      In-App Support Community <br class="m-break">With Women On The Same Journey
+                      Receive Training Insights And Resources From Holly And Join A Private <br class="d-break">
+                      In-App Support Community With Women On The Same Journey
                     </div>
                   </div>
               {%- when 'button' -%}

@@ -301,14 +301,15 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% render 'backgrounds-css', cdn_image_path: {{ settings.cdn_image_path }} %}
+    {% render 'backgrounds-css', cdn_image_path: settings.image_cdn_path %}
 
     {%- case template -%}
     {%- when 'index' -%}
-      <script>
-        {% comment %} TODO: Change link to direct or permanent {% endcomment %}
-        location.href = 'https://76tj7arzrwfnmyqx-67477504191.shopifypreview.com/products_preview?preview_key=bad16386a04005bd7278d014f7bbfc76';
-      </script>
+      {% unless settings.challenge_redirect == empty or request.design_mode%}
+        <script>
+          location.href = '{{ settings.challenge_redirect }}';
+        </script>
+      {% endunless %}
       {% sections 'header-group' %}
     {%- when 'product.biafit-challenge' -%}
       {% section 'header-challenge' %}
@@ -385,9 +386,11 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <script src="{{ 'biafit-main.js' | asset_url }}" defer="defer"></script>
+
     {%- if template == 'product.biafit-challenge' -%}
       <script src="{{ 'challenge-main.js' | asset_url }}" defer="defer"></script>  
     {%- endif -%}
-    <script src="{{ 'biafit-main.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>

@@ -66,6 +66,14 @@
             "heading_size": "h1"
           }
         },
+        "caption_gx7RfN": {
+          "type": "caption",
+          "settings": {
+            "caption": "Add a tagline",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "text_HRrFiV": {
           "type": "text",
           "settings": {
@@ -84,6 +92,7 @@
       },
       "block_order": [
         "heading_NWh3ab",
+        "caption_gx7RfN",
         "text_HRrFiV",
         "button_Rih6TP"
       ],

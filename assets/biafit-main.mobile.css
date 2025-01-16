@@ -5,10 +5,6 @@
     .m-break {
         display: inherit;
     }
-    .page-width {
-        overflow: hidden;
-        overflow-y: visible;
-    }
     #programs-section {
         margin-top: -75px;
     }

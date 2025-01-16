@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 640px) {
   .section-grand-prize .page-width {
     height: 845px;
   }

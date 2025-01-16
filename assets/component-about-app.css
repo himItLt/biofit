@@ -90,7 +90,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 640px) {
   .section-about-app .main-content {
     max-width: 345px;
     width: 345px;

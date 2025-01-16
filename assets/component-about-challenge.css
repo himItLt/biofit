@@ -61,7 +61,7 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 640px) {
   .section-about-challenge {
     margin-top: 10px;
   }

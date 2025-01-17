@@ -40,6 +40,10 @@ product-info {
   /*background: linear-gradient(270deg, rgba(0, 0, 0, 0) -14.47%, rgba(0, 0, 0, 0.8) 100%);*/
 }
 
+.challenge-main .date-value span {
+  white-space: nowrap;
+}
+
 @media screen and (min-width: 1440px) {
   #header-challenge .header, #header-challenge {
     width: 1328px;

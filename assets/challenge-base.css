@@ -55,7 +55,7 @@
     background: none;
 }
 
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 990px) {
     .blog .article-card-wrapper {
         height: 317px !important;
     }
@@ -70,7 +70,7 @@
     }
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 980px) {
     .blog .article-card__image-wrapper {
         border-radius: 8px !important;    
     }

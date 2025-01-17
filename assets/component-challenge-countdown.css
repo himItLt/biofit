@@ -111,12 +111,12 @@
 
 
 /* Desktop */
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 990px) {
     
 }
 
 /* Mobile */
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 980px) {
     .countdown__page-wrapper {
         width: 100%;
         height: 370px;

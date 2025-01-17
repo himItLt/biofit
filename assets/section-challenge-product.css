@@ -44,7 +44,7 @@ product-info {
   white-space: nowrap;
 }
 
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 990px) {
   #header-challenge .header, #header-challenge {
     width: 1328px;
     min-width: 1328px;

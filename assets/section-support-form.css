@@ -145,7 +145,7 @@
   background: #fff;
 }
 
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 990px) {
   .support__services {
     display: none !important;
   }

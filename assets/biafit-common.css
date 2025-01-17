@@ -270,7 +270,7 @@ shopify-paypal-button {
   display: none;
 }
 
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 990px) {
   table th.cart-item__totals {
     width: 430px;
   }

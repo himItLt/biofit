@@ -43,7 +43,7 @@
   margin: 0;
 }
 
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 990px) {
   .about-app__content {
     width: 620px;
   }
@@ -87,7 +87,7 @@
   }
 }
 
-@media screen and (max-width: 968px) {
+@media screen and (max-width: 980px) {
   .section-about-app .main-content {
     max-width: 345px;
     width: 345px;

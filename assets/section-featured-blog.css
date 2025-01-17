@@ -11,7 +11,7 @@
   color: var(--Primary, rgba(237, 22, 83, 1));
 }
 
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 990px) {
   .description h2 {
     font-family: Poppins, sans-serif;
     font-size: 32px;

@@ -574,5 +574,5 @@ window.onload = (e) => {
   biafitSlider.lockClick();
   biafitSlider.initProgramsCarusel();
   biafitSlider.initTestimonialsCarusel();
-  // TODO: biafitSlider.setupTimers();
+  // TODO:biafitSlider.setupTimers();
 }

@@ -139,7 +139,13 @@
   color: rgba(65, 65, 66, 1);
 }
 
-@media screen and (min-width: 1440px) {
+.support .custom__form {
+  width: 900px;
+  height: 850px;
+  background: #fff;
+}
+
+@media screen and (min-width: 968px) {
   .support__services {
     display: none !important;
   }

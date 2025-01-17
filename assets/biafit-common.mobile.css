@@ -1,4 +1,4 @@
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 968px) {
   #header-common.header {
     margin-top: 10px;
     height: 75px;
@@ -19,12 +19,6 @@
     height: auto !important;
   }
 
-  /* .cart__items {
-    display: flex;
-    width: 100%;
-    margin-top: 0;
-  } */
-  
   #main-cart-footer {
     border-top: 1px solid rgba(226, 226, 226, 1);
     width: 100%;

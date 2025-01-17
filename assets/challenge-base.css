@@ -40,15 +40,22 @@
 }
 
 .blog .article-card__image-wrapper {
-    box-shadow: 2px 2px 8px #0000000d !important;
-    border: 1px solid rgba(226, 226, 226, 1) !important;    
+    box-shadow: none !important;
+    border: none !important;   
 }
 
 .about-holly__heading {
     margin-top: 30px;
 }
 
-@media screen and (min-width: 1440px) {
+.blog .article-card__image .media {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: none;
+}
+
+@media screen and (min-width: 968px) {
     .blog .article-card-wrapper {
         height: 317px !important;
     }
@@ -63,7 +70,7 @@
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 968px) {
     .blog .article-card__image-wrapper {
         border-radius: 8px !important;    
     }

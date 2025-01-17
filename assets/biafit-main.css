@@ -1,4 +1,23 @@
-@media screen and (min-width: 1440px) {
+:root {
+    --img-ratio: calc(100vw / 1728);
+    --img-ratio-mobile: calc(100vw / 370);
+    --img-ratio-tablet: calc(100vw / 768);
+}
+@media screen and (min-width: 968px) {
+    #MainContent {
+        max-width: 2000px !important;
+        min-width: 1400px !important;
+        margin: auto !important;    
+    }
+
+    #MainContent .shopify-section {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    #MainContent .shopify-section:has(product-info) {
+        overflow: visible;
+    }
     .d-break {
         display: inherit;
     }
@@ -346,12 +365,8 @@
         color: var(--Text-Black, rgba(6, 6, 6, 1));
     }
 
-    .media>*:not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
-        height: fit-content !important;
-    }
-
     .page-width {
-        max-width: 100%;
+        max-width: 100%;    
     }
 
     /* TODO: remove template class */

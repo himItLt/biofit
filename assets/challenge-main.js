@@ -121,9 +121,9 @@ class ChallengeTimer {
     this.mode = (window.biafitManager.isMobile() ? 'mobile' : 'desktop');
 
     // TODO: uncomment countdown
-    setInterval(() => {
+    //setInterval(() => {
       this.startAnimation();
-    }, 1000);
+    //}, 1000);
   }
 }
 

@@ -11,7 +11,7 @@
   color: var(--Primary, rgba(237, 22, 83, 1));
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 968px) {
   .description h2 {
     font-family: Poppins, sans-serif;
     font-size: 32px;
@@ -96,10 +96,11 @@
     padding-left: 0;
     position: relative;
     justify-content: flex-start;
+    gap: 15px;
   } 
 
   .blog .description {
-    margin-left: calc(50vw - 665px);
+    margin-left: calc(200 * var(--img-ratio));
   }
 
   .blog .card__inner {
@@ -112,6 +113,10 @@
 
   .blog .caption-text {
     margin-bottom: 0;
+  }
+  
+  .blog .card__media {
+    width: 317px;
   }
 }
 

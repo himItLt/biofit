@@ -48,7 +48,7 @@
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 968px) {
   .section-grand-prize {
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -89,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 968px) {
   .section-grand-prize .page-width {
     height: 845px;
   }
@@ -113,9 +113,11 @@
   }
 
   .grand-prize__media {
-    width: 321px;
+    width: calc(100% + 40px);
     margin-top: -20px;
     margin-bottom: 20px;
+    position: relative;
+    left: -20px;
   }
 
   .grand-prize__services {

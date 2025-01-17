@@ -1,7 +1,4 @@
 /* BiaFit */
-:root {
-  --img-ratio: calc(100vw / 1728);
-}
 .about-app__services {
   display: flex;
   flex-direction: column;
@@ -46,7 +43,7 @@
   margin: 0;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 968px) {
   .about-app__content {
     width: 620px;
   }
@@ -90,7 +87,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 968px) {
   .section-about-app .main-content {
     max-width: 345px;
     width: 345px;
@@ -117,9 +114,9 @@
   }
   .about-app__media {
     width: 321px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    margin-left: 70px;
+    margin: auto;
+    position: relative;
+    left: 40px;
   }
 
   .about-app__caption {

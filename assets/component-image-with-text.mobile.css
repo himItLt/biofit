@@ -1,4 +1,4 @@
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 968px) {
   .page-width:has(.image-with-text) {
     height: 850px;
   }

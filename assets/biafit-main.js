@@ -3,7 +3,7 @@
  */
 class Manager {
   isMobile() {
-    const mq = window.matchMedia( "(max-width: 430px)" );
+    const mq = window.matchMedia( "(max-width: 768px)" );
     return mq.matches;
   }
 
@@ -397,7 +397,7 @@ class BiafitSlider {
 
     nextBtn.removeAttribute('disabled');
     prevBtn.removeAttribute('disabled');
-
+    
     const config = this.sliderConfig[configName];
 
     if (config) {
@@ -574,5 +574,5 @@ window.onload = (e) => {
   biafitSlider.lockClick();
   biafitSlider.initProgramsCarusel();
   biafitSlider.initTestimonialsCarusel();
-  biafitSlider.setupTimers();
+  // TODO: biafitSlider.setupTimers();
 }

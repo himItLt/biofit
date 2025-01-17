@@ -18,7 +18,7 @@
   color: var(--Primary, rgba(237, 22, 83, 1));
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 968px) {
   .about-challenge__services {
     margin-top: 40px;
   }
@@ -61,7 +61,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 968px) {
   .section-about-challenge {
     margin-top: 10px;
   }
@@ -71,12 +71,12 @@
   }
   .about-challenge__heading {
     line-height: 42px;
-  }
+  } 
 
   .about-challenge__media {
     position: relative;
-    width: 100%;
-    margin-top: -15px;
+    width: 345px;
+    margin: auto;
   }
   
   .about-challenge__grid {

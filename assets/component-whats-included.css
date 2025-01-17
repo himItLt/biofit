@@ -46,7 +46,11 @@
   color: var(--Primary, rgba(237, 22, 83, 1)) !important;
 }
 
-@media screen and (min-width: 1440px) {
+.whats-included__heading {
+  z-index: 0;
+}
+
+@media screen and (min-width: 968px) {
   .whats-included__caption h3 {
     font-family: Poppins, sans-serif;
     font-size: 32px;
@@ -88,7 +92,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 968px) {
   .section-whats-included {
     margin-top: 20px;
     height: 1030px;

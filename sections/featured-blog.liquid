@@ -42,9 +42,9 @@
     </div>
     <slider-component>
       <div class="slider__wrapper">
-        <ul class="blog__posts" role="list">
+        <ul class="blog__posts stopped" role="list">
           {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
-            {%- for article in section.settings.blog.articles limit: section.settings.post_limit -%}
+            {%- for article in section.settings.blog.articles -%}
               <li
                 id="Slide-{{ section.id }}-{{ forloop.index }}"
                 class="blog__post grid__item article slider__slide slider__slide--full-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"

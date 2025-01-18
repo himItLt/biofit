@@ -592,5 +592,5 @@ window.onload = (e) => {
   biafitSlider.initProgramsCarusel();
   biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  biafitSlider.setupTimers();
+  //biafitSlider.setupTimers();
 }

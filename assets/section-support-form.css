@@ -116,9 +116,6 @@
   left: 5px;
 }
 
-.support {
-  height: 800px;
-}
 .support .support__main-content {
   background-size: cover;
   background-position: center;
@@ -139,13 +136,10 @@
   color: rgba(65, 65, 66, 1);
 }
 
-.support .custom__form {
-  width: 900px;
-  height: 850px;
-  background: #fff;
-}
-.support #customForm {
-  border: 0;
+.support #customForm:focus-visible {
+  outline: none;
+  outline-offset: unset;
+  box-shadow: none;
 }
 
 @media screen and (min-width: 990px) {
@@ -163,5 +157,22 @@
   }
   .support .icon {
     margin-top: 6px;
+  }
+  .support {
+    height: 1024px;
+    background-size: 1328px 325px;
+    background-repeat: no-repeat;
+    background-position: center 680px;
+  }
+  .support .custom__form {
+    width: 391px;
+    height: 850px;
+    background-color: transparent;
+    border-radius: 12px;
+    padding-top: 99px;
+  }
+  .support #customForm {
+    border: 0;
+    height: 640px;
   }
 }

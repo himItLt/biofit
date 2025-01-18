@@ -3,13 +3,25 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    height: fit-content;
+    height: 1034px;
     margin-top: 60px;
+  }
+
+  .support .custom__form {
+    position: relative;
+  }
+
+  .support #customForm {
+    overflow: hidden;
+    height: 660px;
+    overflow: hidden;
+    height: 557px;
+    width: 370px;
   }
   .support .support__main-content {
     background: none !important;
-    width: 343px;
-    height: 780px;
+    width: 360px;
+    height: 510px;
     margin: auto;
     position: relative;
     top: -24px;
@@ -55,7 +67,7 @@
     padding-left: 50px;
     background-repeat: no-repeat;
     background-position: 12px center;
-    background-color: #fff;
+    background-color: transparent;
     background-size: 28px 28px;
     display: flex;
     align-items: center;

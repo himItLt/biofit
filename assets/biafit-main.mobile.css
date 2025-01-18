@@ -296,3 +296,23 @@
         color: var(--Primary, rgba(237, 22, 83, 1));
     }
 }
+/* Tablet */
+@media screen and (min-width: 640px) and (max-width: 989px) {
+    .about-app__heading, 
+    .collection__title .title, 
+    .blog__title, .about-holly__heading, 
+    .recipe-library__heading,
+    .membership__heading,
+    .contact .title,
+    .support .title,
+    .about-challenge__heading,
+    .whats-included__heading,
+    .grand-prize__heading {
+        font-size: 52px;
+        font-weight: 800;
+        line-height: 72.8px;
+        margin-left: 20px;
+    }
+
+    
+}

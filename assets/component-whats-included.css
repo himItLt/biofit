@@ -49,7 +49,13 @@
 .whats-included__heading {
   z-index: 0;
 }
-
+.section-whats-included .d-img {
+  display: inherit;
+}
+.section-whats-included .t-img {
+  display: none;
+}
+/* Desktop */
 @media screen and (min-width: 990px) {
   .whats-included__caption h3 {
     font-family: Poppins, sans-serif;
@@ -91,7 +97,7 @@
     width: 615px;
   }
 }
-
+/* Mobile */
 @media screen and (max-width: 989px) {
   .section-whats-included {
     margin-top: 20px;
@@ -140,6 +146,89 @@
     font-weight: 400;
     line-height: 19.6px;
   }
+  .whats-included__button-wrapper {
+    margin-top: 32px;
+    margin-bottom: 20px;
+  }
+}
+/* Tablet */
+@media screen and (min-width: 640px) and (max-width: 989px) {
+  .section-whats-included .d-img {
+    display: none;
+  }
+  .section-whats-included .t-img {
+    display: inherit;
+  }
+  .section-whats-included {
+    margin-top: 20px;
+    height: 1216px;
+  }
+  .whats-included__caption {
+    width: 100%;
+  }
+  .whats-included__caption .d-break {
+    display: inherit;
+  }
+  .whats-included__caption .m-break {
+    display: none;
+  }
+
+  .whats-included__heading {
+    margin-bottom: 15px;
+  }
+  .whats-included__grid {
+    display: flex;
+    flex-direction: column;
+    width: 610px;
+    margin:auto;
+    justify-content: space-between;
+  }
+  .whats-included__caption h3 {
+    width: 100%;
+    text-align: center !important;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33.6px;
+  }
+
+  .whats-included__media {
+    position: relative;
+    height: 480px;
+    width: max-content;
+    top: 5px;
+    left: 30px;
+  }
+
+  .whats-included__text-item {
+    width: 610px;
+    margin: auto;
+    padding-top: 25px;
+  }
+
+  .section-whats-included .button-wrapper {
+    padding-top: 40px;
+  }
+
+  .whats-included__media-item {
+    width: 100%;  
+  }
+  .whats-included__text-item {
+    width: 100%;
+  }
+  .whats-included__services>li {
+    background-position: left center;
+    background-size: 28px 28px;
+    height: 48px;
+    width: 100%;
+    padding: 0 0 0 45px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: left;
+  }
+
   .whats-included__button-wrapper {
     margin-top: 32px;
     margin-bottom: 20px;

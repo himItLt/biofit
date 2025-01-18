@@ -101,7 +101,7 @@
         text-transform: uppercase;
         color: var(--Text-Black, rgba(6, 6, 6, 1));
     }
-
+    /* TODO: fix margin-left to design */
     .about-app__heading, 
     .collection__title .title, 
     .blog__title, .about-holly__heading, 
@@ -120,6 +120,7 @@
         position: relative;
         text-transform: uppercase;
         z-index: 10;
+        margin-left: 15px;
     }
 
     /** Programs **/    
@@ -310,6 +311,7 @@
         font-size: 52px;
         font-weight: 800;
         line-height: 72.8px;
+        margin-left: 20px;
     }
 
     

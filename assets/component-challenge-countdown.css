@@ -39,7 +39,7 @@
 }
 
 .countdown-timer {
-    width: 880px;
+    width: 800px;
     height: 374px;
     display: flex;
     flex-direction: row;
@@ -51,13 +51,10 @@
     width: 225px;
     height: 216px;
 }
-.countdown-timer .time-block.hours {
-    width: 310px;
+.countdown-timer .time-block.minutes {
+    width: 250px;
 }
-.countdown-timer .time-block.seconds {
-    width: 225px;
-}
-.countdown-timer .time-seconds {
+.countdown-timer .time-minutes {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -65,15 +62,15 @@
     height: 100%;
     position: relative;
 }
-.countdown-timer .second-unit-animated {
+.countdown-timer .minute-unit-animated {
     position: relative;
     width: 100%;
-    height: 432px;
-    margin-top: 35px;
-    top: 0px;
+    height: 470px;
+    margin-top: -125px;
+    top: 0;
 }
 
-.countdown-timer .second-unit-animated .time-number {
+.countdown-timer .minute-unit-animated .time-number {
     line-height: 156px;
     opacity: 0.5;
 }
@@ -97,7 +94,7 @@
     margin-top: -20px;
 }
 
-.countdown-timer .time-seconds .second-unit {
+.countdown-timer .time-minutes .minute-unit {
     position: relative;
     height: 281px;
     overflow: hidden;
@@ -108,6 +105,15 @@
     margin-top: 70px;
 }
 
+.minute-unit-animated li:first-child, 
+.minute-unit-animated li:nth-child(3)
+{
+    opacity: 0.5;
+}
+
+.minute-unit-animated li:nth-child(2) {
+    opacity: 1 !important;
+}
 
 
 /* Desktop */
@@ -168,13 +174,13 @@
         width: 82px;
         height: 90px;
     }
-    .countdown-timer .time-block.hours {
+    .countdown-timer .time-block.days {
         width: 120px;
     }
-    .countdown-timer .time-block.seconds {
+    .countdown-timer .time-block.minutes {
         width: 90px;
     }
-    .countdown-timer .time-seconds {
+    .countdown-timer .time-minutes {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -183,7 +189,7 @@
         position: relative;
     }
     
-    .countdown-timer .second-unit-animated {
+    .countdown-timer .minute-unit-animated {
         position: relative;
         width: 100%;
         height: 170px;
@@ -191,7 +197,7 @@
         top: 0px;
     }
     
-    .countdown-timer .second-unit-animated .time-number {
+    .countdown-timer .minute-unit-animated .time-number {
         line-height: 60px;
         opacity: 0.5;
     }
@@ -216,11 +222,11 @@
         margin-top: -10px;
     }
 
-    .countdown-timer .time-seconds .time-title {
+    .countdown-timer .time-minutes .time-title {
         margin-top: -16px;    
     }
     
-    .countdown-timer .time-seconds .second-unit {
+    .countdown-timer .time-minutes .minute-unit {
         position: relative;
         height: 120px;
         overflow: hidden;

@@ -7,9 +7,11 @@ class ChallengeTimer {
   timeDiff = null;
   diffSeconds = null;
   slider = null;
-  currentSecond = null;
-  nextSecond = null;
-  currentSecondAnimated = null;
+  currentMinute = null;
+  nextMinute = null;
+  prevMinute = null;
+  currentMinuteAnimated = null;
+  tickInterval = 60000;
 
   animation = {
     'slider-desktop': [
@@ -35,33 +37,46 @@ class ChallengeTimer {
   startAnimation() {
     let doUpdate = false;
 
-    const alignAnimatedSeconds = (value) => {
+    const alignAnimatedMinutes = (value) => {
       return (value < 0 ? (10 + value) : value);  
     }
 
-    this.currentSecondAnimated = alignAnimatedSeconds(this.currentSecondAnimated - 1);
-    this.currentSecond.innerText = this.currentSecondAnimated;
+    this.currentMinuteAnimated = alignAnimatedMinutes(this.currentMinuteAnimated);
+    console.log('Current minute:', this.currentMinuteAnimated);
+    this.currentMinute.innerText = this.currentMinuteAnimated;
     
-    if (this.currentSecondAnimated == 1) {
+    if (this.currentMinuteAnimated == 0) {
       doUpdate = true;
     }
   
-    this.nextSecond.innerText = alignAnimatedSeconds(this.currentSecondAnimated - 1);
-
-    const newSecond = this.currentSecond.cloneNode(true);
-    newSecond.innerText = alignAnimatedSeconds(this.currentSecondAnimated - 2);
-    this.slider.append(newSecond);
+    this.nextMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated - 1);
+    this.prevMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated + 1);
     
+    const opacityDown = [
+      {opacity: 1},
+      {opacity: 0.5}
+    ];
+    const opacityUp = [
+      {opacity: 0.5},
+      {opacity: 1}
+    ];
+    
+    this.nextMinute.animate(opacityUp, this.tickInterval);
+    this.currentMinute.animate(opacityDown, this.tickInterval);
     this.slider
-      .animate(this.animation['slider-' + this.mode], 1000)
+      .animate(this.animation['slider-' + this.mode], this.tickInterval)
       .onfinish = (e) => {
-        this.currentSecond.remove();
-        this.currentSecond = this.nextSecond;
-        this.nextSecond = newSecond;
+        // count down
+        this.currentMinuteAnimated--;
         
-        this.currentSecond.innerText = alignAnimatedSeconds(this.currentSecondAnimated);
-        this.nextSecond.innerText = alignAnimatedSeconds(this.currentSecondAnimated - 1);
-        this.diffSeconds--;
+        this.prevMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated - 1);
+        this.slider.append(this.prevMinute);
+        this.initTimerSlots();
+
+        /* this.currentMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated);
+        this.nextMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated - 1); */
+
+        this.diffSeconds -= 60;
         if (doUpdate) {
           this.updateCounterBlock();
         }
@@ -70,12 +85,12 @@ class ChallengeTimer {
 
   updateCounterBlock() {
     this.initTimeDiff();
+    const daysDiv = this.container.querySelector('.days .time-number');
+    daysDiv.innerText = this.alignTimeNumer(this.timeDiff.days);
     const hoursDiv = this.container.querySelector('.hours .time-number');
     hoursDiv.innerText = this.alignTimeNumer(this.timeDiff.hours);
-    const minutesDiv = this.container.querySelector('.minutes .time-number');
-    minutesDiv.innerText = this.alignTimeNumer(this.timeDiff.minutes);
-    const secondsTen = this.container.querySelector('.seconds .second-ten');
-    secondsTen.innerText = this.timeDiff.seconds.ten;
+    const minutesTen = this.container.querySelector('.minutes .minute-ten');
+    minutesTen.innerText = this.timeDiff.minutes.ten;
   }
 
   initTimeDiff() {
@@ -88,24 +103,34 @@ class ChallengeTimer {
       this.diffSeconds = parseInt(startTime) - Math.floor(Date.now() / 1000);
     } 
 
-    const hours = Math.floor(this.diffSeconds / 3600);
-    const minutes = Math.floor((this.diffSeconds - hours * 3600) / 60);
-    const seconds = (this.diffSeconds - hours * 3600 - minutes * 60);
-    const secondTen = Math.floor(seconds / 10);
-    const secondUnit = 9;
+    const secondsInDay = 3600 * 24;
+    const days = Math.floor(this.diffSeconds / secondsInDay);
+    const hours = Math.floor((this.diffSeconds - days * secondsInDay) / 3600);
+    const minutes = (this.diffSeconds - days * secondsInDay - hours * 3600) / 60;
+    const minuteTen = Math.floor(minutes / 10);
+    const minuteUnit = Math.ceil(minutes % 10);
 
-    if (this.currentSecondAnimated === null) {
-      this.currentSecondAnimated = secondUnit;
+    if (this.currentMinuteAnimated === null) {
+      this.currentMinuteAnimated = minuteUnit;
     }
 
     this.timeDiff = {
+      days: days,
       hours: hours,
-      minutes: minutes,
-      seconds: {
-        ten: secondTen,
-        unit: secondUnit
+      minutes: {
+        ten: minuteTen,
+        unit: minuteUnit
       }
     }
+  }
+
+  initTimerSlots() {
+    this.prevMinute = this.slider.querySelector('.time-number:first-child');
+    this.prevMinute.style.opacity = 0.5;
+    this.currentMinute = this.slider.querySelector('.time-number:nth-child(2)');
+    this.currentMinute.style.opacity = 1;
+    this.nextMinute = this.slider.querySelector('.time-number:nth-child(3)');
+    this.nextMinute.style.opacity = 0.5;
   }
 
   initCountdoun() {
@@ -114,16 +139,17 @@ class ChallengeTimer {
       console.log('Timer not found');
       return;
     }
-    this.slider = this.container.querySelector('.second-unit-animated');
-    this.currentSecond = this.slider.querySelector('.time-number:first-child');
-    this.nextSecond = this.slider.querySelector('.time-number:nth-child(2)');
+    this.slider = this.container.querySelector('.minute-unit-animated');
+    this.initTimerSlots();
     this.updateCounterBlock();
     this.mode = (window.biafitManager.isMobile() ? 'mobile' : 'desktop');
 
     // TODO: uncomment before deploy to PROD
-    //setInterval(() => {
+    setInterval(() => {
       this.startAnimation();
-    //}, 1000);
+    }, this.tickInterval);
+
+    this.startAnimation();
   }
 }
 

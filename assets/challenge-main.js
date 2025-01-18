@@ -120,7 +120,7 @@ class ChallengeTimer {
     this.updateCounterBlock();
     this.mode = (window.biafitManager.isMobile() ? 'mobile' : 'desktop');
 
-    // TODO: uncomment countdown
+    // TODO: uncomment before deploy to PROD
     //setInterval(() => {
       this.startAnimation();
     //}, 1000);

@@ -144,6 +144,9 @@
   height: 850px;
   background: #fff;
 }
+.support #customForm {
+  border: 0;
+}
 
 @media screen and (min-width: 990px) {
   .support__services {

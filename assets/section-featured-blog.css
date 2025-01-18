@@ -100,7 +100,8 @@
   } 
 
   .blog .description {
-    margin-left: calc(200 * var(--img-ratio));
+    width: 1328px;
+    margin: auto;
   }
 
   .blog .card__inner {

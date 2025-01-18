@@ -3,7 +3,7 @@
  */
 class Manager {
   isMobile() {
-    const mq = window.matchMedia( "(max-width: 768px)" );
+    const mq = window.matchMedia( "(max-width: 989px)" );
     return mq.matches;
   }
 
@@ -131,6 +131,8 @@ window.biafitManager = manager;
  * Slider customization
  */
 class BiafitSlider {
+  isSliderButtonsLocked = false;
+
   sliderConfig = {
     'program': {
       original: {
@@ -236,26 +238,24 @@ class BiafitSlider {
     },
     'blog': {
       original: {
-        marginLeft: '0px',
-        width: '1328px'  
+        left: '0px',
       },
       prev: {
         animation: 'blog-desktop-prev',
         init: (slider) => {
-          slider.style.width = '1385px';
-          slider.style.marginLeft = '-330px';
+          slider.style.left = '-330px';
         }
       },
       next: {
         animation: 'blog-desktop-next',
         init: (slider) => {
-          slider.style.width = '1385px';
+          //slider.style.width = '1385px';
         }
       },
     },
     'blog-mobile': {
       original: {
-        left: '0',
+        left: '0px',
       },
       prev: {
         animation: 'blog-mobile-prev',
@@ -271,21 +271,14 @@ class BiafitSlider {
     }
   };
 
-  programAnimationEnd(slider) {
-    const oldCard = slider.querySelector('li.large-slide');
-    const newCard = slider.querySelector('li:nth-child(2)');
-    oldCard.classList.remove('large-slide');
-    newCard.classList.add('large-slide');
-  }
-
   getAnimation(name) {
     const animations = {
       'blog-desktop-prev': [
         {
-          left: '0px'
+          left: '-335px'
         },
         {
-          left: '335px'
+          left: '0px'
         },
       ],
       'blog-desktop-next': [
@@ -371,7 +364,14 @@ class BiafitSlider {
     };
     return animations[name];
   }
-  
+
+  programAnimationEnd(slider) {
+    const oldCard = slider.querySelector('li.large-slide');
+    const newCard = slider.querySelector('li:nth-child(2)');
+    oldCard.classList.remove('large-slide');
+    newCard.classList.add('large-slide');
+  }
+
   animateElement(element, animationName, reverse = false, finishCallback = (e) => {}, startCallback = () => {}) {
     startCallback();
     const animation = element.animate(
@@ -405,9 +405,15 @@ class BiafitSlider {
         for (let originalStyle in config.original) {
           slider.style[originalStyle] = config.original[originalStyle];
         }
+        this.isSliderButtonsLocked = false;
       };
 
       nextBtn.addEventListener('click', e => {
+        if (this.isSliderButtonsLocked) {
+          return;
+        }
+        this.isSliderButtonsLocked = true;
+
         let newSlide = firstSlide.cloneNode(true);
         config.next.init(slider);
         slider.append(newSlide);
@@ -433,6 +439,11 @@ class BiafitSlider {
       });
       
       prevBtn.addEventListener('click', e => {
+        if (this.isSliderButtonsLocked) {
+          return;
+        }
+        this.isSliderButtonsLocked = true;
+
         let newSlide = lastSlide.cloneNode(true);
         config.prev.init(slider);
         slider.prepend(newSlide);
@@ -472,6 +483,12 @@ class BiafitSlider {
         updateSlider();
       });
     }
+  }
+
+  toggleSliderButtons() {
+    const buttonsClasses = [
+      '.collection .slider-button--next'  
+    ]
   }
 
   initProgramsCarusel() {
@@ -574,5 +591,5 @@ window.onload = (e) => {
   biafitSlider.lockClick();
   biafitSlider.initProgramsCarusel();
   biafitSlider.initTestimonialsCarusel();
-  // TODO:biafitSlider.setupTimers();
+  // TODO: biafitSlider.setupTimers();
 }

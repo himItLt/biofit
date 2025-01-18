@@ -70,7 +70,7 @@
     }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 989px) {
     .blog .article-card__image-wrapper {
         border-radius: 8px !important;    
     }

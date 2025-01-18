@@ -1,4 +1,4 @@
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 989px) {
   .support {
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -154,7 +154,7 @@
 }
 
 /* Tablet */
-@media screen and (min-width: 640px) and (max-width: 968px) {
+@media screen and (min-width: 640px) and (max-width: 989px) {
   .support {
     background-repeat: no-repeat;
     background-size: 100% 100%;

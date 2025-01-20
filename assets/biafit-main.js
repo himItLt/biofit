@@ -42,7 +42,6 @@ class Manager {
     }
     const heightDiff = this.isMobile() ? 405 : 295;
     const resizeObserver = new ResizeObserver((entries) => {
-      console.log("Heigth changed to:", formIFrame.offsetHeight);
       formSection.style.height = (formIFrame.offsetHeight + heightDiff) + 'px';
     });
 

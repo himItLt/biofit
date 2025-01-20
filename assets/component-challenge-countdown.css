@@ -68,14 +68,13 @@
 .countdown-timer .minute-unit-animated {
     position: relative;
     width: 100%;
-    height: 470px;
-    margin-top: -119px;
+    height: 330px;
+    margin-top: 36px;
     top: 0;
 }
 
 .countdown-timer .minute-unit-animated .time-number {
     line-height: 156px;
-    opacity: 0.5;
 }
 
 .countdown-timer .time-number {
@@ -108,14 +107,13 @@
     margin-top: 70px;
 }
 
-.minute-unit-animated li:first-child, 
-.minute-unit-animated li:nth-child(3)
+.minute-unit-animated li:first-child
 {
-    opacity: 0.5;
+    opacity: 1;
 }
 
-.minute-unit-animated li:nth-child(2) {
-    opacity: 1 !important;
+.minute-unit-animated li:last-child {
+    opacity: 0;
 }
 
 
@@ -206,7 +204,6 @@
     
     .countdown-timer .minute-unit-animated .time-number {
         line-height: 60px;
-        opacity: 0.5;
     }
     
     .countdown-timer .time-number {

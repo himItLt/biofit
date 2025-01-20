@@ -9,33 +9,52 @@ class ChallengeTimer {
   slider = null;
   currentMinute = null;
   nextMinute = null;
-  prevMinute = null;
   currentMinuteAnimated = null;
   tickInterval = 60000;
+  currentFrame = {
+    min: 0,
+    max: null,
+    opacity: 0,
+  };
 
   animation = {
-    'slider-desktop': [
-      {
-        top: '0px',
-      },
-      {
-        top: '-157px'
-      },
-    ],
-    'slider-mobile': [
-      {
-        top: '0px',
-      },
-      {
-        top: '-57px'
-      },
-    ],
-  }
+    'slider-desktop': {
+      min: 0,
+      max: 157
+    },
+    'slider-mobile': {
+      min: 0,
+      max: 57
+    }
+  };
+
   alignTimeNumer(value) {
     return (value < 10 ? '0' + value : value);
   }
   startAnimation() {
+    console.log('Animation...');
     let doUpdate = false;
+    const animation = this.animation['slider-' + this.mode];
+    const stepTop = (animation.max - animation.min);
+    const stepOpacity = 1;
+
+    if (!this.currentFrame.max) {
+      this.currentFrame.min = animation.min;
+      this.currentFrame.max = animation.min + stepTop;
+    }
+
+    const topDown = [
+      { top: (- this.currentFrame.min) + 'px' },
+      { top: (- this.currentFrame.max) + 'px' }
+    ];
+    const opacityDown = [
+      {opacity: 1 - this.currentFrame.opacity},
+      {opacity: 1 - (this.currentFrame.opacity + stepOpacity) }
+    ];
+    const opacityUp = [
+      {opacity: this.currentFrame.opacity},
+      {opacity: this.currentFrame.opacity + stepOpacity},
+    ];
 
     const alignAnimatedMinutes = (value) => {
       return (value < 0 ? (10 + value) : value);  
@@ -49,36 +68,32 @@ class ChallengeTimer {
     }
   
     this.nextMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated - 1);
-    this.prevMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated + 1);
     
-    const opacityDown = [
-      {opacity: 1},
-      {opacity: 0.5}
-    ];
-    const opacityUp = [
-      {opacity: 0.5},
-      {opacity: 1}
-    ];
-    
-    this.nextMinute.animate(opacityUp, this.tickInterval);
-    this.currentMinute.animate(opacityDown, this.tickInterval);
+    this.nextMinute.animate(opacityUp, 2000);
+    this.currentMinute.animate(opacityDown, 2000);
     this.slider
-      .animate(this.animation['slider-' + this.mode], this.tickInterval)
+      .animate(topDown, 2000)
       .onfinish = (e) => {
+        this.currentFrame.max += stepTop;
+        this.currentFrame.min += stepTop;
+        this.currentFrame.opacity += stepOpacity;
+
         // count down
-        this.currentMinuteAnimated--;
-        
-        this.prevMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated - 1);
-        this.slider.append(this.prevMinute);
-        this.initTimerSlots();
+        if (this.currentFrame.opacity >= 1) {
+          this.currentFrame.opacity = 0;
+          this.currentFrame.max = animation.min + stepTop;
+          this.currentFrame.min = animation.min;
 
-        /* this.currentMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated);
-        this.nextMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated - 1); */
-
-        this.diffSeconds -= 60;
-        if (doUpdate) {
-          this.updateCounterBlock();
+          this.currentMinuteAnimated--;
+          this.currentMinute.innerText = alignAnimatedMinutes(this.currentMinuteAnimated - 1);
+          this.slider.append(this.currentMinute);
+          
+          this.diffSeconds -= 58;
+          if (doUpdate) {
+            this.updateCounterBlock();
+          }
         }
+        this.initTimerSlots();
       }
   }
 
@@ -124,12 +139,12 @@ class ChallengeTimer {
   }
 
   initTimerSlots() {
-    this.prevMinute = this.slider.querySelector('.time-number:first-child');
-    this.prevMinute.style.opacity = 0.5;
-    this.currentMinute = this.slider.querySelector('.time-number:nth-child(2)');
-    this.currentMinute.style.opacity = 1;
-    this.nextMinute = this.slider.querySelector('.time-number:nth-child(3)');
-    this.nextMinute.style.opacity = 0.5;
+    console.log('Tick...');
+    this.currentMinute = this.slider.querySelector('.time-number:first-child');
+    this.currentMinute.style.opacity = (1 - this.currentFrame.opacity);
+    this.nextMinute = this.slider.querySelector('.time-number:last-child');
+    this.nextMinute.style.opacity = this.currentFrame.opacity;
+    this.slider.style.top = (- this.currentFrame.min) + 'px';
   }
 
   initCountdoun() {
@@ -146,7 +161,7 @@ class ChallengeTimer {
     // TODO: uncomment before deploy to PROD
     setInterval(() => {
       this.startAnimation();
-    }, 60000);
+    }, this.tickInterval);
 
     this.startAnimation();
   }

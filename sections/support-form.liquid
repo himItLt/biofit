@@ -29,6 +29,10 @@
         <li class="service-item item-5">Post-coaching support & <br class="m-break">nutrition guidance</li>
       </ul>
       <div class="custom__form">
+        <h2 class="form__message">
+          {{- 'icon-success.svg' | inline_asset_content -}}
+          You message has been submitted successfully.
+        </h2>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js" defer="defer"></script>
         <iframe 
             src="https://hello.dubsado.com/public/form/view/676f1febbedad0003a27383e"
@@ -36,21 +40,20 @@
             frameborder="0" 
             width="100%"
             height="100%" 
-          >
-        </iframe>
+          ></iframe>
         <script type="text/javascript" defer="defer">
-            setTimeout(() => {
-                iFrameResize({
-                    checkOrigin: false, 
-                    heightCalculationMethod: "taggedElement"
-                });
-            }, 30);
+          setTimeout(() => {
+              iFrameResize({
+                  checkOrigin: false, 
+                  heightCalculationMethod: "taggedElement"
+              });
+          }, 30);
         </script>
       </div>
+      
     </div>
   </div>
 </div>
-
 {% schema %}
 {
   "name": "Support Form",

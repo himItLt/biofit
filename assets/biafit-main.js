@@ -60,42 +60,50 @@ class Manager {
 
   initHeaderLinks() {
     let headerLinks = {
-      // Desktop
-      'HeaderMenu-about-biafit': 'about-app-section',
-      'HeaderMenu-programs': 'programs-section',
-      'HeaderMenu-testimonials': 'testimonials-section',
-      'HeaderMenu-transformations': 'testimonials-section',
-      'HeaderMenu-about-holly': 'about-holly-section',
-      'HeaderMenu-recipe-library': 'recipe-library-section',
-      'HeaderMenu-plans': 'membership-section',
-      'HeaderMenu-contact-us': 'contact-section',
-      'HeaderMenu-support': 'contact-section',
-      'HeaderMenu-grand-prize': 'grand-prize-section',
-      'HeaderMenu-what-is-the-challenge': 'about-challenge-section',
-      'HeaderMenu-whats-included': 'whats-included-section',
-
-      // Mobile
-      'HeaderDrawer-whats-included': 'whats-included-section',
-      'HeaderDrawer-what-is-the-challenge': 'about-challenge-section',
-      'HeaderDrawer-about-biafit': 'about-app-section',
-      'HeaderDrawer-transformations': 'testimonials-section',
-      'HeaderDrawer-about-holly': 'about-holly-section',
-      'HeaderDrawer-grand-prize': 'grand-prize-section',
-      'HeaderDrawer-support': 'contact-section',
+      mobile: {
+        // Mobile
+        'HeaderDrawer-whats-included': 'whats-included-section',
+        'HeaderDrawer-what-is-the-challenge': 'about-challenge-section',
+        'HeaderDrawer-about-biafit': 'about-app-section',
+        'HeaderDrawer-transformations': 'testimonials-section',
+        'HeaderDrawer-about-holly': 'about-holly-section',
+        'HeaderDrawer-grand-prize': 'grand-prize-section',
+        'HeaderDrawer-support': 'contact-section',
+      },
+      desktop: {
+        'HeaderMenu-about-biafit': 'about-app-section',
+        'HeaderMenu-programs': 'programs-section',
+        'HeaderMenu-testimonials': 'testimonials-section',
+        'HeaderMenu-transformations': 'testimonials-section',
+        'HeaderMenu-about-holly': 'about-holly-section',
+        'HeaderMenu-recipe-library': 'recipe-library-section',
+        'HeaderMenu-plans': 'membership-section',
+        'HeaderMenu-contact-us': 'contact-section',
+        'HeaderMenu-support': 'contact-section',
+        'HeaderMenu-grand-prize': 'grand-prize-section',
+        'HeaderMenu-what-is-the-challenge': 'about-challenge-section',
+        'HeaderMenu-whats-included': 'whats-included-section',
+      } 
     };
 
-    for (let linkId in headerLinks) {
+    const displayMode = this.isMobile() ? 'mobile' : 'desktop';
+
+    for (let linkId in headerLinks[displayMode]) {
       let href = document.getElementById(linkId);
-      let targetEl = document.getElementById(headerLinks[linkId]);
+      let targetEl = document.getElementById(headerLinks[displayMode][linkId]);
       
       if (!href || !targetEl) {
         continue;
       }
-
+      
+      const offsetTop = this.isMobile() 
+        ? targetEl.offsetTop
+        : targetEl.getBoundingClientRect().top + window.scrollY;
+      
       href.addEventListener('click', e => {
         e.preventDefault();
         e.stopPropagation();
-        this.scrollToSmoothly(targetEl.offsetTop, 600);
+        this.scrollToSmoothly(offsetTop, 600);
         return false;
       });
     }
@@ -124,8 +132,7 @@ class Manager {
   }
 }
 
-const manager = new Manager();
-window.biafitManager = manager;
+window.biafitManager = new Manager();
 
 /**
  * Slider customization
@@ -499,14 +506,14 @@ class BiafitSlider {
     const nextBtn = document.querySelector('.collection .slider-button--next');
     const prevBtn = document.querySelector('.collection .slider-button--prev');
     slider.querySelector('li:nth-child(2)').classList.add('large-slide');
-    this.processSliderAction(slider, prevBtn, nextBtn, !manager.isMobile() ? 'program' : 'program-mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, !window.biafitManager.isMobile() ? 'program' : 'program-mobile');
   }
 
   initTestimonialsCarusel() {
     const nextBtn = document.querySelector('.blog .slider-button--next');
     const prevBtn = document.querySelector('.blog .slider-button--prev');
     const slider = document.querySelector('.blog .blog__posts');
-    this.processSliderAction(slider, prevBtn, nextBtn, !manager.isMobile() ? 'blog' : 'blog-mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, !window.biafitManager.isMobile() ? 'blog' : 'blog-mobile');
   }
   
   setupTimers() {
@@ -581,16 +588,16 @@ class BiafitSlider {
   }
 }
 
-const biafitSlider = new BiafitSlider();
+window.biafitSlider = new BiafitSlider();
 
 /* Initialize */
-window.onload = (e) => {
-  manager.initHeaderLinks();
-  manager.trackMobileMenu();
+window.addEventListener('load', (e) => {
+  window.biafitManager.initHeaderLinks();
+  window.biafitManager.trackMobileMenu();
 
-  biafitSlider.lockClick();
-  biafitSlider.initProgramsCarusel();
-  biafitSlider.initTestimonialsCarusel();
+  window.biafitSlider.lockClick();
+  window.biafitSlider.initProgramsCarusel();
+  window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  biafitSlider.setupTimers();
-}
+  window.biafitSlider.setupTimers();
+});

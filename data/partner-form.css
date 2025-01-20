@@ -1,4 +1,4 @@
-.form-viewer__form-elements-list .form-viewer-element:first-child,
+.form-viewer__form-elements-list .form-viewer-element:has(#element__663112cdbca3ec0000526389),
 .form-viewer__form-elements-list .form-viewer-element:nth-child(2),
 .form-viewer__form-elements-list .form-viewer-element:nth-child(8) {
     display: none !important;

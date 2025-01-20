@@ -42,7 +42,6 @@ class ChallengeTimer {
     }
 
     this.currentMinuteAnimated = alignAnimatedMinutes(this.currentMinuteAnimated);
-    console.log('Current minute:', this.currentMinuteAnimated);
     this.currentMinute.innerText = this.currentMinuteAnimated;
     
     if (this.currentMinuteAnimated == 0) {
@@ -147,7 +146,7 @@ class ChallengeTimer {
     // TODO: uncomment before deploy to PROD
     setInterval(() => {
       this.startAnimation();
-    }, this.tickInterval);
+    }, 60000);
 
     this.startAnimation();
   }

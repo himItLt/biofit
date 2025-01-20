@@ -3,28 +3,26 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    height: 1034px;
     margin-top: 60px;
-  }
-
-  .support .custom__form {
+    height: auto;
     position: relative;
+    overflow: visible;
   }
 
   .support #customForm {
-    overflow: hidden;
-    height: 660px;
-    overflow: hidden;
-    height: 557px;
+    overflow: visible;
+    height: 840px;
+    min-height: 810px;
     width: 370px;
   }
   .support .support__main-content {
     background: none !important;
     width: 360px;
-    height: 510px;
+    height: 100%;
     margin: auto;
     position: relative;
     top: -24px;
+    overflow: visible;
   }
 
   .support img {
@@ -46,167 +44,12 @@
   .support__services {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 20px);
     height: 300px;
     justify-content: space-between;
     margin-bottom: 20px;
-    padding-left: 0px;
-  }
-  .support__services .service-item {
-    height: 52px;
-    padding: 12px;
-    border-radius: 12px;
-    border: 0;
-    width: 100%;
-    font-family: Poppins, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18.2px;
-    text-align: left;
-    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
-    padding-left: 50px;
-    background-repeat: no-repeat;
-    background-position: 12px center;
-    background-color: transparent;
-    background-size: 28px 28px;
-    display: flex;
-    align-items: center;
-  }
-  .support form {
-    max-width: 345px;
-    height: 465px;
-  }
-
-  .support .field, .support .field .field__label {
-    font-family: Lato, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
-  }
-
-  .support .field .field__label {
-    margin-top: 3px;
-    color: rgba(237, 22, 83, 0.6);
-  }
-
-  .support .field input,
-  .support .field textarea {
-    border: 1px solid var(--Primary, rgba(237, 22, 83, 1)) !important;  
-    border-radius: 12px;
-    color: rgba(237, 22, 83, 0.6);
-  }
-
-  .support .field input {
-    height: 52px;
-  }
-
-  .support .field textarea {
-    height: 120px;
-  }
-
-  .support .button {
-    background: transparent !important;
-    width: 100%;
-    height: 52px;
-    padding: 20px 40px 20px 40px;
-    border-radius: 16px;
-    border: 1px solid #F15822;
-    font-family: Poppins, sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    color: var(--Primary, rgba(237, 22, 83, 1));
-    margin-top: 15px;
-  }
-
-  .support .description {
-    padding: 0;
-  }
-
-  .support .description h3 {
-    font-family: Poppins, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 28px;
-    color: var(--Text-Black, rgba(6, 6, 6, 1));
-    text-transform: uppercase;
-    margin-top: 5px;
-    margin-bottom: -10px;
-    text-align: left;
-    white-space: nowrap;
-  }
-
-  .support .description p {
-    font-family: Lato, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19.6px;
-    text-align: left;
-    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
-  }
-
-  .support form *::before, 
-  .support form *::after {
-    display: none !important;
-  }
-
-  .support .title {
-    left: 0;
-  }
-
-  .support .form__message {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-  }
-  .support .icon {
-    margin-top: 6px;
-  }
-}
-
-/* Tablet */
-@media screen and (min-width: 640px) and (max-width: 989px) {
-  .support {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 100%;
-    height: fit-content;
-    margin-top: 60px;
-  }
-  .support .support__main-content {
-    background: none !important;
-    width: 343px;
-    height: 780px;
-    margin: auto;
-    position: relative;
-    top: -24px;
-  }
-
-  .support img {
-    display: none;
-  }
-
-  .support .form__message {
-    align-items: flex-start;
-  }
-
-  .support .icon-success {
-    margin-top: 0.2rem;
-  }
-
-  .support .field {
-    margin-bottom: 12px;
-  }
-
-  .support__services {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 300px;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-left: 0px;
+    padding-left: 0;
+    gap: 8px;
   }
   .support__services .service-item {
     height: 52px;
@@ -263,7 +106,7 @@
 
   .support .button {
     background: transparent !important;
-    width: 311px;
+    width: 100%;
     height: 52px;
     padding: 20px 40px 20px 40px;
     border-radius: 16px;
@@ -315,7 +158,176 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 19px;
+    text-align: center;
   }
+  .support .icon {
+    margin-top: 6px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 640px) and (max-width: 989px) {
+  .support {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    margin-top: 60px;
+    height: auto;
+    position: relative;
+    overflow: visible;
+  }
+
+  .support .custom__form {
+    /* TODO: tablet custom form */
+  }
+
+  .support #customForm {
+    overflow: hidden;
+    height: 660px;
+    overflow: hidden;
+    height: 557px;
+    width: 370px;
+  }
+  .support .support__main-content {
+    background: none !important;
+    width: 360px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    top: -24px;
+    overflow: visible;
+  }
+
+  .support img {
+    display: none;
+  }
+
+  .support .form__message {
+    align-items: flex-start;
+  }
+
+  .support .icon-success {
+    margin-top: 0.2rem;
+  }
+
+  .support .field {
+    margin-bottom: 12px;
+  }
+
+  .support__services {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    height: 300px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-left: 0;
+    gap: 8px;
+  }
+  .support__services .service-item {
+    height: 52px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 0;
+    width: 100%;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.2px;
+    text-align: left;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+    padding-left: 50px;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-color: #fff;
+    background-size: 28px 28px;
+    display: flex;
+    align-items: center;
+  }
+  .support form {
+    max-width: 345px;
+    height: 465px;
+  }
+
+  .support .field, .support .field .field__label {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
+  }
+
+  .support .field .field__label {
+    margin-top: 3px;
+    color: rgba(237, 22, 83, 0.6);
+  }
+
+  .support .field input,
+  .support .field textarea {
+    border: 1px solid var(--Primary, rgba(237, 22, 83, 1)) !important;  
+    border-radius: 12px;
+    color: rgba(237, 22, 83, 0.6);
+  }
+
+  .support .field input {
+    height: 52px;
+  }
+
+  .support .field textarea {
+    height: 120px;
+  }
+
+  .support .button {
+    background: transparent !important;
+    width: 100%;
+    height: 52px;
+    padding: 20px 40px 20px 40px;
+    border-radius: 16px;
+    border: 1px solid #F15822;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+    margin-top: 15px;
+  }
+
+  .support .description {
+    padding: 0;
+  }
+
+  .support .description h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
+    text-transform: uppercase;
+    margin-top: 5px;
+    margin-bottom: -10px;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .support .description p {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+  }
+
+  .support form *::before, 
+  .support form *::after {
+    display: none !important;
+  }
+
+  .support .title {
+    left: 0;
+  }
+
+  
   .support .icon {
     margin-top: 6px;
   }

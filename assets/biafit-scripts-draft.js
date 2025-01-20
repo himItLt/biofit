@@ -140,7 +140,6 @@ const HomePageManager = {
 const loadFrame = () => {
   const iframe = document.querySelector('.custom__form iframe');
   iframe.onload = (e) => {
-    console.log('We are in');
     const style = document.createElement('style');
     style.textContent = 'body { background-color: some-color; }';
     let attempts = 0;

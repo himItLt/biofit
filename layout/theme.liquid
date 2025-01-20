@@ -307,7 +307,15 @@
     {%- when 'index' -%}
       {% unless settings.challenge_redirect == empty or request.design_mode%}
         <script>
-          location.href = '{{ settings.challenge_redirect }}';
+          let redirect = '{{ settings.challenge_redirect }}';
+          const urlParams = new URLSearchParams(window.location.search);
+          const isSupportForm = urlParams.get('support-form-success');
+          
+          if (isSupportForm == 1) {
+            redirect = redirect + '#contact-section';
+            localStorage.setItem('isSupportSuccess', 1);
+          }
+          location.href = redirect;
         </script>
       {% endunless %}
       {% sections 'header-group' %}
@@ -390,7 +398,21 @@
     <script src="{{ 'biafit-main.js' | asset_url }}" defer="defer"></script>
 
     {%- if template == 'product.biafit-challenge' -%}
-      <script src="{{ 'challenge-main.js' | asset_url }}" defer="defer"></script>  
+      <script src="{{ 'challenge-main.js' | asset_url }}" defer="defer"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', e => {
+          const isSupportForm = localStorage.getItem('isSupportSuccess');
+          if (isSupportForm) {
+            const msg = document.querySelector('.support .form__message');
+            if (!msg) {
+              return;
+            }
+           msg.style.display = 'block';
+           localStorage.removeItem('isSupportSuccess');
+          }
+        });
+        
+      </script>
     {%- endif -%}
   </body>
 </html>

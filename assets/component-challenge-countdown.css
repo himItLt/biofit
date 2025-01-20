@@ -54,6 +54,9 @@
 .countdown-timer .time-block.minutes {
     width: 250px;
 }
+.countdown-timer .time-block.days .time-title {
+    margin-left: 15px;
+}
 .countdown-timer .time-minutes {
     display: flex;
     flex-direction: row;
@@ -66,7 +69,7 @@
     position: relative;
     width: 100%;
     height: 470px;
-    margin-top: -125px;
+    margin-top: -119px;
     top: 0;
 }
 
@@ -177,6 +180,9 @@
     .countdown-timer .time-block.days {
         width: 120px;
     }
+    .countdown-timer .time-block.days .time-title {
+        margin-left: 20px;
+    }
     .countdown-timer .time-block.minutes {
         width: 90px;
     }
@@ -193,7 +199,8 @@
         position: relative;
         width: 100%;
         height: 170px;
-        margin-top: 17px;
+        margin-top: -43px;
+        left: -30px;
         top: 0px;
     }
     

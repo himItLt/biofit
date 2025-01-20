@@ -118,7 +118,7 @@
 }
 
 .support .support__main-content {
-  background-size: contain;
+  background-size: 100% auto;
   background-position: center top;
   background-repeat: no-repeat;
   width: 1328px;

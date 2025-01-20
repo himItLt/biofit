@@ -26,22 +26,23 @@
             {% case block.type %}
               {%- when 'caption' -%}
                 <h3 class="grand-prize__caption">
-                  {{ block.settings.caption | escape }}
+                  {% comment %} {{ block.settings.caption | escape }} {% endcomment %}
+                  WIN OVER $3,000 IN PRIZES!
                 </h3>
                 <ul class="grand-prize__services">
-                  <li class="item-icon-1">Win $1,000 USD Cash</li>
-                  <li class="item-icon-2">6 Weeks FREE 1 on 1 Coaching</li>
-                  <li class="item-icon-3">3 Month Free Subscription to BiaFit <br class="m-break">Workout App</li>
-                  <li class="item-icon-4">Holly's Ebook Collection</li>
-                  <li class="item-icon-5">Fitness Essentials Supp Pack <br class="m-break">($250 USD Value)</li>
-                  <li class="item-icon-6">Limited Edition Ultimate Glute Bands</li>
-                  <li class="item-icon-7">Exclusve BiaBody Hoodie</li>
+                  <li class="item-icon-1">$1,000 USD Cash Grand Prize</li>
+                  <li class="item-icon-2">6 Weeks FREE 1:1 Coaching with Holly  ($1500 Value)</li>
+                  <li class="item-icon-3">3 Months FREE Subscription to BiaFit Workout App  ($90 Value)</li>
+                  <li class="item-icon-4">Holly's Entire E-book Collection  ($150 Value)</li>
+                  <li class="item-icon-5">Fitness Essentials Supplement Pack  ($250 Value)</li>
+                  <li class="item-icon-6">Limited Edition Ultimate Glute Bands  ($30 Value)</li>
+                  <li class="item-icon-7">Exclusive BiaBody Hoodie ($50 Value)</li>
                 </ul>
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
                 <div class="grand-prize__button-wrapper">
                   <a href="#" class="button button--primary biafit-buy-button" id="grand-prize-button">
-                    Begin your transformation
+                    Begin Your Transformation
                   </a>
                 </div>
                 {%- endif -%}

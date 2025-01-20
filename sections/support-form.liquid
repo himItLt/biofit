@@ -42,12 +42,23 @@
             height="100%" 
           ></iframe>
         <script type="text/javascript" defer="defer">
-          setTimeout(() => {
-              iFrameResize({
-                  checkOrigin: false, 
-                  heightCalculationMethod: "taggedElement"
-              });
-          }, 30);
+          window.addEventListener('load', e => {
+            const resizeIFrame = () => {
+              console.log('Test...');
+              setTimeout(() => {
+                if (iFrameResize) {
+                  iFrameResize({
+                    checkOrigin: false, 
+                    heightCalculationMethod: "taggedElement"
+                  });
+                } else {
+                  resizeIFrame();
+                }
+              }, 30);
+            }
+            resizeIFrame();
+          });
+          
         </script>
       </div>
       

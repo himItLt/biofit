@@ -33,6 +33,22 @@ class Manager {
     mutationObserver.observe(menuBtn, { attributes: true });
   }
 
+  trackSupportForm() {
+    const formIFrame = document.getElementById('customForm');
+    const formSection = document.querySelector('.support .support__main-content');
+   
+    if (!formIFrame) {
+      return;
+    }
+    const heightDiff = this.isMobile() ? 405 : 295;
+    const resizeObserver = new ResizeObserver((entries) => {
+      console.log("Heigth changed to:", formIFrame.offsetHeight);
+      formSection.style.height = (formIFrame.offsetHeight + heightDiff) + 'px';
+    });
+
+    resizeObserver.observe(formIFrame);
+  }
+
   scrollToSmoothly(pos, time) {
     if (this.isMobile()) {
       document.querySelector('header-drawer .header__icon')?.click();
@@ -594,6 +610,7 @@ window.biafitSlider = new BiafitSlider();
 window.addEventListener('load', (e) => {
   window.biafitManager.initHeaderLinks();
   window.biafitManager.trackMobileMenu();
+  window.biafitManager.trackSupportForm();
 
   window.biafitSlider.lockClick();
   window.biafitSlider.initProgramsCarusel();

@@ -25,6 +25,10 @@ class ChallengeTimer {
     'slider-mobile': {
       min: 0,
       max: 57
+    },
+    'slider-tablet': {
+      min: 0,
+      max: 110
     }
   };
 
@@ -154,7 +158,7 @@ class ChallengeTimer {
     this.slider = this.container.querySelector('.minute-unit-animated');
     this.initTimerSlots();
     this.updateCounterBlock();
-    this.mode = (window.biafitManager.isMobile() ? 'mobile' : 'desktop');
+    this.mode = window.biafitManager.getScreenMode();
 
     // TODO: uncomment before deploy to PROD
     setInterval(() => {

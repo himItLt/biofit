@@ -116,12 +116,6 @@
     opacity: 0;
 }
 
-
-/* Desktop */
-@media screen and (min-width: 990px) {
-    
-}
-
 /* Mobile */
 @media screen and (max-width: 989px) {
     .countdown__page-wrapper {
@@ -197,7 +191,7 @@
         position: relative;
         width: 100%;
         height: 170px;
-        margin-top: 17px;
+        margin-top: 19px;
         left: -30px;
         top: 0px;
     }
@@ -208,7 +202,6 @@
     
     .countdown-timer .time-number {
         font-family: Lato, sans-serif;
-        font-family: Lato;
         font-size: 70.36px;
         font-weight: 700;
         line-height: 84.44px;
@@ -218,7 +211,6 @@
     
     .countdown-timer .time-title {
         font-family: Poppins, sans-serif;
-        font-family: Poppins;
         font-size: 10.95px;
         font-weight: 600;
         line-height: 13.68px;
@@ -242,4 +234,96 @@
     }
 }
 
+/* Tablet */
+@media screen and (min-width: 640px) and (max-width: 989px) {
+    .countdown__page-wrapper {
+        width: 100%;
+        height: 459px;
+        margin-top: 36px;
+    }
+
+    .countdown-heading h3 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 33.6px;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 40px;
+    }
+    
+    .countdown-heading h2 {
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 52.8px;
+        text-align: center;
+        color: var(--Text-Black, rgba(6, 6, 6, 1));
+        margin-top: 10px;;
+    }
+    
+    .countdown-timer {
+        width: 610px;
+        height: 210px;
+    }
+
+    .countdown-timer .time-block {
+        width: 140px;
+        height: 174px;
+    }
+    .countdown-timer .time-block.minutes {
+        width: 170px;
+    }
+
+    .challenge-countdown {
+        width: 100%;
+        height: 100%;
+    }
+
+    .countdown-timer .minute-unit-animated {
+        margin-top: 46px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 50px;
+    }
+
+    .countdown-timer .time-number {
+        font-size: 120px;
+        font-weight: 700;
+        line-height: 144px;
+        text-align: center;
+        color: var(--Primary, rgba(237, 22, 83, 1));
+    }
+    
+    .countdown-timer .time-title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 30px;
+        text-align: left;
+        margin-top: -10px;
+        margin-left: 5px;
+    }
+
+    .countdown-timer .time-minutes .time-title {
+        margin-top: -40px;    
+    }
+    
+    .countdown-timer .time-minutes .minute-unit {
+        position: relative;
+        height: 164px;
+    }
+    
+    .countdown__button-wrapper {
+        top: -40px;
+        position: relative;
+    }
+
+    .countdown-timer .time-block.days .time-title {
+       margin-left: 5px; 
+    }
+
+    .countdown-timer .time-block.minutes .time-title {
+        margin-top: -40px;
+        margin-left: -25px;
+    }
+}
 

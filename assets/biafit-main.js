@@ -2,9 +2,20 @@
  * Manager
  */
 class Manager {
-  isMobile() {
-    const mq = window.matchMedia( "(max-width: 989px)" );
-    return mq.matches;
+  getScreenMode() {
+    let mode = 'desktop';
+
+    if (window.matchMedia( "(max-width: 640px)" ).matches) {
+      mode = 'mobile';
+    } else if (window.matchMedia( "(min-width: 640px) and (max-width: 989px)" ).matches) {
+      mode = 'tablet';
+    }
+
+    return mode;
+  }
+
+  hasScreenMode(screenMode) {
+    return (this.getScreenMode() == mode);
   }
 
   trackMobileMenu() {
@@ -40,7 +51,7 @@ class Manager {
     if (!formIFrame) {
       return;
     }
-    const heightDiff = this.isMobile() ? 405 : 295;
+    const heightDiff = !this.hasScreenMode('desktop') ? 405 : 295;
     const resizeObserver = new ResizeObserver((entries) => {
       formSection.style.height = (formIFrame.offsetHeight + heightDiff) + 'px';
     });
@@ -49,7 +60,7 @@ class Manager {
   }
 
   scrollToSmoothly(pos, time) {
-    if (this.isMobile()) {
+    if (!this.hasScreenMode('desktop')) {
       document.querySelector('header-drawer .header__icon')?.click();
     }
 
@@ -101,7 +112,7 @@ class Manager {
       } 
     };
 
-    const displayMode = this.isMobile() ? 'mobile' : 'desktop';
+    const displayMode = !this.hasScreenMode('desktop') ? 'mobile' : 'desktop';
 
     for (let linkId in headerLinks[displayMode]) {
       let href = document.getElementById(linkId);
@@ -111,7 +122,7 @@ class Manager {
         continue;
       }
       
-      const offsetTop = this.isMobile() 
+      const offsetTop = !this.hasScreenMode('desktop') 
         ? targetEl.offsetTop
         : targetEl.getBoundingClientRect().top + window.scrollY;
       
@@ -156,7 +167,7 @@ class BiafitSlider {
   isSliderButtonsLocked = false;
 
   sliderConfig = {
-    'program': {
+    'program-desktop': {
       original: {
         width: '1835px',
         left: '0px',
@@ -258,7 +269,56 @@ class BiafitSlider {
         }
       },
     },
-    'blog': {
+    'program-tablet': {
+      original: {
+        left: '0px',
+      },
+      prev: {
+        animation: 'program-mobile-prev',
+        init: (slider) => {
+          slider.style.left = '-215px';  
+        },
+        onStart: (slider) => {
+          const oldCard = slider.querySelector('li.large-slide');
+          const newCard = slider.querySelector('li:nth-child(2)');
+          this.animateElement(
+            oldCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            true
+          );
+          this.animateElement(
+            newCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            false
+          );
+        },
+        onFinish: (slider) => {
+          this.programAnimationEnd(slider);
+        }
+      },
+      next: {
+        animation: 'program-mobile-next',
+        init: (slider) => {},
+        onStart: (slider) => {
+          const oldCard = slider.querySelector('li.large-slide');
+          const newCard = slider.querySelector('li:nth-child(3)');
+          this.animateElement(
+            oldCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            true
+          );
+          this.animateElement(
+            newCard.querySelector('.card-wrapper'), 
+            'program-mobile.wrapper',
+            false
+          );
+        },
+        onFinish: (slider) => {
+          this.programAnimationEnd(slider);  
+        }
+      },
+    },
+    'blog-desktop': {
       original: {
         left: '0px',
       },
@@ -290,11 +350,28 @@ class BiafitSlider {
         init: (slider) => {
         }
       },
+    },
+    'blog-tablet': {
+      original: {
+        left: '0px',
+      },
+      prev: {
+        animation: 'blog-mobile-prev',
+        init: (slider) => {
+          slider.style.left = '-180px';
+        }
+      },
+      next: {
+        animation: 'blog-mobile-next',
+        init: (slider) => {
+        }
+      },
     }
   };
 
   getAnimation(name) {
     const animations = {
+      // Testimonials and Transformations
       'blog-desktop-prev': [
         {
           left: '-335px'
@@ -327,6 +404,23 @@ class BiafitSlider {
           left: "-180px"
         },
       ],
+      'blog-tablet-prev': [
+        {
+          left: '-180px'
+        },
+        {
+          left: '0px'
+        },
+      ],
+      'blog-tablet-next': [
+        {
+          left: '0px'
+        },
+        {
+          left: "-180px"
+        },
+      ],
+      // Programs
       'program-desktop-prev': [
         {
           left: '-410px'
@@ -372,6 +466,34 @@ class BiafitSlider {
         },
       ],
       'program-mobile.wrapper': [
+        {
+          marginTop: '30px',
+          width: '210px',
+          height: '250px',
+        },
+        {
+          marginTop: '0px',
+          width: '260px',
+          height: '310px',  
+        }
+      ],
+      'program-tablet-prev': [
+        {
+          left: '-215px'
+        },
+        {
+          left: '0px'
+        },
+      ],
+      'program-tablet-next': [
+        {
+          left: '0px'
+        },
+        {
+          left: '-215px'
+        },
+      ],
+      'program-tablet.wrapper': [
         {
           marginTop: '30px',
           width: '210px',
@@ -521,14 +643,14 @@ class BiafitSlider {
     const nextBtn = document.querySelector('.collection .slider-button--next');
     const prevBtn = document.querySelector('.collection .slider-button--prev');
     slider.querySelector('li:nth-child(2)').classList.add('large-slide');
-    this.processSliderAction(slider, prevBtn, nextBtn, !window.biafitManager.isMobile() ? 'program' : 'program-mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, 'program-' + window.biafitManager.getScreenMode());
   }
 
   initTestimonialsCarusel() {
     const nextBtn = document.querySelector('.blog .slider-button--next');
     const prevBtn = document.querySelector('.blog .slider-button--prev');
     const slider = document.querySelector('.blog .blog__posts');
-    this.processSliderAction(slider, prevBtn, nextBtn, !window.biafitManager.isMobile() ? 'blog' : 'blog-mobile');
+    this.processSliderAction(slider, prevBtn, nextBtn, 'blog-' + window.biafitManager.getScreenMode());
   }
   
   setupTimers() {

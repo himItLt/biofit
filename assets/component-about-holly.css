@@ -11,7 +11,7 @@
   display: inherit;
 }
 .about-holly__media img.only-mobile {
-  display: inherit;
+  display: none;
 }
 .about-holly__services {
   display: none;

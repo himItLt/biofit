@@ -40,9 +40,9 @@
   .about-challenge__media {
     position: relative;
     width: 694px;
-    margin-right: -90px;
     float: right;
     margin-top: -70px;
+    margin-left: -80px;
   }
   .section-about-challenge .button-wrapper {
     padding-top: 40px;
@@ -52,12 +52,13 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
+    gap: 140px;
   }
   .about-challenge__media-item {
     width: 580px;  
   }
   .about-challenge__text-item {
-    width: 580px;
+    width: 590px;
   }
 }
 

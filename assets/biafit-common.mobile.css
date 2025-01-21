@@ -15,10 +15,11 @@
     height: calc(100vh - 90px);
   }
 
-  #MainContent:has(cart-items.is-empty) {
+  #MainContent:has(cart-items.is-empty),
+  #MainContent:not(h1.main-page-title) {
     height: auto !important;
   }
-
+ 
   #main-cart-footer {
     border-top: 1px solid rgba(226, 226, 226, 1);
     width: 100%;
@@ -284,5 +285,31 @@
     width: 343px ;
     height: 52px ;
     border-radius: 12px ;
+  }
+
+  /* Pages styles */
+  .shopify-policy__body {
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .shopify-policy__body div > strong {
+    display: block;
+  }
+
+  .shopify-policy__body div > strong,
+  .shopify-policy__body h2,
+  .shopify-policy__body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+  }
+
+  .shopify-policy__body {
+    min-width: 340px;
+    width: calc(100% - 60px);
+    margin: auto;  
   }
 }

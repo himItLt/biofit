@@ -45,7 +45,8 @@
 
 @media screen and (min-width: 990px) {
   .about-app__content {
-    width: 620px;
+    width: 561px;
+    margin-left: calc(var(--img-ratio) * 115);
   }
   .about-app__text p, .section-about-app .service-item {
     font-family: Lato, sans-serif;
@@ -59,8 +60,8 @@
     position: relative;
     width: 660px;
     top: -30px;
-    margin-right: calc(-160px * var(--img-ratio));
     float: right;
+    margin-right: -55px;
   }
   .section-about-app .button-wrapper {
     padding-top: 40px;
@@ -69,17 +70,17 @@
   .about-app__grid {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
     width: 1362px;
     margin: auto;
+    gap: 100px;
   }
   .about-app__media-item {
     width: 700px;  
   }
   .about-app__text-item {
-    width: 460px;
-    padding-left: calc(100px * var(--img-ratio));
+    width: 600px;
   }
   .about-app__services {
     height: 320px;

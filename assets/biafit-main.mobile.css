@@ -102,6 +102,7 @@
         color: var(--Text-Black, rgba(6, 6, 6, 1));
     }
     /* TODO: fix margin-left to design */
+    .main-page-title,
     .about-app__heading, 
     .collection__title .title, 
     .blog__title, .about-holly__heading, 

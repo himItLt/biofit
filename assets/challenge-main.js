@@ -32,7 +32,6 @@ class ChallengeTimer {
     return (value < 10 ? '0' + value : value);
   }
   startAnimation() {
-    console.log('Animation...');
     let doUpdate = false;
     const animation = this.animation['slider-' + this.mode];
     const stepTop = (animation.max - animation.min);
@@ -139,7 +138,6 @@ class ChallengeTimer {
   }
 
   initTimerSlots() {
-    console.log('Tick...');
     this.currentMinute = this.slider.querySelector('.time-number:first-child');
     this.currentMinute.style.opacity = (1 - this.currentFrame.opacity);
     this.nextMinute = this.slider.querySelector('.time-number:last-child');

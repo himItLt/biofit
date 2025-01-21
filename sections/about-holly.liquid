@@ -16,11 +16,21 @@
     <div class="about-holly__grid">
       <div class="about-holly__media-item">
         <div class="about-holly__media">
-          <img src="{{ settings.image_cdn_path }}about-holly.png?v=1736535312" width="100%" height="100%">
+          <img src="{{ settings.image_cdn_path }}about-holly.png?v=1736535312" width="100%" height="100%" class="not-mobile">
+          <img src="{{ settings.image_cdn_path }}holly-mobile-bg.png?v=1737459912" width="100%" height="100%" class="only-mobile">
         </div>
       </div>
       <div class="about-holly__text-item">
         <div class="about-holly__content">
+          <ul class="about-holly__services">
+            <li class="service-item item-1">Dietician & Nutrition Coach</li>
+            <li class="service-item item-2">B.S. Food Science and Nutrition</li>
+            <li class="service-item item-3">M.S. Dietetics</li>
+            <li class="service-item item-4">Amateur and Pro Fitness Competitor Coach</li>
+            <li class="service-item item-5">IFBB Bikini Pro</li>
+            <li class="service-item item-6">Scientific Educator & Online Physique Coach </li>
+            <li class="service-item item-7">Published Author</li>
+          </ul>
           <div class="about-holly_information">
             {%- for block in section.blocks -%}
               {% case block.type %}

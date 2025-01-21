@@ -130,6 +130,7 @@
   align-items: center;
   position: relative;
   overflow: visible;
+  border-radius: 0 0 100px 100px;
 }
 
 .support .form__message {

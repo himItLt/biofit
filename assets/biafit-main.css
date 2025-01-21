@@ -53,7 +53,7 @@
     }
 
     .header-wrapper {
-        width: 1328px;
+        width: calc(1328 * var(--img-ratio));
         margin: auto;
     }
 
@@ -96,7 +96,7 @@
         font-weight: 900;
         line-height: 126px;
         text-align: left;
-        color: var(--Color-Block-Titles, rgba(237, 22, 83, 0.07));
+        color: var(--Color-Block-Titles, rgba(237, 22, 83, 0.1));
         position: relative;
         text-transform: uppercase;
         z-index: 10;

@@ -117,11 +117,11 @@
         font-size: 34px;
         font-weight: 800;
         line-height: 56px;
-        color: var(--Color-Block-Titles, rgba(237, 22, 83, 0.07));
+        color: var(--Color-Block-Titles, rgba(237, 22, 83, 0.1));
         position: relative;
         text-transform: uppercase;
         z-index: 10;
-        margin-left: 15px;
+        margin-left: 10px;
         padding-top: 35px;
     }
 

@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 {{ 'component-image-with-text.mobile.css' | asset_url | stylesheet_tag }}
 
@@ -27,80 +30,109 @@
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
   <div class="page-width">
-    <div class="image-with-text">
-      <!-- TODO: add flex, remove image item -->
-      <div class="image-with-text__grid">
-        <div class="image-with-text__media-item">
-          <div class="image-with-text__media">
-            {%- if section.settings.image != blank -%}
-              {%- if section.settings.image_behavior == 'ambient' or section.settings.image_behavior == 'zoom-in' -%}
-                {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
-                {%- capture sizes -%}
-              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 1.6667 }}px,
-              (min-width: 750px) calc((100vw - 130px) / 1.667), calc((100vw - 50px) / 1.667)
-            {%- endcapture -%}
-              {%- else -%}
-                {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
-                {%- capture sizes -%}
-              (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
-              (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
-            {%- endcapture -%}
-              {%- endif -%}
-              {{
-                section.settings.image
-                | image_url: width: 1500
-                | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
-              }}
-            {%- else -%}
-              {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-            {%- endif -%}
-          </div>
-        </div>
-        <div class="image-with-text__text-item">
-          <div id="ImageWithText--{{ section.id }} " class="image-with-text__content">
-            {%- for block in section.blocks -%}
-              {% case block.type %}
-                {%- when 'heading' -%}
-                  <h2
-                    class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
-                    {{ block.shopify_attributes }}
-                  >
-                    Meet BiaFit:<br>
-                    Your Evidence Based<br> 
-                    Training Companion!
-                  </h2>
-                {%- when 'text' -%}
-                  <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                    We'll help you become the best version of yourself, with customized, <br class="d-break">
-                    supportive, evidence based and empowering training programs, <br class="d-break">
-                    and expert guidance.
-                  </div>
-                {%- when 'button' -%}
-                  {%- if block.settings.button_label != blank -%}
-                    <a href="#membership-section" id="main-block-button" class="button button--primary">
-                      Join Now  
-                    </a>
+    <div class="home-slider__wrapper">
+      <div class="home-slider__grid">
+        <div class="image-with-text home-slide">
+          <div class="image-with-text__grid">
+            <div class="image-with-text__media-item">
+              <div class="image-with-text__media">
+                {%- if section.settings.image != blank -%}
+                  {%- if section.settings.image_behavior == 'ambient' or section.settings.image_behavior == 'zoom-in' -%}
+                    {%- assign widths = '198, 432, 642, 900, 1284, 1800' -%}
+                    {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 1.6667 }}px,
+                  (min-width: 750px) calc((100vw - 130px) / 1.667), calc((100vw - 50px) / 1.667)
+                {%- endcapture -%}
+                  {%- else -%}
+                    {%- assign widths = '165, 360, 535, 750, 1070, 1500' -%}
+                    {%- capture sizes -%}
+                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px,
+                  (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)
+                {%- endcapture -%}
                   {%- endif -%}
-              {%- endcase -%}
-            {%- endfor -%}
-            <div class="counter-block">
-              <div class="counter-block-item">
-                <h2 class="counter-number">250+</h2>
-                <span class="counter-text">Recipes</span>
-              </div>
-              <div class="counter-block-item">
-                <h2 class="counter-number">40+</h2>
-                <span class="counter-text">Programs</span>
-              </div>
-              <div class="counter-block-item">
-                <h2 class="counter-number">700+</h2>
-                <span class="counter-text">Exercise Videos</span>
-              </div>
-              <div class="counter-block-item">
-                <h2 class="counter-number">5,000+</h2>
-                <span class="counter-text">Community Members</span>
+                  {{
+                    section.settings.image
+                    | image_url: width: 1500
+                    | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
+                  }}
+                {%- else -%}
+                  {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {%- endif -%}
               </div>
             </div>
+            <div class="image-with-text__text-item">
+              <div id="ImageWithText--{{ section.id }} " class="image-with-text__content">
+                {%- for block in section.blocks -%}
+                  {% case block.type %}
+                    {%- when 'heading' -%}
+                      <h2
+                        class="image-with-text__heading inline-richtext {{ block.settings.heading_size }}"
+                        {{ block.shopify_attributes }}
+                      >
+                        Meet BiaFit:<br>
+                        Your Evidence Based<br> 
+                        Training Companion!
+                      </h2>
+                    {%- when 'text' -%}
+                      <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                        We'll help you become the best version of yourself, with customized, <br class="d-break">
+                        supportive, evidence based and empowering training programs, <br class="d-break">
+                        and expert guidance.
+                      </div>
+                    {%- when 'button' -%}
+                      {%- if block.settings.button_label != blank -%}
+                        <a href="#membership-section" id="main-block-button" class="button button--primary">
+                          Join Now  
+                        </a>
+                      {%- endif -%}
+                  {%- endcase -%}
+                {%- endfor -%}
+                <div class="counter-block">
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">250+</h2>
+                    <span class="counter-text">Recipes</span>
+                  </div>
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">40+</h2>
+                    <span class="counter-text">Programs</span>
+                  </div>
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">700+</h2>
+                    <span class="counter-text">Exercise Videos</span>
+                  </div>
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">5,000+</h2>
+                    <span class="counter-text">Community Members</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% for product in collections['challenges'].products %}
+          {% if product.id == 8030980735167 %}
+            {% assign start_date = product.metafields.custom.challenge_start.value | date: "%a, %b %d, %Y" %}
+          {% endif %}
+       {% endfor %}
+    
+        <div class="home__challenge-wrapper home-slide">
+          <div class="challenge-main">
+            <div class="start-date-block">
+              <div class="date-value"><span>Start Date: {{ start_date }}</span></div>
+            </div>
+            <h1 class="challenge-title">New 6 week challenge</h1>
+            <div class="home__love-fit"></div>
+            <div class="home__be-quick">Be Quick! Sign-Ups Close Soon!</div>
+            <div class="button-block">
+              <a
+                href="/challenge"
+                class="button button--primary biafit-buy-button"
+              >
+                Join Now
+              </a>
+            </div>
+            <div class="home__challenge-brands"></div>
           </div>
         </div>
       </div>

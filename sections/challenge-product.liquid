@@ -53,6 +53,7 @@
   {% assign start_date_ts = product.metafields.custom.challenge_start.value | date: "%s" %}
 
   <script>
+    console.log('ID: ', {{ product.id }});
     window.biafitStart = {{ start_date_ts }};
     window.challengeId = {{ product.selected_or_first_available_variant.id }};
   </script>

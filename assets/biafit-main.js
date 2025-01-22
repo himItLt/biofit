@@ -723,6 +723,35 @@ class BiafitSlider {
       });
     });
   }
+
+  processMainSlider(slider, interval) {
+    const slide1 = slider.querySelector('.home-slide:first-child');
+    const slide2 = slider.querySelector('.home-slide:last-child');
+    
+    slide1.animate([
+      {opacity: 1},
+      {opacity: 0},
+    ], interval);
+    slide2.animate([
+      {opacity: 0},
+      {opacity: 1},
+    ], interval);
+    
+    slider.animate([
+      {left: 0},
+      {left: '-100vw'},
+    ], interval).onfinish = (e) => {
+      slider.append(slide1);
+    } 
+  }
+
+  initMainSlider() {
+    const slider = document.querySelector('.home-slider__grid');
+    setInterval(() => {
+      this.processMainSlider(slider, 2000);
+    }, 5000);
+    this.processMainSlider(slider, 2000);
+  }
 }
 
 window.biafitSlider = new BiafitSlider();
@@ -737,5 +766,7 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  //window.biafitSlider.setupTimers();
+  window.biafitSlider.setupTimers();
+  window.biafitSlider.initMainSlider();
+  document.querySelector('.home__video video')?.play();
 });

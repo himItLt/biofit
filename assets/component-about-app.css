@@ -54,7 +54,7 @@
 /* Desktop */
 @media screen and (min-width: 990px) {
   .about-app__content {
-    width: 100%;
+    width: 640px;
   }
   .about-app__text p, .section-about-app .service-item {
     font-family: Lato, sans-serif;
@@ -83,7 +83,7 @@
     gap: 100px;
   }
   .about-app__media-item {
-    width: 700px;  
+    width: 600px;  
   }
   .about-app__text-item {
     width: 640px;

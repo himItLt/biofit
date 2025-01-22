@@ -289,6 +289,11 @@
         "padding_bottom": 36
       }
     },
+    "homepage_video": {
+      "type": "homepage-video",
+      "settings": {
+      }
+    },
     "featured_product_QeYAz4": {
       "type": "featured-product",
       "blocks": {
@@ -408,6 +413,7 @@
   "order": [
     "image_with_text_3PaXKQ",
     "about_app_TQVKC9",
+    "homepage_video",
     "featured_collection_Nay7xH",
     "recipe_library_9fLnAL",
     "featured_blog_ph4qGt",

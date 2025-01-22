@@ -18,7 +18,7 @@
     font-weight: 800;
     line-height: 44.8px;
     text-align: left;
-    text-underline-position: from-font;
+    text-transform: uppercase;
     margin: 0;
   }
 
@@ -29,9 +29,6 @@
     line-height: 27.36px;
     letter-spacing: 0.03em;
     text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-    width: 520px;
     display: block;
   }
   .blog__title {
@@ -40,14 +37,8 @@
   }
 
   .blog .article-card-wrapper {
-      height: 409px;
-      width: 317px;
-  }
-
-  .blog .article-card__image-wrapper {
-      border-radius: 12px;
-      border: 1px solid rgba(226, 226, 226, 1);
-      box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.05);
+      height: 450px;
+      width: 100%;
   }
 
   .blog .card__heading {
@@ -83,7 +74,7 @@
   .blog .slider__wrapper {
     width: 1328px;
     margin: auto;
-    top: -40px;
+    top: -85px;
     position: relative;
     overflow: hidden;
     padding-top: 60px;
@@ -97,6 +88,7 @@
     position: relative;
     justify-content: flex-start;
     gap: 15px;
+    top: 35px;
   } 
 
   .blog .description {
@@ -106,6 +98,26 @@
 
   .blog .card__inner {
     height: 225px;
+    border-radius: 12px 12px 0 0;
+    border: 1px solid rgba(226, 226, 226, 1);
+    border-bottom: none;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .blog .card__information {
+    border-radius: 0 0 12px 12px;
+    border: 1px solid rgba(226, 226, 226, 1);
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .blog .article-card__rating {
+    display: block;
+    background-position: left center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 135px;
+    height: 20px;
   }
 
   .blog .page-width-desktop {

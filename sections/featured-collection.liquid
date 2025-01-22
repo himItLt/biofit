@@ -91,7 +91,7 @@
       <div class="slider__wrapper">
         <ul class="collection__cards">
           {% assign skip_card_product_styles = false %}
-          {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+          {%- for product in section.settings.collection.products limit: 100 -%}
             <li
               id="Slide-{{ section.id }}-{{ forloop.index }}"
               class="{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"

@@ -16,7 +16,7 @@
       {%- endfor -%}
     <div class="about-app__grid">
       <div class="about-app__media-item">
-        <div class="about-app__media">
+        <div class="about-app__media">  
           <img src="{{ settings.image_cdn_path }}about-app.png?v=1736524892" width="100%" height="100%">
         </div>
       </div>
@@ -28,39 +28,40 @@
             {%- when 'caption' -%}
                 <h3 class="about-app__caption">
                   {% comment %} {{ block.settings.caption | escape }} {% endcomment %}
-                  The BiaFit App: Your Evidence-<br class="d-break"><br class="m-break"> Based <br class="t-break">Training Companion!
+                  Achieve Results with Science-<br class="d-break"> 
+                  Driven Workouts & Recipes<br class="d-break">
+                  Tailored to your Goals
                 </h3>
               {%- when 'text' -%}
                   <div class="about-app__text">
                     <!-- {{ block.settings.text }} -->
                     <p>
-                      The <strong>BRAND NEW BiaFit Workout App</strong> by Dietician and Coach Holly T Baxter, has everything you need to reach your goals in the gym:
+                      The <strong>NEW BiaFit Workout App</strong> by Dietician and Coach Holly T. Baxter, has everything you need to reach your goals in the gym:
                     </p>
                   </div>
                   <div class="about-app__services">
                     <div class="service-item item-icon-1">
-                      Access To 50+ Home & Gym Programs For Strength, Hypertrophy, Fat 
-                      Loss, Cardio, Warmup & Mobility
+                      Access to 50+ Home & Gym Programs for Strength, Hypertrophy, Cardio, Warmup & Mobility
                     </div>
                     <div class="service-item item-icon-2">
-                      Enjoy Holly's Dietician Approved Recipe Library (250+ Recipes With New 
-                      Recipes Added Monthly!)
+                      Enjoy Holly's Dietician Approved Recipe Library (250+ recipes with New Recipes Added Monthly)
                     </div>
-                    <div class="service-item item-icon-3">Stay Motivated With Workout And Progress Tracking, Personal Bests, 
-                    And Detailed Volume And Lifting Analytics</div>
+                    <div class="service-item item-icon-3">
+                      Stay Motivated with Workout and Progress Tracking, Personal Bests, and Detailed Volume and Lifting Analytics
+                    </div>
                     <div class="service-item item-icon-4">
-                      Monitor Your Energy Expenditure, Track Your Steps, And Record Your 
-                      Weight Daily To Stay On Track With Your Goals</div>
+                      Monitor Your Energy Expenditure, Track Your Steps, and Record Your Weight Daily to stay on track with your goals
+                    </div>
                     <div class="service-item item-icon-5">
-                      Receive Training Insights And Resources From Holly And Join A Private 
-                      In-App Support Community With Women On The Same Journey
+                      Receive Training Insights and Resources from Holly and Join a Private In-App Support Community with women on the same journey
                     </div>
                   </div>
               {%- when 'button' -%}
                 {%- if block.settings.button_label != blank -%}
                 <div class="button-wrapper">
                   <a href="{{ block.settings.button_link }}" class="button button--primary biafit-buy-button" id="about-app-button">
-                    {{ block.settings.button_label | escape }}
+                    <!--{{ block.settings.button_label | escape }} -->
+                    Join Now
                   </a>
                 </div>
                 {%- endif -%}

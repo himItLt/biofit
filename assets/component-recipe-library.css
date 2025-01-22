@@ -71,24 +71,31 @@
   }
   .recipe-library__text-item .content {
     margin-top: 40px;
+    margin-left: -14px;
   }
   .recipe-library_info {
     width: 526px;
-    margin-left: 92px;
+    margin-left: calc(125 * var(--img-ratio));
   }
   .recipe-library__media {
     position: relative;
-    width: 530px;
+    width: calc(530 * var(--img-ratio));
     top: -50px;
-    margin-right: 105px;
+    margin-right: calc(105 * var(--img-ratio));
   }
   
   .recipe-library__grid {
     display: flex;
     width: 1328px;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: center;
     margin: auto;
-  }  
+    gap: 100px;
+  }
+  .section-recipe-library {
+    background-position: left left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
 }
 

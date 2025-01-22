@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 990px) {
   .section-about-holly {
-    height: calc(870 * var(--img-ratio));
+    height: calc(925 * var(--img-ratio));
   }
   .about-holly__text p {
     font-family: Lato, sans-serif;
@@ -34,12 +34,13 @@
   }
 
   .about-holly_information {
-    width: 524px;
-    margin-top: -75px;
+    right: calc(-40 * var(--img-ratio));
+    position: relative;
+    width: 540px;
   }
 
   .about-holly__content {
-    margin-left: calc(150 * var(--img-ratio));
+    margin-top: -75px;
   }
 
   .social-links {
@@ -72,9 +73,11 @@
   }
 
   .section-about-holly .about-holly__media {
-    width: 860px;
+    width: calc(860 * var(--img-ratio));
     position: relative;
+    max-width: 860px;
     top: -184px;
+    left: calc(110 * var(--img-ratio));
   }
   .about-holly__grid {
     display: flex;
@@ -82,7 +85,7 @@
     justify-content: center;
     width: 1362px;
     margin: auto;
-    gap: 100px;
+    gap: 50px;
   }
   .about-holly__heading {
     left: 5px;

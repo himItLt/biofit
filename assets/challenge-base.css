@@ -39,13 +39,6 @@
     border: 0px !important;  
 }
 
-.blog .article-card__image-wrapper {
-    box-shadow: none !important;
-    border: none !important;   
-    box-shadow: none !important;
-    border: none !important;   
-}
-
 .about-holly__heading {
     margin-top: 30px;
 }
@@ -61,19 +54,17 @@
     .blog .article-card-wrapper {
         height: 317px !important;
     }
-    .blog .card__inner {
-        height: 100% !important;
-    }
     .blog .slider-buttons {
         top: -405px !important;
     }
-    .blog .article-card__image-wrapper {
+    .blog .card__inner {
         border-radius: 12px !important;
+        height: 100% !important;
     }
 }
 
 @media screen and (max-width: 989px) {
-    .blog .article-card__image-wrapper {
+    .blog .blog .card__inner {
         border-radius: 8px !important;    
     }
     .whats-included__caption h3,

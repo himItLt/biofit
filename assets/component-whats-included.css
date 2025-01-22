@@ -35,7 +35,7 @@
   align-items: center;
 }
 .whats-included__caption {
-  width: 700px;
+  width: 750px;
 }
 .whats-included__caption h3 {
   text-align: center !important;
@@ -66,6 +66,7 @@
     text-transform: uppercase;
     color: rgba(65, 65, 66, 1);
     margin-bottom: 10px;
+    white-space: nowrap;
   }
   
   .whats-included__heading {

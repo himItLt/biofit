@@ -314,8 +314,8 @@
           if (isSupportForm == 1) {
             redirect = redirect + '#contact-section';
             localStorage.setItem('isSupportSuccess', 1);
+            location.href = redirect;
           }
-          location.href = redirect;
         </script>
       {% endunless %}
       {% sections 'header-group' %}
@@ -326,6 +326,8 @@
     {%- endcase -%}
 
     {%- case template -%}
+    {%- when 'index' -%}
+      {% comment %} Index page addons {% endcomment %}
     {%- when 'product.biafit-challenge' -%}
       <link rel="stylesheet" href="{{ 'challenge-base.css' | asset_url }}" media="print" onload="this.media='all'"> 
     {%- else -%}

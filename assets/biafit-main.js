@@ -15,7 +15,7 @@ class Manager {
   }
 
   hasScreenMode(screenMode) {
-    return (this.getScreenMode() == mode);
+    return (this.getScreenMode() == screenMode);
   }
 
   trackMobileMenu() {
@@ -737,5 +737,5 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  window.biafitSlider.setupTimers();
+  //window.biafitSlider.setupTimers();
 });

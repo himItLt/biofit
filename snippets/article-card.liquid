@@ -119,6 +119,9 @@
               {{ article.title | truncate: 50 | escape }}
             </a>
           </h3>
+          <!-- Biafit Rating Stars -->
+          <div class="article-card__rating"></div>
+
           <div class="article-card__info caption-with-letter-spacing h5">
             {%- if show_date -%}
               <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>

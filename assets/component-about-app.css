@@ -26,6 +26,10 @@
   color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
 }
 
+.about-app__text p > strong {
+  color: var(--Primary, rgba(237, 22, 83, 1));
+}
+
 .about-app__services .service-item {
   background-repeat: no-repeat;
   width: 100%;
@@ -50,8 +54,7 @@
 /* Desktop */
 @media screen and (min-width: 990px) {
   .about-app__content {
-    width: 561px;
-    margin-left: calc(var(--img-ratio) * 115);
+    width: 100%;
   }
   .about-app__text p, .section-about-app .service-item {
     font-family: Lato, sans-serif;
@@ -63,10 +66,8 @@
   }
   .about-app__media {
     position: relative;
-    width: 660px;
+    width: calc(760 * var(--img-ratio));
     top: -30px;
-    float: right;
-    margin-right: -55px;
   }
   .section-about-app .button-wrapper {
     padding-top: 40px;
@@ -85,7 +86,8 @@
     width: 700px;  
   }
   .about-app__text-item {
-    width: 600px;
+    width: 640px;
+    margin-left: calc(20 * var(--img-ratio));
   }
   .about-app__services {
     height: 320px;
@@ -211,7 +213,7 @@
   }
   
   .about-app__services {
-    gap: 12px;
+    gap: 16px;
   }
   .about-app__media {
     left: 75px;
@@ -230,7 +232,7 @@
   .about-app__services .service-item {
     background-repeat: no-repeat;
     background-size: 32px 32px;
-    padding: 0 0 0 38px;
+    padding: 0 0 0 55px;
     background-position: left center;
     width: 100%;
     margin: auto;
@@ -247,8 +249,9 @@
     font-weight: 400;
     line-height: 24px;
     letter-spacing: 0.03em;
-    text-align: left;
-    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));  
+    text-align: center;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1)); 
+    padding: 0 10px;
   }
 
   .about-app__services .button-wrapper {
@@ -263,7 +266,7 @@
   .section-about-app .button-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 32px;
+    margin-top: 40px;
   }
   .section-about-app a.button {
     width: 360px;

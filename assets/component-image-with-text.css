@@ -1,45 +1,52 @@
 /* BiaFit */
 @media screen and (min-width: 990px) {
+  #MainContent {
+    position: relative;
+    top: -102px;
+  }
+
+  .d-break {
+    display: inherit;
+  }
+  .m-break {
+    display: none;
+  }
+  
   .image-with-text {
-    background-size: cover;
-    background-position: right;
+    background-size: 100% 100%;
+    background-position: 0px calc(118 * var(--img-ratio));
     background-repeat: no-repeat;
-    width:100%;
+    width: 100%;
     position: relative;
     margin-top: -120px;
-    height: 935px;
+    height: calc(1050 * var(--img-ratio));
+    max-height: 1050px;
     padding-top: 210px;
   }
 
   .image-with-text__content {
-    top: -80px;
-    width: 85%;
-    float: left;
-    /* TODO: remove calc padding */
-    padding-left: calc(50vw - 665px);
-    max-width: 725px;
+    width: 1328px;
     padding: 0;
-    margin-top: 45px;
-    margin-left: 200px;
+    margin: auto;
+    position: relative;
+    top: 85px;
   }
 
   .image-with-text__heading {
-    font-family: Poppins, sans-serif;
-    font-size: 60px;
+    font-family: Poppins,sans-serif;
+    font-size: calc(60 * var(--img-ratio));
     font-weight: 700;
-    line-height: 72px;
+    line-height: calc(74 * var(--img-ratio));
     text-align: left;
-    text-underline-position: from-font;
-    text-transform: uppercase;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
     width: 715px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   .image-with-text__text {
-    width:725px;
+    width: 725px;
     margin-bottom: 40px;
-    margin-top: 18px;
+    margin-top: 20px;
   }
   .image-with-text__text p {
     width: 580px;

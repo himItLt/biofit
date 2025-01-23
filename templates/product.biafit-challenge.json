@@ -355,8 +355,7 @@
     "support_form": {
       "type": "support-form",
       "settings": {
-        "heading": "Support",
-        "partner_form_type": "challenge"
+        "heading": "Support"
       }
     },
     "biafit_footer_ymBdTx": {

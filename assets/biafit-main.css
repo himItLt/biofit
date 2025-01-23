@@ -2,6 +2,7 @@
     --img-ratio: calc(100vw / 1728);
     --img-ratio-mobile: calc(100vw / 370);
     --img-ratio-tablet: calc(100vw / 768);
+    --zoom-desktop: 1;
 }
 a:hover {
     text-decoration: none !important;
@@ -11,9 +12,24 @@ p > strong {
 }
 
 @media screen and (min-width: 990px) {
+    @media (max-width: 1600px) {
+        :root {
+            --zoom-desktop: 0.9;    
+        }
+    }
+    @media (max-width: 1400px) {
+        :root {
+            --zoom-desktop: 0.8;    
+        }
+    }
+    @media (max-width: 1200px) {
+        :root {
+            --zoom-desktop: 0.7;    
+        }
+    }
+    
     #MainContent {
-        max-width: 2000px !important;
-        min-width: 1400px !important;
+        width: 100vw;
         margin: auto !important;    
     }
 
@@ -22,6 +38,9 @@ p > strong {
         position: relative;
         overflow: hidden;
         padding-bottom: 20px;
+    }
+    #MainContent .shopify-section:not(.homepage-slider) {
+        zoom: var(--zoom-desktop);
     }
     #MainContent .shopify-section:has(product-info) {
         overflow: visible;

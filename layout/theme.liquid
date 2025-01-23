@@ -308,17 +308,24 @@
     {%- when 'index' -%}
       {% unless settings.challenge_redirect == empty or request.design_mode%}
         <script>
-          let redirect = '{{ settings.challenge_redirect }}';
-          const urlParams = new URLSearchParams(window.location.search);
-          const isSupportForm = urlParams.get('support-form-success');
-          
-          if (isSupportForm == 1) {
-            redirect = redirect + '#contact-section';
-            localStorage.setItem('isSupportSuccess', 1);
-            location.href = redirect;
-          }
-          // TODO: uncomment for PROD
-          //location.href = redirect;
+          (() => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const noRedirect = urlParams.get('no-redirect');
+            if (noRedirect == 1) {
+              console.log('No redirect');
+              return;
+            }
+            let redirect = '{{ settings.challenge_redirect }}';
+            const isSupportForm = urlParams.get('support-form-success');
+            
+            if (isSupportForm == 1) {
+              redirect = redirect + '#contact-section';
+              localStorage.setItem('isSupportSuccess', 1);
+              location.href = redirect;
+            }
+            // TODO: uncomment for PROD
+            //location.href = redirect;
+          })();
         </script>
       {% endunless %}
       {% sections 'header-group' %}

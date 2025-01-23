@@ -769,7 +769,7 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  window.biafitSlider.setupTimers();
+  /* window.biafitSlider.setupTimers();
   window.biafitSlider.initMainSlider();
-  document.querySelector('.home__video video')?.play();
+  document.querySelector('.home__video video')?.play(); */
 });

@@ -282,14 +282,12 @@
     "support_form": {
       "type": "support-form",
       "settings": {
-        "heading": "Support",
-        "partner_form_type": "homepage"
+        "heading": "Support"
       }
     },
     "homepage_video": {
       "type": "homepage-video",
-      "settings": {
-      }
+      "settings": {}
     },
     "featured_product_QeYAz4": {
       "type": "featured-product",

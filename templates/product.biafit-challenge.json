@@ -356,10 +356,7 @@
       "type": "support-form",
       "settings": {
         "heading": "Support",
-        "heading_size": "h1",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "partner_form_type": "challenge"
       }
     },
     "biafit_footer_ymBdTx": {

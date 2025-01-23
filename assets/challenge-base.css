@@ -64,6 +64,9 @@
 }
 
 @media screen and (max-width: 989px) {
+    .blog .card .card__inner .card__media {
+        border-radius: 8px !important;
+    }
     .blog .blog .card__inner {
         border-radius: 8px !important;    
     }

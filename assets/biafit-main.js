@@ -747,6 +747,9 @@ class BiafitSlider {
 
   initMainSlider() {
     const slider = document.querySelector('.home-slider__grid');
+    if (!slider) {
+      return;
+    }
     setInterval(() => {
       this.processMainSlider(slider, 2000);
     }, 5000);

@@ -1,0 +1,22 @@
+{% comment %}
+  Adds google tag to HTML
+
+  Accepts:
+    - tag_id: {String} Google Tag Id
+  Usage:
+  {% render 'google-tag', tag_id: 'AW-16830318629' %}
+{% endcomment %}
+
+<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ tag_id }}"></script> 
+<script>
+  window.dataLayer = window.dataLayer || []; 
+  function gtag(){
+    // TODO: uncomment for PROD
+    console.log('Google tag: ', arguments);
+    
+    dataLayer.push(arguments);
+  } 
+  gtag('js', new Date()); 
+  gtag('config', '{{ tag_id }}'); 
+</script>

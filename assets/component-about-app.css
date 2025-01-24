@@ -103,6 +103,11 @@
     margin: auto;
   }
 
+  .about-app__heading {
+    margin-bottom: 15px;
+    margin-top: calc(180 * var(--img-ratio-mobile));
+  }
+
   .about-app__media-item {
     width: 100%;
     position: relative;

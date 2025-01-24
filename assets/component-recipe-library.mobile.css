@@ -3,15 +3,15 @@
     padding: 0;
   }
   .content-item {
-    list-style-type: none;
-    border: 1px solid rgba(255, 232, 238, 1);
+    border: 1px solid rgba(255,232,238,1);
     box-shadow: 2px 2px 12px #0000000a;
     height: 115px;
     padding-left: 45px;
     padding-top: 15px;
     border-radius: 16px;
-    width: 362px;
-    margin-bottom: 4px
+    width: 343px;
+    margin: auto;
+    margin-bottom: 6px;
   }
   .content-item::before {
     content: '';

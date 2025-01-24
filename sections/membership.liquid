@@ -1,7 +1,7 @@
 {{ 'component-membership.css' | asset_url | stylesheet_tag }}
 {{ 'component-membership.mobile.css' | asset_url | stylesheet_tag }}
 
-<div class="section-membership membership">
+<div class="section-membership membership biafit-zoom">
   <div class="page-width" id="membership-section">
     {%- for block in section.blocks -%}
       {% case block.type %}
@@ -33,9 +33,9 @@
                 <label class="plan-info">
                   <div class="plan-description">
                     <h5 class="plan-title">Semi-Annual</h5>
-                    <p><span class="plan-price">$119 USD</span><span class="plan-frequency"> / every 6 month</span></p>
+                    <p><span class="plan-price">$139 USD</span><span class="plan-frequency"> / every 6 month</span></p>
                   </div>
-                  <div class="plan-discount">Save 30%</div>
+                  <div class="plan-discount">Save 20%</div>
                 </label>
               </div>
               <div class="plan-item checked" id="plan3">
@@ -43,9 +43,9 @@
                 <label class="plan-info best-price" for="plan-3">
                   <div class="plan-description">
                     <h5 class="plan-title">Annual</h5>
-                    <p><span class="plan-price">$179 USD</span><span class="plan-frequency"> / per year</span></p>
+                    <p><span class="plan-price">$239 USD</span><span class="plan-frequency"> / per year</span></p>
                   </div>
-                  <div class="plan-discount">Save 50%</div>
+                  <div class="plan-discount">Save 30%</div>
                 </label>
               </div>
             </div>

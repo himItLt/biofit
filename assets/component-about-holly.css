@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 990px) {
   .section-about-holly {
-    height: calc(925 * var(--img-ratio));
+    height: 925px;
   }
   .about-holly__text p {
     font-family: Lato, sans-serif;
@@ -73,7 +73,7 @@
   }
 
   .section-about-holly .about-holly__media {
-    width: calc(860 * var(--img-ratio));
+    width: 860px;
     position: relative;
     max-width: 860px;
     top: -184px;

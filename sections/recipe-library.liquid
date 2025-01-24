@@ -1,7 +1,7 @@
 {{ 'component-recipe-library.css' | asset_url | stylesheet_tag }}
 {{ 'component-recipe-library.mobile.css' | asset_url | stylesheet_tag }}
 
-<div class="section-recipe-library">
+<div class="section-recipe-library biafit-zoom">
   <div class="page-width" id="recipe-library-section">
     {%- for block in section.blocks -%}
       {% case block.type %}

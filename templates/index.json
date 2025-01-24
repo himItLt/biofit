@@ -282,7 +282,8 @@
     "support_form": {
       "type": "support-form",
       "settings": {
-        "heading": "Support"
+        "heading": "Support",
+        "partner_form_type": "homepage"
       }
     },
     "homepage_video": {

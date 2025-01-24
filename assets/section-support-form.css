@@ -121,7 +121,6 @@
   background-size: 100% auto;
   background-position: center top;
   background-repeat: no-repeat;
-  width: 1328px;
   height: 1085px;
   margin: auto;
   display: flex;
@@ -164,7 +163,7 @@
     margin-top: 6px;
   }
   .support {
-    background-size: 1328px 800px;
+    background-size: 100% 800px;
     background-repeat: no-repeat;
     background-position: center bottom;
     height: auto;

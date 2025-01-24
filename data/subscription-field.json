@@ -35,16 +35,16 @@
     {
         "planId": 5725651135,
         "title": "Semi-Annual",
-        "discount": "Save 30%",
+        "discount": "Save 20%",
         "frequency": "every 6 month",
-        "display_price": 119
+        "display_price": 139
     },
     {
         "planId": 5725683903,
         "title": "Annual",
-        "discount": "Save 50%",
+        "discount": "Save 30%",
         "frequency": "per year",
-        "display_price": 179
+        "display_price": 239
     }
 ]
 ]

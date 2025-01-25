@@ -251,4 +251,8 @@
     #header-challenge .header .menu-drawer {
       width: 100% !important;
     }
+    #header-challenge .header,
+    #header-challenge {
+        background: none !important;
+    }
 }

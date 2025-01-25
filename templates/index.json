@@ -117,7 +117,7 @@
       "settings": {
         "title": "Programs",
         "heading_size": "h1",
-        "description": "<p>Find the program that’s <strong><br class=>right for you</strong></p>",
+        "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "programs",

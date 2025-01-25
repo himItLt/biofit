@@ -1,4 +1,212 @@
 @media screen and (max-width: 989px) {
+  #MainContent .shopify-section:has(.homepage-slider) {
+    height: calc(740 * var(--img-ratio-mobile));
+    margin-bottom: 20px;   
+  }
+
+  .image-with-text {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 100vw;
+    position: relative;
+    height: calc(740 * var(--img-ratio-mobile));
+  }
+  .image-with-text__text {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    color: rgba(139, 136, 137, 1);
+}
+  .counter-block {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    margin-top: -35px;
+    margin-bottom: 30px;
+  }
+  .counter-block .counter-block-item {
+    width: 76px;
+    height: 76px;
+    padding: 6px 8px;
+    border-radius: 12px;
+    border: 1px solid #FFADC4;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .counter-block .counter-block-item:nth-child(3) {
+    width: 91px;
+  }
+  .counter-block-item .counter-number {
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
+    margin: 0;
+  }
+  .counter-block-item .counter-text {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0.03em;
+    color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
+  }
+  .image-with-text__heading {
+    font-family: Poppins, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  .image-with-text__content {
+    padding: 16px;
+    height: 745px;
+  }
+  .main-button__wrapper {
+    position: relative;
+    top: calc(120 * var(--img-ratio-mobile));
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Challenge slide */
+  .challenge-main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 340px;
+    height: 100%;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .home__challenge-wrapper {
+    height: calc(740 * var(--img-ratio-mobile));
+    position: relative;
+    z-index: 0;
+    width: 100vw;
+  }
+
+  .challenge-main .challenge-title {
+    font-family: Bebas Neue, serif;
+    font-size: 45.12px;
+    font-weight: 700;
+    line-height: 54.14px;
+    text-align: center;
+    color: var(--Text-Black, rgba(6, 6, 6, 1));
+    height: 54px;
+    margin-top: 20px;
+    white-space: nowrap;
+  }
+
+  .challenge-main .home__love-fit {
+    display: block;
+    width: 436px;
+    height: 92px;
+    background-repeat: no-repeat;
+    background-size: calc(100% - 80px) 100%;
+    background-position: 65px;
+    position: relative;
+    top: -56px;
+    z-index: 20;
+    left: -24px;
+  }
+
+  .home__challenge-brands {
+    display: none;
+  }
+
+  .challenge-main .start-date-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .challenge-main .home__be-quick {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Poppins,sans-serif;
+    font-size: 15.42px;
+    font-weight: 600;
+    line-height: 41.5px;
+    text-align: center;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+    text-transform: uppercase;
+    position: relative;
+    top: -40px;
+    width: 347px;;
+  }
+
+  .challenge-main .date-value {
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 16px center;
+    background-color: #fff;
+    width: 256px;
+    height: 40px;
+    padding: 10px 16px;
+    border-radius: 100px;
+  }
+  .challenge-main .date-value span {
+    margin-left: 30px;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.2px;
+    text-align: left;
+    color: var(--Primary, rgba(237, 22, 83, 1));
+  }
+
+  .challenge-main .button-block {
+    margin-top: -20px;
+  }
+  .challenge-main a.button {
+    width: 343px;
+    height: 52px;
+    padding: 20px 40px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .home-slider__wrapper {
+    height: 740px;
+    position: relative;
+    z-index: 0;
+    width: 100vw; 
+  }
+
+  .home-slider__grid {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    width: 2000px;
+    flex-direction: row;
+    justify-content: flex-start;
+    top: 0;
+    left: 0;
+  }
+
+}
+
+/* Tabledt */
+@media screen and (min-width: 640px) and (max-width: 989px) {
   .page-width:has(.image-with-text) {
     height: fit-content;
   }

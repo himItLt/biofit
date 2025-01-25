@@ -1,0 +1,70 @@
+.form-control {
+    border-radius: 12px !important;
+    border: 1px solid rgba(237, 22, 83, 1) !important; 
+}
+
+.form-control,
+.form-group label {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: rgba(237, 22, 83, 0.6) !important;
+}
+
+#submitButton {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#submitButton button {
+    background: transparent !important;
+    width: 326px;
+    height: 64px;
+    padding: 20px 40px 20px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(237, 22, 83, 1) !important;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--Primary, rgba(237, 22, 83, 1)) !important;
+    left: -5px;
+    position: relative;
+}
+
+input.form-control,
+select.form-control {
+    height: 45px;
+}
+
+.text-danger {
+    font-weight: 700;
+    color: #ff0000;
+    margin-left: 2px;
+}
+
+.checkbox label::before {
+    border: 1px solid rgba(237, 22, 83, 1) !important;    
+} 
+
+@media screen and (max-width: 989px) {
+    #submitButton button {
+        background: transparent !important;
+        width: 100%;
+        height: 52px;
+        padding: 20px 40px 20px 40px;
+        border-radius: 16px;
+        border: 1px solid #F15822 !important;
+        font-family: Poppins, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 14px;
+        color: var(--Primary, rgba(237, 22, 83, 1)) !important;
+        position: relative;
+        left: 0;
+    }    
+}

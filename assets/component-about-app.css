@@ -105,7 +105,7 @@
 
   .about-app__heading {
     margin-bottom: 15px;
-    margin-top: calc(180 * var(--img-ratio-mobile));
+    margin-top: calc(40* var(--img-ratio-mobile));;
   }
 
   .about-app__media-item {

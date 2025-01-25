@@ -162,6 +162,11 @@
   .support .icon {
     margin-top: 6px;
   }
+
+  .custom__form {
+    width: 400px;
+    padding-right: 2px;
+  }
 }
 
 /* Tablet */

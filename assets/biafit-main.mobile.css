@@ -1,22 +1,19 @@
 @media screen and (max-width: 989px) {
     :root {
         --zoom-mobile: 1;
-        --slide_1-top: 0px;
-        --slide_2-top: 0px;
+        --program-left: -204px;
+        --blog-left: -30px;
     }
-    @media (min-width: 430px) {
+    @media (min-width: 450px) {
         :root {
             --zoom-mobile: 1.14;
+            --blog-left: -54px;
         }   
       }
     @media (min-width: 550px) {
         :root {
-            --zoom-mobile: 1.4;  
-        }
-    }
-    @media (max-width: 640px) {
-        :root {
-            --zoom-desktop: 1.6;   
+            --zoom-mobile: 1.3;
+            --blog-left: -73px;
         }
     }
 
@@ -28,7 +25,16 @@
         width: 100vw;
         margin: auto;
         overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
+    #MainContent .shopify-section {
+        width: 100vw;
+    }
+
     .d-break {
         display: none;
     }
@@ -36,7 +42,7 @@
         display: inherit;
     }
     #programs-section {
-        margin-top: -75px;
+        margin-top: 0;
     }
     .header__button-div {
         display: none;
@@ -189,7 +195,7 @@
         position: absolute;
         width: 1028px;
         gap: 10px;
-        margin-left: calc(-200 * var(--img-ratio-mobile));
+        margin-left: var(--program-left);
     }
 
     .collection ul > li.large-slide .card__media {
@@ -282,6 +288,8 @@
 
     .collection .slider-buttons {
         position: relative;
+        width: 375px;
+        margin: auto;
     }
 
     .collection .card__content::after {

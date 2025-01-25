@@ -342,7 +342,7 @@ class BiafitSlider {
       prev: {
         animation: 'blog-mobile-prev',
         init: (slider) => {
-          slider.style.left = '-180px';
+          slider.style.left = '-285px';
         }
       },
       next: {
@@ -351,6 +351,7 @@ class BiafitSlider {
         }
       },
     },
+    // TODO: Tablet animation
     'blog-tablet': {
       original: {
         left: '0px',
@@ -390,7 +391,7 @@ class BiafitSlider {
       ],
       'blog-mobile-prev': [
         {
-          left: '-180px'
+          left: '-285px'
         },
         {
           left: '0px'
@@ -401,7 +402,7 @@ class BiafitSlider {
           left: '0px'
         },
         {
-          left: "-180px"
+          left: "-285px"
         },
       ],
       'blog-tablet-prev': [
@@ -769,8 +770,8 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  /* window.biafitSlider.setupTimers();
-  window.biafitSlider.initMainSlider(); */
+  window.biafitSlider.setupTimers();
+  window.biafitSlider.initMainSlider();
 
   //document.querySelector('.home__video video')?.play();
 });

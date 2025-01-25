@@ -55,9 +55,11 @@
                       </div>
                     {%- when 'button' -%}
                       {%- if block.settings.button_label != blank -%}
+                      <div class="main-button__wrapper">
                         <a href="#membership-section" id="main-block-button" class="button button--primary">
                           Join Now  
                         </a>
+                      </div>
                       {%- endif -%}
                   {%- endcase -%}
                 {%- endfor -%}

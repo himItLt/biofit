@@ -153,7 +153,7 @@
   }
 }
 /* Tablet */
-@media screen and (min-width: 640px) and (max-width: 989px) {
+@media screen and (min-width: 641px) and (max-width: 989px) {
   .section-whats-included .d-img {
     display: none;
   }
@@ -167,13 +167,7 @@
   .whats-included__caption {
     width: 100%;
   }
-  .whats-included__caption .d-break {
-    display: inherit;
-  }
-  .whats-included__caption .m-break {
-    display: none;
-  }
-
+  
   .whats-included__heading {
     margin-bottom: 15px;
   }

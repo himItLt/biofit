@@ -112,7 +112,7 @@
     "brand_image_width": 465,
     "social_facebook_link": "https://www.facebook.com/TeamBiaFit",
     "social_instagram_link": "https://www.instagram.com/teambiafit/",
-    "social_youtube_link": "https://www.youtube.com/c/HollyTBaxter",
+    "social_youtube_link": "{{ settings.social_youtube_link }}",
     "social_tiktok_link": "",
     "social_twitter_link": "",
     "social_snapchat_link": "",

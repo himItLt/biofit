@@ -20,17 +20,14 @@
   white-space: nowrap;
 }
 
+.counter-block.tablet {
+  display: none;
+}
+
 @media screen and (min-width: 990px) {
   #MainContent {
     position: relative;
     top: -102px;
-  }
-
-  .d-break {
-    display: inherit;
-  }
-  .m-break {
-    display: none;
   }
   /* Homepage Slide 1 */
   .image-with-text {

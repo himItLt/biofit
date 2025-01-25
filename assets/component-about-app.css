@@ -203,10 +203,15 @@
 }
 
 /* Tablet */
-@media screen and (min-width: 640px) and (max-width: 989px) {
+@media screen and (min-width: 641px) and (max-width: 989px) {
   .t-break {
     display: inherit;
   }
+  .about-app__heading {
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+  
   .section-about-app .main-content {
     max-width: 610px;
     width: 610px;

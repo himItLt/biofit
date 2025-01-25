@@ -1,5 +1,7 @@
+/* Mobile */
 @media screen and (max-width: 989px) {
-    .biafit-footer.desktop {
+    .biafit-footer.desktop, 
+    .biafit-footer.tablet {
         display: none;
     }
     .biafit-footer {
@@ -120,5 +122,8 @@
         margin-top: -8px;
     }
 }
-
+/* Tablet */
+@media screen and (min-width: 641px) and (max-width: 989px) {
+    
+}
 

@@ -78,11 +78,15 @@
         and section.settings.collection.description != empty
       -%}
         <div class="collection__description">
-          {%- if section.settings.show_description -%}
+          {% comment %} {%- if section.settings.show_description -%}
             {{ section.settings.collection.description }}
           {%- else -%}
             {{ section.settings.description -}}
-          {%- endif %}
+          {%- endif %} {% endcomment %}
+          <p>
+            Find the program that's <br class="t-break">
+            <strong>right for you</strong>
+          </p>
         </div>
       {%- endif -%}
     </div>

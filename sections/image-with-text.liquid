@@ -49,8 +49,8 @@
                       </h2>
                     {%- when 'text' -%}
                       <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                        We'll help you become the best version of yourself, with customized, <br class="d-break">
-                        supportive, evidence based and empowering training programs, <br class="d-break">
+                        We'll help you become the best version of yourself, with customized, <br class="d-break t-break">
+                        supportive, evidence based and empowering training programs, <br class="d-break t-break">
                         and expert guidance.
                       </div>
                     {%- when 'button' -%}
@@ -63,7 +63,8 @@
                       {%- endif -%}
                   {%- endcase -%}
                 {%- endfor -%}
-                <div class="counter-block">
+                <!--  Mobile and desktop -->
+                <div class="counter-block desktop mobile">
                   <div class="counter-block-item">
                     <h2 class="counter-number">250+</h2>
                     <span class="counter-text">Recipes</span>
@@ -79,6 +80,25 @@
                   <div class="counter-block-item">
                     <h2 class="counter-number">50+</h2>
                     <span class="counter-text">Programs</span>
+                  </div>
+                </div>
+                <!-- Tablet -->
+                <div class="counter-block tablet">
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">250+</h2>
+                    <span class="counter-text">Recipes</span>
+                  </div>
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">50+</h2>
+                    <span class="counter-text">Programs</span>
+                  </div>
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">750+</h2>
+                    <span class="counter-text">Exercise Videos</span>
+                  </div>
+                  <div class="counter-block-item">
+                    <h2 class="counter-number">5,000+</h2>
+                    <span class="counter-text">Community Members</span>
                   </div>
                 </div>
               </div>

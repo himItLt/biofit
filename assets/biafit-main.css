@@ -57,7 +57,7 @@ p > strong {
     .d-break {
         display: inherit;
     }
-    .m-break {
+    .m-break, .t-break {
         display: none;
     }
     /* Header start */

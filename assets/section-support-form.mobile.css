@@ -170,7 +170,7 @@
 }
 
 /* Tablet */
-@media screen and (min-width: 640px) and (max-width: 989px) {
+@media screen and (min-width: 641px) and (max-width: 989px) {
   .m-break {
     display: none;
   }

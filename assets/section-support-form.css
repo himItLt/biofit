@@ -174,10 +174,14 @@
     height: 100%;
     background-color: transparent;
     border-radius: 12px;
+  }
+  .support .custom__form:has(.challenge) {
+    padding-top: 170px;
+    height: 880px;
+  }
+  .support .custom__form:has(.homepage) {
     padding-top: 99px;
+    height: 800px;
   }
-  .support #customForm {
-    border: 0;
-    height: calc(100% + 40px);
-  }
+  
 }

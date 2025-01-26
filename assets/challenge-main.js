@@ -161,9 +161,9 @@ class ChallengeTimer {
     this.mode = window.biafitManager.getScreenMode();
 
     // TODO: uncomment before deploy to PROD
-    /* setInterval(() => {
+    setInterval(() => {
       this.startAnimation();
-    }, this.tickInterval); */
+    }, this.tickInterval);
 
     this.startAnimation();
   }

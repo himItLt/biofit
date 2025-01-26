@@ -173,3 +173,39 @@
   }
 }
 
+@media screen and (min-width: 641px) and (max-width: 989px) {
+  .grand-prize__grid {
+    width: 640px;
+  }
+  .section-grand-prize {
+    height: 1187px;
+  }
+
+  .grand-prize__caption {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33.6px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .grand-prize__services {
+    width: 610px;
+    margin: auto;
+  }
+
+  .grand-prize__services li {
+    padding-left: 40px;
+    background-size: 28px;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 27.36px;
+    height: 40px;
+  }
+  .section-grand-prize a.button {
+    height: 52px;
+    padding: 16px 10px;
+  }
+}
+

@@ -24,7 +24,7 @@
   .section-membership .plans-form {
     width: 343px;
     height: 231px;
-    margin-top: 45px;
+    margin-top: 60px;
   }
 
   .section-membership .plan-item {
@@ -112,12 +112,19 @@
   }
 
   .membership__text h2 {
-    font-family: Poppins, sans-serif;
-    font-size: 20px;
+    font-family: Poppins,sans-serif;
+    font-size: 24px;
     font-weight: 700;
-    line-height: 28px;
+    line-height: 33.6px;
+    text-align: left;
     color: var(--Text-Black, rgba(6, 6, 6, 1));
     margin-bottom: 5px;
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+  .membership__text h2 strong {
+    color: var(--Primary, rgba(237, 22, 83, 1));
   }
 
   .membership__text p {
@@ -169,5 +176,69 @@
   }
   .membership__heading {
     margin-bottom: 5px;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 989px) {
+  .section-membership {
+    height: 680px;
+  }
+
+  #MainContent:has(.homepage) .biafit-footer {
+      margin-top: 0;
+  }
+
+  .membership__grid {
+      width: 610px;
+      height: 415px;
+  }
+
+  .membership__text-item {
+      width: 100%;
+      text-align: center;
+  }
+
+  .membership__content {
+      width: 100%;
+  }
+
+  .membership__media-item {
+      width: 100%;
+  }
+
+  .membership__media {
+      display: flex;
+      justify-content: center;
+  }
+
+  .membership__text h2 {
+      font-family: Poppins,sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 33.6px;
+      text-align: center;
+      color: var(--Text-Black, rgba(6, 6, 6, 1));
+      margin-bottom: 5px;
+      width: 100%;
+      text-transform: uppercase;
+      padding: 0 30px;
+  }
+
+  .membership__text p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.03em;
+      text-align: center;
+  }
+
+  .section-membership .plans-form {
+      width: 343px;
+      height: 231px;
+      margin-top: 0;
+  }
+  #membership_join-us {
+      top: 300px;
+      width: 296px;
   }
 }

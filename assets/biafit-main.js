@@ -274,21 +274,21 @@ class BiafitSlider {
         left: '0px',
       },
       prev: {
-        animation: 'program-mobile-prev',
+        animation: 'program-tablet-prev',
         init: (slider) => {
-          slider.style.left = '-215px';  
+          slider.style.left = '-325px';  
         },
         onStart: (slider) => {
           const oldCard = slider.querySelector('li.large-slide');
           const newCard = slider.querySelector('li:nth-child(2)');
           this.animateElement(
             oldCard.querySelector('.card-wrapper'), 
-            'program-mobile.wrapper',
+            'program-tablet.wrapper',
             true
           );
           this.animateElement(
             newCard.querySelector('.card-wrapper'), 
-            'program-mobile.wrapper',
+            'program-tablet.wrapper',
             false
           );
         },
@@ -297,19 +297,19 @@ class BiafitSlider {
         }
       },
       next: {
-        animation: 'program-mobile-next',
+        animation: 'program-tablet-next',
         init: (slider) => {},
         onStart: (slider) => {
           const oldCard = slider.querySelector('li.large-slide');
           const newCard = slider.querySelector('li:nth-child(3)');
           this.animateElement(
             oldCard.querySelector('.card-wrapper'), 
-            'program-mobile.wrapper',
+            'program-tablet.wrapper',
             true
           );
           this.animateElement(
             newCard.querySelector('.card-wrapper'), 
-            'program-mobile.wrapper',
+            'program-tablet.wrapper',
             false
           );
         },
@@ -342,7 +342,7 @@ class BiafitSlider {
       prev: {
         animation: 'blog-mobile-prev',
         init: (slider) => {
-          slider.style.left = '-285px';
+          slider.style.left = '-185px';
         }
       },
       next: {
@@ -357,13 +357,13 @@ class BiafitSlider {
         left: '0px',
       },
       prev: {
-        animation: 'blog-mobile-prev',
+        animation: 'blog-tablet-prev',
         init: (slider) => {
-          slider.style.left = '-180px';
+          slider.style.left = '-310px';
         }
       },
       next: {
-        animation: 'blog-mobile-next',
+        animation: 'blog-tablet-next',
         init: (slider) => {
         }
       },
@@ -391,7 +391,7 @@ class BiafitSlider {
       ],
       'blog-mobile-prev': [
         {
-          left: '-285px'
+          left: '-185px'
         },
         {
           left: '0px'
@@ -402,12 +402,12 @@ class BiafitSlider {
           left: '0px'
         },
         {
-          left: "-285px"
+          left: "-185px"
         },
       ],
       'blog-tablet-prev': [
         {
-          left: '-180px'
+          left: '-310px'
         },
         {
           left: '0px'
@@ -418,7 +418,7 @@ class BiafitSlider {
           left: '0px'
         },
         {
-          left: "-180px"
+          left: "-310px"
         },
       ],
       // Programs
@@ -480,7 +480,7 @@ class BiafitSlider {
       ],
       'program-tablet-prev': [
         {
-          left: '-215px'
+          left: '-325px'
         },
         {
           left: '0px'
@@ -491,19 +491,19 @@ class BiafitSlider {
           left: '0px'
         },
         {
-          left: '-215px'
+          left: '-325px'
         },
       ],
       'program-tablet.wrapper': [
         {
-          marginTop: '30px',
-          width: '210px',
-          height: '250px',
+          marginTop: '38px',
+          width: '320px',
+          height: '380px',
         },
         {
           marginTop: '0px',
-          width: '260px',
-          height: '310px',  
+          width: '384px',
+          height: '458px',  
         }
       ],
     };

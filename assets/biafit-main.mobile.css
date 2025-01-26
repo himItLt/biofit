@@ -54,8 +54,9 @@
         flex-direction: row-reverse;
         justify-content: space-between;
         padding: 0 !important;
-        width: calc(340 * var(--img-ratio-mobile));
+        /* width: calc(340 * var(--img-ratio-mobile)); */
         margin: auto;
+        padding: 0 40px !important;
     }
     .header__heading-logo-wrapper {
         width: 106px;

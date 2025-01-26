@@ -12,6 +12,11 @@
           >
             {{ block.settings.heading }}
           </h2>
+          {%- when 'caption' -%}
+          <h3 class="recipe-library__text">
+            {% comment %} {{ block.settings.caption | escape }} {% endcomment %}
+            Healthy eating, made simple
+          </h3>
       {%- endcase -%}
     {%- endfor -%}
       <div class="recipe-library__grid">
@@ -23,35 +28,6 @@
         <div class="recipe-library__text-item">
           <div class="recipe-library__content">
             <div class="recipe-library_info">
-              {%- for block in section.blocks -%}
-                {% case block.type %}
-                  {%- when 'caption' -%}
-                    <p
-                      class="recipe-library__text recipe-library__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
-                      {{ block.shopify_attributes }}
-                    >
-                      {{ block.settings.caption | escape }}
-                    </p>
-                  {%- when 'text' -%}
-                    <div class="recipe-library__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-                      {{ block.settings.text }}
-                    </div>
-                  {%- when 'button' -%}
-                    {%- if block.settings.button_label != blank -%}
-                      <a
-                        {% if block.settings.button_link == blank %}
-                          role="link" aria-disabled="true"
-                        {% else %}
-                          href="{{ block.settings.button_link }}"
-                        {% endif %}
-                        class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
-                        {{ block.shopify_attributes }}
-                      >
-                        {{ block.settings.button_label | escape }}
-                      </a>
-                    {%- endif -%}
-                {%- endcase -%}
-              {%- endfor -%}
               <div class="content">
                 <ul>
                   <li class="content-item">

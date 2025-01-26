@@ -206,7 +206,7 @@
           }
         },
         "text_mczyhA": {
-          "type": "text",
+          "type": "caption",
           "settings": {
             "text": "<h2><strong>Healthy eating, made simple</strong></h2>",
             "text_style": "body"

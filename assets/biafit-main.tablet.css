@@ -3,14 +3,13 @@
     /* default: 768px : 710 - 820 */
     :root {
         --zoom-tablet: 1;
-        --program-left: -204px;
-        --blog-left: -30px;
+        --program-left: -260px;
+        --blog-left: -40px;
     }
     /* 640  - 710 */
     @media (max-width: 710px) {
         :root {
             --zoom-tablet: 0.8;
-            --program-left: -204px;
             --blog-left: -30px;
         }
     }
@@ -94,12 +93,26 @@
     .collection .card__content {
         position: relative;
         top: -200px;
-        padding: 10px;
-        height: 200px;
+        height: 100%;
+    }
+
+    .collection .slider__wrapper {
+        width: 610px;
+        height: 519px;
     }
 
     .collection {
         height: 620px;
+    }
+
+    .collection .caption {
+        font-family: Lato,sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        color: #fff;
+        height: 156px;
+        margin: 10px !important;
     }
 
     .collection ul > li.large-slide .card-wrapper {
@@ -121,18 +134,33 @@
         background-position: center left;
         background-size: 32px 32px;
         height: 32px;
-        background-size: contain;
-        background-repeat: no-repeat;
         font-size: 20px;
         font-weight: 600;
-        line-height: 26px;
-        padding-left: 38px;
+        line-height: 17px;
+        padding-left: 45px;
         padding-top: 7px;
+        position: relative;
+        top: -60px;
+        margin: 0 10px;
     }
 
-    .collection .caption {
-        height: 61px;
+    .card__information .card-information {
+        margin-bottom: 10px;
+        margin-top: -10px;
+        position: relative;
+        top: -65px;
+        height: 90px;
     }
 
-
+    .collection .card__content > .card__information {
+        padding-left: 12px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 200px;
+        background: linear-gradient(180deg,#0000,#000000e6);
+        border-radius: 12px;
+        position: relative;
+        width: 100%;
+    }
 }

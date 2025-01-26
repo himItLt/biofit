@@ -82,4 +82,106 @@
     margin-top: 60px;
     margin-left: -6px;
   }
+
+  .recipe-library__text {
+    width: 343px;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+    color: rgba(37, 37, 37, 1);
+    text-transform: uppercase;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+
+  .recipe-library__text-item {
+    margin-top: 35px;
+  }
+}
+/* Tablet */
+@media screen and (min-width: 640px) and (max-width: 968px) {
+  .content-item {
+    border: 1px solid rgba(255,232,238,1);
+    box-shadow: 2px 2px 12px #0000000a;
+    height: 115px;
+    padding-left: 45px;
+    padding-top: 15px;
+    border-radius: 16px;
+    width: 320px;
+    margin: auto;
+    margin-bottom: 6px;
+  }
+  .content-item::before {
+    content: '';
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: -35px;
+  }
+  .content-item h5 {
+    position: relative;
+    top: -57px;
+  }
+  .content-item p {
+    position: relative;
+    top: -77px;
+  }
+  .recipe-library__text h2 {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #252525;
+    text-align: center;
+    top: -349px;
+    position: relative;
+    text-transform: uppercase;
+  }
+  .recipe-library_info {
+    width: 343px;
+    margin-right: 0px;
+  }
+  .recipe-library__media {
+    position: relative;
+    width: 295px;
+    margin: 0;
+  }
+  .recipe-library__grid {
+    display: flex;
+    width: 610px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 15px;
+    margin: auto;
+  }
+  .section-recipe-library .page-width {
+    padding-left: 14px;
+    padding-right: 0;
+  }
+  .recipe-library__media-item {
+    top: 24px;
+    position: relative;
+  }
+  .recipe-library__heading {
+    margin-top: 60px;
+    margin-left: -6px;
+    margin-bottom: 20px;
+  }
+  .recipe-library__text {
+    width: 380px;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33.6px;
+    text-align: center;
+    color: rgba(37, 37, 37, 1);
+    text-transform: uppercase;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 410px;
+  }
 }

@@ -108,10 +108,19 @@
 }
 
 @media screen and (max-width: 989px) {
+
   .section-about-holly {
-    margin-top: 100px;
     height: auto;
   }
+
+  #MainContent:has(.homepage) .section-about-holly {
+    margin-top: 100px;
+  }
+
+  #MainContent:has(.challenge) .section-about-holly {
+    margin-top: -110px;
+  }
+
   .section-about-holly .about-holly__media {
     width: 370px;
     position: relative;
@@ -186,48 +195,69 @@
   }
  }
 
- @media screen and (max-width: 640px) {
-  .about-holly__heading {
-    margin-bottom: 0px;
+ @media screen and (min-width: 641px) and (max-width: 989px) {
+  .section-about-holly .about-holly__media {
+    width: 675px;
+    margin: auto;
   }
 
+  .about-holly_information {
+    width: 610px;
+    margin: auto;
+  }
+
+  .about-holly__text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33.6px;
+    text-transform: uppercase;
+  }
+
+  .about-holly__text p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+  }
+
+  .about-holly__text {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 24px;
+  }
+
+  .social-links {
+    width: 610px;
+    height: 245px;  
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .social-links a {
+    width: 286px;
+    height: 116px;
+    padding: 72px 12px 12px;
+    background-position-y: 25px !important;
+    background-size: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25.6px;
+    text-align: center;
+  }
+ }
+
+ @media (max-width: 640px) {
   .about-holly__media img.not-mobile {
     display: none;
   }
   .about-holly__media img.only-mobile {
     display: inherit;
   }
-  
-  .about-holly__services {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 20px);
-    height: 300px;
-    justify-content: space-between;
-    padding-left: 0;
-    gap: 12px;
-    height: fit-content;
-    margin: 20px auto;
-  }
-  .about-holly__services .service-item {
-    height: 52px;
-    padding: 12px;
-    border-radius: 12px;
-    border: 0;
-    width: 100%;
-    font-family: Poppins, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18.2px;
-    text-align: left;
-    color: var(--Text-Dark-Grey, rgba(65, 65, 66, 1));
-    padding-left: 50px;
-    background-repeat: no-repeat;
-    background-position: 12px center;
-    background-color: #fff;
-    background-size: 28px 28px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 2px 20px 0px rgba(242, 51, 105, 0.1);
-  }
- }
+} 

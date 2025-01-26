@@ -1,3 +1,4 @@
+
 .section-header:has(#header-challenge) {
     z-index: 10;
     position: relative;
@@ -98,6 +99,7 @@
 
     .blog .article-card-wrapper {
         height: 317px !important;
+        width: 317px !important;
     }
 
     .blog .slider-buttons {
@@ -108,10 +110,31 @@
         border-radius: 12px !important;
         height: 100% !important;
     }
+
+    .blog ul.blog__posts {
+        gap: 8px !important;
+    }
 }
 
 /* Mobidle */
 @media screen and (max-width: 989px) {
+    :root {
+        --zoom-mobile: 1;
+        --blog-left: -30px;
+    }
+    @media (min-width: 450px) {
+        :root {
+            --zoom-mobile: 1.14;
+            --blog-left: -38px;
+        }   
+      }
+    @media (min-width: 550px) {
+        :root {
+            --zoom-mobile: 1.3;
+            --blog-left: -38px;
+        }
+    }
+
     .header__heading-logo {
         height: 25px;
         width: auto;
@@ -176,6 +199,13 @@
         border-radius: 8px !important;
     }
 
+    .blog .slider__wrapper {
+        overflow: hidden !important;
+        width: 360px;
+        margin: auto;
+        height: 250px;
+    }
+
     .whats-included__caption h3,
     .about-challenge-heading {
         font-family: Poppins, sans-serif;
@@ -208,6 +238,7 @@
 
     .blog .article-card-wrapper {
         height: 170px !important;
+        width: 170px !important;
     }
 
     .blog .card__inner {
@@ -254,5 +285,16 @@
     #header-challenge .header,
     #header-challenge {
         background: none !important;
+    }
+
+    #header-challenge .menu-drawer {
+        overflow: visible;
+    }
+
+    .menu-drawer__inner-container {
+        position: relative;
+        height: 100%;
+        width: 100vw !important;
+        left: -40px;
     }
 }

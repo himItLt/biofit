@@ -45,6 +45,7 @@
 
 .about-app__caption {
   margin: 0;
+  white-space: nowrap;
 }
 
 .t-break {
@@ -53,8 +54,11 @@
 
 /* Desktop */
 @media screen and (min-width: 990px) {
+  #MainContent:has(.homepage) .shopify-section:has(.about-app__content) {
+    margin-top: -245px !important;
+  }
   .about-app__content {
-    width: 640px;
+    width: 565px;
   }
   .about-app__text p, .section-about-app .service-item {
     font-family: Lato, sans-serif;
@@ -66,7 +70,7 @@
   }
   .about-app__media {
     position: relative;
-    width: calc(760 * var(--img-ratio));
+    width: 670px;
     top: -30px;
   }
   .section-about-app .button-wrapper {
@@ -83,11 +87,10 @@
     gap: 100px;
   }
   .about-app__media-item {
-    width: 600px;  
+    width: 620px;  
   }
   .about-app__text-item {
     width: 640px;
-    margin-left: calc(20 * var(--img-ratio));
   }
   .about-app__services {
     height: 320px;

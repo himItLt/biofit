@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
-    width: 1326px;
+    width: 1328px;
     top: -30px;
     margin: auto;
     position: relative;
@@ -61,6 +61,7 @@
     justify-content: space-between;
     width: 100%;
     margin-left: 20px;
+    margin-top: 5px;
   }
 
   .section-membership .plan-info p {
@@ -136,12 +137,12 @@
   }
 
   .membership__media-item {
-    width: 500px;
+    width: 510px;
     margin-right: 0;
   }
 
   .membership__text-item {
-    width: 700px;
+    width: 715px;
     margin-left: 0;
   }
 

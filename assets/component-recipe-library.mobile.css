@@ -102,6 +102,9 @@
 }
 /* Tablet */
 @media screen and (min-width: 640px) and (max-width: 968px) {
+  #MainContent:has(#customForm.homepage) #recipe-library-section {
+    margin-top: 155px;
+  }  
   .content-item {
     border: 1px solid rgba(255,232,238,1);
     box-shadow: 2px 2px 12px #0000000a;
@@ -170,6 +173,12 @@
     margin-top: 60px;
     margin-left: -6px;
     margin-bottom: 20px;
+  }
+  .recipe-library__text.mobile {
+    display: inherit;
+  }
+  .recipe-library__text.desktop {
+    display: none;
   }
   .recipe-library__text {
     width: 380px;

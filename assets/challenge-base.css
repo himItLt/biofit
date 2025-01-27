@@ -143,7 +143,7 @@
     .section-header:has(#header-challenge) {
         z-index: 10;
         position: relative;
-        top: -0px;
+        top: 0px;
     }
 
     #header-challenge .header,
@@ -275,16 +275,15 @@
 
 /* Tablet */
 @media screen and (min-width: 641px) and (max-width: 989px) {
-    #header-challenge .header, #header-challenge {
-      width: calc(100vw - 80px);
-      margin: auto;
+    #shopify-section-header-challenge {
+        background: #fff;
     }
     #header-challenge .header .menu-drawer {
       width: 100% !important;
     }
     #header-challenge .header,
     #header-challenge {
-        background: none !important;
+        background: #fff !important;
     }
 
     #header-challenge .menu-drawer {
@@ -295,6 +294,6 @@
         position: relative;
         height: 100%;
         width: 100vw !important;
-        left: -40px;
+        /* left: -40px; */
     }
 }

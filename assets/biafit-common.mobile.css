@@ -19,7 +19,7 @@
   #MainContent:not(h1.main-page-title) {
     height: auto !important;
   }
- 
+  
   #main-cart-footer {
     border-top: 1px solid rgba(226, 226, 226, 1);
     width: 100%;
@@ -32,7 +32,7 @@
   .cart-item__details >* {
     max-width: none !important;
   }
-  
+
   .cart-plan-item {
     width: 215px;
     height: 70px;
@@ -192,6 +192,8 @@
 
   cart-items .cart-item__details .cart-item__name {
     font-size: 14px;
+    position: relative;
+    left: -70px;
   }
   
   .cart-item {
@@ -234,8 +236,8 @@
   }
 
   table td.cart-item__totals {
-    margin-top: 0px;
-    width: 220px;
+    margin-top: 0;
+    left: -85px;
   }
 
   table td.cart-item__quantity {

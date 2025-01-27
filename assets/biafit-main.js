@@ -51,7 +51,7 @@ class Manager {
     if (!formIFrame) {
       return;
     }
-    const heightDiff = !this.hasScreenMode('desktop') ? 405 : 295;
+    const heightDiff = !this.hasScreenMode('desktop') ? 405 : 305;
     const resizeObserver = new ResizeObserver((entries) => {
       formSection.style.height = (formIFrame.offsetHeight + heightDiff) + 'px';
     });
@@ -138,6 +138,11 @@ class Manager {
     if (!targetElement) {
       return;
     }
+
+    const offsetTop = !this.hasScreenMode('desktop') 
+        ? targetElement.offsetTop
+        : targetElement.getBoundingClientRect().top + window.scrollY;
+
     let buttons = [
       document.getElementById('main-block-button'),
       document.querySelector('.header-button'),
@@ -151,7 +156,7 @@ class Manager {
       el.addEventListener('click', e => {
         e.preventDefault();
         e.stopPropagation();
-        this.scrollToSmoothly(targetElement.offsetTop, 600);
+        this.scrollToSmoothly(offsetTop, 600);
         return false;  
       });
     })
@@ -630,12 +635,6 @@ class BiafitSlider {
     }
   }
 
-  toggleSliderButtons() {
-    const buttonsClasses = [
-      '.collection .slider-button--next'  
-    ]
-  }
-
   initProgramsCarusel() {
     const slider = document.querySelector('.collection .collection__cards');
     if (!slider) {
@@ -645,6 +644,8 @@ class BiafitSlider {
     const prevBtn = document.querySelector('.collection .slider-button--prev');
     slider.querySelector('li:nth-child(2)').classList.add('large-slide');
     this.processSliderAction(slider, prevBtn, nextBtn, 'program-' + window.biafitManager.getScreenMode());
+    // TODO: uncomment for Prod
+    this.setupProgramTimer();
   }
 
   initTestimonialsCarusel() {
@@ -652,17 +653,29 @@ class BiafitSlider {
     const prevBtn = document.querySelector('.blog .slider-button--prev');
     const slider = document.querySelector('.blog .blog__posts');
     this.processSliderAction(slider, prevBtn, nextBtn, 'blog-' + window.biafitManager.getScreenMode());
+
+    // TODO: uncomment for Prod
+    this.setupBlogTimer();
+    nextBtn.dispatchEvent(new Event('click'));
   }
   
-  setupTimers() {
+  setupProgramTimer() {
     const programsBtn = document.querySelector('.collection .slider-button--next');
-    const blogBtn = document.querySelector('.blog .slider-button--next');
 
-    if (programsBtn || blogBtn) {
+    if (programsBtn) {
       setInterval(() => {
         if (programsBtn) {
           programsBtn.dispatchEvent(new Event('click'));
         }
+      }, 15000);
+    }
+  }
+
+  setupBlogTimer() {
+    const blogBtn = document.querySelector('.blog .slider-button--next');
+
+    if (blogBtn) {
+      setInterval(() => {
         if (blogBtn) {
           blogBtn.dispatchEvent(new Event('click'));
         }
@@ -770,7 +783,6 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  window.biafitSlider.setupTimers();
   window.biafitSlider.initMainSlider();
 
   //document.querySelector('.home__video video')?.play();

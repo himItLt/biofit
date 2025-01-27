@@ -14,8 +14,8 @@
         padding: 60px 30px 80px;
     }
 
-    #MainContent:has(.homepage) .biafit-footer {
-        margin-top: 450px;
+    #MainContent:has(#customForm.challenge) .biafit-footer {
+        margin-top: 50px;
     }
 
     .biafit-footer .heading,
@@ -31,13 +31,15 @@
     }
     .biafit-footer .social-links {
         height: 70px;
+        margin-top: -20px;
     }
     .biafit-footer .download-app {
         height: 91px;
-        margin-top: -25px;
+        margin-top: 20px;
     }
     .biafit-footer .customer-service {
         height: 110px;
+        margin-top: 45px;
     }
 
     .biafit-footer a.link-image {
@@ -143,10 +145,6 @@
         margin-bottom: 60px;
     }
 
-    #MainContent:has(.homepage) .biafit-footer {
-        margin-top: 60px;
-    }
-
     .biafit-footer .left-block, 
     .biafit-footer .right-block {
         display: flex;
@@ -171,7 +169,7 @@
     .biafit-footer .social-links, 
     .biafit-footer .download-app {
         text-align: left;
-        margin-bottom: 50px;
+        margin-bottom: 15px;
     }
 
     .biafit-footer h5, .biafit-footer h5 a {
@@ -191,6 +189,7 @@
         width: 239px;
         height: 115px;
         left: -9px;
+        top: 45px;
     }
 
     .biafit-footer .social-links .instagram, 
@@ -214,7 +213,14 @@
         gap: 10px;
     }
 
-    #MainContent:has(.challenge) .biafit-footer {
+    /* .biafit-footer .download-app h5 {
+        margin-top: -30px;
+    } */
+
+    #MainContent:has(#customForm.challenge) .biafit-footer {
+        margin-top: 60px;
+    }
+    #MainContent:has(#customForm.homepage) .biafit-footer {
         margin-top: 60px;
     }
 }

@@ -311,13 +311,16 @@
           (() => {
             const urlParams = new URLSearchParams(window.location.search);
             const noRedirect = urlParams.get('no-redirect');
+            const isSupportForm = urlParams.get('support-form-success');
+
             if (noRedirect == 1) {
-              console.log('No redirect');
+              // TODO: homepage success support form
+              if (isSupportForm == 1) {
+              }
               return;
             }
+
             let redirect = '{{ settings.challenge_redirect }}';
-            const isSupportForm = urlParams.get('support-form-success');
-            
             if (isSupportForm == 1) {
               redirect = redirect + '#contact-section';
               localStorage.setItem('isSupportSuccess', 1);

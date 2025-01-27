@@ -73,10 +73,6 @@
           {{ section.settings.title }}
         </h2>
       {%- endif -%}
-      {%- if section.settings.description != blank
-        or section.settings.show_description
-        and section.settings.collection.description != empty
-      -%}
         <div class="collection__description">
           {% comment %} {%- if section.settings.show_description -%}
             {{ section.settings.collection.description }}
@@ -88,7 +84,6 @@
             <strong>right for you</strong>
           </p>
         </div>
-      {%- endif -%}
     </div>
 
     <slider-component>

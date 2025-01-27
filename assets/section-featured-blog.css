@@ -12,6 +12,9 @@
 }
 
 @media screen and (min-width: 990px) {
+  #shopify-section-template--17776157622463__featured_blog_ph4qGt {
+    margin-top: -80px;
+  }
   .description h2 {
     font-family: Poppins, sans-serif;
     font-size: 32px;
@@ -38,7 +41,7 @@
 
   .blog .article-card-wrapper {
       height: 450px;
-      width: 100%;
+      width: 316px;
   }
 
   .blog .card__heading {
@@ -83,11 +86,10 @@
   .blog ul.blog__posts {
     display: flex;
     width: 1328px;
-    min-width: 1328px !important;
     padding-left: 0;
     position: relative;
     justify-content: flex-start;
-    gap: 15px;
+    gap: 10px;
     top: 35px;
   } 
 

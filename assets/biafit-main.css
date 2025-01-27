@@ -3,9 +3,11 @@
     --img-ratio-mobile: calc(100vw / 370);
     --img-ratio-tablet: calc(100vw / 768);
     --zoom-desktop: 1;
+    --zoom-desktop-small: 1;
     
     --slide_1-top: -60px;
     --slide_2-top: 100px;
+    --slider-top: -102px;
 }
 a:hover {
     text-decoration: none !important;
@@ -15,18 +17,45 @@ p > strong {
 }
 
 @media screen and (min-width: 990px) {
+    @media (min-width: 2000px) {
+        :root {
+            --zoom-desktop: 1.15;
+            --slider-top: -116px;
+        }    
+    }
+    @media (min-width: 2500px) {
+        :root {
+            --zoom-desktop: 1.5;
+            --slider-top: -150px;
+        }    
+    } 
+    @media (min-width: 3000px) {
+        :root {
+            --zoom-desktop: 1.7;
+            --slider-top: -200px;
+        }    
+    } 
+    @media (min-width: 3500px) {
+        :root {
+            --zoom-desktop: 2.0;
+            --slider-top: -102px;
+        }    
+    }
+
     @media (max-width: 1600px) {
         :root {
             --zoom-desktop: 0.9;
             --slide_1-top: -80px; 
             --slide_2-top: 100px;
+            --zoom-desktop-small: 0.9;
         }   
     }
     @media (max-width: 1400px) {
         :root {
-            --zoom-desktop: 0.9;  
+            --zoom-desktop: 0.85;  
             --slide_1-top: -120px;
             --slide_2-top: 40px;
+            --zoom-desktop-small: 0.85;
         }
     }
     @media (max-width: 1200px) {
@@ -34,20 +63,27 @@ p > strong {
             --zoom-desktop: 0.8;   
             --slide_1-top: -180px;
             --slide_2-top: 20px;
+            --zoom-desktop-small: 0.8;
         }
     }
 
     #MainContent {
         width: 100vw;
-        margin: auto !important;    
+        margin: auto !important;
+        position: relative;
+        top: var(--slider-top);
     }
 
     #MainContent .shopify-section {
         width: 100%;
+        max-width: 100vw !important;
         position: relative;
         overflow: hidden;
         padding-bottom: 20px;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
+    
     #MainContent .biafit-zoom {
         zoom: var(--zoom-desktop);
     }
@@ -66,12 +102,12 @@ p > strong {
         border-radius: 40px;
         background-color: #fff !important;
         float: none;
-        max-width: calc(100% - 15%);
         border: none;
         box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.05);
         margin-top: 40px;
         height: 60px;
-        max-width: 77%;
+        width: 1328px;
+        min-width: 1328px;
     }
 
     .utility-bar {
@@ -89,7 +125,6 @@ p > strong {
 
     .header-wrapper {
         zoom: var(--zoom-desktop);
-        margin: auto;
     }
 
     .header:not(.drawer-menu).page-width {
@@ -147,7 +182,6 @@ p > strong {
 
     .collection__title .title {
         top: -27px;
-        left: calc(-45 * var(--img-ratio));
     }
 
     /* Programs */

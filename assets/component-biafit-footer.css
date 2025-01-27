@@ -38,13 +38,13 @@
     }
     
     .biafit-footer {
-        width: 70%;
+        width: 1328px;
         display: flex;
         justify-content: space-between;
         align-content: center;
         height: 170px;
         margin: auto;
-        margin: 190px auto;
+        margin-top: 130px;
     }
 
     .biafit-footer .column1,
@@ -99,7 +99,7 @@
 
     .column3 h5 {
         padding-left: 90px;
-        margin-bottom: 15px;
+        margin-bottom: 6px;
     }
 
     .biafit-footer .service-title {
@@ -115,7 +115,7 @@
         width: 191px;
         height: 56px;
         float: right;
-        margin-top: 5px;
+        margin-top: 10px;
     }
 
     .biafit-footer .service-links {

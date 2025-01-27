@@ -18,9 +18,11 @@
 }
 
 @media screen and (min-width: 990px) {
-  .section-about-holly {
-    height: 925px;
+  #shopify-section-template--17776157622463__about_holly_K79yHh {
+    margin-top: -45px;
+    height: calc(1015 * var(--img-ratio));
   }
+
   .about-holly__text p {
     font-family: Lato, sans-serif;
     font-size: 16px;
@@ -33,10 +35,17 @@
     color: var(--Primary, rgba(237, 22, 83, 1));
   }
 
+  .about-holly__media-item {
+    width: 900px;
+  }
+
+  .about-holly__text-item {
+    width: 740px;
+  }
+
   .about-holly_information {
-    right: calc(-40 * var(--img-ratio));
     position: relative;
-    width: 540px;
+    width: 100%;
   }
 
   .about-holly__content {
@@ -73,17 +82,15 @@
   }
 
   .section-about-holly .about-holly__media {
-    width: 860px;
+    width: 900px;
     position: relative;
-    max-width: 860px;
     top: -184px;
-    left: calc(110 * var(--img-ratio));
   }
   .about-holly__grid {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
-    width: 1362px;
+    justify-content: flex-end;
+    width: 1328px;
     margin: auto;
     gap: 50px;
   }
@@ -113,11 +120,11 @@
     height: auto;
   }
 
-  #MainContent:has(.homepage) .section-about-holly {
+  #MainContent:has(#customForm.homepage) .section-about-holly {
     margin-top: 100px;
   }
 
-  #MainContent:has(.challenge) .section-about-holly {
+  #MainContent:has(#customForm.challenge) .section-about-holly {
     margin-top: -110px;
   }
 
@@ -130,6 +137,7 @@
   .about-holly_information {
     width: 355px;
     margin: auto;
+    margin-top: 20px;
   }
 
   .social-links {
@@ -184,6 +192,7 @@
     font-weight: 700;
     line-height: 28px;
     color: rgba(37, 37, 37, 1);
+    text-transform: uppercase;
   }
 
   .about-holly__text p {

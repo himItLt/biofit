@@ -13,7 +13,7 @@
             {{ block.settings.heading }}
           </h2>
           {%- when 'caption' -%}
-          <h3 class="recipe-library__text">
+          <h3 class="recipe-library__text mobile">
             {% comment %} {{ block.settings.caption | escape }} {% endcomment %}
             Healthy eating, made simple
           </h3>
@@ -28,6 +28,10 @@
         <div class="recipe-library__text-item">
           <div class="recipe-library__content">
             <div class="recipe-library_info">
+              <h3 class="recipe-library__text desktop">
+                {% comment %} {{ block.settings.caption | escape }} {% endcomment %}
+                Healthy eating, made simple
+              </h3>
               <div class="content">
                 <ul>
                   <li class="content-item">

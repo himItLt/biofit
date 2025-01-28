@@ -658,7 +658,7 @@ class BiafitSlider {
     this.processSliderAction(slider, prevBtn, nextBtn, 'program-' + window.biafitManager.getScreenMode());
 
     // TODO: uncomment for Prod
-    //this.setupProgramTimer();
+    this.setupProgramTimer();
   }
 
   initTestimonialsCarusel() {
@@ -668,7 +668,7 @@ class BiafitSlider {
     this.processSliderAction(slider, prevBtn, nextBtn, 'blog-' + window.biafitManager.getScreenMode());
 
     // TODO: uncomment for Prod
-    //this.setupBlogTimer();
+    this.setupBlogTimer();
   }
   
   setupProgramTimer() {
@@ -795,7 +795,7 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  //window.biafitSlider.initMainSlider();
+  window.biafitSlider.initMainSlider();
 
   //document.querySelector('.home__video video')?.play();
 });

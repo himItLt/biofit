@@ -25,7 +25,7 @@
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
-<cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
+<cart-items class="biafit-cart">
   <div class="page-width">
     <div class="title-wrapper-with-link">
       <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
@@ -60,7 +60,6 @@
                   <th class="cart-item__title" scope="col">
                     {{ 'sections.cart.headings.product' | t }}
                   </th>
-                  <th class="cart-item__info" scope="col">&nbsp;</th>
                   <th class="cart-item__totals" scope="col">
                     {{ 'sections.cart.headings.total' | t }}
                   </th>
@@ -79,25 +78,7 @@
               <tbody>
                 {%- for item in cart.items -%}
                   <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
-                    {% if item.product.type != 'Subscription' %}
-                      <td class="cart-item__media">
-                      {% if item.image %}
-                        {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                        <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
-                        <div class="cart-item__image-container gradient global-media-settings">
-                          <img
-                            src="{{ item.image | image_url: width: 300 }}"
-                            class="cart-item__image"
-                            alt="{{ item.image.alt | escape }}"
-                            loading="lazy"
-                            width="150"
-                            height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
-                          >
-                        </div>
-                      {% endif %}
-                      </td>
-                    {% endif %}
-                    <td class="cart-item__details">
+                    <td class="biavit-cart-item__details">
                       {% comment %}
                         Subscription Plan
                       {% endcomment %}
@@ -109,11 +90,29 @@
                         {% comment %}
                           Another products
                         {% endcomment %}
+                        {% if item.product.type != 'Subscription' %}
+                          <div class="cart-item__media">
+                          {% if item.image %}
+                            {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
+                            <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
+                            <div class="cart-item__image-container gradient global-media-settings">
+                              <img
+                                src="{{ item.image | image_url: width: 300 }}"
+                                class="cart-item__image"
+                                alt="{{ item.image.alt | escape }}"
+                                loading="lazy"
+                                width="150"
+                                height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
+                              >
+                            </div>
+                          {% endif %}
+                          </div>
+                        {% endif %} 
                         {%- if settings.show_vendor -%}
                           <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                         {%- endif -%}
 
-                        <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+                        <a href="{{ item.url }}" class="cart-item__name h4">{{ item.product.title | escape }}</a>
 
                         {% comment %} {%- if item.original_price != item.final_price -%}
                           <div class="cart-item__discounted-prices">
@@ -236,7 +235,7 @@
                         {%- endif -%}
                       </div>
                     </td>
-                    <td class="cart-item__quantity{% if has_qty_rules or has_vol_pricing %} cart-item__quantity--info{% endif %}">
+                    <td class="biavit-cart-item__quantity">
                       <quantity-popover>
                         <div class="cart-item__quantity-wrapper quantity-popover-wrapper">
                           <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">

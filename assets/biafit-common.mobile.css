@@ -29,7 +29,7 @@
     padding-bottom: 15px;
   }
 
-  .cart-item__details >* {
+  .biavit-cart-item__details >* {
     max-width: none !important;
   }
 
@@ -92,7 +92,7 @@
     color: var(--Text-Light-Grey, rgba(130, 130, 130, 1));
   }
   /* TODO: fix tempale id class */
-  cart-items.section-template--17715265798335__cart-items-padding {
+  cart-items.biafit-cart {
     padding-bottom: 0px !important;
     padding-top: 10px;
     width: 100%;
@@ -190,63 +190,54 @@
     padding: 0 !important;
   }
 
-  cart-items .cart-item__details .cart-item__name {
+  cart-items .biavit-cart-item__details .cart-item__name {
     font-size: 14px;
-    position: relative;
-    left: -70px;
-  }
-  
-  .cart-item {
-    display: flex;
-  }
-  .cart-item:first-child {
-    margin-bottom: 0;
-    margin-top: -55px;
   }
 
   table.cart-items {
-    width: 100%;
-  }
-  table.cart-items td {
-    vertical-align: middle;
-    text-align: center;
-  }
-  table.cart-items th {
-    text-align: center;
-    padding: 10px 0 !important;
-  }
-  table.cart-items th:first-child,
-  table.cart-items td:first-child {
-    text-align: left;
-    width: 215px;
-    margin-left: 15px;
+    width: calc(340* var(--img-ratio-mobile));
+    margin: auto;
   }
 
-  table.cart-items th:last-child {
-    margin-right: 15px;
+  @media (min-width: 641px) {
+    table.cart-items {
+      width: calc(610* var(--img-ratio-tablet));
+      margin: auto;
+    }
   }
   
-  table.cart-items td:last-child {
-    margin-left: -10px;
-  }
-  
+
   table.cart-items .svg-wrapper {
     width: 20px;
     height: 20px;
   }
 
-  table td.cart-item__totals {
-    margin-top: 0;
-    left: -85px;
+  table.cart-items thead>tr, table.cart-items tbody>tr {
+    margin-bottom: 0 !important;
   }
 
-  table td.cart-item__quantity {
-    margin-top: -12px;
+  table.cart-items td:first-child, 
+  table.cart-items th:first-child {
+    min-width: 222px !important;
   }
 
+  table.cart-items td:last-child, 
+  table.cart-items th:last-child {
+    justify-content: flex-end;
+  }
+
+  .cart-item__totals {
+    min-width: 55px !important;
+  }
+
+  .cart-item__quantity-wrapper {
+    flex-wrap: nowrap !important;
+    padding-left: 0;
+  }
+
+  /* Cart footer */
   #main-cart-footer .totals h2,  
   #main-cart-footer .totals p {
-    font-family: Lato, sans-serif;
     font-family: Lato, sans-serif;
     font-size: 20px;
     font-weight: 700;

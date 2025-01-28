@@ -86,6 +86,12 @@
     position: relative;
     top: -184px;
   }
+
+  @media (max-width: 1300px) {
+    .section-about-holly .about-holly__media {
+      width: 800px;
+    }
+  }
   .about-holly__grid {
     display: flex;
     flex-direction: row-reverse;

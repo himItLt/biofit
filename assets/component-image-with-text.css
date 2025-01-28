@@ -20,7 +20,32 @@
   white-space: nowrap;
 }
 
+.main-slider__bullets {
+  display: flex;
+  height: 12px;
+  width: 40px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  position: relative;
+  z-index: 10;
+  top: calc(760 * var(--img-ratio));
+}
+.main-slider__bullets .slider-bullet {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
 @media screen and (min-width: 990px) {
+  @media (max-width: 1300px) {
+    .main-slider__bullets {
+      top: calc(720* var(--img-ratio));  
+    } 
+  }
   /* Homepage Slide 1 */
   .image-with-text {
     background-size: 100% 100%;

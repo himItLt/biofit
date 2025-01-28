@@ -182,6 +182,7 @@ window.biafitManager = new Manager();
  */
 class BiafitSlider {
   isSliderButtonsLocked = [];
+  activeMainSlide = 'slide-1';
 
   sliderConfig = {
     'program-desktop': {
@@ -753,6 +754,8 @@ class BiafitSlider {
   processMainSlider(slider, interval) {
     const slide1 = slider.querySelector('.home-slide:first-child');
     const slide2 = slider.querySelector('.home-slide:last-child');
+    const activeBullet = document.querySelector('.main-slider__bullets .slider-bullet.active');
+    const inactiveBullet = document.querySelector('.main-slider__bullets .slider-bullet.inactive');
     
     slide1.animate([
       {opacity: 1},
@@ -768,6 +771,10 @@ class BiafitSlider {
       {left: '-100vw'},
     ], interval).onfinish = (e) => {
       slider.append(slide1);
+      activeBullet.classList.remove('active');
+      activeBullet.classList.add('inactive');
+      inactiveBullet.classList.remove('inactive');
+      inactiveBullet.classList.add('active');
     } 
   }
 
@@ -776,6 +783,7 @@ class BiafitSlider {
     if (!slider) {
       return;
     }
+
     setInterval(() => {
       this.processMainSlider(slider, 2000);
     }, 5000);
@@ -797,5 +805,5 @@ window.addEventListener('load', (e) => {
   // TODO: uncomment before deploy to PROD
   window.biafitSlider.initMainSlider();
 
-  //document.querySelector('.home__video video')?.play();
+  document.querySelector('.home__video video')?.play();
 });

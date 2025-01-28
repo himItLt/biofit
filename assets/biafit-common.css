@@ -6,7 +6,7 @@
 }
 
 .biafit-cart {
-  margin-top: 75px;
+  margin-top: 160px;
 }
 
 cart-items .title-wrapper-with-link h1, h1.cart__empty-text {
@@ -110,8 +110,11 @@ cart-items .continue-shopping {
   white-space: nowrap;
   padding-left: 40px;
   line-height: 10px;
-  width: 300px;
-  margin-top: 50px;
+  width: calc(1328* var(--img-ratio));
+  margin: auto;
+  margin-top: 36px;
+  justify-content: flex-start;
+  display: flex;
 }
 
 .cart__empty-text, .is-empty .cart__warnings {
@@ -320,11 +323,14 @@ shopify-paypal-button {
     width: calc(1328 * var(--img-ratio));
     margin: auto;
   }
-  table th {
+  .biafit-cart table th {
     border: 0;
   }
-  table thead > tr {
+  .biafit-cart table thead > tr {
     border-bottom: 1px solid rgba(226, 226, 226, 1);
   }
 
+  .biafit-cart {
+    zoom: var(--zoom-desktop);
+  }  
 }

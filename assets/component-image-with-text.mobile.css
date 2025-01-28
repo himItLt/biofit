@@ -272,7 +272,7 @@
   }
   .main-button__wrapper {
     position: relative;
-    top: calc(448 * var(--img-ratio-tablet));
+    top: 448px;
     width: 100%;
     display: flex;
     justify-content: center;

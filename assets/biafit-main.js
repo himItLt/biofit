@@ -20,9 +20,6 @@ class Manager {
 
   trackMobileMenu() {
     const menuBtn = document.getElementById('Details-menu-drawer-container');
-    const header = document.querySelector('.header-wrapper header');
-    const drawer = document.getElementById('menu-drawer'); 
-
     if (!menuBtn) {
       return;
     }
@@ -38,8 +35,23 @@ class Manager {
         }
       }
 
-      header.style.backgroundColor = (isOpened ? '#fff' : '#ffe8ee');
-      drawer.style.marginTop = (isOpened ? '-1px' : '0px');
+      const doUpdate = document.querySelector('#customForm.homepage') && this.hasScreenMode('tablet');
+
+      if (doUpdate) {
+        const header = document.querySelector('header');
+        const headerSection = document.getElementById('shopify-section-sections--17776157917375__header');
+        const drawer = document.getElementById('menu-drawer');
+
+        if (isOpened) {
+          header.classList.add('white-bg');
+          headerSection.classList.add('white-bg');
+        } else {
+          header.classList.remove('white-bg');
+          headerSection.classList.remove('white-bg');
+        }
+        drawer.style.marginTop = (isOpened ? '-1px' : '0px');
+        drawer.style.marginLeft = 'calc(305* var(--img-ratio-tablet) - 50vw)';
+      }
     });
     mutationObserver.observe(menuBtn, { attributes: true });
   }
@@ -169,7 +181,7 @@ window.biafitManager = new Manager();
  * Slider customization
  */
 class BiafitSlider {
-  isSliderButtonsLocked = false;
+  isSliderButtonsLocked = [];
 
   sliderConfig = {
     'program-desktop': {
@@ -555,14 +567,14 @@ class BiafitSlider {
         for (let originalStyle in config.original) {
           slider.style[originalStyle] = config.original[originalStyle];
         }
-        this.isSliderButtonsLocked = false;
+        this.isSliderButtonsLocked[configName] = false;
       };
 
       nextBtn.addEventListener('click', e => {
-        if (this.isSliderButtonsLocked) {
+        if (this.isSliderButtonsLocked[configName]) {
           return;
         }
-        this.isSliderButtonsLocked = true;
+        this.isSliderButtonsLocked[configName] = true;
 
         let newSlide = firstSlide.cloneNode(true);
         config.next.init(slider);
@@ -589,10 +601,10 @@ class BiafitSlider {
       });
       
       prevBtn.addEventListener('click', e => {
-        if (this.isSliderButtonsLocked) {
+        if (this.isSliderButtonsLocked[configName]) {
           return;
         }
-        this.isSliderButtonsLocked = true;
+        this.isSliderButtonsLocked[configName] = true;
 
         let newSlide = lastSlide.cloneNode(true);
         config.prev.init(slider);
@@ -644,8 +656,9 @@ class BiafitSlider {
     const prevBtn = document.querySelector('.collection .slider-button--prev');
     slider.querySelector('li:nth-child(2)').classList.add('large-slide');
     this.processSliderAction(slider, prevBtn, nextBtn, 'program-' + window.biafitManager.getScreenMode());
+
     // TODO: uncomment for Prod
-    this.setupProgramTimer();
+    //this.setupProgramTimer();
   }
 
   initTestimonialsCarusel() {
@@ -655,8 +668,7 @@ class BiafitSlider {
     this.processSliderAction(slider, prevBtn, nextBtn, 'blog-' + window.biafitManager.getScreenMode());
 
     // TODO: uncomment for Prod
-    this.setupBlogTimer();
-    nextBtn.dispatchEvent(new Event('click'));
+    //this.setupBlogTimer();
   }
   
   setupProgramTimer() {
@@ -732,7 +744,7 @@ class BiafitSlider {
         el.addEventListener('click', e => {
           e.preventDefault();
           e.stopPropagation();
-          return false;  
+          return false;
         });
       });
     });
@@ -783,7 +795,7 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
   // TODO: uncomment before deploy to PROD
-  window.biafitSlider.initMainSlider();
+  //window.biafitSlider.initMainSlider();
 
   //document.querySelector('.home__video video')?.play();
 });

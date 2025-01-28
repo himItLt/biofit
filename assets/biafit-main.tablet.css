@@ -24,7 +24,7 @@
     @media (min-width: 900px) {
         :root {
             --zoom-tablet: 1.24;
-            --blog-left: -73px;
+            --blog-left: -37px;
         }
     }
 
@@ -37,12 +37,6 @@
     }
     .m-break, .d-break {
         display: none;
-    }
-    .section-header {
-        background: transparent;
-    };
-    #MainContent {
-        margin-top: -45px;
     }
     
     .about-app__heading, 
@@ -61,20 +55,13 @@
         margin-left: 20px;
     }
 
-    .header {
-        width: calc(610 * var(--img-ratio-tablet));
+    .list-social__item .svg-wrapper {
+        width: 48px !important;
+        height: 48px !important;
     }
 
-    .header-wrapper,
-    .header {
-        background: none !important;
-        border-radius: 0;
-        border: 0;
-        box-shadow: none;
-    }
-
-    .header-wrapper {
-        top: 15px;
+    #menu-drawer .list-social {
+        gap: 80px;
     }
 
     a.button {

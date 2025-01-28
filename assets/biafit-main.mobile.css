@@ -31,6 +31,7 @@
         justify-content: flex-start;
         align-items: center;
     }
+
     #MainContent .shopify-section {
         width: 100vw;
     }
@@ -53,10 +54,9 @@
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        padding: 0 !important;
-        /* width: calc(340 * var(--img-ratio-mobile)); */
         margin: auto;
-        padding: 0 40px !important;
+        padding: 0 !important;
+        width: calc(340 * var(--img-ratio-mobile));
     }
     .header__heading-logo-wrapper {
         width: 106px;
@@ -71,27 +71,39 @@
         height: 24px;
         color: var(--Text-Black, rgba(6, 6, 6, 1));
     }
+    
     .menu-drawer-container {
         justify-content: right;
     }
-    .menu-drawer {
-        background-color: #fff;
+    .menu-drawer,
+    .menu-drawer__utility-links,
+    .menu-drawer__inner-container {
+        background-color: #fff !important;
     }
+    #menu-drawer {
+        width: 100vw !important;
+    }
+    
     .menu-drawer__navigation-container {
-        background-color: #fff; 
-        /* TODO: chack mobile menu height */
-        max-height: 768px;  
+        background-color: #fff;
+        height: calc(100% - 100px) !important;
+        position: relative;
     }
-    .menu-drawer .list-social {
+    #menu-drawer .list-social {
         justify-content: center !important;
+        gap: 40px;
     }
     .menu-drawer__account {
         display:none !important;
     }
     .list-social__item .icon {
-        color: rgba(237, 22, 83, 0.5);
-        width: 32px;
-        height: 32px;
+        color: rgba(237, 22, 83, 0.5) !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .list-social__item .svg-wrapper {
+        width: 32px !important;
+        height: 32px !important;
     }
     .list-menu__item {
         display: flex;
@@ -109,6 +121,36 @@
         border-color: var(--Color-Block-Titles, rgba(237, 22, 83, 0.07));
         margin-top: 0 !important;
         margin-bottom: 0 !important;
+    }
+
+    @media screen and (min-width: 641px) {
+        #MainContent {
+            margin-top: -45px !important;
+        }
+        .section-header {
+            background-color: transparent !important;
+        };
+        .header-wrapper,
+        .header {
+            background-color: transparent !important;
+            border-radius: 0;
+            border: 0;
+            box-shadow: none;
+            width: calc(610 * var(--img-ratio-tablet));
+            margin: auto;
+            padding: 0 !important;
+        }
+    
+        .section-header.white-bg,
+        .header.white-bg,
+        .header-wrapper.white-bg {
+            background-color: #fff !important;
+        };
+
+        #menu-drawer {
+            width: 100vw !important;
+            margin-left: calc(305* var(--img-ratio-tablet) - 50vw) !important;
+        }
     }
     
     a.button {

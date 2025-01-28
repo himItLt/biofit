@@ -156,6 +156,7 @@
         flex-direction: row-reverse;
         justify-content: space-between;
         width: 100%;
+        padding: 0 16px !important;
     }
 
     #header-challenge .menu-drawer-container {
@@ -164,6 +165,8 @@
 
     #header-challenge .menu-drawer {
         background-color: #fff;
+        margin-left: -16px;
+        width: 100vw !important;
     }
 
     #header-challenge .menu-drawer__navigation-container {
@@ -189,21 +192,6 @@
 
     #header-challenge .menu-drawer__account {
         display: none;
-    }
-
-    .blog .card .card__inner .card__media {
-        border-radius: 8px !important;
-    }
-
-    .blog .blog .card__inner {
-        border-radius: 8px !important;
-    }
-
-    .blog .slider__wrapper {
-        overflow: hidden !important;
-        width: 360px;
-        margin: auto;
-        height: 250px;
     }
 
     .whats-included__caption h3,
@@ -271,15 +259,26 @@
         top: 200px !important;
         left: -4px !important;
     }
+    .blog .card .card__inner .card__media {
+        border-radius: 8px !important;
+    }
+
+    .blog .blog .card__inner {
+        border-radius: 8px !important;
+    }
+
+    .blog .slider__wrapper {
+        overflow: hidden !important;
+        width: 360px;
+        margin: auto;
+        height: 250px;
+    }
 }
 
 /* Tablet */
 @media screen and (min-width: 641px) and (max-width: 989px) {
     #shopify-section-header-challenge {
         background: #fff;
-    }
-    #header-challenge .header .menu-drawer {
-      width: 100% !important;
     }
     #header-challenge .header,
     #header-challenge {
@@ -294,6 +293,43 @@
         position: relative;
         height: 100%;
         width: 100vw !important;
-        /* left: -40px; */
+    }
+
+    .blog .article-card-wrapper {
+        height: 296px !important;
+        width: 296px !important;
+    }
+
+    .blog slider-component {
+        margin-top: -25px;
+    }
+
+    .blog slider-component ul {
+        margin-left: -40px;
+        height: 300px;
+    }
+
+    .blog .slider__wrapper {
+        width: 610px;
+        height: 400px;
+    }
+
+    .blog .slider-buttons {
+        top: 340px !important;
+        left: -4px !important;
+    }
+    .blog .card .card__inner .card__media {
+        border-radius: 8px !important;
+    }
+
+    .blog .blog .card__inner {
+        border-radius: 8px !important;
+    }
+
+    .blog .slider__wrapper {
+        overflow: hidden !important;
+        width: 610ppx;
+        margin: auto;
+        height: 350px;
     }
 }

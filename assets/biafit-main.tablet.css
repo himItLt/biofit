@@ -17,7 +17,7 @@
     @media (min-width: 820px) {
         :root {
             --zoom-tablet: 1.13;
-            --blog-left: -54px;
+            --blog-left: -38px;
         }   
     }
     /* 900 - 989 */

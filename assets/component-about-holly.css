@@ -205,6 +205,10 @@
  }
 
  @media screen and (min-width: 641px) and (max-width: 989px) {
+  #MainContent:has(#customForm.challenge) .section-about-holly {
+    margin-top: -55px;
+  }
+
   .section-about-holly .about-holly__media {
     width: 675px;
     margin: auto;

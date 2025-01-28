@@ -127,7 +127,7 @@
 /* Tablet */
 @media screen and (min-width: 640px) and (max-width: 968px) {
   .blog {
-    height: 650px;
+    height: 690px;
     margin-bottom: 85px;
   }
 
@@ -148,6 +148,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    width: 610px;
   }
 
   .blog__title {

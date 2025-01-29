@@ -73,7 +73,11 @@ class Manager {
 
   scrollToSmoothly(pos, time) {
     if (!this.hasScreenMode('desktop')) {
-      document.querySelector('header-drawer .header__icon')?.click();
+      const menuDrawer = document.getElementById('Details-menu-drawer-container');
+      if (menuDrawer.classList.contains('menu-opening')) {
+        const closeButton = menuDrawer.querySelector('.header__icon');
+        closeButton.dispatchEvent(new Event('click'));
+      }
     }
 
     let currentPos = window.scrollY;
@@ -104,9 +108,13 @@ class Manager {
         'HeaderDrawer-what-is-the-challenge': 'about-challenge-section',
         'HeaderDrawer-about-biafit': 'about-app-section',
         'HeaderDrawer-transformations': 'testimonials-section',
+        'HeaderDrawer-testimonials': 'testimonials-section',
         'HeaderDrawer-about-holly': 'about-holly-section',
         'HeaderDrawer-grand-prize': 'grand-prize-section',
         'HeaderDrawer-support': 'contact-section',
+        'HeaderDrawer-programs': 'programs-section',
+        'HeaderDrawer-recipe-library': 'recipe-library-section',
+        'HeaderDrawer-plans': 'membership-section',
       },
       desktop: {
         'HeaderMenu-about-biafit': 'about-app-section',

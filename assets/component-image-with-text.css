@@ -40,6 +40,14 @@
   display: block;
 }
 
+.main-slider__bullets .slider-bullet.inactive {
+  cursor: pointer;
+}
+.main-slider__bullets .slider-bullet.active {
+  cursor: default;
+}
+
+
 @media screen and (min-width: 990px) {
   @media (max-width: 1300px) {
     .main-slider__bullets {
@@ -247,7 +255,6 @@
     top: 0;
     left: 0;
   }
-
 }
 
 .content-container:after {

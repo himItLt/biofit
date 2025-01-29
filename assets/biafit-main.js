@@ -182,7 +182,6 @@ window.biafitManager = new Manager();
  */
 class BiafitSlider {
   isSliderButtonsLocked = [];
-  activeMainSlide = 'slide-1';
 
   sliderConfig = {
     'program-desktop': {
@@ -752,11 +751,17 @@ class BiafitSlider {
   }
 
   processMainSlider(slider, interval) {
+    if (this.isSliderButtonsLocked['main-slider']) {
+      return;
+    }
+
     const slide1 = slider.querySelector('.home-slide:first-child');
     const slide2 = slider.querySelector('.home-slide:last-child');
     const activeBullet = document.querySelector('.main-slider__bullets .slider-bullet.active');
     const inactiveBullet = document.querySelector('.main-slider__bullets .slider-bullet.inactive');
     
+    this.isSliderButtonsLocked['main-slider'] = true;
+
     slide1.animate([
       {opacity: 1},
       {opacity: 0},
@@ -765,7 +770,6 @@ class BiafitSlider {
       {opacity: 0},
       {opacity: 1},
     ], interval);
-    
     slider.animate([
       {left: 0},
       {left: '-100vw'},
@@ -775,6 +779,7 @@ class BiafitSlider {
       activeBullet.classList.add('inactive');
       inactiveBullet.classList.remove('inactive');
       inactiveBullet.classList.add('active');
+      this.isSliderButtonsLocked['main-slider'] = false;
     } 
   }
 
@@ -784,9 +789,25 @@ class BiafitSlider {
       return;
     }
 
-    setInterval(() => {
+    const bullets = document.querySelectorAll('.main-slider__bullets .slider-bullet');
+    bullets.forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.target.classList.contains('active')) {
+          return;
+        }
+        this.processMainSlider(slider, 2000);
+      })
+    });
+
+    this.isSliderButtonsLocked['main-slider'] = false;
+
+    // TODO: uncomment before deploy to PROD
+    /* setInterval(() => {
       this.processMainSlider(slider, 2000);
-    }, 5000);
+    }, 12000); */
     this.processMainSlider(slider, 2000);
   }
 }
@@ -802,7 +823,6 @@ window.addEventListener('load', (e) => {
   window.biafitSlider.lockClick();
   window.biafitSlider.initProgramsCarusel();
   window.biafitSlider.initTestimonialsCarusel();
-  // TODO: uncomment before deploy to PROD
   window.biafitSlider.initMainSlider();
 
   document.querySelector('.home__video video')?.play();

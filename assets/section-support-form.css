@@ -177,7 +177,7 @@
     border-radius: 12px;
   }
   .support .custom__form:has(.challenge) {
-    padding-top: 130px;
+    padding-top: 100px;
     height: 1100px;
   }
   .support .custom__form:has(.homepage) {
@@ -185,5 +185,12 @@
     height: 100%;
     margin-top: 24px;
   }
-  
+
+  .support:has(.homepage) .form__message {
+    top: 75px;
+  }
+
+  .support:has(.challenge) .form__message {
+    top: -10px;
+  }
 }

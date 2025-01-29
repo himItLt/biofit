@@ -259,4 +259,9 @@
   .support .icon {
     margin-top: 6px;
   }
+
+  #customForm.homepage {
+    top: -50px;
+    position: relative;
+  }
 }

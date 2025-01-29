@@ -316,6 +316,8 @@
             if (noRedirect == 1) {
               // TODO: homepage success support form
               if (isSupportForm == 1) {
+                localStorage.setItem('isSupportSuccess', 1);
+                location.href = '/?no-redirect=1#contact-section';
               }
               return;
             }
@@ -414,21 +416,21 @@
 
     {%- if template == 'product.biafit-challenge' -%}
       <script src="{{ 'challenge-main.js' | asset_url }}" defer="defer"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', e => {
-          const isSupportForm = localStorage.getItem('isSupportSuccess');
-          if (isSupportForm) {
-            const msg = document.querySelector('.support .form__message');
-            if (!msg) {
-              return;
-            }
-           msg.style.display = 'block';
-           localStorage.removeItem('isSupportSuccess');
-          }
-        });
-        
-      </script>
     {%- endif -%}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', e => {
+        const isSupportForm = localStorage.getItem('isSupportSuccess');
+        if (isSupportForm) {
+          const msg = document.querySelector('.support .form__message');
+          if (!msg) {
+            return;
+          }
+         msg.style.display = 'block';
+         localStorage.removeItem('isSupportSuccess');
+        }
+      });
+    </script>
 
     {% render 'google-tag', tag_id: 'AW-16830318629' %}
   </body>

@@ -213,9 +213,22 @@
     --left-slide-1: 60px;
     --left-slide-2: 86px;
   }
+
+  .header {
+    position: relative;
+    top: 15px;
+  }
+  .header-wrapper {
+    height: 70px;
+  }
+
   #MainContent .shopify-section:has(.homepage-slider) {
     height: calc(896 * var(--img-ratio-tablet));
     margin-bottom: 20px;   
+  }
+
+  #MainContent {
+    margin-top: -70px !important;
   }
 
   .image-with-text {

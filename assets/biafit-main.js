@@ -813,9 +813,9 @@ class BiafitSlider {
     this.isSliderButtonsLocked['main-slider'] = false;
 
     // TODO: uncomment before deploy to PROD
-    /* setInterval(() => {
+    setInterval(() => {
       this.processMainSlider(slider, 2000);
-    }, 12000); */
+    }, 12000);
     this.processMainSlider(slider, 2000);
   }
 }

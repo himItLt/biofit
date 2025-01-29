@@ -816,7 +816,6 @@ class BiafitSlider {
     setInterval(() => {
       this.processMainSlider(slider, 2000);
     }, 12000);
-    this.processMainSlider(slider, 2000);
   }
 }
 

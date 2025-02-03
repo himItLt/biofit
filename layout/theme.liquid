@@ -291,6 +291,7 @@
     <link rel="stylesheet" href="{{ 'biafit-main.css' | asset_url }}" media="all" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'biafit-main.mobile.css' | asset_url }}" media="all" onload="this.media='all'">
     <link rel="stylesheet" href="{{ 'biafit-main.tablet.css' | asset_url }}" media="all" onload="this.media='all'">
+    {% render 'google-tag', tag_id: 'AW-16830318629' %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -431,7 +432,5 @@
         }
       });
     </script>
-
-    {% render 'google-tag', tag_id: 'AW-16830318629' %}
   </body>
 </html>

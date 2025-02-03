@@ -118,7 +118,19 @@ class ChallengeTimer {
     }
     if (!this.diffSeconds) {
       this.diffSeconds = parseInt(startTime) - Math.floor(Date.now() / 1000);
-    } 
+    }
+
+    if (this.diffSeconds < 0) {
+      this.timeDiff = {
+        days: 0,
+        hours: 0,
+        minutes: {
+          ten: 0,
+          unit: 0
+        }
+      }
+      return;
+    }
 
     const secondsInDay = 3600 * 24;
     const days = Math.floor(this.diffSeconds / secondsInDay);
@@ -160,6 +172,10 @@ class ChallengeTimer {
     this.updateCounterBlock();
     this.mode = window.biafitManager.getScreenMode();
 
+    if (this.diffSeconds < 0) {
+      this.currentMinute.innerText = '0';
+      return;
+    }
     // TODO: uncomment before deploy to PROD
     setInterval(() => {
       this.startAnimation();

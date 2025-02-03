@@ -365,18 +365,18 @@ class BiafitSlider {
         left: '0px',
       },
       prev: {
-        animation: 'blog-mobile-prev',
+        animation: document.querySelector('#customForm.homepage') 
+                    ? 'blog-mobile_h-prev' : 'blog-mobile-prev',
         init: (slider) => {
-          slider.style.left = '-185px';
+          slider.style.left = document.querySelector('#customForm.homepage') ? '-289px' : '-185px';
         }
       },
       next: {
-        animation: 'blog-mobile-next',
+        animation: document.querySelector('#customForm.homepage') ? 'blog-mobile_h-next' : 'blog-mobile-next',
         init: (slider) => {
         }
       },
     },
-    // TODO: Tablet animation
     'blog-tablet': {
       original: {
         left: '0px',
@@ -428,6 +428,22 @@ class BiafitSlider {
         },
         {
           left: "-185px"
+        },
+      ],
+      'blog-mobile_h-prev': [
+        {
+          left: '-289px'
+        },
+        {
+          left: '0px'
+        },
+      ],
+      'blog-mobile_h-next': [
+        {
+          left: '0px'
+        },
+        {
+          left: "-289px"
         },
       ],
       'blog-tablet-prev': [
